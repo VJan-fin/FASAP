@@ -117,7 +117,9 @@
     <Compile Include="InfoForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoForma.Designer.cs" />
+    <Compile Include="InfoForma.designer.cs">
+      <DependentUpon>InfoForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="IzvrsuvanjeNaracka.cs">
       <SubType>Form</SubType>
     </Compile>

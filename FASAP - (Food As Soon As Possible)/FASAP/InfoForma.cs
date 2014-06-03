@@ -33,7 +33,7 @@ namespace SmetkaZaNaracka
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register(Conn);
-           register.Show();
+            register.Show();
         }
     }
 }
