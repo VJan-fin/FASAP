@@ -167,5 +167,19 @@ namespace SmetkaZaNaracka
             
             postaviRejting(0);
         }
+
+        private void lbl1_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            LabelFASAP lb = sender as LabelFASAP;
+            lb.Font = new Font("Trebuchet MS", 20, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        }
+
+        private void lbl1_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            LabelFASAP lb = sender as LabelFASAP;
+            lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        }
     }
 }

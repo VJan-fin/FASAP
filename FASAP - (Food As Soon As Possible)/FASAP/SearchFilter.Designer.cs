@@ -218,140 +218,170 @@
             this.lbl12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl12.AutoSize = true;
             this.lbl12.BackColor = System.Drawing.Color.Transparent;
-            this.lbl12.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl12.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl12.ForeColor = System.Drawing.Color.Gold;
             this.lbl12.Image = ((System.Drawing.Image)(resources.GetObject("lbl12.Image")));
             this.lbl12.LblObject = null;
-            this.lbl12.Location = new System.Drawing.Point(221, 574);
+            this.lbl12.Location = new System.Drawing.Point(199, 573);
             this.lbl12.Name = "lbl12";
-            this.lbl12.Size = new System.Drawing.Size(0, 27);
+            this.lbl12.Size = new System.Drawing.Size(45, 29);
             this.lbl12.TabIndex = 24;
+            this.lbl12.Text = ": : ";
+            this.lbl12.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl12.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl10
             // 
             this.lbl10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl10.AutoSize = true;
             this.lbl10.BackColor = System.Drawing.Color.Transparent;
-            this.lbl10.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl10.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl10.ForeColor = System.Drawing.Color.Gold;
             this.lbl10.Image = ((System.Drawing.Image)(resources.GetObject("lbl10.Image")));
             this.lbl10.LblObject = null;
-            this.lbl10.Location = new System.Drawing.Point(221, 480);
+            this.lbl10.Location = new System.Drawing.Point(199, 479);
             this.lbl10.Name = "lbl10";
-            this.lbl10.Size = new System.Drawing.Size(0, 27);
+            this.lbl10.Size = new System.Drawing.Size(45, 29);
             this.lbl10.TabIndex = 24;
+            this.lbl10.Text = ": : ";
+            this.lbl10.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl10.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl9
             // 
             this.lbl9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl9.AutoSize = true;
             this.lbl9.BackColor = System.Drawing.Color.Transparent;
-            this.lbl9.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl9.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl9.ForeColor = System.Drawing.Color.Gold;
             this.lbl9.Image = ((System.Drawing.Image)(resources.GetObject("lbl9.Image")));
             this.lbl9.LblObject = null;
-            this.lbl9.Location = new System.Drawing.Point(221, 433);
+            this.lbl9.Location = new System.Drawing.Point(199, 432);
             this.lbl9.Name = "lbl9";
-            this.lbl9.Size = new System.Drawing.Size(0, 27);
+            this.lbl9.Size = new System.Drawing.Size(45, 29);
             this.lbl9.TabIndex = 24;
+            this.lbl9.Text = ": : ";
+            this.lbl9.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl9.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl8
             // 
             this.lbl8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl8.AutoSize = true;
             this.lbl8.BackColor = System.Drawing.Color.Transparent;
-            this.lbl8.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl8.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl8.ForeColor = System.Drawing.Color.Gold;
             this.lbl8.Image = ((System.Drawing.Image)(resources.GetObject("lbl8.Image")));
             this.lbl8.LblObject = null;
-            this.lbl8.Location = new System.Drawing.Point(221, 386);
+            this.lbl8.Location = new System.Drawing.Point(199, 385);
             this.lbl8.Name = "lbl8";
-            this.lbl8.Size = new System.Drawing.Size(0, 27);
+            this.lbl8.Size = new System.Drawing.Size(45, 29);
             this.lbl8.TabIndex = 24;
+            this.lbl8.Text = ": : ";
+            this.lbl8.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl8.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl7
             // 
             this.lbl7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl7.AutoSize = true;
             this.lbl7.BackColor = System.Drawing.Color.Transparent;
-            this.lbl7.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl7.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl7.ForeColor = System.Drawing.Color.Gold;
             this.lbl7.Image = ((System.Drawing.Image)(resources.GetObject("lbl7.Image")));
             this.lbl7.LblObject = null;
-            this.lbl7.Location = new System.Drawing.Point(221, 339);
+            this.lbl7.Location = new System.Drawing.Point(199, 338);
             this.lbl7.Name = "lbl7";
-            this.lbl7.Size = new System.Drawing.Size(0, 27);
+            this.lbl7.Size = new System.Drawing.Size(45, 29);
             this.lbl7.TabIndex = 24;
+            this.lbl7.Text = ": : ";
+            this.lbl7.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl7.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl5
             // 
             this.lbl5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl5.AutoSize = true;
             this.lbl5.BackColor = System.Drawing.Color.Transparent;
-            this.lbl5.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl5.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl5.ForeColor = System.Drawing.Color.Gold;
             this.lbl5.Image = ((System.Drawing.Image)(resources.GetObject("lbl5.Image")));
             this.lbl5.LblObject = null;
-            this.lbl5.Location = new System.Drawing.Point(221, 245);
+            this.lbl5.Location = new System.Drawing.Point(199, 244);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(0, 27);
+            this.lbl5.Size = new System.Drawing.Size(45, 29);
             this.lbl5.TabIndex = 22;
+            this.lbl5.Text = ": : ";
+            this.lbl5.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl5.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl4
             // 
             this.lbl4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl4.AutoSize = true;
             this.lbl4.BackColor = System.Drawing.Color.Transparent;
-            this.lbl4.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl4.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl4.ForeColor = System.Drawing.Color.Gold;
             this.lbl4.Image = ((System.Drawing.Image)(resources.GetObject("lbl4.Image")));
             this.lbl4.LblObject = null;
-            this.lbl4.Location = new System.Drawing.Point(221, 198);
+            this.lbl4.Location = new System.Drawing.Point(199, 197);
             this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(0, 27);
+            this.lbl4.Size = new System.Drawing.Size(45, 29);
             this.lbl4.TabIndex = 21;
+            this.lbl4.Text = ": : ";
+            this.lbl4.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl4.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl3
             // 
             this.lbl3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl3.AutoSize = true;
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl3.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl3.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl3.ForeColor = System.Drawing.Color.Gold;
             this.lbl3.Image = ((System.Drawing.Image)(resources.GetObject("lbl3.Image")));
             this.lbl3.LblObject = null;
-            this.lbl3.Location = new System.Drawing.Point(221, 151);
+            this.lbl3.Location = new System.Drawing.Point(199, 150);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(0, 27);
+            this.lbl3.Size = new System.Drawing.Size(45, 29);
             this.lbl3.TabIndex = 20;
+            this.lbl3.Text = ": : ";
+            this.lbl3.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl3.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl2
             // 
             this.lbl2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl2.AutoSize = true;
             this.lbl2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl2.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl2.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl2.ForeColor = System.Drawing.Color.Gold;
             this.lbl2.Image = ((System.Drawing.Image)(resources.GetObject("lbl2.Image")));
             this.lbl2.LblObject = null;
-            this.lbl2.Location = new System.Drawing.Point(221, 104);
+            this.lbl2.Location = new System.Drawing.Point(199, 103);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(0, 27);
+            this.lbl2.Size = new System.Drawing.Size(45, 29);
             this.lbl2.TabIndex = 19;
+            this.lbl2.Text = ": : ";
+            this.lbl2.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl2.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl1
             // 
             this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl1.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl1.ForeColor = System.Drawing.Color.Gold;
             this.lbl1.Image = ((System.Drawing.Image)(resources.GetObject("lbl1.Image")));
             this.lbl1.LblObject = null;
-            this.lbl1.Location = new System.Drawing.Point(221, 57);
+            this.lbl1.Location = new System.Drawing.Point(199, 56);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(0, 27);
+            this.lbl1.Size = new System.Drawing.Size(45, 29);
             this.lbl1.TabIndex = 18;
+            this.lbl1.Text = ": : ";
+            this.lbl1.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl1.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // pbListUp
             // 
@@ -384,28 +414,34 @@
             this.lbl6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl6.AutoSize = true;
             this.lbl6.BackColor = System.Drawing.Color.Transparent;
-            this.lbl6.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl6.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl6.ForeColor = System.Drawing.Color.Gold;
             this.lbl6.Image = ((System.Drawing.Image)(resources.GetObject("lbl6.Image")));
             this.lbl6.LblObject = null;
-            this.lbl6.Location = new System.Drawing.Point(221, 292);
+            this.lbl6.Location = new System.Drawing.Point(199, 291);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(0, 27);
+            this.lbl6.Size = new System.Drawing.Size(45, 29);
             this.lbl6.TabIndex = 23;
+            this.lbl6.Text = ": : ";
+            this.lbl6.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl6.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lbl11
             // 
             this.lbl11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl11.AutoSize = true;
             this.lbl11.BackColor = System.Drawing.Color.Transparent;
-            this.lbl11.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbl11.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl11.ForeColor = System.Drawing.Color.Gold;
             this.lbl11.Image = ((System.Drawing.Image)(resources.GetObject("lbl11.Image")));
             this.lbl11.LblObject = null;
-            this.lbl11.Location = new System.Drawing.Point(221, 527);
+            this.lbl11.Location = new System.Drawing.Point(199, 526);
             this.lbl11.Name = "lbl11";
-            this.lbl11.Size = new System.Drawing.Size(0, 27);
+            this.lbl11.Size = new System.Drawing.Size(45, 29);
             this.lbl11.TabIndex = 24;
+            this.lbl11.Text = ": : ";
+            this.lbl11.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
+            this.lbl11.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
             // lblImeRestoran
             // 
@@ -417,9 +453,9 @@
             this.lblImeRestoran.LblObject = null;
             this.lblImeRestoran.Location = new System.Drawing.Point(827, 84);
             this.lblImeRestoran.Name = "lblImeRestoran";
-            this.lblImeRestoran.Size = new System.Drawing.Size(224, 49);
+            this.lblImeRestoran.Size = new System.Drawing.Size(236, 49);
             this.lblImeRestoran.TabIndex = 17;
-            this.lblImeRestoran.Text = ":РЕЈТИНГ:";
+            this.lblImeRestoran.Text = ":РЕЈТИНГ: ";
             // 
             // labelFASAP7
             // 
@@ -431,9 +467,9 @@
             this.labelFASAP7.LblObject = null;
             this.labelFASAP7.Location = new System.Drawing.Point(538, 233);
             this.labelFASAP7.Name = "labelFASAP7";
-            this.labelFASAP7.Size = new System.Drawing.Size(101, 29);
+            this.labelFASAP7.Size = new System.Drawing.Size(108, 29);
             this.labelFASAP7.TabIndex = 18;
-            this.labelFASAP7.Text = ":Улица:";
+            this.labelFASAP7.Text = ":Улица: ";
             // 
             // lblUlica
             // 
@@ -445,9 +481,9 @@
             this.lblUlica.LblObject = null;
             this.lblUlica.Location = new System.Drawing.Point(538, 262);
             this.lblUlica.Name = "lblUlica";
-            this.lblUlica.Size = new System.Drawing.Size(168, 29);
+            this.lblUlica.Size = new System.Drawing.Size(175, 29);
             this.lblUlica.TabIndex = 19;
-            this.lblUlica.Text = ":Македонија:";
+            this.lblUlica.Text = ":Македонија: ";
             // 
             // lblGrad
             // 
@@ -459,9 +495,9 @@
             this.lblGrad.LblObject = null;
             this.lblGrad.Location = new System.Drawing.Point(538, 356);
             this.lblGrad.Name = "lblGrad";
-            this.lblGrad.Size = new System.Drawing.Size(109, 29);
+            this.lblGrad.Size = new System.Drawing.Size(116, 29);
             this.lblGrad.TabIndex = 21;
-            this.lblGrad.Text = ":Скопје:";
+            this.lblGrad.Text = ":Скопје: ";
             // 
             // labelFASAP10
             // 
@@ -473,9 +509,9 @@
             this.labelFASAP10.LblObject = null;
             this.labelFASAP10.Location = new System.Drawing.Point(538, 327);
             this.labelFASAP10.Name = "labelFASAP10";
-            this.labelFASAP10.Size = new System.Drawing.Size(86, 29);
+            this.labelFASAP10.Size = new System.Drawing.Size(93, 29);
             this.labelFASAP10.TabIndex = 20;
-            this.labelFASAP10.Text = ":Град:";
+            this.labelFASAP10.Text = ":Град: ";
             // 
             // lblKategorija
             // 
@@ -487,9 +523,9 @@
             this.lblKategorija.LblObject = null;
             this.lblKategorija.Location = new System.Drawing.Point(538, 522);
             this.lblKategorija.Name = "lblKategorija";
-            this.lblKategorija.Size = new System.Drawing.Size(182, 29);
+            this.lblKategorija.Size = new System.Drawing.Size(189, 29);
             this.lblKategorija.TabIndex = 23;
-            this.lblKategorija.Text = ":Мексикански:";
+            this.lblKategorija.Text = ":Мексикански: ";
             // 
             // labelFASAP12
             // 
@@ -501,9 +537,9 @@
             this.labelFASAP12.LblObject = null;
             this.labelFASAP12.Location = new System.Drawing.Point(538, 493);
             this.labelFASAP12.Name = "labelFASAP12";
-            this.labelFASAP12.Size = new System.Drawing.Size(159, 29);
+            this.labelFASAP12.Size = new System.Drawing.Size(166, 29);
             this.labelFASAP12.TabIndex = 22;
-            this.labelFASAP12.Text = ":Категорија:";
+            this.labelFASAP12.Text = ":Категорија: ";
             // 
             // lblRabotnoVreme
             // 
@@ -529,9 +565,9 @@
             this.labelFASAP14.LblObject = null;
             this.labelFASAP14.Location = new System.Drawing.Point(538, 591);
             this.labelFASAP14.Name = "labelFASAP14";
-            this.labelFASAP14.Size = new System.Drawing.Size(205, 29);
+            this.labelFASAP14.Size = new System.Drawing.Size(212, 29);
             this.labelFASAP14.TabIndex = 24;
-            this.labelFASAP14.Text = ":Работно време:";
+            this.labelFASAP14.Text = ":Работно време: ";
             // 
             // lblSlobodniMasi
             // 
@@ -543,9 +579,9 @@
             this.lblSlobodniMasi.LblObject = null;
             this.lblSlobodniMasi.Location = new System.Drawing.Point(538, 714);
             this.lblSlobodniMasi.Name = "lblSlobodniMasi";
-            this.lblSlobodniMasi.Size = new System.Drawing.Size(59, 29);
+            this.lblSlobodniMasi.Size = new System.Drawing.Size(66, 29);
             this.lblSlobodniMasi.TabIndex = 27;
-            this.lblSlobodniMasi.Text = ":10:";
+            this.lblSlobodniMasi.Text = ":10: ";
             // 
             // labelFASAP16
             // 
@@ -557,15 +593,15 @@
             this.labelFASAP16.LblObject = null;
             this.labelFASAP16.Location = new System.Drawing.Point(538, 685);
             this.labelFASAP16.Name = "labelFASAP16";
-            this.labelFASAP16.Size = new System.Drawing.Size(215, 29);
+            this.labelFASAP16.Size = new System.Drawing.Size(222, 29);
             this.labelFASAP16.TabIndex = 26;
-            this.labelFASAP16.Text = ":Слободни маси: ";
+            this.labelFASAP16.Text = ":Слободни маси:  ";
             // 
             // pbContactRight
             // 
             this.pbContactRight.BackColor = System.Drawing.Color.Transparent;
             this.pbContactRight.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
-            this.pbContactRight.Location = new System.Drawing.Point(1201, 322);
+            this.pbContactRight.Location = new System.Drawing.Point(1207, 322);
             this.pbContactRight.Name = "pbContactRight";
             this.pbContactRight.Size = new System.Drawing.Size(20, 35);
             this.pbContactRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -597,9 +633,9 @@
             this.lblKontakt.LblObject = null;
             this.lblKontakt.Location = new System.Drawing.Point(997, 322);
             this.lblKontakt.Name = "lblKontakt";
-            this.lblKontakt.Size = new System.Drawing.Size(200, 35);
+            this.lblKontakt.Size = new System.Drawing.Size(208, 35);
             this.lblKontakt.TabIndex = 29;
-            this.lblKontakt.Text = ":071/254-986:";
+            this.lblKontakt.Text = ":071/254-986: ";
             // 
             // labelFASAP17
             // 
@@ -611,9 +647,9 @@
             this.labelFASAP17.LblObject = null;
             this.labelFASAP17.Location = new System.Drawing.Point(1026, 287);
             this.labelFASAP17.Name = "labelFASAP17";
-            this.labelFASAP17.Size = new System.Drawing.Size(138, 35);
+            this.labelFASAP17.Size = new System.Drawing.Size(146, 35);
             this.labelFASAP17.TabIndex = 28;
-            this.labelFASAP17.Text = ":Контакт:";
+            this.labelFASAP17.Text = ":Контакт: ";
             // 
             // labelFASAP18
             // 
@@ -623,18 +659,18 @@
             this.labelFASAP18.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP18.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP18.Image")));
             this.labelFASAP18.LblObject = null;
-            this.labelFASAP18.Location = new System.Drawing.Point(115, 38);
+            this.labelFASAP18.Location = new System.Drawing.Point(114, 38);
             this.labelFASAP18.Name = "labelFASAP18";
-            this.labelFASAP18.Size = new System.Drawing.Size(79, 29);
+            this.labelFASAP18.Size = new System.Drawing.Size(95, 29);
             this.labelFASAP18.TabIndex = 32;
-            this.labelFASAP18.Text = ":Име:";
+            this.labelFASAP18.Text = ":ИМЕ:  ";
             // 
             // pbIme
             // 
             this.pbIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbIme.BackColor = System.Drawing.Color.Transparent;
             this.pbIme.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pbIme.Location = new System.Drawing.Point(137, 18);
+            this.pbIme.Location = new System.Drawing.Point(145, 18);
             this.pbIme.Name = "pbIme";
             this.pbIme.Size = new System.Drawing.Size(36, 17);
             this.pbIme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -646,7 +682,7 @@
             this.pbRejting.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbRejting.BackColor = System.Drawing.Color.Transparent;
             this.pbRejting.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pbRejting.Location = new System.Drawing.Point(275, 18);
+            this.pbRejting.Location = new System.Drawing.Point(282, 18);
             this.pbRejting.Name = "pbRejting";
             this.pbRejting.Size = new System.Drawing.Size(36, 17);
             this.pbRejting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -661,11 +697,11 @@
             this.labelFASAP19.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP19.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP19.Image")));
             this.labelFASAP19.LblObject = null;
-            this.labelFASAP19.Location = new System.Drawing.Point(227, 38);
+            this.labelFASAP19.Location = new System.Drawing.Point(226, 38);
             this.labelFASAP19.Name = "labelFASAP19";
-            this.labelFASAP19.Size = new System.Drawing.Size(134, 29);
+            this.labelFASAP19.Size = new System.Drawing.Size(148, 29);
             this.labelFASAP19.TabIndex = 34;
-            this.labelFASAP19.Text = ":РЕЈТИНГ:";
+            this.labelFASAP19.Text = ":РЕЈТИНГ:  ";
             // 
             // labelFASAP8
             // 
@@ -677,9 +713,9 @@
             this.labelFASAP8.LblObject = null;
             this.labelFASAP8.Location = new System.Drawing.Point(479, 168);
             this.labelFASAP8.Name = "labelFASAP8";
-            this.labelFASAP8.Size = new System.Drawing.Size(114, 29);
+            this.labelFASAP8.Size = new System.Drawing.Size(121, 29);
             this.labelFASAP8.TabIndex = 36;
-            this.labelFASAP8.Text = ":Адреса:";
+            this.labelFASAP8.Text = ":Адреса: ";
             // 
             // labelFASAP9
             // 
@@ -691,11 +727,11 @@
             this.labelFASAP9.LblObject = null;
             this.labelFASAP9.Location = new System.Drawing.Point(479, 426);
             this.labelFASAP9.Name = "labelFASAP9";
-            this.labelFASAP9.Size = new System.Drawing.Size(109, 29);
+            this.labelFASAP9.Size = new System.Drawing.Size(116, 29);
             this.labelFASAP9.TabIndex = 37;
-            this.labelFASAP9.Text = ":Услуга:";
+            this.labelFASAP9.Text = ":Услуга: ";
             // 
-            // SearchFilter1
+            // SearchFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -730,7 +766,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.textBox1);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "SearchFilter1";
+            this.Name = "SearchFilter";
             this.Text = "+";
             this.Load += new System.EventHandler(this.SearchFilter1_Load);
             this.Controls.SetChildIndex(this.textBox1, 0);
