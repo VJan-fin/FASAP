@@ -20,32 +20,32 @@ namespace SmetkaZaNaracka
             this.pictureBox2.Image = Resources.ExitDark;
         }
 
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        public void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             this.pictureBox1.Image = Resources.MinimizeLightLeft;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        public void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
             this.pictureBox2.Image = Resources.ExitLight;
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        public void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox1.Image = Resources.MinimizeDarkLeft;
         }
 
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        public void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox2.Image = Resources.ExitDark;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }

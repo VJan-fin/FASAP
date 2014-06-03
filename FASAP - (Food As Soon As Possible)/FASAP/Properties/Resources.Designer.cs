@@ -113,9 +113,9 @@ namespace SmetkaZaNaracka.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DarkButton {
+        internal static System.Drawing.Bitmap DarkButton___Copy {
             get {
-                object obj = ResourceManager.GetObject("DarkButton", resourceCulture);
+                object obj = ResourceManager.GetObject("DarkButton___Copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -89,6 +89,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonFASAP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonFASAP.Designer.cs">
+      <DependentUpon>ButtonFASAP.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,6 +102,12 @@
       <DependentUpon>DBLayoutPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Dodatok.cs" />
+    <Compile Include="DodavanjeVraboten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeVraboten.Designer.cs">
+      <DependentUpon>DodavanjeVraboten.cs</DependentUpon>
+    </Compile>
     <Compile Include="FasapNaracka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,12 @@
     </Compile>
     <Compile Include="Meni.cs" />
     <Compile Include="MenuComponent.cs" />
+    <Compile Include="MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxForm.Designer.cs">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderComponent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +197,9 @@
     <Compile Include="VrabotenForma.designer.cs">
       <DependentUpon>VrabotenForma.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DodavanjeVraboten.resx">
+      <DependentUpon>DodavanjeVraboten.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FasapNaracka.resx">
       <DependentUpon>FasapNaracka.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxForm.resx">
+      <DependentUpon>MessageBoxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -267,6 +291,7 @@
     <None Include="Resources\LabelBackground.png" />
     <None Include="Resources\LabelBackground1.png" />
     <None Include="Resources\LabelBackground2.png" />
+    <None Include="Resources\DarkButton - Copy.png" />
     <Content Include="Resources\Resized-HTAHM.png" />
     <None Include="Resources\Resized-HTAHM1.png" />
   </ItemGroup>

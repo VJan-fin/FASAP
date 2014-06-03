@@ -15,7 +15,8 @@ namespace SmetkaZaNaracka
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FasapPocetenEkran());
+            // plink odnadvor@bazi.finki.ukim.mk -ssh -pw B2eN66Rq3GXE7T8R -C -N -2 -L 1620:bazi.finki.ukim.mk:1521
+            Application.Run(new DodavanjeVraboten());
         }
     }
 }
