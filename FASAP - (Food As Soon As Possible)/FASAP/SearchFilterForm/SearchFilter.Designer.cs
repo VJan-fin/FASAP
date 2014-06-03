@@ -73,6 +73,7 @@
             this.labelFASAP19 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP9 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.pbRestoranLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda5)).BeginInit();
@@ -86,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbContactLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRejting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRestoranLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox3
@@ -110,6 +112,7 @@
             this.textBox1.TabIndex = 7;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Пребарај FASAP - Ресторани";
+            this.textBox1.VisibleChanged += new System.EventHandler(this.textBox1_VisibleChanged);
             this.textBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDown);
             this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
             this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
@@ -172,9 +175,7 @@
             // 
             // dbLayoutPanel2
             // 
-            this.dbLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dbLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dbLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.dbLayoutPanel2.ColumnCount = 1;
             this.dbLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -211,7 +212,7 @@
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.dbLayoutPanel2.Size = new System.Drawing.Size(443, 667);
-            this.dbLayoutPanel2.TabIndex = 16;
+            this.dbLayoutPanel2.TabIndex = 0;
             // 
             // lbl12
             // 
@@ -227,6 +228,8 @@
             this.lbl12.Size = new System.Drawing.Size(45, 29);
             this.lbl12.TabIndex = 24;
             this.lbl12.Text = ": : ";
+            this.lbl12.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl12.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl12.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl12.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -244,6 +247,8 @@
             this.lbl10.Size = new System.Drawing.Size(45, 29);
             this.lbl10.TabIndex = 24;
             this.lbl10.Text = ": : ";
+            this.lbl10.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl10.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl10.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl10.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -261,6 +266,8 @@
             this.lbl9.Size = new System.Drawing.Size(45, 29);
             this.lbl9.TabIndex = 24;
             this.lbl9.Text = ": : ";
+            this.lbl9.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl9.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl9.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl9.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -278,6 +285,8 @@
             this.lbl8.Size = new System.Drawing.Size(45, 29);
             this.lbl8.TabIndex = 24;
             this.lbl8.Text = ": : ";
+            this.lbl8.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl8.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl8.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl8.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -295,6 +304,8 @@
             this.lbl7.Size = new System.Drawing.Size(45, 29);
             this.lbl7.TabIndex = 24;
             this.lbl7.Text = ": : ";
+            this.lbl7.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl7.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl7.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl7.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -312,6 +323,8 @@
             this.lbl5.Size = new System.Drawing.Size(45, 29);
             this.lbl5.TabIndex = 22;
             this.lbl5.Text = ": : ";
+            this.lbl5.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl5.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl5.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl5.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -329,6 +342,8 @@
             this.lbl4.Size = new System.Drawing.Size(45, 29);
             this.lbl4.TabIndex = 21;
             this.lbl4.Text = ": : ";
+            this.lbl4.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl4.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl4.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl4.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -346,6 +361,8 @@
             this.lbl3.Size = new System.Drawing.Size(45, 29);
             this.lbl3.TabIndex = 20;
             this.lbl3.Text = ": : ";
+            this.lbl3.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl3.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl3.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl3.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -363,6 +380,8 @@
             this.lbl2.Size = new System.Drawing.Size(45, 29);
             this.lbl2.TabIndex = 19;
             this.lbl2.Text = ": : ";
+            this.lbl2.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl2.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl2.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl2.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -380,6 +399,8 @@
             this.lbl1.Size = new System.Drawing.Size(45, 29);
             this.lbl1.TabIndex = 18;
             this.lbl1.Text = ": : ";
+            this.lbl1.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl1.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl1.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl1.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -423,6 +444,8 @@
             this.lbl6.Size = new System.Drawing.Size(45, 29);
             this.lbl6.TabIndex = 23;
             this.lbl6.Text = ": : ";
+            this.lbl6.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl6.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl6.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl6.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -440,6 +463,8 @@
             this.lbl11.Size = new System.Drawing.Size(45, 29);
             this.lbl11.TabIndex = 24;
             this.lbl11.Text = ": : ";
+            this.lbl11.Click += new System.EventHandler(this.lbl1_Click);
+            this.lbl11.DoubleClick += new System.EventHandler(this.lbl1_DoubleClick);
             this.lbl11.MouseEnter += new System.EventHandler(this.lbl1_MouseEnter);
             this.lbl11.MouseLeave += new System.EventHandler(this.lbl1_MouseLeave);
             // 
@@ -481,9 +506,9 @@
             this.lblUlica.LblObject = null;
             this.lblUlica.Location = new System.Drawing.Point(538, 262);
             this.lblUlica.Name = "lblUlica";
-            this.lblUlica.Size = new System.Drawing.Size(175, 29);
+            this.lblUlica.Size = new System.Drawing.Size(45, 29);
             this.lblUlica.TabIndex = 19;
-            this.lblUlica.Text = ":Македонија: ";
+            this.lblUlica.Text = ": : ";
             // 
             // lblGrad
             // 
@@ -495,9 +520,9 @@
             this.lblGrad.LblObject = null;
             this.lblGrad.Location = new System.Drawing.Point(538, 356);
             this.lblGrad.Name = "lblGrad";
-            this.lblGrad.Size = new System.Drawing.Size(116, 29);
+            this.lblGrad.Size = new System.Drawing.Size(45, 29);
             this.lblGrad.TabIndex = 21;
-            this.lblGrad.Text = ":Скопје: ";
+            this.lblGrad.Text = ": : ";
             // 
             // labelFASAP10
             // 
@@ -523,9 +548,9 @@
             this.lblKategorija.LblObject = null;
             this.lblKategorija.Location = new System.Drawing.Point(538, 522);
             this.lblKategorija.Name = "lblKategorija";
-            this.lblKategorija.Size = new System.Drawing.Size(189, 29);
+            this.lblKategorija.Size = new System.Drawing.Size(45, 29);
             this.lblKategorija.TabIndex = 23;
-            this.lblKategorija.Text = ":Мексикански: ";
+            this.lblKategorija.Text = ": : ";
             // 
             // labelFASAP12
             // 
@@ -551,9 +576,9 @@
             this.lblRabotnoVreme.LblObject = null;
             this.lblRabotnoVreme.Location = new System.Drawing.Point(538, 620);
             this.lblRabotnoVreme.Name = "lblRabotnoVreme";
-            this.lblRabotnoVreme.Size = new System.Drawing.Size(251, 29);
+            this.lblRabotnoVreme.Size = new System.Drawing.Size(45, 29);
             this.lblRabotnoVreme.TabIndex = 25;
-            this.lblRabotnoVreme.Text = ":09:00-24:00/01:00: ";
+            this.lblRabotnoVreme.Text = ": : ";
             // 
             // labelFASAP14
             // 
@@ -579,9 +604,9 @@
             this.lblSlobodniMasi.LblObject = null;
             this.lblSlobodniMasi.Location = new System.Drawing.Point(538, 714);
             this.lblSlobodniMasi.Name = "lblSlobodniMasi";
-            this.lblSlobodniMasi.Size = new System.Drawing.Size(66, 29);
+            this.lblSlobodniMasi.Size = new System.Drawing.Size(45, 29);
             this.lblSlobodniMasi.TabIndex = 27;
-            this.lblSlobodniMasi.Text = ":10: ";
+            this.lblSlobodniMasi.Text = ": : ";
             // 
             // labelFASAP16
             // 
@@ -607,6 +632,7 @@
             this.pbContactRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbContactRight.TabIndex = 31;
             this.pbContactRight.TabStop = false;
+            this.pbContactRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbContactRight_MouseDown);
             this.pbContactRight.MouseEnter += new System.EventHandler(this.pbContactRight_MouseEnter);
             this.pbContactRight.MouseLeave += new System.EventHandler(this.pbContactRight_MouseLeave);
             // 
@@ -620,6 +646,7 @@
             this.pbContactLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbContactLeft.TabIndex = 30;
             this.pbContactLeft.TabStop = false;
+            this.pbContactLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbContactLeft_MouseDown);
             this.pbContactLeft.MouseEnter += new System.EventHandler(this.pbContactLeft_MouseEnter);
             this.pbContactLeft.MouseLeave += new System.EventHandler(this.pbContactLeft_MouseLeave);
             // 
@@ -633,9 +660,9 @@
             this.lblKontakt.LblObject = null;
             this.lblKontakt.Location = new System.Drawing.Point(997, 322);
             this.lblKontakt.Name = "lblKontakt";
-            this.lblKontakt.Size = new System.Drawing.Size(208, 35);
+            this.lblKontakt.Size = new System.Drawing.Size(203, 35);
             this.lblKontakt.TabIndex = 29;
-            this.lblKontakt.Text = ":071/254-986: ";
+            this.lblKontakt.Text = ":                    : ";
             // 
             // labelFASAP17
             // 
@@ -653,55 +680,69 @@
             // 
             // labelFASAP18
             // 
+            this.labelFASAP18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP18.AutoSize = true;
             this.labelFASAP18.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP18.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP18.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP18.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP18.Image")));
             this.labelFASAP18.LblObject = null;
-            this.labelFASAP18.Location = new System.Drawing.Point(114, 38);
+            this.labelFASAP18.Location = new System.Drawing.Point(112, 38);
             this.labelFASAP18.Name = "labelFASAP18";
             this.labelFASAP18.Size = new System.Drawing.Size(95, 29);
             this.labelFASAP18.TabIndex = 32;
             this.labelFASAP18.Text = ":ИМЕ:  ";
+            this.labelFASAP18.Click += new System.EventHandler(this.labelFASAP18_Click);
+            this.labelFASAP18.MouseEnter += new System.EventHandler(this.labelFASAP19_MouseEnter);
+            this.labelFASAP18.MouseLeave += new System.EventHandler(this.labelFASAP19_MouseLeave);
             // 
             // pbIme
             // 
             this.pbIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbIme.BackColor = System.Drawing.Color.Transparent;
             this.pbIme.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pbIme.Location = new System.Drawing.Point(145, 18);
+            this.pbIme.Location = new System.Drawing.Point(143, 17);
             this.pbIme.Name = "pbIme";
             this.pbIme.Size = new System.Drawing.Size(36, 17);
             this.pbIme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbIme.TabIndex = 33;
             this.pbIme.TabStop = false;
+            this.pbIme.Click += new System.EventHandler(this.labelFASAP18_Click);
+            this.pbIme.MouseEnter += new System.EventHandler(this.labelFASAP19_MouseEnter);
+            this.pbIme.MouseLeave += new System.EventHandler(this.labelFASAP19_MouseLeave);
             // 
             // pbRejting
             // 
             this.pbRejting.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbRejting.BackColor = System.Drawing.Color.Transparent;
             this.pbRejting.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pbRejting.Location = new System.Drawing.Point(282, 18);
+            this.pbRejting.Location = new System.Drawing.Point(306, 17);
             this.pbRejting.Name = "pbRejting";
             this.pbRejting.Size = new System.Drawing.Size(36, 17);
             this.pbRejting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRejting.TabIndex = 35;
             this.pbRejting.TabStop = false;
+            this.pbRejting.Click += new System.EventHandler(this.labelFASAP19_Click);
+            this.pbRejting.MouseEnter += new System.EventHandler(this.labelFASAP19_MouseEnter);
+            this.pbRejting.MouseLeave += new System.EventHandler(this.labelFASAP19_MouseLeave);
             // 
             // labelFASAP19
             // 
+            this.labelFASAP19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP19.AutoSize = true;
             this.labelFASAP19.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP19.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP19.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP19.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP19.Image")));
             this.labelFASAP19.LblObject = null;
-            this.labelFASAP19.Location = new System.Drawing.Point(226, 38);
+            this.labelFASAP19.Location = new System.Drawing.Point(250, 38);
             this.labelFASAP19.Name = "labelFASAP19";
             this.labelFASAP19.Size = new System.Drawing.Size(148, 29);
             this.labelFASAP19.TabIndex = 34;
             this.labelFASAP19.Text = ":РЕЈТИНГ:  ";
+            this.labelFASAP19.Click += new System.EventHandler(this.labelFASAP19_Click);
+            this.labelFASAP19.MouseEnter += new System.EventHandler(this.labelFASAP19_MouseEnter);
+            this.labelFASAP19.MouseLeave += new System.EventHandler(this.labelFASAP19_MouseLeave);
             // 
             // labelFASAP8
             // 
@@ -731,11 +772,23 @@
             this.labelFASAP9.TabIndex = 37;
             this.labelFASAP9.Text = ":Услуга: ";
             // 
+            // pbRestoranLogo
+            // 
+            this.pbRestoranLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbRestoranLogo.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
+            this.pbRestoranLogo.Location = new System.Drawing.Point(836, 426);
+            this.pbRestoranLogo.Name = "pbRestoranLogo";
+            this.pbRestoranLogo.Size = new System.Drawing.Size(175, 175);
+            this.pbRestoranLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRestoranLogo.TabIndex = 38;
+            this.pbRestoranLogo.TabStop = false;
+            // 
             // SearchFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pbRestoranLogo);
             this.Controls.Add(this.labelFASAP9);
             this.Controls.Add(this.labelFASAP8);
             this.Controls.Add(this.pbRejting);
@@ -767,8 +820,10 @@
             this.Controls.Add(this.textBox1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "SearchFilter";
+            this.Opacity = 1D;
             this.Text = "+";
             this.Load += new System.EventHandler(this.SearchFilter1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchFilter_KeyDown);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.pbZvezda1, 0);
@@ -798,6 +853,7 @@
             this.Controls.SetChildIndex(this.pbRejting, 0);
             this.Controls.SetChildIndex(this.labelFASAP8, 0);
             this.Controls.SetChildIndex(this.labelFASAP9, 0);
+            this.Controls.SetChildIndex(this.pbRestoranLogo, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda5)).EndInit();
@@ -812,6 +868,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbContactLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRejting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRestoranLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -857,11 +914,12 @@
         private LabelFASAP lblKontakt;
         private LabelFASAP labelFASAP17;
         private LabelFASAP labelFASAP18;
-        private System.Windows.Forms.PictureBox pbIme;
-        private System.Windows.Forms.PictureBox pbRejting;
         private LabelFASAP labelFASAP19;
         private LabelFASAP labelFASAP8;
         private LabelFASAP labelFASAP9;
+        public System.Windows.Forms.PictureBox pbIme;
+        public System.Windows.Forms.PictureBox pbRejting;
+        private System.Windows.Forms.PictureBox pbRestoranLogo;
 
     }
 }

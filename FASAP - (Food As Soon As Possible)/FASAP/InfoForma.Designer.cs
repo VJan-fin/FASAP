@@ -28,33 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.buttonLogin = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoForma));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbRegister = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lbLogin = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP3 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.Location = new System.Drawing.Point(459, 244);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(180, 37);
-            this.buttonRegister.TabIndex = 0;
-            this.buttonRegister.Text = "Регистрирај нов ресторан";
-            this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Location = new System.Drawing.Point(459, 184);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(180, 36);
-            this.buttonLogin.TabIndex = 1;
-            this.buttonLogin.Text = "Логирај се";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // label1
             // 
@@ -65,46 +49,107 @@
             this.label1.TabIndex = 2;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // pictureBox3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Инфо за FASAP";
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
+            this.pictureBox3.Location = new System.Drawing.Point(67, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(369, 276);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
             // 
-            // label3
+            // lbRegister
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 119);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Краток опис на услугата што ја нудиме";
+            this.lbRegister.BackColor = System.Drawing.Color.Transparent;
+            this.lbRegister.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegister.ForeColor = System.Drawing.Color.White;
+            this.lbRegister.Image = ((System.Drawing.Image)(resources.GetObject("lbRegister.Image")));
+            this.lbRegister.LblObject = null;
+            this.lbRegister.Location = new System.Drawing.Point(914, 175);
+            this.lbRegister.Name = "lbRegister";
+            this.lbRegister.Size = new System.Drawing.Size(346, 61);
+            this.lbRegister.TabIndex = 9;
+            this.lbRegister.Text = " Регистрирај нов ресторан  ";
+            this.lbRegister.Click += new System.EventHandler(this.lbRegister_Click);
             // 
-            // label4
+            // lbLogin
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(252, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "кој и како може да се логира / регистрира и сл.";
+            this.lbLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lbLogin.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogin.ForeColor = System.Drawing.Color.White;
+            this.lbLogin.Image = ((System.Drawing.Image)(resources.GetObject("lbLogin.Image")));
+            this.lbLogin.LblObject = null;
+            this.lbLogin.Location = new System.Drawing.Point(914, 91);
+            this.lbLogin.Name = "lbLogin";
+            this.lbLogin.Size = new System.Drawing.Size(238, 51);
+            this.lbLogin.TabIndex = 8;
+            this.lbLogin.Text = " Логирај се     ";
+            this.lbLogin.Click += new System.EventHandler(this.lbLogin_Click);
+            // 
+            // labelFASAP1
+            // 
+            this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP1.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
+            this.labelFASAP1.LblObject = null;
+            this.labelFASAP1.Location = new System.Drawing.Point(35, 340);
+            this.labelFASAP1.Name = "labelFASAP1";
+            this.labelFASAP1.Size = new System.Drawing.Size(766, 123);
+            this.labelFASAP1.TabIndex = 10;
+            this.labelFASAP1.Text = resources.GetString("labelFASAP1.Text");
+            // 
+            // labelFASAP2
+            // 
+            this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP2.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
+            this.labelFASAP2.LblObject = null;
+            this.labelFASAP2.Location = new System.Drawing.Point(35, 463);
+            this.labelFASAP2.Name = "labelFASAP2";
+            this.labelFASAP2.Size = new System.Drawing.Size(766, 149);
+            this.labelFASAP2.TabIndex = 11;
+            this.labelFASAP2.Text = resources.GetString("labelFASAP2.Text");
+            // 
+            // labelFASAP3
+            // 
+            this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP3.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
+            this.labelFASAP3.LblObject = null;
+            this.labelFASAP3.Location = new System.Drawing.Point(39, 612);
+            this.labelFASAP3.Name = "labelFASAP3";
+            this.labelFASAP3.Size = new System.Drawing.Size(762, 110);
+            this.labelFASAP3.TabIndex = 12;
+            this.labelFASAP3.Text = resources.GetString("labelFASAP3.Text");
             // 
             // InfoForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 328);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.labelFASAP3);
+            this.Controls.Add(this.labelFASAP2);
+            this.Controls.Add(this.labelFASAP1);
+            this.Controls.Add(this.lbRegister);
+            this.Controls.Add(this.lbLogin);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.buttonRegister);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "InfoForma";
             this.Text = "InfoForma";
+            this.Load += new System.EventHandler(this.InfoForma_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.pictureBox3, 0);
+            this.Controls.SetChildIndex(this.lbLogin, 0);
+            this.Controls.SetChildIndex(this.lbRegister, 0);
+            this.Controls.SetChildIndex(this.labelFASAP1, 0);
+            this.Controls.SetChildIndex(this.labelFASAP2, 0);
+            this.Controls.SetChildIndex(this.labelFASAP3, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,11 +157,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonRegister;
-        private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private LabelFASAP lbLogin;
+        private LabelFASAP lbRegister;
+        private LabelFASAP labelFASAP1;
+        private LabelFASAP labelFASAP2;
+        private LabelFASAP labelFASAP3;
     }
 }

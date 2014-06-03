@@ -28,195 +28,168 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP3 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP4 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP5 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP6 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP7 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // pictureBox3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Регистрирање нов ресторан";
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
+            this.pictureBox3.Location = new System.Drawing.Point(67, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(369, 276);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
             // 
-            // groupBox1
+            // labelFASAP1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 49);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 267);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Инфо за менаџер";
+            this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP1.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
+            this.labelFASAP1.LblObject = null;
+            this.labelFASAP1.Location = new System.Drawing.Point(78, 327);
+            this.labelFASAP1.Name = "labelFASAP1";
+            this.labelFASAP1.Size = new System.Drawing.Size(332, 23);
+            this.labelFASAP1.TabIndex = 5;
+            this.labelFASAP1.Text = "Информации за менаџерот: ";
             // 
-            // label2
+            // labelFASAP2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Име";
+            this.labelFASAP2.AutoSize = true;
+            this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP2.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
+            this.labelFASAP2.LblObject = null;
+            this.labelFASAP2.Location = new System.Drawing.Point(62, 410);
+            this.labelFASAP2.Name = "labelFASAP2";
+            this.labelFASAP2.Size = new System.Drawing.Size(71, 27);
+            this.labelFASAP2.TabIndex = 6;
+            this.labelFASAP2.Text = "Име: ";
             // 
-            // label3
+            // labelFASAP3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Презиме";
+            this.labelFASAP3.AutoSize = true;
+            this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP3.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
+            this.labelFASAP3.LblObject = null;
+            this.labelFASAP3.Location = new System.Drawing.Point(62, 452);
+            this.labelFASAP3.Name = "labelFASAP3";
+            this.labelFASAP3.Size = new System.Drawing.Size(121, 27);
+            this.labelFASAP3.TabIndex = 7;
+            this.labelFASAP3.Text = "Презиме: ";
             // 
-            // textBox1
+            // labelFASAP4
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.labelFASAP4.AutoSize = true;
+            this.labelFASAP4.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP4.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
+            this.labelFASAP4.LblObject = null;
+            this.labelFASAP4.Location = new System.Drawing.Point(62, 492);
+            this.labelFASAP4.Name = "labelFASAP4";
+            this.labelFASAP4.Size = new System.Drawing.Size(75, 27);
+            this.labelFASAP4.TabIndex = 8;
+            this.labelFASAP4.Text = "ЕМБГ:";
             // 
-            // textBox2
+            // labelFASAP5
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.labelFASAP5.AutoSize = true;
+            this.labelFASAP5.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP5.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP5.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
+            this.labelFASAP5.LblObject = null;
+            this.labelFASAP5.Location = new System.Drawing.Point(54, 531);
+            this.labelFASAP5.Name = "labelFASAP5";
+            this.labelFASAP5.Size = new System.Drawing.Size(211, 27);
+            this.labelFASAP5.TabIndex = 9;
+            this.labelFASAP5.Text = "Датум на раѓање: ";
             // 
-            // label4
+            // labelFASAP6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Корисничко име";
+            this.labelFASAP6.AutoSize = true;
+            this.labelFASAP6.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP6.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP6.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
+            this.labelFASAP6.LblObject = null;
+            this.labelFASAP6.Location = new System.Drawing.Point(54, 577);
+            this.labelFASAP6.Name = "labelFASAP6";
+            this.labelFASAP6.Size = new System.Drawing.Size(242, 27);
+            this.labelFASAP6.TabIndex = 10;
+            this.labelFASAP6.Text = "Адреса на живеење: ";
             // 
-            // label5
+            // labelFASAP7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Лозинка";
+            this.labelFASAP7.AutoSize = true;
+            this.labelFASAP7.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP7.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP7.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP7.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP7.Image")));
+            this.labelFASAP7.LblObject = null;
+            this.labelFASAP7.Location = new System.Drawing.Point(62, 667);
+            this.labelFASAP7.Name = "labelFASAP7";
+            this.labelFASAP7.Size = new System.Drawing.Size(203, 27);
+            this.labelFASAP7.TabIndex = 11;
+            this.labelFASAP7.Text = "Корисничко име: ";
             // 
-            // textBox3
+            // labelFASAP8
             // 
-            this.textBox3.Location = new System.Drawing.Point(123, 114);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(123, 147);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(351, 20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 219);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Инфо за ресторан";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Име ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 73);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Локација";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Друго ...";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(149, 31);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 3;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(154, 68);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 4;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(167, 111);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 5;
+            this.labelFASAP8.AutoSize = true;
+            this.labelFASAP8.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP8.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP8.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP8.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP8.Image")));
+            this.labelFASAP8.LblObject = null;
+            this.labelFASAP8.Location = new System.Drawing.Point(62, 708);
+            this.labelFASAP8.Name = "labelFASAP8";
+            this.labelFASAP8.Size = new System.Drawing.Size(109, 27);
+            this.labelFASAP8.TabIndex = 12;
+            this.labelFASAP8.Text = "Лозинка:";
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 328);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.labelFASAP8);
+            this.Controls.Add(this.labelFASAP7);
+            this.Controls.Add(this.labelFASAP6);
+            this.Controls.Add(this.labelFASAP5);
+            this.Controls.Add(this.labelFASAP4);
+            this.Controls.Add(this.labelFASAP3);
+            this.Controls.Add(this.labelFASAP2);
+            this.Controls.Add(this.labelFASAP1);
+            this.Controls.Add(this.pictureBox3);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Register";
             this.Text = "Register";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Controls.SetChildIndex(this.pictureBox3, 0);
+            this.Controls.SetChildIndex(this.labelFASAP1, 0);
+            this.Controls.SetChildIndex(this.labelFASAP2, 0);
+            this.Controls.SetChildIndex(this.labelFASAP3, 0);
+            this.Controls.SetChildIndex(this.labelFASAP4, 0);
+            this.Controls.SetChildIndex(this.labelFASAP5, 0);
+            this.Controls.SetChildIndex(this.labelFASAP6, 0);
+            this.Controls.SetChildIndex(this.labelFASAP7, 0);
+            this.Controls.SetChildIndex(this.labelFASAP8, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,22 +197,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private LabelFASAP labelFASAP1;
+        private LabelFASAP labelFASAP2;
+        private LabelFASAP labelFASAP3;
+        private LabelFASAP labelFASAP4;
+        private LabelFASAP labelFASAP5;
+        private LabelFASAP labelFASAP6;
+        private LabelFASAP labelFASAP7;
+        private LabelFASAP labelFASAP8;
+
     }
 }

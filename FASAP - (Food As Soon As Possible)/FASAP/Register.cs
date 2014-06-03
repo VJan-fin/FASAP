@@ -10,7 +10,7 @@ using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
-    public partial class Register : Form
+    public partial class Register : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
         public Register(OracleConnection conn)

@@ -179,15 +179,25 @@
     <Compile Include="Register.designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchFilter.cs">
+    <Compile Include="RestoranKlasi\NameAscendingComparer.cs" />
+    <Compile Include="RestoranKlasi\NameDescendingComparer.cs" />
+    <Compile Include="RestoranKlasi\RejtingAscendingComparer.cs" />
+    <Compile Include="RestoranKlasi\RejtingDescendingComparer.cs" />
+    <Compile Include="SearchFilterForm\NameAscendingSort.cs" />
+    <Compile Include="SearchFilterForm\NameDescendingSort.cs" />
+    <Compile Include="SearchFilterForm\NoneSort.cs" />
+    <Compile Include="SearchFilterForm\RejtingAscendingSort.cs" />
+    <Compile Include="SearchFilterForm\RejtingDescendingSort.cs" />
+    <Compile Include="SearchFilterForm\SearchFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchFilter.Designer.cs">
+    <Compile Include="SearchFilterForm\SearchFilter.Designer.cs">
       <DependentUpon>SearchFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchFilterForm\SortingState.cs" />
     <Compile Include="Stavka.cs" />
     <Compile Include="Telefon.cs" />
-    <Compile Include="Restoran.cs" />
+    <Compile Include="RestoranKlasi\Restoran.cs" />
     <Compile Include="SearchButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -240,7 +250,7 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchFilter.resx">
+    <EmbeddedResource Include="SearchFilterForm\SearchFilter.resx">
       <DependentUpon>SearchFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VrabotenForma.resx">
@@ -292,6 +302,7 @@
     <None Include="Resources\LabelBackground1.png" />
     <None Include="Resources\LabelBackground2.png" />
     <None Include="Resources\DarkButton - Copy.png" />
+    <None Include="Resources\LabelBackgroundSelected.png" />
     <Content Include="Resources\Resized-HTAHM.png" />
     <None Include="Resources\Resized-HTAHM1.png" />
   </ItemGroup>
