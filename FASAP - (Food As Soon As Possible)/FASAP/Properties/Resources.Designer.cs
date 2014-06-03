@@ -203,6 +203,16 @@ namespace SmetkaZaNaracka.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LabelBackgroundSelected {
+            get {
+                object obj = ResourceManager.GetObject("LabelBackgroundSelected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LightArrowDown {
             get {
                 object obj = ResourceManager.GetObject("LightArrowDown", resourceCulture);

@@ -34,5 +34,22 @@ namespace SmetkaZaNaracka
         {
             return Ime;
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if(!(obj is Restoran))
+                return false;
+            Restoran res = obj as Restoran;
+            if(RestoranID != res.RestoranID)
+                return false;
+            return true;
+        }
     }
 }

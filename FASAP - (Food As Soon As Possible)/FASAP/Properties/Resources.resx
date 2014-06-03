@@ -118,85 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LightButton___Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LightButton - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DarkArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DarkArrowUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pola_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pola_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LabelBackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LabelBackground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="restoran_amigos_skopje_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restoran_amigos_skopje_logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LightArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LightArrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ExitDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ExitLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExitLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Resized-HTAHM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Resized-HTAHM1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LightArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightArrowUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Boards-Wooden-Surface-Background-Texture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Boards-Wooden-Surface-Background-Texture.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DarkArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DarkArrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FasapBackground12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FasapBackground12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LightArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LightArrowLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LightArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LightArrowUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MinimizeDarkLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeDarkLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DarkArrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DarkArrowRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Polna_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Polna_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LabelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LabelBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Prazna_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prazna_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FasapBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FasapBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DarkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DarkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Resized-HTAHM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Resized-HTAHM1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LightArrowRight___Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LightArrowRight - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MinimizeLightLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeLightLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ExitDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkArrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restoran_amigos_skopje_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restoran_amigos_skopje_logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkArrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkArrowRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinimizeDarkLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimizeDarkLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelBackground2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LabelBackground2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LabelBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pola_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pola_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Polna_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Polna_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FasapBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FasapBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DarkArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DarkArrowLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FasapBackground12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FasapBackground12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FASAP-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FASAP-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LabelBackground2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LabelBackground2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DarkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelBackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LabelBackground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightArrowLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DarkArrowUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightArrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExitLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExitLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinimizeLightLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimizeLightLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightButton___Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightButton - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Prazna_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Prazna_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LabelBackgroundSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LabelBackgroundSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

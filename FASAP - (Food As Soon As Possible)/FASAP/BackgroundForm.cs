@@ -18,6 +18,9 @@ namespace SmetkaZaNaracka
             this.DoubleBuffered = true;
             this.pictureBox1.Image = Resources.MinimizeDarkLeft;
             this.pictureBox2.Image = Resources.ExitDark;
+            Opacity = 0;
+            timer1.Start();
+            
         }
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
@@ -48,6 +51,13 @@ namespace SmetkaZaNaracka
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Opacity < 1)
+                Opacity += 0.07;
+            else timer1.Stop();
         }
     }
 }
