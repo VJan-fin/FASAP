@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SmetkaZaNaracka.FasapNaracka" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAIIAAmAAABAAAACAACCiAIgIAAgAgCQABAIAABA=</HashCode>
+      <FileName>FasapNaracka.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.FasapPocetenEkran" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAYAAACGAADAgAACAAAASIAAYAAgACEAAAAABBAA=</HashCode>
+      <FileName>FasapPocetenEkran.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Info" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAADABAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Info.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Loading" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAIAAAABAAAA=</HashCode>
+      <FileName>Loading.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Program" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Restoran" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAQIAgAAAQMQAAAACAAwAAACEAAAAAAAACAAAY=</HashCode>
+      <FileName>Restoran.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GlavnoMeni" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SmetkaZaNaracka.SearchButton" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.SearchFilter" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABI9ECYCABEDDoAQCQQACCDQEAQhEQGCQAgABIIEA=</HashCode>
+      <FileName>SearchFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Telefon" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Telefon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Manager.Manager" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/yCBQIUAASAgwRSREACgIABCIEg4FgIiECQAQAABBLA=</HashCode>
+      <FileName>Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIgAAQAAAABBEAABAQAAgAAAACAAAAACAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Meni" Collapsed="true">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAgAAAAAAIAAAAAgAAIAAAQAAACAAAAAEBAE=</HashCode>
+      <FileName>Meni.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Stavka" Collapsed="true">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAgAAAJAAAAggAAIAAAQAAACAAAAAEBAE=</HashCode>
+      <FileName>Stavka.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.OrderComponent" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAABAAAAEAAAAAAIAAAAAgAAADAA=</HashCode>
+      <FileName>OrderComponent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Item" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SmetkaZaNaracka.MenuComponent" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEIAAAAAgAAIAAAQAAACAAAAAEBAE=</HashCode>
+      <FileName>MenuComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmetkaZaNaracka.Dodatok" Collapsed="true">
+    <Position X="4.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAIAAAAAAAAIAAAQAAAAAAAAAABAA=</HashCode>
+      <FileName>Dodatok.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
