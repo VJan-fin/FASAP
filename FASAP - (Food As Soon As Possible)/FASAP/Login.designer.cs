@@ -57,7 +57,7 @@
             // 
             this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP1.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
             this.labelFASAP1.Location = new System.Drawing.Point(363, 341);
@@ -70,7 +70,7 @@
             // 
             this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP2.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
             this.labelFASAP2.Location = new System.Drawing.Point(447, 451);
@@ -83,7 +83,7 @@
             // 
             this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP3.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP3.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
             this.labelFASAP3.LblObject = null;
             this.labelFASAP3.Location = new System.Drawing.Point(715, 560);
@@ -116,6 +116,7 @@
             this.Controls.Add(this.tbUserName);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Login";
+            this.Opacity = 1D;
             this.Text = "Login";
             this.Controls.SetChildIndex(this.tbUserName, 0);
             this.Controls.SetChildIndex(this.tbPassword, 0);

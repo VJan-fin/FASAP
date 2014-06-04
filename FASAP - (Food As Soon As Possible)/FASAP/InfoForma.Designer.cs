@@ -63,10 +63,10 @@
             // 
             this.lbRegister.BackColor = System.Drawing.Color.Transparent;
             this.lbRegister.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegister.ForeColor = System.Drawing.Color.White;
+            this.lbRegister.ForeColor = System.Drawing.Color.Khaki;
             this.lbRegister.Image = ((System.Drawing.Image)(resources.GetObject("lbRegister.Image")));
             this.lbRegister.LblObject = null;
-            this.lbRegister.Location = new System.Drawing.Point(914, 175);
+            this.lbRegister.Location = new System.Drawing.Point(914, 179);
             this.lbRegister.Name = "lbRegister";
             this.lbRegister.Size = new System.Drawing.Size(346, 61);
             this.lbRegister.TabIndex = 9;
@@ -77,7 +77,7 @@
             // 
             this.lbLogin.BackColor = System.Drawing.Color.Transparent;
             this.lbLogin.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLogin.ForeColor = System.Drawing.Color.White;
+            this.lbLogin.ForeColor = System.Drawing.Color.Khaki;
             this.lbLogin.Image = ((System.Drawing.Image)(resources.GetObject("lbLogin.Image")));
             this.lbLogin.LblObject = null;
             this.lbLogin.Location = new System.Drawing.Point(914, 91);
@@ -91,7 +91,7 @@
             // 
             this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP1.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
             this.labelFASAP1.Location = new System.Drawing.Point(35, 340);
@@ -104,7 +104,7 @@
             // 
             this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP2.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
             this.labelFASAP2.Location = new System.Drawing.Point(35, 463);
@@ -117,7 +117,7 @@
             // 
             this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP3.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP3.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
             this.labelFASAP3.LblObject = null;
             this.labelFASAP3.Location = new System.Drawing.Point(39, 612);
@@ -140,6 +140,7 @@
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "InfoForma";
+            this.Opacity = 1D;
             this.Text = "InfoForma";
             this.Load += new System.EventHandler(this.InfoForma_Load);
             this.Controls.SetChildIndex(this.label1, 0);
