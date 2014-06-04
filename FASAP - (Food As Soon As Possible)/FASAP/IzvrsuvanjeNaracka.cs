@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using SmetkaZaNaracka.Properties;
 using Oracle.DataAccess.Client;
+using System.Globalization;
 
 namespace SmetkaZaNaracka
 {
@@ -166,7 +167,10 @@ namespace SmetkaZaNaracka
             int ind = this.indMeni;
             for (int i = 0; i < this.ListaMeni.Count; i++)
                 if (ind < mc.GetContent().Count)
-                    this.ListaMeni[i].Text = mc.GetContent()[ind++].ToString();
+                {
+                    this.ListaMeni[i].Text = mc.GetContent()[ind].ToString().Substring(0, 1) + mc.GetContent()[ind].ToString().Substring(1).ToLower() + "  ";
+                    ind++;                  
+                }
                 else
                     this.ListaMeni[i].Text = " ";
         }
@@ -180,7 +184,7 @@ namespace SmetkaZaNaracka
             for (int i = 0; i < this.ListaStavki.Count; i++)
                 if (ind < this.CurrComponent.GetContent().Count)
                 {
-                    this.ListaStavki[i].Text = this.CurrComponent.GetContent()[ind].ToString();
+                    this.ListaStavki[i].Text = this.CurrComponent.GetContent()[ind].ToString() + "  ";
                     if (this.CurrComponent.GetContent()[ind] is Meni)
                     {
                         this.ListaStavki[i].ForeColor = Color.Gold;
