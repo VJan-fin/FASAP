@@ -91,6 +91,7 @@
             this.labelFASAP3.Size = new System.Drawing.Size(186, 61);
             this.labelFASAP3.TabIndex = 7;
             this.labelFASAP3.Text = "Логирај се";
+            this.labelFASAP3.Click += new System.EventHandler(this.labelFASAP3_Click);
             // 
             // pictureBox3
             // 

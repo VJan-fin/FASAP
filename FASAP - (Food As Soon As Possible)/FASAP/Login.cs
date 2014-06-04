@@ -32,8 +32,14 @@ namespace SmetkaZaNaracka
 
         private void button1Log_Click(object sender, EventArgs e)
         {
-             username = tbUserName.Text;
-             password = tbPassword.Text;
+            
+        }
+
+        private void labelFASAP3_Click(object sender, EventArgs e)
+        {
+
+            username = tbUserName.Text;
+            password = tbPassword.Text;
 
             string sql = @"SELECT LOZINKA FROM KORISNIK WHERE KORISNICHKO_IME = :KOR_IME"; // C#
             OracleCommand cmd = new OracleCommand(sql, Conn);
@@ -43,7 +49,7 @@ namespace SmetkaZaNaracka
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
             String realPass = "";
-           
+
             if (dr.Read())
             {
                 realPass = dr.GetString(0);
@@ -71,8 +77,8 @@ namespace SmetkaZaNaracka
             if (tocenPass)
             {
                 sql = @"Select v.vraboten_id, i.Pozicija, r.restoran_id From Korisnik k join Vraboten v on k.Vraboten_ID=v.Vraboten_ID Join Izvrshuva i on i.Vraboten_ID=v.Vraboten_ID Join Restoran r on r.Restoran_ID=i.Restoran_ID where korisnichko_ime = :KOR_IME";
-                 cmd = new OracleCommand(sql, Conn);
-                 prm = new OracleParameter("KOR_IME", OracleDbType.Varchar2);
+                cmd = new OracleCommand(sql, Conn);
+                prm = new OracleParameter("KOR_IME", OracleDbType.Varchar2);
                 prm.Value = username;
                 cmd.Parameters.Add(prm);
                 cmd.CommandType = CommandType.Text;
@@ -93,10 +99,9 @@ namespace SmetkaZaNaracka
                     VrabotenForma vf = new VrabotenForma(Conn, VrabotenId, RestoranId);
                     vf.Show();
                 }
-               
+
                 //MessageBox.Show(String.Format("Vraboten: {0}, Pozicija: {1}, RestoranID: {2}",VrabotenId,pozicija,RestoranId));
             }
-            
         }
     }
 }
