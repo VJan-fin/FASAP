@@ -17,6 +17,7 @@ namespace SmetkaZaNaracka
         private Restoran Restoran { get; set; }
         private int VrabotenID { get; set; }
         private List<string> Pozicii { get; set; }
+        private int PozInd { get; set; }
 
         public DodavanjeVraboten(Restoran restoran, OracleConnection conn)
         {
@@ -47,16 +48,26 @@ namespace SmetkaZaNaracka
 
         private void PopolniPozicii()
         {
+            this.PozInd = 0;
             this.Pozicii = new List<string>();
 
-            string sqlPozicii = @"SELECT * FROM FUNKCIJA";
+            string sqlPozicii = @"SELECT * FROM FUNKCIJA ORDER BY POZICIJA";
             OracleCommand cmd = new OracleCommand(sqlPozicii, this.Conn);
             cmd.CommandType = CommandType.Text;
 
             OracleDataReader dr = cmd.ExecuteReader();
-            var source = new AutoCompleteStringCollection();
             while (dr.Read())
-                source.Add(dr.GetString(0));
+                this.Pozicii.Add(dr.GetString(0));
+
+            UpdatePozicii();
+        }
+
+        private void UpdatePozicii()
+        {
+            if (this.Pozicii.Count != 0)
+                this.lblPozicija.Text = this.Pozicii[this.PozInd].ToString();
+            else
+                this.lblPozicija.Text = " ";
         }
 
         private void NajdiID()
@@ -257,7 +268,7 @@ namespace SmetkaZaNaracka
             prm.Value = this.Restoran.RestoranID;
             cmd.Parameters.Add(prm);
             prm = new OracleParameter("POZ", OracleDbType.Varchar2);
-            prm.Value = this.tbPozicija.Text.Trim();
+            prm.Value = this.Pozicii[this.PozInd];
             cmd.Parameters.Add(prm);
             string datum = DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
             prm = new OracleParameter("DAT", OracleDbType.Varchar2);
@@ -337,6 +348,50 @@ namespace SmetkaZaNaracka
         {
             this.buttonFASAP2.Image = Resources.DarkButton___Copy;
             this.buttonFASAP2.ForeColor = Color.Khaki;
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.LightArrowLeft;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.DarkArrowLeft;
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.LightArrowRight___Copy;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.DarkArrowRight;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (this.Pozicii.Count > 1)
+            {
+                this.PozInd = (this.PozInd + 1) % this.Pozicii.Count;
+                UpdatePozicii();
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (this.Pozicii.Count > 1)
+            {
+                if (this.PozInd == 0)
+                    this.PozInd = this.Pozicii.Count;
+                this.PozInd--;
+                UpdatePozicii();
+            }
         }
     }
 }

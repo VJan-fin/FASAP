@@ -48,7 +48,6 @@
             this.tbGodina = new System.Windows.Forms.TextBox();
             this.labelFASAP6 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.tbGrad = new System.Windows.Forms.TextBox();
-            this.tbPozicija = new System.Windows.Forms.TextBox();
             this.labelFASAP10 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP11 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.tbPlata = new System.Windows.Forms.TextBox();
@@ -60,6 +59,11 @@
             this.labelFASAP17 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.buttonFASAP1 = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.buttonFASAP2 = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblPozicija = new SmetkaZaNaracka.LabelFASAP(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tbIme
@@ -305,19 +309,6 @@
             this.tbGrad.TabIndex = 26;
             this.tbGrad.TabStop = false;
             // 
-            // tbPozicija
-            // 
-            this.tbPozicija.BackColor = System.Drawing.Color.Sienna;
-            this.tbPozicija.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbPozicija.ForeColor = System.Drawing.Color.Khaki;
-            this.tbPozicija.Location = new System.Drawing.Point(1265, 331);
-            this.tbPozicija.Margin = new System.Windows.Forms.Padding(4);
-            this.tbPozicija.Name = "tbPozicija";
-            this.tbPozicija.Size = new System.Drawing.Size(395, 42);
-            this.tbPozicija.TabIndex = 28;
-            this.tbPozicija.TabStop = false;
-            this.tbPozicija.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
-            // 
             // labelFASAP10
             // 
             this.labelFASAP10.AutoSize = true;
@@ -476,11 +467,56 @@
             this.buttonFASAP2.MouseEnter += new System.EventHandler(this.buttonFASAP2_MouseEnter);
             this.buttonFASAP2.MouseLeave += new System.EventHandler(this.buttonFASAP2_MouseLeave);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
+            this.pictureBox5.Location = new System.Drawing.Point(1620, 331);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 43);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 43;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowLeft;
+            this.pictureBox4.Location = new System.Drawing.Point(1232, 330);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(41, 43);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 42;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
+            // 
+            // lblPozicija
+            // 
+            this.lblPozicija.BackColor = System.Drawing.Color.Transparent;
+            this.lblPozicija.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPozicija.ForeColor = System.Drawing.Color.Khaki;
+            this.lblPozicija.Image = ((System.Drawing.Image)(resources.GetObject("lblPozicija.Image")));
+            this.lblPozicija.LblObject = null;
+            this.lblPozicija.Location = new System.Drawing.Point(1280, 334);
+            this.lblPozicija.Name = "lblPozicija";
+            this.lblPozicija.Size = new System.Drawing.Size(336, 38);
+            this.lblPozicija.TabIndex = 44;
+            // 
             // DodavanjeVraboten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1821, 945);
+            this.Controls.Add(this.lblPozicija);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.buttonFASAP2);
             this.Controls.Add(this.buttonFASAP1);
             this.Controls.Add(this.labelFASAP17);
@@ -492,7 +528,6 @@
             this.Controls.Add(this.tbPlata);
             this.Controls.Add(this.labelFASAP11);
             this.Controls.Add(this.labelFASAP10);
-            this.Controls.Add(this.tbPozicija);
             this.Controls.Add(this.labelFASAP6);
             this.Controls.Add(this.tbGrad);
             this.Controls.Add(this.labelFASAP9);
@@ -513,6 +548,7 @@
             this.Controls.Add(this.tbIme);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "DodavanjeVraboten";
+            this.Opacity = 1D;
             this.Text = "DodavanjeVraboten";
             this.Controls.SetChildIndex(this.tbIme, 0);
             this.Controls.SetChildIndex(this.labelFASAP1, 0);
@@ -532,7 +568,6 @@
             this.Controls.SetChildIndex(this.labelFASAP9, 0);
             this.Controls.SetChildIndex(this.tbGrad, 0);
             this.Controls.SetChildIndex(this.labelFASAP6, 0);
-            this.Controls.SetChildIndex(this.tbPozicija, 0);
             this.Controls.SetChildIndex(this.labelFASAP10, 0);
             this.Controls.SetChildIndex(this.labelFASAP11, 0);
             this.Controls.SetChildIndex(this.tbPlata, 0);
@@ -544,6 +579,11 @@
             this.Controls.SetChildIndex(this.labelFASAP17, 0);
             this.Controls.SetChildIndex(this.buttonFASAP1, 0);
             this.Controls.SetChildIndex(this.buttonFASAP2, 0);
+            this.Controls.SetChildIndex(this.pictureBox4, 0);
+            this.Controls.SetChildIndex(this.pictureBox5, 0);
+            this.Controls.SetChildIndex(this.lblPozicija, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,7 +609,6 @@
         private System.Windows.Forms.TextBox tbGodina;
         private LabelFASAP labelFASAP6;
         private System.Windows.Forms.TextBox tbGrad;
-        private System.Windows.Forms.TextBox tbPozicija;
         private LabelFASAP labelFASAP10;
         private LabelFASAP labelFASAP11;
         private System.Windows.Forms.TextBox tbPlata;
@@ -581,6 +620,9 @@
         private LabelFASAP labelFASAP17;
         private ButtonFASAP buttonFASAP1;
         private ButtonFASAP buttonFASAP2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private LabelFASAP lblPozicija;
 
     }
 }
