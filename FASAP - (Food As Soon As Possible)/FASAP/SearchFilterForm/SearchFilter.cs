@@ -202,8 +202,8 @@ namespace SmetkaZaNaracka
         {
             for (int i = 0; i < Restorani.Count && i < labeli.Count; i++)
             {
-                labeli[i].UpdateObject(Restorani[i]);
-                if (Restoran != null && Restorani[i].Equals(Restoran))
+                labeli[i].UpdateObject(Restorani[i + CurrRestorani]);
+                if (Restoran != null && Restorani[i + CurrRestorani].Equals(Restoran))
                 {
                     labeli[i].Image = Resources.LabelBackgroundSelected;
                     labeli[i].ForeColor = Color.SaddleBrown;
@@ -356,6 +356,26 @@ namespace SmetkaZaNaracka
         private void labelFASAP18_Click(object sender, EventArgs e)
         {
             SortingState.Name();
+        }
+
+        private void pbListUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            int pom = Restorani.Count - 12;
+            if (CurrRestorani < pom)
+            {
+                CurrRestorani++;
+                PostaviRestorani();
+            }
+        }
+
+        private void pbListDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (CurrRestorani > 0)
+            {
+                CurrRestorani--;
+                PostaviRestorani();
+            }
+            
         }
     }
 }
