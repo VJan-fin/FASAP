@@ -10,13 +10,16 @@ using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
-    public partial class InfoForma : Form
+    public partial class InfoForma : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
+
+        List<LabelFASAP> labeli;
         public InfoForma(OracleConnection conn)
         {
             InitializeComponent();
             Conn = conn;
+            labeli = new List<LabelFASAP>();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,16 +27,25 @@ namespace SmetkaZaNaracka
 
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+      
+
+        private void InfoForma_Load(object sender, EventArgs e)
         {
-            Login login = new Login(Conn);
-            login.Show();
+            //labeli.Add(this.label2);
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
+       
+
+        private void lbRegister_Click(object sender, EventArgs e)
         {
             Register register = new Register(Conn);
             register.Show();
+        }
+
+        private void lbLogin_Click(object sender, EventArgs e)
+        {
+            Login login = new Login(Conn);
+            login.Show();
         }
     }
 }

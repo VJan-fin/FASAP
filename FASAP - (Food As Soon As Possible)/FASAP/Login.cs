@@ -10,7 +10,7 @@ using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
-    public partial class Login : Form
+    public partial class Login : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
         private String username;
