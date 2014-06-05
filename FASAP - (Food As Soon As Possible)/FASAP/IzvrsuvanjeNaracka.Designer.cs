@@ -83,6 +83,8 @@
             this.labelFASAP16 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblCenaProizvod = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.flowLayoutPanelFasap1 = new SmetkaZaNaracka.FlowLayoutPanelFasap(this.components);
+            this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -262,7 +264,7 @@
             this.labelFASAP4.ForeColor = System.Drawing.Color.White;
             this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
             this.labelFASAP4.LblObject = null;
-            this.labelFASAP4.Location = new System.Drawing.Point(47, 317);
+            this.labelFASAP4.Location = new System.Drawing.Point(47, 302);
             this.labelFASAP4.Name = "labelFASAP4";
             this.labelFASAP4.Size = new System.Drawing.Size(145, 27);
             this.labelFASAP4.TabIndex = 14;
@@ -281,7 +283,7 @@
             this.dbLayoutPanel2.Controls.Add(this.lblMeni1, 0, 1);
             this.dbLayoutPanel2.Controls.Add(this.pictureBox6, 0, 0);
             this.dbLayoutPanel2.Controls.Add(this.pictureBox7, 0, 7);
-            this.dbLayoutPanel2.Location = new System.Drawing.Point(12, 360);
+            this.dbLayoutPanel2.Location = new System.Drawing.Point(12, 345);
             this.dbLayoutPanel2.Name = "dbLayoutPanel2";
             this.dbLayoutPanel2.RowCount = 8;
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -432,7 +434,7 @@
             this.dbLayoutPanel3.Controls.Add(this.lblStavka2, 0, 2);
             this.dbLayoutPanel3.Controls.Add(this.lblStavka1, 0, 1);
             this.dbLayoutPanel3.Controls.Add(this.pictureBox8, 0, 0);
-            this.dbLayoutPanel3.Location = new System.Drawing.Point(350, 360);
+            this.dbLayoutPanel3.Location = new System.Drawing.Point(350, 345);
             this.dbLayoutPanel3.Name = "dbLayoutPanel3";
             this.dbLayoutPanel3.RowCount = 8;
             this.dbLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -579,7 +581,7 @@
             this.labelFASAP5.ForeColor = System.Drawing.Color.White;
             this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
             this.labelFASAP5.LblObject = null;
-            this.labelFASAP5.Location = new System.Drawing.Point(360, 317);
+            this.labelFASAP5.Location = new System.Drawing.Point(360, 302);
             this.labelFASAP5.Name = "labelFASAP5";
             this.labelFASAP5.Size = new System.Drawing.Size(158, 27);
             this.labelFASAP5.TabIndex = 17;
@@ -588,13 +590,13 @@
             // lblImeStavka
             // 
             this.lblImeStavka.BackColor = System.Drawing.Color.Transparent;
-            this.lblImeStavka.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblImeStavka.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblImeStavka.ForeColor = System.Drawing.Color.White;
             this.lblImeStavka.Image = ((System.Drawing.Image)(resources.GetObject("lblImeStavka.Image")));
             this.lblImeStavka.LblObject = null;
-            this.lblImeStavka.Location = new System.Drawing.Point(689, 122);
+            this.lblImeStavka.Location = new System.Drawing.Point(668, 122);
             this.lblImeStavka.Name = "lblImeStavka";
-            this.lblImeStavka.Size = new System.Drawing.Size(472, 104);
+            this.lblImeStavka.Size = new System.Drawing.Size(546, 127);
             this.lblImeStavka.TabIndex = 18;
             // 
             // labelFASAP7
@@ -657,7 +659,7 @@
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
-            this.pictureBox12.Location = new System.Drawing.Point(690, 469);
+            this.pictureBox12.Location = new System.Drawing.Point(690, 454);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(36, 74);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -671,7 +673,7 @@
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
-            this.pictureBox14.Location = new System.Drawing.Point(726, 469);
+            this.pictureBox14.Location = new System.Drawing.Point(726, 454);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(36, 74);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -685,7 +687,7 @@
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowLeft;
-            this.pictureBox13.Location = new System.Drawing.Point(726, 565);
+            this.pictureBox13.Location = new System.Drawing.Point(726, 550);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(36, 76);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -698,7 +700,7 @@
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowLeft;
-            this.pictureBox15.Location = new System.Drawing.Point(690, 565);
+            this.pictureBox15.Location = new System.Drawing.Point(690, 550);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(36, 76);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -720,7 +722,7 @@
             this.dbLayoutPanel4.Controls.Add(this.lblKupeno2, 0, 2);
             this.dbLayoutPanel4.Controls.Add(this.lblKupeno1, 0, 1);
             this.dbLayoutPanel4.Controls.Add(this.pictureBox17, 0, 0);
-            this.dbLayoutPanel4.Location = new System.Drawing.Point(778, 360);
+            this.dbLayoutPanel4.Location = new System.Drawing.Point(778, 345);
             this.dbLayoutPanel4.Name = "dbLayoutPanel4";
             this.dbLayoutPanel4.RowCount = 8;
             this.dbLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -732,19 +734,20 @@
             this.dbLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.dbLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.dbLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.dbLayoutPanel4.Size = new System.Drawing.Size(398, 396);
+            this.dbLayoutPanel4.Size = new System.Drawing.Size(495, 396);
             this.dbLayoutPanel4.TabIndex = 29;
             // 
             // pictureBox16
             // 
             this.pictureBox16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox16.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pictureBox16.Location = new System.Drawing.Point(149, 348);
+            this.pictureBox16.Location = new System.Drawing.Point(197, 348);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(100, 43);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 25;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             this.pictureBox16.MouseEnter += new System.EventHandler(this.pictureBox7_MouseEnter);
             this.pictureBox16.MouseLeave += new System.EventHandler(this.pictureBox7_MouseLeave);
             // 
@@ -757,7 +760,7 @@
             this.lblKupeno6.ForeColor = System.Drawing.Color.White;
             this.lblKupeno6.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno6.Image")));
             this.lblKupeno6.LblObject = null;
-            this.lblKupeno6.Location = new System.Drawing.Point(179, 305);
+            this.lblKupeno6.Location = new System.Drawing.Point(227, 305);
             this.lblKupeno6.Name = "lblKupeno6";
             this.lblKupeno6.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno6.TabIndex = 24;
@@ -772,7 +775,7 @@
             this.lblKupeno5.ForeColor = System.Drawing.Color.White;
             this.lblKupeno5.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno5.Image")));
             this.lblKupeno5.LblObject = null;
-            this.lblKupeno5.Location = new System.Drawing.Point(179, 256);
+            this.lblKupeno5.Location = new System.Drawing.Point(227, 256);
             this.lblKupeno5.Name = "lblKupeno5";
             this.lblKupeno5.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno5.TabIndex = 23;
@@ -787,7 +790,7 @@
             this.lblKupeno4.ForeColor = System.Drawing.Color.White;
             this.lblKupeno4.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno4.Image")));
             this.lblKupeno4.LblObject = null;
-            this.lblKupeno4.Location = new System.Drawing.Point(179, 207);
+            this.lblKupeno4.Location = new System.Drawing.Point(227, 207);
             this.lblKupeno4.Name = "lblKupeno4";
             this.lblKupeno4.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno4.TabIndex = 22;
@@ -802,7 +805,7 @@
             this.lblKupeno3.ForeColor = System.Drawing.Color.White;
             this.lblKupeno3.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno3.Image")));
             this.lblKupeno3.LblObject = null;
-            this.lblKupeno3.Location = new System.Drawing.Point(179, 158);
+            this.lblKupeno3.Location = new System.Drawing.Point(227, 158);
             this.lblKupeno3.Name = "lblKupeno3";
             this.lblKupeno3.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno3.TabIndex = 21;
@@ -817,7 +820,7 @@
             this.lblKupeno2.ForeColor = System.Drawing.Color.White;
             this.lblKupeno2.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno2.Image")));
             this.lblKupeno2.LblObject = null;
-            this.lblKupeno2.Location = new System.Drawing.Point(179, 109);
+            this.lblKupeno2.Location = new System.Drawing.Point(227, 109);
             this.lblKupeno2.Name = "lblKupeno2";
             this.lblKupeno2.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno2.TabIndex = 20;
@@ -832,7 +835,7 @@
             this.lblKupeno1.ForeColor = System.Drawing.Color.White;
             this.lblKupeno1.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno1.Image")));
             this.lblKupeno1.LblObject = null;
-            this.lblKupeno1.Location = new System.Drawing.Point(179, 60);
+            this.lblKupeno1.Location = new System.Drawing.Point(227, 60);
             this.lblKupeno1.Name = "lblKupeno1";
             this.lblKupeno1.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno1.TabIndex = 19;
@@ -842,12 +845,13 @@
             // 
             this.pictureBox17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox17.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowUp;
-            this.pictureBox17.Location = new System.Drawing.Point(149, 3);
+            this.pictureBox17.Location = new System.Drawing.Point(197, 3);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(100, 42);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 2;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
             this.pictureBox17.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
             this.pictureBox17.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
             // 
@@ -858,7 +862,7 @@
             this.lblCena.ForeColor = System.Drawing.Color.Khaki;
             this.lblCena.Image = ((System.Drawing.Image)(resources.GetObject("lblCena.Image")));
             this.lblCena.LblObject = null;
-            this.lblCena.Location = new System.Drawing.Point(1109, 283);
+            this.lblCena.Location = new System.Drawing.Point(1109, 268);
             this.lblCena.Name = "lblCena";
             this.lblCena.Size = new System.Drawing.Size(238, 61);
             this.lblCena.TabIndex = 30;
@@ -873,7 +877,7 @@
             this.labelFASAP16.ForeColor = System.Drawing.Color.White;
             this.labelFASAP16.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP16.Image")));
             this.labelFASAP16.LblObject = null;
-            this.labelFASAP16.Location = new System.Drawing.Point(941, 297);
+            this.labelFASAP16.Location = new System.Drawing.Point(941, 282);
             this.labelFASAP16.Name = "labelFASAP16";
             this.labelFASAP16.Size = new System.Drawing.Size(152, 43);
             this.labelFASAP16.TabIndex = 31;
@@ -887,7 +891,7 @@
             this.lblCenaProizvod.ForeColor = System.Drawing.Color.White;
             this.lblCenaProizvod.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaProizvod.Image")));
             this.lblCenaProizvod.LblObject = null;
-            this.lblCenaProizvod.Location = new System.Drawing.Point(1178, 183);
+            this.lblCenaProizvod.Location = new System.Drawing.Point(1220, 206);
             this.lblCenaProizvod.Name = "lblCenaProizvod";
             this.lblCenaProizvod.Size = new System.Drawing.Size(127, 43);
             this.lblCenaProizvod.TabIndex = 32;
@@ -901,11 +905,30 @@
             this.flowLayoutPanelFasap1.Size = new System.Drawing.Size(1155, 51);
             this.flowLayoutPanelFasap1.TabIndex = 33;
             // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.BackColor = System.Drawing.Color.Khaki;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblErrorMessage.Location = new System.Drawing.Point(0, 746);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(54, 22);
+            this.lblErrorMessage.TabIndex = 34;
+            this.lblErrorMessage.Text = "label1";
+            this.lblErrorMessage.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // IzvrsuvanjeNaracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.flowLayoutPanelFasap1);
             this.Controls.Add(this.lblCenaProizvod);
             this.Controls.Add(this.labelFASAP16);
@@ -969,6 +992,7 @@
             this.Controls.SetChildIndex(this.labelFASAP16, 0);
             this.Controls.SetChildIndex(this.lblCenaProizvod, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);
+            this.Controls.SetChildIndex(this.lblErrorMessage, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1050,5 +1074,7 @@
         private LabelFASAP labelFASAP16;
         private LabelFASAP lblCenaProizvod;
         private FlowLayoutPanelFasap flowLayoutPanelFasap1;
+        private System.Windows.Forms.Label lblErrorMessage;
+        private System.Windows.Forms.Timer timer1;
     }
 }

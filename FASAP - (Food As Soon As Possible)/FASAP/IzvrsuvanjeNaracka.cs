@@ -27,6 +27,7 @@ namespace SmetkaZaNaracka
         private int indMeni { get; set; }
         private int indStavka { get; set; }
         private int indKupeni { get; set; }
+        int errorMessageTime = 3;
 
         public IzvrsuvanjeNaracka(Restoran restoran, OracleConnection conn)
         {
@@ -34,6 +35,7 @@ namespace SmetkaZaNaracka
             Restoran = restoran;
             Conn = conn;
             OrderList = new List<OrderComponent>();
+            Opacity = 0;
             this.AddButtons();
         }
 
@@ -127,6 +129,7 @@ namespace SmetkaZaNaracka
             while (dr.Read())
             {
                 meni = new Meni(dr.GetString(1));
+                meni.Parent = mc;
                 mc.AddComp(meni);
                 KreirajMeni(meni);
             }
@@ -153,12 +156,14 @@ namespace SmetkaZaNaracka
                 if (IsDecorator == "1")
                 {
                     dodatok = new Dodatok((int)dr.GetValue(2), dr.GetString(7), (decimal)dr.GetValue(4));
+                    dodatok.Parent = mc;
                     mc.AddComp(dodatok);
                 }
                 else
                 {
 
                     stavka = new Stavka((int)dr.GetValue(2), dr.GetString(7), (decimal)dr.GetValue(4));
+                    stavka.Parent = mc;
                     mc.AddComp(stavka);
                 }
             }
@@ -174,8 +179,8 @@ namespace SmetkaZaNaracka
                     this.ListaMeni[i].UpdateObject(mc.GetContent()[ind]);
                     ind++;                  
                 }
-                /*else
-                    this.ListaMeni[i].Text = " ";*/
+                else
+                    this.ListaMeni[i].Text = ": : ";
         }
 
         private void PopolniListaStavki()
@@ -188,11 +193,18 @@ namespace SmetkaZaNaracka
                     if (this.CurrMenu.GetContent()[ind] is Meni)
                     {
                         this.ListaStavki[i].ForeColor = Color.Gold;
-                        this.ListaStavki[i].Font = this.Font = new Font("Trebuchet MS", 16, FontStyle.Underline);
+                        ListaStavki[i].Font = new Font("Trebuchet MS", 16, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                     }
-                    else if (this.CurrMenu.GetContent()[ind] is Stavka)
+                    else
+                    {
                         this.ListaStavki[i].ForeColor = Color.White;
+                        ListaStavki[i].Font = new Font("Trebuchet MS", 16, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    }
                     ind++;
+                }
+                else
+                {
+                    ListaStavki[i].Text = ": : ";
                 }
         }
 
@@ -367,12 +379,24 @@ namespace SmetkaZaNaracka
             if (lb.LblObject != null)
             {
                 MenuComponent mc = lb.LblObject as MenuComponent;
+
+                if (mc is Meni)
+                {
+                    CurrMenu = mc;
+                    PopolniListaStavki();
+                    return;
+                }
                 try
                 {
                     CurrItem = mc.GetReference(CurrItem);
                 }
                 catch (Exception ex)
                 {
+                    lblErrorMessage.Text = String.Format("{0}   ",ex.Message);
+                    timer1.Stop();
+                    errorMessageTime = 3;
+                    lblErrorMessage.Visible = true;
+                    timer1.Start();
                 }
             }
             if (CurrItem != null)
@@ -406,22 +430,42 @@ namespace SmetkaZaNaracka
         private void PostaviNaracka()
         {
             int Vkupno = 0;
+            foreach (var obj in OrderList)
+                Vkupno += obj.ComputePrice();
             for (int i = 0; i < OrderList.Count && i < ListaKupeni.Count; i++)
             {
-                ListaKupeni[i].UpdateObject(OrderList[i]);
-                Vkupno += OrderList[i].ComputePrice();
-                /*if (Restoran != null && OrderList[i + indKupeni].Equals(Restoran))
-                {
-                    labeli[i].Image = Resources.LabelBackgroundSelected;
-                    labeli[i].ForeColor = Color.SaddleBrown;
-                }
-                else
-                {
-                    labeli[i].Image = Resources.LabelBackground2;
-                    labeli[i].ForeColor = Color.Gold;
-                }*/
+                ListaKupeni[i].UpdateObject(OrderList[i + indKupeni]);
             }
             lblCena.Text = Vkupno.ToString();
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+            int pom = OrderList.Count - ListaKupeni.Count;
+            if (indKupeni < pom)
+            {
+                indKupeni++;
+                PostaviNaracka();
+            }
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+            if (indKupeni > 0)
+            {
+                indKupeni--;
+                PostaviNaracka();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            errorMessageTime--;
+            if (errorMessageTime == 0)
+            {
+                lblErrorMessage.Visible = false;
+                timer1.Stop();
+            }
         }
     }
 }

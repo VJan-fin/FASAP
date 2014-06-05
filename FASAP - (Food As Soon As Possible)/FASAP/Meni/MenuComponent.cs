@@ -7,6 +7,8 @@ namespace SmetkaZaNaracka
 {
     public abstract class MenuComponent
     {
+        public MenuComponent Parent { get; set; }
+
         public abstract List<MenuComponent> GetContent();
 
         public abstract string GetName();
@@ -32,6 +34,11 @@ namespace SmetkaZaNaracka
         public override string ToString()
         {
             return GetName();
+        }
+
+        public virtual bool Sodrzi(Object obj)
+        {
+            return this.Equals(obj);
         }
     }
 }

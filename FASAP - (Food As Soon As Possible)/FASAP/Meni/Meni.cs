@@ -69,10 +69,10 @@ namespace SmetkaZaNaracka
             Meni meni = obj as Meni;
             if (Ime != meni.Ime)
                 return false;
-            foreach (var obt in Content)
-                foreach (var oob in meni.Content)
-                    if (!obt.Equals(oob))
-                        return false;
+            //foreach (var obt in Content)
+            //    foreach (var oob in meni.Content)
+            //        if (!obt.Equals(oob))
+            //            return false;
             return true;
         }
 

@@ -72,7 +72,7 @@ namespace SmetkaZaNaracka
             if (!(obj is Stavka))
                 return false;
             Stavka st = obj as Stavka;
-            if (ID != st.ID)
+            if (ID != st.ID || !Parent.Equals(st.Parent))
                 return false;
             return true;
         }
