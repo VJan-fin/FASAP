@@ -180,9 +180,9 @@
             // 
             // tbIme
             // 
-            this.tbIme.BackColor = System.Drawing.Color.Khaki;
+            this.tbIme.BackColor = System.Drawing.Color.Sienna;
             this.tbIme.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIme.ForeColor = System.Drawing.Color.Sienna;
+            this.tbIme.ForeColor = System.Drawing.Color.Khaki;
             this.tbIme.Location = new System.Drawing.Point(754, 80);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(259, 32);
@@ -190,9 +190,9 @@
             // 
             // tbKategorija
             // 
-            this.tbKategorija.BackColor = System.Drawing.Color.Khaki;
+            this.tbKategorija.BackColor = System.Drawing.Color.Sienna;
             this.tbKategorija.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKategorija.ForeColor = System.Drawing.Color.Sienna;
+            this.tbKategorija.ForeColor = System.Drawing.Color.Khaki;
             this.tbKategorija.Location = new System.Drawing.Point(754, 149);
             this.tbKategorija.Name = "tbKategorija";
             this.tbKategorija.Size = new System.Drawing.Size(259, 32);
@@ -200,9 +200,9 @@
             // 
             // tbUlica
             // 
-            this.tbUlica.BackColor = System.Drawing.Color.Khaki;
+            this.tbUlica.BackColor = System.Drawing.Color.Sienna;
             this.tbUlica.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUlica.ForeColor = System.Drawing.Color.Sienna;
+            this.tbUlica.ForeColor = System.Drawing.Color.Khaki;
             this.tbUlica.Location = new System.Drawing.Point(754, 224);
             this.tbUlica.Multiline = true;
             this.tbUlica.Name = "tbUlica";
@@ -211,9 +211,9 @@
             // 
             // tbGrad
             // 
-            this.tbGrad.BackColor = System.Drawing.Color.Khaki;
+            this.tbGrad.BackColor = System.Drawing.Color.Sienna;
             this.tbGrad.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGrad.ForeColor = System.Drawing.Color.Sienna;
+            this.tbGrad.ForeColor = System.Drawing.Color.Khaki;
             this.tbGrad.Location = new System.Drawing.Point(754, 326);
             this.tbGrad.Name = "tbGrad";
             this.tbGrad.Size = new System.Drawing.Size(259, 32);
@@ -221,9 +221,9 @@
             // 
             // tbRabotnoVreme
             // 
-            this.tbRabotnoVreme.BackColor = System.Drawing.Color.Khaki;
+            this.tbRabotnoVreme.BackColor = System.Drawing.Color.Sienna;
             this.tbRabotnoVreme.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRabotnoVreme.ForeColor = System.Drawing.Color.Sienna;
+            this.tbRabotnoVreme.ForeColor = System.Drawing.Color.Khaki;
             this.tbRabotnoVreme.Location = new System.Drawing.Point(754, 389);
             this.tbRabotnoVreme.Name = "tbRabotnoVreme";
             this.tbRabotnoVreme.Size = new System.Drawing.Size(259, 32);
@@ -231,9 +231,9 @@
             // 
             // tbkapacitet
             // 
-            this.tbkapacitet.BackColor = System.Drawing.Color.Khaki;
+            this.tbkapacitet.BackColor = System.Drawing.Color.Sienna;
             this.tbkapacitet.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbkapacitet.ForeColor = System.Drawing.Color.Sienna;
+            this.tbkapacitet.ForeColor = System.Drawing.Color.Khaki;
             this.tbkapacitet.Location = new System.Drawing.Point(754, 458);
             this.tbkapacitet.Name = "tbkapacitet";
             this.tbkapacitet.Size = new System.Drawing.Size(259, 32);
@@ -242,9 +242,9 @@
             // 
             // tbBrMasi
             // 
-            this.tbBrMasi.BackColor = System.Drawing.Color.Khaki;
+            this.tbBrMasi.BackColor = System.Drawing.Color.Sienna;
             this.tbBrMasi.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBrMasi.ForeColor = System.Drawing.Color.Sienna;
+            this.tbBrMasi.ForeColor = System.Drawing.Color.Khaki;
             this.tbBrMasi.Location = new System.Drawing.Point(754, 526);
             this.tbBrMasi.Name = "tbBrMasi";
             this.tbBrMasi.Size = new System.Drawing.Size(259, 32);
@@ -253,9 +253,9 @@
             // 
             // tbDostava
             // 
-            this.tbDostava.BackColor = System.Drawing.Color.Khaki;
+            this.tbDostava.BackColor = System.Drawing.Color.Sienna;
             this.tbDostava.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDostava.ForeColor = System.Drawing.Color.Sienna;
+            this.tbDostava.ForeColor = System.Drawing.Color.Khaki;
             this.tbDostava.Location = new System.Drawing.Point(754, 594);
             this.tbDostava.Name = "tbDostava";
             this.tbDostava.Size = new System.Drawing.Size(259, 32);
@@ -303,9 +303,9 @@
             // 
             // tbUser
             // 
-            this.tbUser.BackColor = System.Drawing.Color.Khaki;
+            this.tbUser.BackColor = System.Drawing.Color.Sienna;
             this.tbUser.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUser.ForeColor = System.Drawing.Color.Sienna;
+            this.tbUser.ForeColor = System.Drawing.Color.Khaki;
             this.tbUser.Location = new System.Drawing.Point(21, 585);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(337, 32);
@@ -314,9 +314,9 @@
             // 
             // tbPass
             // 
-            this.tbPass.BackColor = System.Drawing.Color.Khaki;
+            this.tbPass.BackColor = System.Drawing.Color.Sienna;
             this.tbPass.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPass.ForeColor = System.Drawing.Color.Sienna;
+            this.tbPass.ForeColor = System.Drawing.Color.Khaki;
             this.tbPass.Location = new System.Drawing.Point(21, 702);
             this.tbPass.Name = "tbPass";
             this.tbPass.PasswordChar = '*';
@@ -440,9 +440,9 @@
             // 
             // tbDatum
             // 
-            this.tbDatum.BackColor = System.Drawing.Color.Khaki;
+            this.tbDatum.BackColor = System.Drawing.Color.Sienna;
             this.tbDatum.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDatum.ForeColor = System.Drawing.Color.Sienna;
+            this.tbDatum.ForeColor = System.Drawing.Color.Khaki;
             this.tbDatum.Location = new System.Drawing.Point(754, 667);
             this.tbDatum.Name = "tbDatum";
             this.tbDatum.Size = new System.Drawing.Size(259, 32);
