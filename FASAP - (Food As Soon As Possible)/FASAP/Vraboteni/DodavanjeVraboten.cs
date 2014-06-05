@@ -46,6 +46,9 @@ namespace SmetkaZaNaracka
             this.PopolniPozicii();
         }
 
+        /// <summary>
+        /// Prezemanje na site mozni funkcii koi postojat vo bazata
+        /// </summary>
         private void PopolniPozicii()
         {
             this.PozInd = 0;
@@ -62,6 +65,10 @@ namespace SmetkaZaNaracka
             UpdatePozicii();
         }
 
+        /// <summary>
+        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
+        /// od listata pozicii
+        /// </summary>
         private void UpdatePozicii()
         {
             if (this.Pozicii.Count != 0)
@@ -70,6 +77,10 @@ namespace SmetkaZaNaracka
                 this.lblPozicija.Text = " ";
         }
 
+        /// <summary>
+        /// Naogjanje na narednoto neiskoristeno ID
+        /// za sledniot vraboten
+        /// </summary>
         private void NajdiID()
         {
             string sqlID = @"SELECT MAX(VRABOTEN_ID) FROM VRABOTEN";
@@ -193,6 +204,11 @@ namespace SmetkaZaNaracka
             }
         }
 
+        /// <summary>
+        /// Proverka dali datumot e celosen (ili site polinja se prazni
+        /// ili site se popolneti, ne se dozvoluvaat delumni podatoci)
+        /// </summary>
+        /// <returns></returns>
         private bool CheckDate()
         {
             if (tbDen.Text.Length != 0 && tbMesec.Text.Length != 0 && tbGodina.Text.Length != 0)
@@ -214,13 +230,13 @@ namespace SmetkaZaNaracka
             prm.Value = this.VrabotenID;
             cmd.Parameters.Add(prm);
             prm = new OracleParameter("IME", OracleDbType.Varchar2);
-            prm.Value = this.tbIme.Text;
+            prm.Value = this.tbIme.Text.Trim();
             cmd.Parameters.Add(prm);
             prm = new OracleParameter("PREZIME", OracleDbType.Varchar2);
-            prm.Value = this.tbPrezime.Text;
+            prm.Value = this.tbPrezime.Text.Trim();
             cmd.Parameters.Add(prm);
             prm = new OracleParameter("EMBG", OracleDbType.Char);
-            prm.Value = this.tbEmbg.Text;
+            prm.Value = this.tbEmbg.Text.Trim();
             cmd.Parameters.Add(prm);
             prm = new OracleParameter("ADR", OracleDbType.Varchar2);
             string adresa = "";
@@ -270,7 +286,7 @@ namespace SmetkaZaNaracka
             prm = new OracleParameter("POZ", OracleDbType.Varchar2);
             prm.Value = this.Pozicii[this.PozInd];
             cmd.Parameters.Add(prm);
-            string datum = DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
+            string datum = DateTime.Now.Day.ToString().Trim() + "." + DateTime.Now.Month.ToString().Trim() + "." + DateTime.Now.Year.ToString().Trim();
             prm = new OracleParameter("DAT", OracleDbType.Varchar2);
             prm.Value = datum;
             cmd.Parameters.Add(prm);
