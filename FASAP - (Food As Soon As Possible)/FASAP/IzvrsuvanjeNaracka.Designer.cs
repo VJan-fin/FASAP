@@ -312,6 +312,8 @@
             this.lblMeni6.TabIndex = 23;
             this.lblMeni6.Text = "МЕНИ ";
             this.lblMeni6.Click += new System.EventHandler(this.lblMeni1_Click);
+            this.lblMeni6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblMeni6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblMeni5
             // 
@@ -328,6 +330,8 @@
             this.lblMeni5.TabIndex = 22;
             this.lblMeni5.Text = "МЕНИ ";
             this.lblMeni5.Click += new System.EventHandler(this.lblMeni1_Click);
+            this.lblMeni5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblMeni5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblMeni4
             // 
@@ -344,6 +348,8 @@
             this.lblMeni4.TabIndex = 21;
             this.lblMeni4.Text = "МЕНИ ";
             this.lblMeni4.Click += new System.EventHandler(this.lblMeni1_Click);
+            this.lblMeni4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblMeni4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblMeni3
             // 
@@ -360,6 +366,8 @@
             this.lblMeni3.TabIndex = 20;
             this.lblMeni3.Text = "Алкохолни пијалоци ";
             this.lblMeni3.Click += new System.EventHandler(this.lblMeni1_Click);
+            this.lblMeni3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblMeni3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblMeni2
             // 
@@ -376,6 +384,8 @@
             this.lblMeni2.TabIndex = 19;
             this.lblMeni2.Text = "Специјалитети на куќата ";
             this.lblMeni2.Click += new System.EventHandler(this.lblMeni1_Click);
+            this.lblMeni2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblMeni2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblMeni1
             // 
@@ -392,6 +402,8 @@
             this.lblMeni1.TabIndex = 18;
             this.lblMeni1.Text = "Безалкохолни пијалоци ";
             this.lblMeni1.Click += new System.EventHandler(this.lblMeni1_Click);
+            this.lblMeni1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblMeni1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // pictureBox6
             // 
@@ -478,6 +490,8 @@
             this.lblStavka6.TabIndex = 24;
             this.lblStavka6.Text = "МЕНИ ";
             this.lblStavka6.Click += new System.EventHandler(this.lblStavka1_Click);
+            this.lblStavka6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblStavka6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblStavka5
             // 
@@ -494,6 +508,8 @@
             this.lblStavka5.TabIndex = 23;
             this.lblStavka5.Text = "МЕНИ ";
             this.lblStavka5.Click += new System.EventHandler(this.lblStavka1_Click);
+            this.lblStavka5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblStavka5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblStavka4
             // 
@@ -510,6 +526,8 @@
             this.lblStavka4.TabIndex = 22;
             this.lblStavka4.Text = "МЕНИ ";
             this.lblStavka4.Click += new System.EventHandler(this.lblStavka1_Click);
+            this.lblStavka4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblStavka4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblStavka3
             // 
@@ -526,6 +544,8 @@
             this.lblStavka3.TabIndex = 21;
             this.lblStavka3.Text = "МЕНИ ";
             this.lblStavka3.Click += new System.EventHandler(this.lblStavka1_Click);
+            this.lblStavka3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblStavka3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblStavka2
             // 
@@ -542,6 +562,8 @@
             this.lblStavka2.TabIndex = 20;
             this.lblStavka2.Text = "МЕНИ ";
             this.lblStavka2.Click += new System.EventHandler(this.lblStavka1_Click);
+            this.lblStavka2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblStavka2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblStavka1
             // 
@@ -558,6 +580,8 @@
             this.lblStavka1.TabIndex = 19;
             this.lblStavka1.Text = "МЕНИ ";
             this.lblStavka1.Click += new System.EventHandler(this.lblStavka1_Click);
+            this.lblStavka1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblStavka1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // pictureBox8
             // 
@@ -765,6 +789,8 @@
             this.lblKupeno6.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno6.TabIndex = 24;
             this.lblKupeno6.Text = ": : ";
+            this.lblKupeno6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblKupeno6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblKupeno5
             // 
@@ -780,6 +806,8 @@
             this.lblKupeno5.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno5.TabIndex = 23;
             this.lblKupeno5.Text = ": : ";
+            this.lblKupeno5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblKupeno5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblKupeno4
             // 
@@ -795,6 +823,8 @@
             this.lblKupeno4.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno4.TabIndex = 22;
             this.lblKupeno4.Text = ": : ";
+            this.lblKupeno4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblKupeno4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblKupeno3
             // 
@@ -810,6 +840,8 @@
             this.lblKupeno3.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno3.TabIndex = 21;
             this.lblKupeno3.Text = ": : ";
+            this.lblKupeno3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblKupeno3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblKupeno2
             // 
@@ -825,6 +857,8 @@
             this.lblKupeno2.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno2.TabIndex = 20;
             this.lblKupeno2.Text = ": : ";
+            this.lblKupeno2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblKupeno2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblKupeno1
             // 
@@ -840,6 +874,8 @@
             this.lblKupeno1.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno1.TabIndex = 19;
             this.lblKupeno1.Text = ": : ";
+            this.lblKupeno1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblKupeno1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // pictureBox17
             // 

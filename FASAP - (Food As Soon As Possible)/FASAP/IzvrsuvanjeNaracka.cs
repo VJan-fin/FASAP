@@ -106,7 +106,7 @@ namespace SmetkaZaNaracka
             PopolniListaMenija();
 
             foreach (var item in this.ListaStavki)
-                item.Text = " ";
+                item.UpdateObject(null);
         }
 
         private void KreirajMeni(MenuComponent mc)
@@ -180,7 +180,7 @@ namespace SmetkaZaNaracka
                     ind++;                  
                 }
                 else
-                    this.ListaMeni[i].Text = ": : ";
+                    this.ListaMeni[i].UpdateObject(null);
         }
 
         private void PopolniListaStavki()
@@ -204,7 +204,7 @@ namespace SmetkaZaNaracka
                 }
                 else
                 {
-                    ListaStavki[i].Text = ": : ";
+                    ListaStavki[i].UpdateObject(null);
                 }
         }
 
@@ -432,10 +432,10 @@ namespace SmetkaZaNaracka
             int Vkupno = 0;
             foreach (var obj in OrderList)
                 Vkupno += obj.ComputePrice();
-            for (int i = 0; i < OrderList.Count && i < ListaKupeni.Count; i++)
-            {
-                ListaKupeni[i].UpdateObject(OrderList[i + indKupeni]);
-            }
+            for (int i = 0; i < ListaKupeni.Count; i++)
+                if (i < OrderList.Count)
+                    ListaKupeni[i].UpdateObject(OrderList[i + indKupeni]);
+                else ListaKupeni[i].UpdateObject(null);
             lblCena.Text = Vkupno.ToString();
         }
 
@@ -465,6 +465,30 @@ namespace SmetkaZaNaracka
             {
                 lblErrorMessage.Visible = false;
                 timer1.Stop();
+            }
+        }
+
+        private void lblMeni1_MouseEnter(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                Cursor = Cursors.Hand;
+                if (lb.LblObject is Meni)
+                    lb.Font = new Font("Trebuchet MS", 17, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                else lb.Font = new Font("Trebuchet MS", 17, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            }
+        }
+
+        private void lblMeni1_MouseLeave(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                Cursor = Cursors.Default;
+                if (lb.LblObject is Meni)
+                    lb.Font = new Font("Trebuchet MS", 16, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                else lb.Font = new Font("Trebuchet MS", 16, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
     }
