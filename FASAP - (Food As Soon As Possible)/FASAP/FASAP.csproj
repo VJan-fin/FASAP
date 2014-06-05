@@ -172,23 +172,33 @@
     <Compile Include="Meni\Meni.cs" />
     <Compile Include="Meni\MenuComponent.cs" />
     <Compile Include="Meni\OrderComponent.cs" />
-    <Compile Include="PomosniKlasi\ButtonFASAP.cs" />
+    <Compile Include="PomosniKlasi\ButtonFASAP.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PomosniKlasi\ButtonFASAP.Designer.cs">
       <DependentUpon>ButtonFASAP.cs</DependentUpon>
     </Compile>
-    <Compile Include="PomosniKlasi\DBLayoutPanel.cs" />
+    <Compile Include="PomosniKlasi\DBLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PomosniKlasi\DBLayoutPanel.Designer.cs">
       <DependentUpon>DBLayoutPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="PomosniKlasi\FlowLayoutPanelFasap.cs" />
+    <Compile Include="PomosniKlasi\FlowLayoutPanelFasap.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PomosniKlasi\FlowLayoutPanelFasap.Designer.cs">
       <DependentUpon>FlowLayoutPanelFasap.cs</DependentUpon>
     </Compile>
-    <Compile Include="PomosniKlasi\LabelFASAP.cs" />
+    <Compile Include="PomosniKlasi\LabelFASAP.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PomosniKlasi\LabelFASAP.Designer.cs">
       <DependentUpon>LabelFASAP.cs</DependentUpon>
     </Compile>
-    <Compile Include="PomosniKlasi\MessageBoxForm.cs" />
+    <Compile Include="PomosniKlasi\MessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PomosniKlasi\MessageBoxForm.Designer.cs">
       <DependentUpon>MessageBoxForm.cs</DependentUpon>
     <Compile Include="PomosniKlasi\MessageBoxForm.cs">
@@ -204,7 +214,9 @@
     <Compile Include="Vraboteni\PregledVraboten.Designer.cs">
       <DependentUpon>PregledVraboten.cs</DependentUpon>
     </Compile>
-    <Compile Include="PomosniKlasi\SearchButton.cs" />
+    <Compile Include="PomosniKlasi\SearchButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -247,12 +259,16 @@
     <Compile Include="VrabotenForma.designer.cs">
       <DependentUpon>VrabotenForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vraboteni\DodavanjeVraboten.cs" />
+    <Compile Include="Vraboteni\DodavanjeVraboten.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vraboteni\DodavanjeVraboten.Designer.cs">
     <EmbeddedResource Include="Vraboteni\DodavanjeVraboten.resx">
       <DependentUpon>DodavanjeVraboten.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vraboteni\PregledVraboten.cs" />
+    <Compile Include="Vraboteni\PregledVraboten.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vraboteni\PregledVraboten.Designer.cs">
       <DependentUpon>PregledVraboten.cs</DependentUpon>
     </Compile>
