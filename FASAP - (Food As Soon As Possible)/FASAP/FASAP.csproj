@@ -126,6 +126,12 @@
     <Compile Include="BackgroundForm.Designer.cs">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FlowLayoutPanelFasap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlowLayoutPanelFasap.Designer.cs">
+      <DependentUpon>FlowLayoutPanelFasap.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoForma.cs">
       <SubType>Form</SubType>
     </Compile>

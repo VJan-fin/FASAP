@@ -14,9 +14,11 @@ namespace SmetkaZaNaracka
 {
     public partial class IzvrsuvanjeNaracka : BackgroundForm
     {
-        private MenuComponent CurrComponent { get; set; }
+        private MenuComponent CurrMenu { get; set; }
         private OracleConnection Conn { get; set; }
         private Restoran Restoran { get; set; }
+        public MenuComponent CurrItem { get; set; }
+        public List<OrderComponent> OrderList { get; set; }
 
         private List<LabelFASAP> ListaMeni { get; set; }
         private List<LabelFASAP> ListaStavki { get; set; }
@@ -31,6 +33,7 @@ namespace SmetkaZaNaracka
             InitializeComponent();
             Restoran = restoran;
             Conn = conn;
+            OrderList = new List<OrderComponent>();
             this.AddButtons();
         }
 
@@ -168,40 +171,29 @@ namespace SmetkaZaNaracka
             for (int i = 0; i < this.ListaMeni.Count; i++)
                 if (ind < mc.GetContent().Count)
                 {
-                    this.ListaMeni[i].Text = mc.GetContent()[ind].ToString().Substring(0, 1) + mc.GetContent()[ind].ToString().Substring(1).ToLower() + "  ";
+                    this.ListaMeni[i].UpdateObject(mc.GetContent()[ind]);
                     ind++;                  
                 }
-                else
-                    this.ListaMeni[i].Text = " ";
+                /*else
+                    this.ListaMeni[i].Text = " ";*/
         }
 
         private void PopolniListaStavki()
         {
-            foreach (var item in this.ListaStavki)
-                item.Text = " ";
-
             int ind = this.indStavka;
             for (int i = 0; i < this.ListaStavki.Count; i++)
-                if (ind < this.CurrComponent.GetContent().Count)
+                if (ind < this.CurrMenu.GetContent().Count)
                 {
-                    this.ListaStavki[i].Text = this.CurrComponent.GetContent()[ind].ToString() + "  ";
-                    if (this.CurrComponent.GetContent()[ind] is Meni)
+                    this.ListaStavki[i].UpdateObject(CurrMenu.GetContent()[ind]);
+                    if (this.CurrMenu.GetContent()[ind] is Meni)
                     {
                         this.ListaStavki[i].ForeColor = Color.Gold;
                         this.ListaStavki[i].Font = this.Font = new Font("Trebuchet MS", 16, FontStyle.Underline);
                     }
-                    else if (this.CurrComponent.GetContent()[ind] is Stavka)
+                    else if (this.CurrMenu.GetContent()[ind] is Stavka)
                         this.ListaStavki[i].ForeColor = Color.White;
                     ind++;
                 }
-                else
-                    this.ListaMeni[i].Text = " ";
-        }
-
-        private void PopolniListaKupeni()
-        {
-            foreach (var item in this.ListaKupeni)
-                item.Text = " ";
         }
 
         private void UpdatePhone()
@@ -216,7 +208,6 @@ namespace SmetkaZaNaracka
         {
             this.UpdatePhone();
             this.PopolniListaMenija();
-            this.PopolniListaKupeni();
         }
 
         private void pictureBox4_MouseEnter(object sender, EventArgs e)
@@ -333,21 +324,15 @@ namespace SmetkaZaNaracka
 
         private void lblMeni1_Click(object sender, EventArgs e)
         {
-            int indS = -1;
-            for (int i = 0; i < this.ListaMeni.Count; i++)
-                if (this.ListaMeni[i].Equals(sender))
-                {
-                    indS = i;
-                    break;
-                }
-
-            this.CurrComponent = this.Restoran.GlavnoMeni.GetContent()[this.indMeni + indS];
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+                CurrMenu = lb.LblObject as MenuComponent;
             this.PopolniListaStavki();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-             if (this.CurrComponent.GetContent().Count > this.ListaStavki.Count)
+             if (CurrMenu != null && this.CurrMenu.GetContent().Count > this.ListaStavki.Count)
              {
                  if (this.indStavka != 0)
                      this.indStavka--;
@@ -357,9 +342,9 @@ namespace SmetkaZaNaracka
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            if (this.CurrComponent.GetContent().Count > this.ListaStavki.Count)
+            if (CurrMenu != null && this.CurrMenu.GetContent().Count > this.ListaStavki.Count)
             {
-                if (this.indStavka < this.CurrComponent.GetContent().Count - this.ListaStavki.Count)
+                if (this.indStavka < this.CurrMenu.GetContent().Count - this.ListaStavki.Count)
                     this.indStavka++;
                 this.PopolniListaStavki();
             }
@@ -374,6 +359,69 @@ namespace SmetkaZaNaracka
         private void pictureBox10_Click(object sender, EventArgs e)
         {
             this.lblKolicina.Text = (int.Parse(this.lblKolicina.Text) + 1).ToString();
+        }
+
+        private void lblStavka1_Click(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                MenuComponent mc = lb.LblObject as MenuComponent;
+                try
+                {
+                    CurrItem = mc.GetReference(CurrItem);
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+            if (CurrItem != null)
+            {
+                lblImeStavka.Text = CurrItem.GetName();
+                try
+                {
+                    lblCenaProizvod.Text = String.Format("{0} ден.",CurrItem.ComputeCost().ToString());
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            OrderComponent oc = new OrderComponent(CurrItem, int.Parse(lblKolicina.Text));
+            int i = 0;
+            for (i = 0; i < OrderList.Count; i++)
+                if (oc.Equals(OrderList[i]))
+                {
+                    OrderList[i].Quantity += oc.Quantity;
+                    break;
+                }
+            if(i == OrderList.Count)
+                OrderList.Add(oc);
+            PostaviNaracka();
+        }
+
+        private void PostaviNaracka()
+        {
+            int Vkupno = 0;
+            for (int i = 0; i < OrderList.Count && i < ListaKupeni.Count; i++)
+            {
+                ListaKupeni[i].UpdateObject(OrderList[i]);
+                Vkupno += OrderList[i].ComputePrice();
+                /*if (Restoran != null && OrderList[i + indKupeni].Equals(Restoran))
+                {
+                    labeli[i].Image = Resources.LabelBackgroundSelected;
+                    labeli[i].ForeColor = Color.SaddleBrown;
+                }
+                else
+                {
+                    labeli[i].Image = Resources.LabelBackground2;
+                    labeli[i].ForeColor = Color.Gold;
+                }*/
+            }
+            lblCena.Text = Vkupno.ToString();
         }
     }
 }

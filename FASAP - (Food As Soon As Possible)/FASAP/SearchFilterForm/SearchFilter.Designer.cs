@@ -687,9 +687,9 @@
             this.labelFASAP18.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP18.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP18.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP18.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP18.Image")));
+            this.labelFASAP18.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
             this.labelFASAP18.LblObject = null;
-            this.labelFASAP18.Location = new System.Drawing.Point(112, 38);
+            this.labelFASAP18.Location = new System.Drawing.Point(111, 37);
             this.labelFASAP18.Name = "labelFASAP18";
             this.labelFASAP18.Size = new System.Drawing.Size(95, 29);
             this.labelFASAP18.TabIndex = 32;
@@ -710,8 +710,6 @@
             this.pbIme.TabIndex = 33;
             this.pbIme.TabStop = false;
             this.pbIme.Click += new System.EventHandler(this.labelFASAP18_Click);
-            this.pbIme.MouseEnter += new System.EventHandler(this.labelFASAP19_MouseEnter);
-            this.pbIme.MouseLeave += new System.EventHandler(this.labelFASAP19_MouseLeave);
             // 
             // pbRejting
             // 
@@ -725,8 +723,6 @@
             this.pbRejting.TabIndex = 35;
             this.pbRejting.TabStop = false;
             this.pbRejting.Click += new System.EventHandler(this.labelFASAP19_Click);
-            this.pbRejting.MouseEnter += new System.EventHandler(this.labelFASAP19_MouseEnter);
-            this.pbRejting.MouseLeave += new System.EventHandler(this.labelFASAP19_MouseLeave);
             // 
             // labelFASAP19
             // 
@@ -735,7 +731,7 @@
             this.labelFASAP19.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP19.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP19.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP19.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP19.Image")));
+            this.labelFASAP19.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
             this.labelFASAP19.LblObject = null;
             this.labelFASAP19.Location = new System.Drawing.Point(250, 38);
             this.labelFASAP19.Name = "labelFASAP19";

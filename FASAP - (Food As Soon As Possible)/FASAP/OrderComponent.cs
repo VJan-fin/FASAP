@@ -38,7 +38,22 @@ namespace SmetkaZaNaracka
 
         public override string ToString()
         {
-            return String.Format("{0}\t{1}", this.GetName(), this.ComputePrice());
-        }
+            return String.Format("{0}......{1}", this.GetName(), this.ComputePrice());
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if (!(obj is OrderComponent))
+                return false;
+            OrderComponent oc = obj as OrderComponent;
+            return Item.Equals(oc.Item);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

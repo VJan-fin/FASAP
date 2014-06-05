@@ -328,12 +328,18 @@ namespace SmetkaZaNaracka
 
         private void labelFASAP19_MouseEnter(object sender, EventArgs e)
         {
+            LabelFASAP lb = sender as LabelFASAP;
             Cursor = Cursors.Hand;
+            lb.Image = Resources.LightButton___Copy;
+            lb.ForeColor = Color.SaddleBrown;
         }
 
         private void labelFASAP19_MouseLeave(object sender, EventArgs e)
         {
+            LabelFASAP lb = sender as LabelFASAP;
             Cursor = Cursors.Default;
+            lb.Image = Resources.DarkButton___Copy;
+            lb.ForeColor = Color.Khaki;
         }
 
         private void textBox1_VisibleChanged(object sender, EventArgs e)

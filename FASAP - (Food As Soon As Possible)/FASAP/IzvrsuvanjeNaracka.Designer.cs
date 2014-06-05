@@ -81,7 +81,8 @@
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.lblCena = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP16 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP6 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblCenaProizvod = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.flowLayoutPanelFasap1 = new SmetkaZaNaracka.FlowLayoutPanelFasap(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -474,6 +475,7 @@
             this.lblStavka6.Size = new System.Drawing.Size(75, 27);
             this.lblStavka6.TabIndex = 24;
             this.lblStavka6.Text = "МЕНИ ";
+            this.lblStavka6.Click += new System.EventHandler(this.lblStavka1_Click);
             // 
             // lblStavka5
             // 
@@ -489,6 +491,7 @@
             this.lblStavka5.Size = new System.Drawing.Size(75, 27);
             this.lblStavka5.TabIndex = 23;
             this.lblStavka5.Text = "МЕНИ ";
+            this.lblStavka5.Click += new System.EventHandler(this.lblStavka1_Click);
             // 
             // lblStavka4
             // 
@@ -504,6 +507,7 @@
             this.lblStavka4.Size = new System.Drawing.Size(75, 27);
             this.lblStavka4.TabIndex = 22;
             this.lblStavka4.Text = "МЕНИ ";
+            this.lblStavka4.Click += new System.EventHandler(this.lblStavka1_Click);
             // 
             // lblStavka3
             // 
@@ -519,6 +523,7 @@
             this.lblStavka3.Size = new System.Drawing.Size(75, 27);
             this.lblStavka3.TabIndex = 21;
             this.lblStavka3.Text = "МЕНИ ";
+            this.lblStavka3.Click += new System.EventHandler(this.lblStavka1_Click);
             // 
             // lblStavka2
             // 
@@ -534,6 +539,7 @@
             this.lblStavka2.Size = new System.Drawing.Size(75, 27);
             this.lblStavka2.TabIndex = 20;
             this.lblStavka2.Text = "МЕНИ ";
+            this.lblStavka2.Click += new System.EventHandler(this.lblStavka1_Click);
             // 
             // lblStavka1
             // 
@@ -549,6 +555,7 @@
             this.lblStavka1.Size = new System.Drawing.Size(75, 27);
             this.lblStavka1.TabIndex = 19;
             this.lblStavka1.Text = "МЕНИ ";
+            this.lblStavka1.Click += new System.EventHandler(this.lblStavka1_Click);
             // 
             // pictureBox8
             // 
@@ -589,7 +596,6 @@
             this.lblImeStavka.Name = "lblImeStavka";
             this.lblImeStavka.Size = new System.Drawing.Size(472, 104);
             this.lblImeStavka.TabIndex = 18;
-            this.lblImeStavka.Text = "Fajitas";
             // 
             // labelFASAP7
             // 
@@ -657,6 +663,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 24;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox14_Click);
             this.pictureBox12.MouseEnter += new System.EventHandler(this.pictureBox12_MouseEnter);
             this.pictureBox12.MouseLeave += new System.EventHandler(this.pictureBox12_MouseLeave);
             // 
@@ -670,6 +677,7 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 26;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
             this.pictureBox14.MouseEnter += new System.EventHandler(this.pictureBox12_MouseEnter);
             this.pictureBox14.MouseLeave += new System.EventHandler(this.pictureBox12_MouseLeave);
             // 
@@ -749,11 +757,11 @@
             this.lblKupeno6.ForeColor = System.Drawing.Color.White;
             this.lblKupeno6.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno6.Image")));
             this.lblKupeno6.LblObject = null;
-            this.lblKupeno6.Location = new System.Drawing.Point(164, 305);
+            this.lblKupeno6.Location = new System.Drawing.Point(179, 305);
             this.lblKupeno6.Name = "lblKupeno6";
-            this.lblKupeno6.Size = new System.Drawing.Size(69, 27);
+            this.lblKupeno6.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno6.TabIndex = 24;
-            this.lblKupeno6.Text = "МЕНИ";
+            this.lblKupeno6.Text = ": : ";
             // 
             // lblKupeno5
             // 
@@ -764,11 +772,11 @@
             this.lblKupeno5.ForeColor = System.Drawing.Color.White;
             this.lblKupeno5.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno5.Image")));
             this.lblKupeno5.LblObject = null;
-            this.lblKupeno5.Location = new System.Drawing.Point(164, 256);
+            this.lblKupeno5.Location = new System.Drawing.Point(179, 256);
             this.lblKupeno5.Name = "lblKupeno5";
-            this.lblKupeno5.Size = new System.Drawing.Size(69, 27);
+            this.lblKupeno5.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno5.TabIndex = 23;
-            this.lblKupeno5.Text = "МЕНИ";
+            this.lblKupeno5.Text = ": : ";
             // 
             // lblKupeno4
             // 
@@ -779,11 +787,11 @@
             this.lblKupeno4.ForeColor = System.Drawing.Color.White;
             this.lblKupeno4.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno4.Image")));
             this.lblKupeno4.LblObject = null;
-            this.lblKupeno4.Location = new System.Drawing.Point(164, 207);
+            this.lblKupeno4.Location = new System.Drawing.Point(179, 207);
             this.lblKupeno4.Name = "lblKupeno4";
-            this.lblKupeno4.Size = new System.Drawing.Size(69, 27);
+            this.lblKupeno4.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno4.TabIndex = 22;
-            this.lblKupeno4.Text = "МЕНИ";
+            this.lblKupeno4.Text = ": : ";
             // 
             // lblKupeno3
             // 
@@ -794,11 +802,11 @@
             this.lblKupeno3.ForeColor = System.Drawing.Color.White;
             this.lblKupeno3.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno3.Image")));
             this.lblKupeno3.LblObject = null;
-            this.lblKupeno3.Location = new System.Drawing.Point(164, 158);
+            this.lblKupeno3.Location = new System.Drawing.Point(179, 158);
             this.lblKupeno3.Name = "lblKupeno3";
-            this.lblKupeno3.Size = new System.Drawing.Size(69, 27);
+            this.lblKupeno3.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno3.TabIndex = 21;
-            this.lblKupeno3.Text = "МЕНИ";
+            this.lblKupeno3.Text = ": : ";
             // 
             // lblKupeno2
             // 
@@ -809,11 +817,11 @@
             this.lblKupeno2.ForeColor = System.Drawing.Color.White;
             this.lblKupeno2.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno2.Image")));
             this.lblKupeno2.LblObject = null;
-            this.lblKupeno2.Location = new System.Drawing.Point(164, 109);
+            this.lblKupeno2.Location = new System.Drawing.Point(179, 109);
             this.lblKupeno2.Name = "lblKupeno2";
-            this.lblKupeno2.Size = new System.Drawing.Size(69, 27);
+            this.lblKupeno2.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno2.TabIndex = 20;
-            this.lblKupeno2.Text = "МЕНИ";
+            this.lblKupeno2.Text = ": : ";
             // 
             // lblKupeno1
             // 
@@ -824,11 +832,11 @@
             this.lblKupeno1.ForeColor = System.Drawing.Color.White;
             this.lblKupeno1.Image = ((System.Drawing.Image)(resources.GetObject("lblKupeno1.Image")));
             this.lblKupeno1.LblObject = null;
-            this.lblKupeno1.Location = new System.Drawing.Point(164, 60);
+            this.lblKupeno1.Location = new System.Drawing.Point(179, 60);
             this.lblKupeno1.Name = "lblKupeno1";
-            this.lblKupeno1.Size = new System.Drawing.Size(69, 27);
+            this.lblKupeno1.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno1.TabIndex = 19;
-            this.lblKupeno1.Text = "МЕНИ";
+            this.lblKupeno1.Text = ": : ";
             // 
             // pictureBox17
             // 
@@ -854,7 +862,7 @@
             this.lblCena.Name = "lblCena";
             this.lblCena.Size = new System.Drawing.Size(238, 61);
             this.lblCena.TabIndex = 30;
-            this.lblCena.Text = "1020000 ";
+            this.lblCena.Text = "0";
             this.lblCena.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelFASAP16
@@ -871,26 +879,35 @@
             this.labelFASAP16.TabIndex = 31;
             this.labelFASAP16.Text = "Вкупно:";
             // 
-            // labelFASAP6
+            // lblCenaProizvod
             // 
-            this.labelFASAP6.AutoSize = true;
-            this.labelFASAP6.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP6.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFASAP6.ForeColor = System.Drawing.Color.White;
-            this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
-            this.labelFASAP6.LblObject = null;
-            this.labelFASAP6.Location = new System.Drawing.Point(1178, 183);
-            this.labelFASAP6.Name = "labelFASAP6";
-            this.labelFASAP6.Size = new System.Drawing.Size(169, 43);
-            this.labelFASAP6.TabIndex = 32;
-            this.labelFASAP6.Text = "620 ден.";
+            this.lblCenaProizvod.AutoSize = true;
+            this.lblCenaProizvod.BackColor = System.Drawing.Color.Transparent;
+            this.lblCenaProizvod.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCenaProizvod.ForeColor = System.Drawing.Color.White;
+            this.lblCenaProizvod.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaProizvod.Image")));
+            this.lblCenaProizvod.LblObject = null;
+            this.lblCenaProizvod.Location = new System.Drawing.Point(1178, 183);
+            this.lblCenaProizvod.Name = "lblCenaProizvod";
+            this.lblCenaProizvod.Size = new System.Drawing.Size(127, 43);
+            this.lblCenaProizvod.TabIndex = 32;
+            this.lblCenaProizvod.Text = "0 ден.";
+            // 
+            // flowLayoutPanelFasap1
+            // 
+            this.flowLayoutPanelFasap1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelFasap1.Location = new System.Drawing.Point(21, 10);
+            this.flowLayoutPanelFasap1.Name = "flowLayoutPanelFasap1";
+            this.flowLayoutPanelFasap1.Size = new System.Drawing.Size(1155, 51);
+            this.flowLayoutPanelFasap1.TabIndex = 33;
             // 
             // IzvrsuvanjeNaracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.labelFASAP6);
+            this.Controls.Add(this.flowLayoutPanelFasap1);
+            this.Controls.Add(this.lblCenaProizvod);
             this.Controls.Add(this.labelFASAP16);
             this.Controls.Add(this.lblCena);
             this.Controls.Add(this.dbLayoutPanel4);
@@ -950,7 +967,8 @@
             this.Controls.SetChildIndex(this.dbLayoutPanel4, 0);
             this.Controls.SetChildIndex(this.lblCena, 0);
             this.Controls.SetChildIndex(this.labelFASAP16, 0);
-            this.Controls.SetChildIndex(this.labelFASAP6, 0);
+            this.Controls.SetChildIndex(this.lblCenaProizvod, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1030,6 +1048,7 @@
         private System.Windows.Forms.PictureBox pictureBox17;
         private LabelFASAP lblCena;
         private LabelFASAP labelFASAP16;
-        private LabelFASAP labelFASAP6;
+        private LabelFASAP lblCenaProizvod;
+        private FlowLayoutPanelFasap flowLayoutPanelFasap1;
     }
 }
