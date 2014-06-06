@@ -16,6 +16,8 @@ namespace SmetkaZaNaracka
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            this.Opacity = 0;
+            timer1.Start();
         }
 
         public MessageBoxForm(string txt, bool cancel = true)
@@ -28,6 +30,8 @@ namespace SmetkaZaNaracka
                 this.buttonFASAPPotvrdi.Size = new Size(this.buttonFASAPPotvrdi.Width * 2, this.buttonFASAPPotvrdi.Height);
                 this.buttonFASAPOtkazi.Visible = false;
             }
+            this.Opacity = 0;
+            timer1.Start();
         }
 
         private void buttonFASAPPotvrdi_Click(object sender, EventArgs e)
@@ -64,6 +68,14 @@ namespace SmetkaZaNaracka
         {
             this.buttonFASAPOtkazi.Image = Resources.DarkButton___Copy;
             this.buttonFASAPOtkazi.ForeColor = Color.Khaki;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Opacity < 1)
+                Opacity += 0.1;
+            else 
+                timer1.Stop();
         }
     }
 }

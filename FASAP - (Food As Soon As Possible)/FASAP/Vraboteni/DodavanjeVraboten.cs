@@ -24,6 +24,7 @@ namespace SmetkaZaNaracka
             InitializeComponent();
             this.Restoran = restoran;
             this.Conn = conn;
+            this.Opacity = 0;
             this.NajdiID();
             this.PopolniPozicii();
         }
@@ -42,6 +43,7 @@ namespace SmetkaZaNaracka
             Conn.ConnectionString = oradb;
             Conn.Open();
 
+            this.Opacity = 0;
             this.NajdiID();
             this.PopolniPozicii();
         }

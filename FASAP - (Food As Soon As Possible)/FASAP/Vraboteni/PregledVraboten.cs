@@ -55,6 +55,8 @@ namespace SmetkaZaNaracka
 
         private void Init()
         {
+            this.Opacity = 0;
+
             this.Nevidlivi = new List<LabelFASAP>();
             this.Nevidlivi.Add(lblZad1);
             this.Nevidlivi.Add(lblZad2);
@@ -495,6 +497,11 @@ namespace SmetkaZaNaracka
             this.PopolniInfo();
         }
 
+        /// <summary>
+        /// Otstranuvanje na cursor-ot od kontrolite koga ne e
+        /// vozmozno da se menuva sodrzinata
+        /// </summary>
+        /// <param name="sender"></param>
         private void LoseCursor(object sender)
         {
             (sender as TextBox).Enabled = false;
