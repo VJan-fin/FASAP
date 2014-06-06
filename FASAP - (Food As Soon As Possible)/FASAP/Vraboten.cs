@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
+using SmetkaZaNaracka.Narachki;
 
 namespace SmetkaZaNaracka
 {
@@ -23,6 +25,8 @@ namespace SmetkaZaNaracka
            this.Prezime = prezime;
        }
 
-       public abstract void PrevzemiNaracka();
+       public abstract bool PrevzemiNaracka(OracleConnection conn, int ResID);
+
+       public abstract List<Naracka> ListaNaracki(OracleConnection conn, int resID);
     }
 }

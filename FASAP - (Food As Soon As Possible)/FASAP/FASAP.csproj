@@ -143,6 +143,9 @@
     <Compile Include="Meni\Meni.cs" />
     <Compile Include="Meni\MenuComponent.cs" />
     <Compile Include="Meni\OrderComponent.cs" />
+    <Compile Include="Naracki\Naracka.cs" />
+    <Compile Include="Naracki\Online.cs" />
+    <Compile Include="Naracki\Onsite.cs" />
     <Compile Include="PomosniKlasi\ButtonFASAP.cs">
       <SubType>Component</SubType>
     </Compile>

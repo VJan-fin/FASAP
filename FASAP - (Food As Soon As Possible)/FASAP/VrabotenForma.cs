@@ -37,8 +37,8 @@ namespace SmetkaZaNaracka
                 imeIPrezime = dr.GetString(0) + " " + dr.GetString(1);
             }
              * */
-            string podatoci = Vraboten.Ime + " " + Vraboten.Prezime + " " + Vraboten.Pozicija + " " + Vraboten.RestoranID + " ";
-            this.label2.Text = podatoci;
+            //string podatoci = Vraboten.Ime + " " + Vraboten.Prezime + " " + Vraboten.Pozicija + " " + Vraboten.RestoranID + " ";
+            //this.label2.Text = podatoci;
         }
     }
 }

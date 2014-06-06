@@ -14,7 +14,12 @@ namespace SmetkaZaNaracka
 
         public Dostavuvac() { }
 
-        public override void PrevzemiNaracka()
+        public override bool PrevzemiNaracka(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<Narachki.Naracka> ListaNaracki(Oracle.DataAccess.Client.OracleConnection conn, int resID)
         {
             throw new NotImplementedException();
         }
