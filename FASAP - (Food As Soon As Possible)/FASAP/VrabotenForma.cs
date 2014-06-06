@@ -10,7 +10,7 @@ using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
-    public partial class VrabotenForma : Form
+    public partial class VrabotenForma : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
         private Vraboten Vraboten { get; set; }
