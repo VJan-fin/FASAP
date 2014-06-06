@@ -229,6 +229,7 @@
             this.tbDen.Size = new System.Drawing.Size(65, 35);
             this.tbDen.TabIndex = 20;
             this.tbDen.TabStop = false;
+            this.tbDen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbDen.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // labelFASAP8
@@ -256,6 +257,7 @@
             this.tbMesec.Size = new System.Drawing.Size(65, 35);
             this.tbMesec.TabIndex = 22;
             this.tbMesec.TabStop = false;
+            this.tbMesec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbMesec.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // labelFASAP9
@@ -283,6 +285,7 @@
             this.tbGodina.Size = new System.Drawing.Size(106, 35);
             this.tbGodina.TabIndex = 24;
             this.tbGodina.TabStop = false;
+            this.tbGodina.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbGodina.Validating += new System.ComponentModel.CancelEventHandler(this.tbGodina_Validating);
             // 
             // labelFASAP6

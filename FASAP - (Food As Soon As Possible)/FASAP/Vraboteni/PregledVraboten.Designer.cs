@@ -42,8 +42,6 @@
             this.tbPlata = new System.Windows.Forms.TextBox();
             this.labelFASAP11 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP10 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP6 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.tbGrad = new System.Windows.Forms.TextBox();
             this.labelFASAP9 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.tbGodinaRagjanje = new System.Windows.Forms.TextBox();
             this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -76,8 +74,14 @@
             this.tbVkNaracki = new System.Windows.Forms.TextBox();
             this.buttonOtkazi = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.buttonIzmeni = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.lblStatus = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.labelFASAP12 = new SmetkaZaNaracka.LabelFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPozicija
@@ -103,6 +107,9 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 73;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             // 
             // pictureBox4
             // 
@@ -114,6 +121,9 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 72;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             // 
             // lblZab
             // 
@@ -215,6 +225,9 @@
             this.tbPlata.Size = new System.Drawing.Size(150, 32);
             this.tbPlata.TabIndex = 65;
             this.tbPlata.TabStop = false;
+            this.tbPlata.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbPlata.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbPlata.Validating += new System.ComponentModel.CancelEventHandler(this.tbPlata_Validating);
             // 
             // labelFASAP11
             // 
@@ -246,32 +259,6 @@
             this.labelFASAP10.TabIndex = 63;
             this.labelFASAP10.Text = "Плата   ";
             // 
-            // labelFASAP6
-            // 
-            this.labelFASAP6.AutoSize = true;
-            this.labelFASAP6.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP6.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFASAP6.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
-            this.labelFASAP6.LblObject = null;
-            this.labelFASAP6.Location = new System.Drawing.Point(494, 335);
-            this.labelFASAP6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelFASAP6.Name = "labelFASAP6";
-            this.labelFASAP6.Size = new System.Drawing.Size(78, 27);
-            this.labelFASAP6.TabIndex = 62;
-            this.labelFASAP6.Text = "Град   ";
-            // 
-            // tbGrad
-            // 
-            this.tbGrad.BackColor = System.Drawing.Color.Sienna;
-            this.tbGrad.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbGrad.ForeColor = System.Drawing.Color.Khaki;
-            this.tbGrad.Location = new System.Drawing.Point(499, 373);
-            this.tbGrad.Name = "tbGrad";
-            this.tbGrad.Size = new System.Drawing.Size(311, 32);
-            this.tbGrad.TabIndex = 61;
-            this.tbGrad.TabStop = false;
-            // 
             // labelFASAP9
             // 
             this.labelFASAP9.AutoSize = true;
@@ -290,13 +277,16 @@
             // tbGodinaRagjanje
             // 
             this.tbGodinaRagjanje.BackColor = System.Drawing.Color.Sienna;
-            this.tbGodinaRagjanje.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbGodinaRagjanje.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbGodinaRagjanje.ForeColor = System.Drawing.Color.Khaki;
             this.tbGodinaRagjanje.Location = new System.Drawing.Point(718, 261);
             this.tbGodinaRagjanje.Name = "tbGodinaRagjanje";
             this.tbGodinaRagjanje.Size = new System.Drawing.Size(92, 32);
             this.tbGodinaRagjanje.TabIndex = 59;
             this.tbGodinaRagjanje.TabStop = false;
+            this.tbGodinaRagjanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbGodinaRagjanje.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbGodinaRagjanje.Validating += new System.ComponentModel.CancelEventHandler(this.tbGodina_Validating);
             // 
             // labelFASAP8
             // 
@@ -316,13 +306,16 @@
             // tbMesecRagjanje
             // 
             this.tbMesecRagjanje.BackColor = System.Drawing.Color.Sienna;
-            this.tbMesecRagjanje.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbMesecRagjanje.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbMesecRagjanje.ForeColor = System.Drawing.Color.Khaki;
             this.tbMesecRagjanje.Location = new System.Drawing.Point(607, 261);
             this.tbMesecRagjanje.Name = "tbMesecRagjanje";
             this.tbMesecRagjanje.Size = new System.Drawing.Size(52, 32);
             this.tbMesecRagjanje.TabIndex = 57;
             this.tbMesecRagjanje.TabStop = false;
+            this.tbMesecRagjanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbMesecRagjanje.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbMesecRagjanje.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // labelFASAP7
             // 
@@ -342,13 +335,16 @@
             // tbDenRagjanje
             // 
             this.tbDenRagjanje.BackColor = System.Drawing.Color.Sienna;
-            this.tbDenRagjanje.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbDenRagjanje.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbDenRagjanje.ForeColor = System.Drawing.Color.Khaki;
             this.tbDenRagjanje.Location = new System.Drawing.Point(496, 261);
             this.tbDenRagjanje.Name = "tbDenRagjanje";
             this.tbDenRagjanje.Size = new System.Drawing.Size(52, 32);
             this.tbDenRagjanje.TabIndex = 55;
             this.tbDenRagjanje.TabStop = false;
+            this.tbDenRagjanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbDenRagjanje.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbDenRagjanje.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // labelFASAP5
             // 
@@ -376,6 +372,7 @@
             this.tbAdresa.Size = new System.Drawing.Size(308, 96);
             this.tbAdresa.TabIndex = 53;
             this.tbAdresa.TabStop = false;
+            this.tbAdresa.Click += new System.EventHandler(this.tbIme_Click);
             // 
             // labelFASAP4
             // 
@@ -395,13 +392,15 @@
             // tbEmbg
             // 
             this.tbEmbg.BackColor = System.Drawing.Color.Sienna;
-            this.tbEmbg.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbEmbg.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbEmbg.ForeColor = System.Drawing.Color.Khaki;
             this.tbEmbg.Location = new System.Drawing.Point(65, 465);
             this.tbEmbg.Name = "tbEmbg";
             this.tbEmbg.Size = new System.Drawing.Size(311, 32);
             this.tbEmbg.TabIndex = 51;
             this.tbEmbg.TabStop = false;
+            this.tbEmbg.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbEmbg.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmbg_Validating);
             // 
             // labelFASAP3
             // 
@@ -421,13 +420,15 @@
             // tbPrezime
             // 
             this.tbPrezime.BackColor = System.Drawing.Color.Sienna;
-            this.tbPrezime.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbPrezime.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPrezime.ForeColor = System.Drawing.Color.Khaki;
             this.tbPrezime.Location = new System.Drawing.Point(65, 335);
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(311, 32);
             this.tbPrezime.TabIndex = 49;
             this.tbPrezime.TabStop = false;
+            this.tbPrezime.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
             // 
             // labelFASAP2
             // 
@@ -477,13 +478,15 @@
             // tbIme
             // 
             this.tbIme.BackColor = System.Drawing.Color.Sienna;
-            this.tbIme.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbIme.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbIme.ForeColor = System.Drawing.Color.Khaki;
             this.tbIme.Location = new System.Drawing.Point(65, 210);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(311, 32);
             this.tbIme.TabIndex = 45;
             this.tbIme.TabStop = false;
+            this.tbIme.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbIme.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
             // 
             // labelFASAP18
             // 
@@ -533,13 +536,16 @@
             // tbGodVrab
             // 
             this.tbGodVrab.BackColor = System.Drawing.Color.Sienna;
-            this.tbGodVrab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbGodVrab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbGodVrab.ForeColor = System.Drawing.Color.Khaki;
             this.tbGodVrab.Location = new System.Drawing.Point(718, 540);
             this.tbGodVrab.Name = "tbGodVrab";
             this.tbGodVrab.Size = new System.Drawing.Size(92, 32);
             this.tbGodVrab.TabIndex = 80;
             this.tbGodVrab.TabStop = false;
+            this.tbGodVrab.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbGodVrab.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbGodVrab.Validating += new System.ComponentModel.CancelEventHandler(this.tbGodina_Validating);
             // 
             // labelFASAP21
             // 
@@ -559,13 +565,16 @@
             // tbMesecVrab
             // 
             this.tbMesecVrab.BackColor = System.Drawing.Color.Sienna;
-            this.tbMesecVrab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbMesecVrab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbMesecVrab.ForeColor = System.Drawing.Color.Khaki;
             this.tbMesecVrab.Location = new System.Drawing.Point(607, 540);
             this.tbMesecVrab.Name = "tbMesecVrab";
             this.tbMesecVrab.Size = new System.Drawing.Size(52, 32);
             this.tbMesecVrab.TabIndex = 78;
             this.tbMesecVrab.TabStop = false;
+            this.tbMesecVrab.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbMesecVrab.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbMesecVrab.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // labelFASAP22
             // 
@@ -585,13 +594,16 @@
             // tbDenVrab
             // 
             this.tbDenVrab.BackColor = System.Drawing.Color.Sienna;
-            this.tbDenVrab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbDenVrab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbDenVrab.ForeColor = System.Drawing.Color.Khaki;
             this.tbDenVrab.Location = new System.Drawing.Point(496, 540);
             this.tbDenVrab.Name = "tbDenVrab";
             this.tbDenVrab.Size = new System.Drawing.Size(52, 32);
             this.tbDenVrab.TabIndex = 76;
             this.tbDenVrab.TabStop = false;
+            this.tbDenVrab.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbDenVrab.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbDenVrab.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // labelFASAP23
             // 
@@ -615,9 +627,12 @@
             this.tbStaz.ForeColor = System.Drawing.Color.Khaki;
             this.tbStaz.Location = new System.Drawing.Point(480, 656);
             this.tbStaz.Name = "tbStaz";
+            this.tbStaz.ReadOnly = true;
             this.tbStaz.Size = new System.Drawing.Size(150, 32);
             this.tbStaz.TabIndex = 83;
             this.tbStaz.TabStop = false;
+            this.tbStaz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbStaz.Click += new System.EventHandler(this.tbStaz_Click);
             // 
             // labelFASAP24
             // 
@@ -627,7 +642,7 @@
             this.labelFASAP24.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP24.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP24.Image")));
             this.labelFASAP24.LblObject = null;
-            this.labelFASAP24.Location = new System.Drawing.Point(920, 335);
+            this.labelFASAP24.Location = new System.Drawing.Point(920, 452);
             this.labelFASAP24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFASAP24.Name = "labelFASAP24";
             this.labelFASAP24.Size = new System.Drawing.Size(191, 27);
@@ -639,11 +654,14 @@
             this.tbOdmor.BackColor = System.Drawing.Color.Sienna;
             this.tbOdmor.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbOdmor.ForeColor = System.Drawing.Color.Khaki;
-            this.tbOdmor.Location = new System.Drawing.Point(925, 373);
+            this.tbOdmor.Location = new System.Drawing.Point(925, 490);
             this.tbOdmor.Name = "tbOdmor";
             this.tbOdmor.Size = new System.Drawing.Size(186, 32);
             this.tbOdmor.TabIndex = 85;
             this.tbOdmor.TabStop = false;
+            this.tbOdmor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbOdmor.Click += new System.EventHandler(this.tbIme_Click);
+            this.tbOdmor.Validating += new System.ComponentModel.CancelEventHandler(this.tbOdmor_Validating);
             // 
             // labelFASAP25
             // 
@@ -653,7 +671,7 @@
             this.labelFASAP25.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP25.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP25.Image")));
             this.labelFASAP25.LblObject = null;
-            this.labelFASAP25.Location = new System.Drawing.Point(920, 452);
+            this.labelFASAP25.Location = new System.Drawing.Point(920, 340);
             this.labelFASAP25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFASAP25.Name = "labelFASAP25";
             this.labelFASAP25.Size = new System.Drawing.Size(220, 27);
@@ -665,11 +683,14 @@
             this.tbVkNaracki.BackColor = System.Drawing.Color.Sienna;
             this.tbVkNaracki.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbVkNaracki.ForeColor = System.Drawing.Color.Khaki;
-            this.tbVkNaracki.Location = new System.Drawing.Point(925, 490);
+            this.tbVkNaracki.Location = new System.Drawing.Point(925, 378);
             this.tbVkNaracki.Name = "tbVkNaracki";
+            this.tbVkNaracki.ReadOnly = true;
             this.tbVkNaracki.Size = new System.Drawing.Size(186, 32);
             this.tbVkNaracki.TabIndex = 87;
             this.tbVkNaracki.TabStop = false;
+            this.tbVkNaracki.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbVkNaracki.Click += new System.EventHandler(this.tbStaz_Click);
             // 
             // buttonOtkazi
             // 
@@ -685,6 +706,7 @@
             this.buttonOtkazi.TabIndex = 90;
             this.buttonOtkazi.Text = "Откажи";
             this.buttonOtkazi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonOtkazi.Click += new System.EventHandler(this.buttonOtkazi_Click);
             this.buttonOtkazi.MouseEnter += new System.EventHandler(this.buttonOtkazi_MouseEnter);
             this.buttonOtkazi.MouseLeave += new System.EventHandler(this.buttonOtkazi_MouseLeave);
             // 
@@ -701,14 +723,75 @@
             this.buttonIzmeni.TabIndex = 89;
             this.buttonIzmeni.Text = "Измени";
             this.buttonIzmeni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonIzmeni.Click += new System.EventHandler(this.buttonIzmeni_Click);
             this.buttonIzmeni.MouseEnter += new System.EventHandler(this.buttonIzmeni_MouseEnter);
             this.buttonIzmeni.MouseLeave += new System.EventHandler(this.buttonIzmeni_MouseLeave);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Khaki;
+            this.lblStatus.Image = ((System.Drawing.Image)(resources.GetObject("lblStatus.Image")));
+            this.lblStatus.LblObject = null;
+            this.lblStatus.Location = new System.Drawing.Point(494, 381);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(252, 31);
+            this.lblStatus.TabIndex = 94;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
+            this.pictureBox7.Location = new System.Drawing.Point(749, 379);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 35);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 93;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox7.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
+            this.pictureBox7.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowLeft;
+            this.pictureBox6.Location = new System.Drawing.Point(458, 378);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(31, 35);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 92;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
+            // 
+            // labelFASAP12
+            // 
+            this.labelFASAP12.AutoSize = true;
+            this.labelFASAP12.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP12.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFASAP12.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP12.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP12.Image")));
+            this.labelFASAP12.LblObject = null;
+            this.labelFASAP12.Location = new System.Drawing.Point(478, 325);
+            this.labelFASAP12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFASAP12.Name = "labelFASAP12";
+            this.labelFASAP12.Size = new System.Drawing.Size(96, 27);
+            this.labelFASAP12.TabIndex = 91;
+            this.labelFASAP12.Text = "Статус   ";
             // 
             // PregledVraboten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.labelFASAP12);
             this.Controls.Add(this.buttonOtkazi);
             this.Controls.Add(this.buttonIzmeni);
             this.Controls.Add(this.labelFASAP25);
@@ -737,8 +820,6 @@
             this.Controls.Add(this.tbPlata);
             this.Controls.Add(this.labelFASAP11);
             this.Controls.Add(this.labelFASAP10);
-            this.Controls.Add(this.labelFASAP6);
-            this.Controls.Add(this.tbGrad);
             this.Controls.Add(this.labelFASAP9);
             this.Controls.Add(this.tbGodinaRagjanje);
             this.Controls.Add(this.labelFASAP8);
@@ -775,8 +856,6 @@
             this.Controls.SetChildIndex(this.labelFASAP8, 0);
             this.Controls.SetChildIndex(this.tbGodinaRagjanje, 0);
             this.Controls.SetChildIndex(this.labelFASAP9, 0);
-            this.Controls.SetChildIndex(this.tbGrad, 0);
-            this.Controls.SetChildIndex(this.labelFASAP6, 0);
             this.Controls.SetChildIndex(this.labelFASAP10, 0);
             this.Controls.SetChildIndex(this.labelFASAP11, 0);
             this.Controls.SetChildIndex(this.tbPlata, 0);
@@ -805,8 +884,14 @@
             this.Controls.SetChildIndex(this.labelFASAP25, 0);
             this.Controls.SetChildIndex(this.buttonIzmeni, 0);
             this.Controls.SetChildIndex(this.buttonOtkazi, 0);
+            this.Controls.SetChildIndex(this.labelFASAP12, 0);
+            this.Controls.SetChildIndex(this.pictureBox6, 0);
+            this.Controls.SetChildIndex(this.pictureBox7, 0);
+            this.Controls.SetChildIndex(this.lblStatus, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -826,8 +911,6 @@
         private System.Windows.Forms.TextBox tbPlata;
         private LabelFASAP labelFASAP11;
         private LabelFASAP labelFASAP10;
-        private LabelFASAP labelFASAP6;
-        private System.Windows.Forms.TextBox tbGrad;
         private LabelFASAP labelFASAP9;
         private System.Windows.Forms.TextBox tbGodinaRagjanje;
         private LabelFASAP labelFASAP8;
@@ -860,5 +943,9 @@
         private System.Windows.Forms.TextBox tbVkNaracki;
         private ButtonFASAP buttonOtkazi;
         private ButtonFASAP buttonIzmeni;
+        private LabelFASAP lblStatus;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private LabelFASAP labelFASAP12;
     }
 }
