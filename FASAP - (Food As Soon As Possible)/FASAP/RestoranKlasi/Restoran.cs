@@ -13,12 +13,12 @@ namespace SmetkaZaNaracka
         public string Ulica { get; set; }
         public string Grad { get; set; }
         public string RabotnoVreme { get; set; }
-        public int Kapacitet { get; set; }
-        public int BrojMasi { get; set; }
-        public int SlobodniMasi { get; set; }
-        public decimal CenaZaDostava { get; set; }
-        public decimal PragZaDostava { get; set; }
-        public DateTime DatumNaOtvoranje { get; set; }
+        public int? Kapacitet { get; set; }
+        public int? BrojMasi { get; set; }
+        public int? SlobodniMasi { get; set; }
+        public int? CenaZaDostava { get; set; }
+        public int? PragZaDostava { get; set; }
+        public DateTime? DatumNaOtvoranje { get; set; }
         public string Kategorija { get; set; }
         public double Rejting { get; set; }
         public List<Telefon> Kontakt { get; set; }

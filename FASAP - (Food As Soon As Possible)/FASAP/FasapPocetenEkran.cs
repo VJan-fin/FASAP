@@ -64,7 +64,10 @@ namespace SmetkaZaNaracka
             cmd.CommandType = CommandType.Text;
             dr = cmd.ExecuteReader();
             while (dr.Read())
+            {
+                if(!dr.IsDBNull(0))
                 lbGrad.Items.Add(dr.GetString(0));
+            }
 
             sql = "Select * from RESTORAN"; // C#
             cmd = new OracleCommand(sql, Conn);
@@ -76,15 +79,49 @@ namespace SmetkaZaNaracka
                 res = new Restoran();
                 res.RestoranID = (int)dr.GetValue(0);
                 res.Ime = dr.GetString(2);
-                res.Ulica = dr.GetString(3);
-                res.Grad = dr.GetString(4);
+                if (!dr.IsDBNull(3))
+                {
+                    res.Ulica = dr.GetString(3);
+                }
+                else res.Ulica = "";
+                if (!dr.IsDBNull(4))
+                {
+                    res.Grad = dr.GetString(4);
+                }
+                else res.Grad = "";
+              
                 res.Rejting = (float)dr.GetValue(5);
-                res.RabotnoVreme = dr.GetString(6);
-                res.Kapacitet = dr.GetInt16(7);
-                res.BrojMasi = dr.GetInt16(8);
-                res.CenaZaDostava = dr.GetInt16(9);
-                res.PragZaDostava = dr.GetInt16(9);
-                res.DatumNaOtvoranje = dr.GetDateTime(11);
+                if (!dr.IsDBNull(6))
+                {
+                    res.RabotnoVreme = dr.GetString(6);
+                }
+                else res.RabotnoVreme = "";
+                if (!dr.IsDBNull(7))
+                {
+                    res.Kapacitet = dr.GetInt16(7);
+                }
+                else res.Kapacitet =null;
+                if (!dr.IsDBNull(8))
+                {
+                    res.BrojMasi = dr.GetInt16(8);
+                }
+                else res.BrojMasi = null;
+                if (!dr.IsDBNull(9))
+                {
+                    res.CenaZaDostava = dr.GetInt16(9);
+                }
+                else res.CenaZaDostava =null;
+                if (!dr.IsDBNull(10))
+                {
+                    res.PragZaDostava = dr.GetInt16(10);
+                }
+                else res.PragZaDostava = null;
+                if (!dr.IsDBNull(11))
+                {
+                    res.DatumNaOtvoranje = dr.GetDateTime(11);
+                }
+                else res.DatumNaOtvoranje = null;
+              
                 res.Kategorija = dr.GetString(12);
                 Restorani.Add(res);
                 lbRestorani.Items.Add(res);

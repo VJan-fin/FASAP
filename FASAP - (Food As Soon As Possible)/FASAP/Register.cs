@@ -37,7 +37,7 @@ namespace SmetkaZaNaracka
         }
 
         private void DodadiVoDBRestoran(){
-            string insertRest = @"INSERT INTO RESTORAN (RESTORAN_ID, IME_RESTORAN, KATEGORIJA, ULICA, GRAD, RABOTNO_VREME, KAPACITET, BROJ_MASI, CENA_ZA_DOSTAVA, DATUM_NA_OTVORANJE) VALUES (:REST_ID, :IME, :KAT, :UL, :GRAD, :RAB, :KAP, :MASI, :DOSTAVA, :TO_DATE(:DAT, 'dd/MM/yyyy'))";
+            string insertRest = @"INSERT INTO RESTORAN (RESTORAN_ID, IME_RESTORAN, KATEGORIJA, ULICA, GRAD, RABOTNO_VREME, KAPACITET, BROJ_MASI, CENA_ZA_DOSTAVA, DATUM_NA_OTVORANJE) VALUES (:REST_ID, :IME, :KAT, :UL, :GRAD, :RAB, :KAP, :MASI, :DOSTAVA, :DATUM)";
             OracleCommand cmd = new OracleCommand(insertRest, Conn);
 
             OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
@@ -89,9 +89,13 @@ namespace SmetkaZaNaracka
 
             cmd.Parameters.Add(prm);
             //
-            prm = new OracleParameter("DAT", OracleDbType.Date);
+            prm = new OracleParameter("DATUM", OracleDbType.Date);
             if (tbDatum.Text.Trim() != "")
-                prm.Value = this.tbDatum.Text.Trim();
+            {
+                DateTime dt=new DateTime(2005,5,2);
+                 prm.Value = dt;
+            }
+               
             else
                 prm.Value = null;
             cmd.Parameters.Add(prm);
@@ -132,7 +136,8 @@ namespace SmetkaZaNaracka
             cmd.Parameters.Add(prm);
 
             prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = 0;
+            int vrab = 0;
+            prm.Value = vrab;
             cmd.Parameters.Add(prm);
 
             cmd.ExecuteNonQuery();
