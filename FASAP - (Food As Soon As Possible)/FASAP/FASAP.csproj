@@ -207,7 +207,9 @@
     <Compile Include="Telefon.cs" />
     <Compile Include="RestoranKlasi\Restoran.cs" />
     <Compile Include="Vraboten.cs" />
-    <Compile Include="VrabotenForma.cs" />
+    <Compile Include="VrabotenForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VrabotenForma.designer.cs">
       <DependentUpon>VrabotenForma.cs</DependentUpon>
     </Compile>
