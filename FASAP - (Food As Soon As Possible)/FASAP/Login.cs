@@ -92,9 +92,12 @@ namespace SmetkaZaNaracka
                     pozicija = dr.GetString(3);
                     RestoranId = (int)dr.GetValue(4);
 
-                    vraboten = new Vraboten(VrabotenId, RestoranId, ime, prezime, pozicija);
+                    if (pozicija.ToLower() == "доставувач")
+                        vraboten = new Dostavuvac(VrabotenId, RestoranId, ime, prezime, username, password);
+                    else if (pozicija.ToLower() == "келнер")
+                        vraboten = new Kelner(VrabotenId, RestoranId, ime, prezime, username, password);
                 }
-                if (pozicija == "Менаџер")
+                if (pozicija.ToLower() == "менаџер")
                 {
                     Manager manager = new Manager(Conn, VrabotenId, RestoranId);
                     manager.Show();
