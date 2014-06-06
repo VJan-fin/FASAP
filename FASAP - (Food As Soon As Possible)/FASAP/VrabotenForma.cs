@@ -13,20 +13,18 @@ namespace SmetkaZaNaracka
     public partial class VrabotenForma : Form
     {
         private OracleConnection Conn { get; set; }
-        public int VrabotenID { get; set; }
-        public int RestoranID { get; set; }
+        private Vraboten Vraboten { get; set; }
 
-        public VrabotenForma(OracleConnection conn, int vrabID, int resID)
+        public VrabotenForma(OracleConnection conn, Vraboten vraboten)
         {
             InitializeComponent();
-            Conn = conn;
-            VrabotenID = vrabID;
-            RestoranID = resID;
+            this.Conn = conn;
+            this.Vraboten = vraboten;
         }
 
         private void VrabotenForma_Load(object sender, EventArgs e)
         {
-            string sql = @"SELECT IME_VRABOTEN, PREZIME_VRABOTEN FROM VRABOTEN WHERE VRABOTEN_ID = :VRAB_ID";
+            /*string sql = @"SELECT IME_VRABOTEN, PREZIME_VRABOTEN FROM VRABOTEN WHERE VRABOTEN_ID = :VRAB_ID";
             OracleCommand cmd = new OracleCommand(sql, Conn);
             OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Varchar2);
             prm.Value = VrabotenID;
@@ -38,7 +36,9 @@ namespace SmetkaZaNaracka
             {
                 imeIPrezime = dr.GetString(0) + " " + dr.GetString(1);
             }
-            this.label2.Text = imeIPrezime;
+             * */
+            string podatoci = Vraboten.Ime + " " + Vraboten.Prezime + " " + Vraboten.Pozicija + " " + Vraboten.RestoranID + " ";
+            this.label2.Text = podatoci;
         }
     }
 }

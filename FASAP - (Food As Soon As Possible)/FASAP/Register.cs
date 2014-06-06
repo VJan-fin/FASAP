@@ -92,7 +92,9 @@ namespace SmetkaZaNaracka
             prm = new OracleParameter("DATUM", OracleDbType.Date);
             if (tbDatum.Text.Trim() != "")
             {
-                DateTime dt=new DateTime(2005,5,2);
+                char[] sepa={'/'};
+                String[] dates = tbDatum.Text.Trim().Split(sepa);
+                DateTime dt=new DateTime(int.Parse(dates[2]),int.Parse(dates[1]),int.Parse(dates[0]));
                  prm.Value = dt;
             }
                
@@ -124,6 +126,7 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(insertRest, Conn);
 
             OracleParameter prm = new OracleParameter("KIME", OracleDbType.Varchar2);
+           
             prm.Value = tbUser.Text.Trim();
             cmd.Parameters.Add(prm);
 
@@ -136,8 +139,8 @@ namespace SmetkaZaNaracka
             cmd.Parameters.Add(prm);
 
             prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            int vrab = 0;
-            prm.Value = vrab;
+            
+            prm.Value = 0;
             cmd.Parameters.Add(prm);
 
             cmd.ExecuteNonQuery();
@@ -159,7 +162,23 @@ namespace SmetkaZaNaracka
         private void tbUser_Validating(object sender, CancelEventArgs e)
         {
             TextBox tb = (sender as TextBox);
-            
+            string sql = "Select KORISNICHKO_IME from KORISNIK";
+            OracleCommand cmd = new OracleCommand(sql, Conn);
+            cmd.CommandType = CommandType.Text;
+            OracleDataReader dr = cmd.ExecuteReader(); // C#
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string usr=dr.GetString(0);
+                if (tb.Text.Trim() == usr)
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Корисничкото име веќе постои! Изберете друго.", false);
+                    e.Cancel = true;
+                    mbf.ShowDialog();
+                    break;
+                }
+            }
+                
             Regex regex=new Regex( @"[A-Z0-9._%+-]*@fasap.com$");
              
             if (tb.Text.Trim() == "")

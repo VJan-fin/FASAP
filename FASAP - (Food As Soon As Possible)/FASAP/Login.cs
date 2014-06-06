@@ -13,6 +13,7 @@ namespace SmetkaZaNaracka
     public partial class Login : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
+        private Vraboten vraboten;
         private String username;
         private String password;
         private bool tocenUser;
@@ -76,7 +77,7 @@ namespace SmetkaZaNaracka
 
             if (tocenPass)
             {
-                sql = @"Select v.vraboten_id, i.Pozicija, r.restoran_id From Korisnik k join Vraboten v on k.Vraboten_ID=v.Vraboten_ID Join Izvrshuva i on i.Vraboten_ID=v.Vraboten_ID Join Restoran r on r.Restoran_ID=i.Restoran_ID where korisnichko_ime = :KOR_IME";
+                sql = @"Select v.vraboten_id, v.ime_vraboten, v.prezime_vraboten,i.Pozicija, r.restoran_id From Korisnik k join Vraboten v on k.Vraboten_ID=v.Vraboten_ID Join Izvrshuva i on i.Vraboten_ID=v.Vraboten_ID Join Restoran r on r.Restoran_ID=i.Restoran_ID where korisnichko_ime = :KOR_IME";
                 cmd = new OracleCommand(sql, Conn);
                 prm = new OracleParameter("KOR_IME", OracleDbType.Varchar2);
                 prm.Value = username;
@@ -86,8 +87,12 @@ namespace SmetkaZaNaracka
                 if (dr.Read())
                 {
                     VrabotenId = (int)dr.GetValue(0);
-                    pozicija = dr.GetString(1);
-                    RestoranId = (int)dr.GetValue(2);
+                    string ime = dr.GetString(1);
+                    string prezime = dr.GetString(2);
+                    pozicija = dr.GetString(3);
+                    RestoranId = (int)dr.GetValue(4);
+
+                    vraboten = new Vraboten(VrabotenId, RestoranId, ime, prezime, pozicija);
                 }
                 if (pozicija == "Менаџер")
                 {
@@ -96,7 +101,7 @@ namespace SmetkaZaNaracka
                 }
                 else
                 {
-                    VrabotenForma vf = new VrabotenForma(Conn, VrabotenId, RestoranId);
+                    VrabotenForma vf = new VrabotenForma(Conn,vraboten);
                     vf.Show();
                 }
 

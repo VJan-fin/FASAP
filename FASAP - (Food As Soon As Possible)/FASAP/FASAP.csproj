@@ -218,6 +218,7 @@
     <Compile Include="SearchButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Vraboten.cs" />
     <Compile Include="VrabotenForma.cs">
       <SubType>Form</SubType>
     </Compile>
