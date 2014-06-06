@@ -91,6 +91,12 @@
   <ItemGroup>
     <Compile Include="Dostavuvac.cs" />
     <Compile Include="Kelner.cs" />
+    <Compile Include="ManagerForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForma.Designer.cs">
+      <DependentUpon>ManagerForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Meni\Dodatok.cs" />
     <Compile Include="FasapNaracka.cs">
       <SubType>Form</SubType>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForma.resx">
+      <DependentUpon>ManagerForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PomosniKlasi\MessageBoxForm.resx">
       <DependentUpon>MessageBoxForm.cs</DependentUpon>
