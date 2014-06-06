@@ -23,8 +23,6 @@ namespace SmetkaZaNaracka
            this.Prezime = prezime;
        }
 
-       public void PrevzemiNaracka()
-       {
-       }
+       public abstract void PrevzemiNaracka();
     }
 }

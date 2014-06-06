@@ -89,6 +89,8 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dostavuvac.cs" />
+    <Compile Include="Kelner.cs" />
     <Compile Include="Meni\Dodatok.cs" />
     <Compile Include="FasapNaracka.cs">
       <SubType>Form</SubType>

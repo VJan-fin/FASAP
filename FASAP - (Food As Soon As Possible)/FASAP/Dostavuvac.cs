@@ -13,5 +13,10 @@ namespace SmetkaZaNaracka
         }
 
         public Dostavuvac() { }
+
+        public override void PrevzemiNaracka()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
