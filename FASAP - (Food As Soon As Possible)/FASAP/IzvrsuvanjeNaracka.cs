@@ -441,19 +441,19 @@ namespace SmetkaZaNaracka
 
         private void pictureBox17_Click(object sender, EventArgs e)
         {
-            int pom = OrderList.Count - ListaKupeni.Count;
-            if (indKupeni < pom)
+            if (indKupeni > 0)
             {
-                indKupeni++;
+                indKupeni--;
                 PostaviNaracka();
             }
         }
 
         private void pictureBox16_Click(object sender, EventArgs e)
         {
-            if (indKupeni > 0)
+            int pom = OrderList.Count - ListaKupeni.Count;
+            if (indKupeni < pom)
             {
-                indKupeni--;
+                indKupeni++;
                 PostaviNaracka();
             }
         }

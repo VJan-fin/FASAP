@@ -8,6 +8,12 @@ namespace SmetkaZaNaracka.Naracki
 {
     public class Onsite : Naracka
     {
-        public Onsite(int narackaID, int vkupnaCena, DateTime vreme) : base(narackaID, vkupnaCena, vreme) {}
+        public int BrojMasa { get; set; }
+
+        public Onsite(int narackaID, int vkupnaCena, DateTime vreme, int brojMasa)
+            : base(narackaID, vkupnaCena, vreme)
+        {
+            BrojMasa = brojMasa;
+        }
     }
 }
