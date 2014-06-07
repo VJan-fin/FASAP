@@ -16,11 +16,21 @@ namespace SmetkaZaNaracka
         public ManagerC()
         {
         }
-        public override List<Narachki.Naracka> ListaNaracki(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        public override List<Narachki.Naracka> ListaNaracki(Oracle.DataAccess.Client.OracleConnection conn)
         {
             throw new NotImplementedException();
         }
-        public override bool PrevzemiNaracka(Oracle.DataAccess.Client.OracleConnection conn, int ResID)
+        public override bool PrevzemiNaracka(Oracle.DataAccess.Client.OracleConnection conn)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string GetFunkcija()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void OslobodiNaracki(Oracle.DataAccess.Client.OracleConnection conn)
         {
             throw new NotImplementedException();
         }
