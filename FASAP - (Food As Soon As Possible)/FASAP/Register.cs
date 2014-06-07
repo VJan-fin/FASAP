@@ -350,6 +350,30 @@ namespace SmetkaZaNaracka
 
         }
 
+        private void tbIme_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox tb = (sender as TextBox);
+            if (tb.Text.Trim() == "")
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Полето е задолжително!", false);
+                e.Cancel = true;
+                mbf.ShowDialog();
+            }
+            tb.SelectAll();
+        }
+
+        private void tbKategorija_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox tb = (sender as TextBox);
+            if (tb.Text.Trim() == "")
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Полето е задолжително!", false);
+                e.Cancel = true;
+                mbf.ShowDialog();
+            }
+            tb.SelectAll();
+        }
+
 
 
     }

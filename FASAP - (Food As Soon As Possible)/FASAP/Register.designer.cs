@@ -187,6 +187,7 @@
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(259, 32);
             this.tbIme.TabIndex = 6;
+            this.tbIme.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
             // 
             // tbKategorija
             // 
@@ -197,6 +198,7 @@
             this.tbKategorija.Name = "tbKategorija";
             this.tbKategorija.Size = new System.Drawing.Size(259, 32);
             this.tbKategorija.TabIndex = 8;
+            this.tbKategorija.Validating += new System.ComponentModel.CancelEventHandler(this.tbKategorija_Validating);
             // 
             // tbUlica
             // 
