@@ -91,6 +91,13 @@
   <ItemGroup>
     <Compile Include="Dostavuvac.cs" />
     <Compile Include="Kelner.cs" />
+    <Compile Include="Vraboteni\VrabotenInfo.cs" />
+    <Compile Include="Vraboteni\ListaVraboteni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vraboteni\ListaVraboteni.Designer.cs">
+      <DependentUpon>ListaVraboteni.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerC.cs" />
     <Compile Include="ManagerForma.cs">
       <SubType>Form</SubType>
@@ -301,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vraboteni\DodavanjeVraboten.resx">
       <DependentUpon>DodavanjeVraboten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vraboteni\ListaVraboteni.resx">
+      <DependentUpon>ListaVraboteni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vraboteni\PregledVraboten.resx">
       <DependentUpon>PregledVraboten.cs</DependentUpon>
