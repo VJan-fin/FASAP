@@ -11,20 +11,23 @@ using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
-    // stavi razlicna boja za vrabotenite koi se neaktivni
     // sortiranje vo rastecki/opagacki redosled po: br. vraboten, ime, prezime, plata
     // filtriranje na vrabotenite po: pozicija, status (posebno po dvata kriteriuma)
     // default e da gi lista samo aktivnite vraboteni sortirani po vraboten broj
-    // dodadi kopcinja za otvoranje na formite za dodavanje nov vraboten i 
     public partial class ListaVraboteni : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
         private Restoran Restoran { get; set; }
         private List<VrabotenInfo> AllEmployees { get; set; }
+        private List<VrabotenInfo> ShowingEmployees { get; set; }
         private VrabotenInfo CurrentEmp { get; set; }
 
         private List<LabelFASAP> ListaVrab { get; set; }
         private int indVrab { get; set; }
+        private List<string> Pozicii { get; set; }
+        private int PozInd { get; set; }
+        private List<string> Statusi { get; set; }
+        private int indStatus { get; set; }
 
         // samo za primer
         public ListaVraboteni()
@@ -51,12 +54,16 @@ namespace SmetkaZaNaracka
             this.Init();
         }
 
+        /// <summary>
+        /// Inicijalizacija na potrebnite kontroli
+        /// </summary>
         public void Init()
         {
             this.DoubleBuffered = true;
             this.Opacity = 0;
             this.lblImeRestoran.Text = this.Restoran.Ime + " ";
             this.AllEmployees = new List<VrabotenInfo>();
+            this.ShowingEmployees = new List<VrabotenInfo>();
 
             this.ListaVrab = new List<LabelFASAP>();
             this.ListaVrab.Add(lbl1);
@@ -71,9 +78,87 @@ namespace SmetkaZaNaracka
             this.ListaVrab.Add(lbl10);
             this.indVrab = 0;
 
+            this.VcitajPozicii();
+            this.VcitajStatusi();
             this.VcitajVraboteni();
+            this.PopolniVraboten();
         }
 
+        /// <summary>
+        /// Popolnuvanje na listata statusi koi moze da se
+        /// pojavat kaj vrabotenite
+        /// </summary>
+        public void VcitajStatusi()
+        {
+            this.Statusi = new List<string>();
+            this.indStatus = 0;
+
+            this.Statusi.Add("1");
+            this.Statusi.Add("0");
+            this.Statusi.Add("Сите");
+
+            this.UpdateStatusi();
+        }
+
+        /// <summary>
+        /// Prezemanje na site mozni funkcii koi postojat vo bazata
+        /// </summary>
+        public void VcitajPozicii()
+        {
+            this.Pozicii = new List<string>();
+            this.PozInd = 0;
+            this.Pozicii.Add("Сите");
+
+            string sqlPozicii = @"SELECT * FROM FUNKCIJA ORDER BY POZICIJA";
+            OracleCommand cmd = new OracleCommand(sqlPozicii, this.Conn);
+            cmd.CommandType = CommandType.Text;
+
+            OracleDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+                this.Pozicii.Add(dr.GetString(0));
+
+            this.UpdatePozicii();
+        }
+
+        /// <summary>
+        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
+        /// od listata pozicii
+        /// </summary>
+        private void UpdatePozicii()
+        {
+            if (this.Pozicii.Count != 0)
+                this.lblPozicijaFilter.Text = this.Pozicii[this.PozInd];
+            else
+                this.lblPozicijaFilter.Text = " ";
+
+            this.FiltrirajVraboteni();
+        }
+
+        /// <summary>
+        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
+        /// od listata statusi na vrabotenite
+        /// </summary>
+        private void UpdateStatusi()
+        {
+            if (this.Statusi.Count != 0)
+            {
+                if (this.Statusi[this.indStatus] == "0")
+                    this.lblStatusFilter.Text = "Неактивен";
+                else if (this.Statusi[this.indStatus] == "1")
+                    this.lblStatusFilter.Text = "Активен";
+                else
+                    this.lblStatusFilter.Text = this.Statusi[this.indStatus];
+            } 
+            else
+                this.lblStatusFilter.Text = " ";
+
+            this.FiltrirajVraboteni();
+        }
+
+        /// <summary>
+        /// Prezemanje na site potrebni podatoci za vrabotenite
+        /// od bazata na podatoci
+        /// </summary>
         public void VcitajVraboteni()
         {
             this.AllEmployees = new List<VrabotenInfo>();
@@ -100,36 +185,109 @@ namespace SmetkaZaNaracka
                     vr.Status = st;
                 vr.Naracki = dr.GetInt32(6);
                 this.AllEmployees.Add(vr);
+                //samo privremeno
+                //this.ShowingEmployees.Add(vr);
             }
 
-            UpdateVrab();
+            this.FiltrirajVraboteni();
         }
 
+        /// <summary>
+        /// Popolnuvanje na listata vraboteni so objektite
+        /// koi gi sodrzat informaciite za istite
+        /// </summary>
         public void UpdateVrab()
         {
             int ind = this.indVrab;
             for (int i = 0; i < this.ListaVrab.Count; i++)
             {
-                if (ind < this.AllEmployees.Count)
+                if (ind < this.ShowingEmployees.Count)
                 {
-                    this.ListaVrab[i].UpdateObject(this.AllEmployees[ind]);
+                    this.ListaVrab[i].UpdateObject(this.ShowingEmployees[ind]);
                     ind++;
                 }
                 else
                     this.ListaVrab[i].UpdateObject(null);
             }
+
+            this.MarkSelection();
         }
 
+        /// <summary>
+        /// Popolnuvanje na poziciite so soodvetnite
+        /// informacii za selektiraniot vraboten
+        /// </summary>
         public void PopolniVraboten()
         {
-            this.lblBrVraboten.Text = this.CurrentEmp.VrabotenID.ToString();
-            this.lblImePrezime.Text = this.CurrentEmp.Ime + " " + this.CurrentEmp.Prezime + " ";
-            this.lblPozicija.Text = this.CurrentEmp.Pozicija + " ";
-            this.lblPlata.Text = this.CurrentEmp.Plata.ToString();
-            if (this.CurrentEmp.Status == 0)
-                this.lblStatus.Text = "Неактивен ";
+            if (this.CurrentEmp != null)
+            {
+                this.lblBrVraboten.Text = this.CurrentEmp.VrabotenID.ToString();
+                this.lblImePrezime.Text = this.CurrentEmp.Ime + " " + this.CurrentEmp.Prezime + " ";
+                this.lblPozicija.Text = this.CurrentEmp.Pozicija + " ";
+                this.lblPlata.Text = this.CurrentEmp.Plata.ToString();
+                if (this.CurrentEmp.Status == 0)
+                    this.lblStatus.Text = "Неактивен ";
+                else
+                    this.lblStatus.Text = "Активен ";
+            }
             else
-                this.lblStatus.Text = "Активен ";
+            {
+                this.lblBrVraboten.Text = ": :";
+                this.lblImePrezime.Text = ": :";
+                this.lblPozicija.Text = ": :";
+                this.lblPlata.Text = ": :";
+                this.lblStatus.Text = ": :";
+            }
+        }
+
+        /// <summary>
+        /// Oznacuvanje na poleto od listata vraboteni koe
+        /// e tekovno selektirano, nezavisno od toa kade se
+        /// naoga vo listata - vo zavisnost od vraboteniot cii
+        /// podatoci se ispisuvaat
+        /// </summary>
+        private void MarkSelection()
+        {
+            foreach (var item in this.ListaVrab)
+                if (this.CurrentEmp != null && this.CurrentEmp.Equals(item.LblObject as VrabotenInfo))
+                {
+                    item.Image = Resources.LabelBackgroundSelected;
+                    if (item.LblObject != null && (item.LblObject as VrabotenInfo).Status == 1)
+                        item.ForeColor = Color.SaddleBrown;
+                    else
+                        item.ForeColor = Color.Firebrick;
+                    //item.ForeColor = SystemColors.InactiveCaptionText;
+                }
+                else
+                {
+                    item.Image = Resources.LabelBackground2;
+                    if (item.LblObject != null && (item.LblObject as VrabotenInfo).Status == 1)
+                        item.ForeColor = Color.Gold;
+                    else if (item.LblObject == null)
+                        item.ForeColor = Color.Gold;
+                    else
+                        item.ForeColor = Color.FromArgb(250, 20, 20);
+                        //item.ForeColor = SystemColors.InactiveCaption;
+                }
+        }
+
+        /// <summary>
+        /// Prikazuvanje na vrabotenite spored odbranite filtri
+        /// </summary>
+        private void FiltrirajVraboteni()
+        {
+            this.ShowingEmployees = new List<VrabotenInfo>();
+            foreach (var item in this.AllEmployees)
+                this.ShowingEmployees.Add(item);
+
+            if (this.lblPozicijaFilter.Text != "Сите")
+                this.ShowingEmployees.RemoveAll(w => w.Pozicija != this.lblPozicijaFilter.Text);
+            if (this.lblStatusFilter.Text != "Сите")
+                this.ShowingEmployees.RemoveAll(w => w.Status.ToString() != this.Statusi[indStatus]);
+
+            //MessageBox.Show(this.ShowingEmployees.Count.ToString());
+
+            this.UpdateVrab();
         }
 
         private void lbl1_Click(object sender, EventArgs e)
@@ -138,49 +296,52 @@ namespace SmetkaZaNaracka
             if (lb.LblObject != null)
             {
                 this.CurrentEmp = lb.LblObject as VrabotenInfo;
+                this.MarkSelection();
                 this.PopolniVraboten();
             }
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void pictureBoxUp_Click(object sender, EventArgs e)
         {
-            if (this.AllEmployees.Count > this.ListaVrab.Count)
+            if (this.ShowingEmployees.Count > this.ListaVrab.Count)
             {
                 if (this.indVrab != 0)
                     this.indVrab--;
-                this.PopolniVraboten();
+                this.FiltrirajVraboteni();
+                this.MarkSelection();
             }
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void pictureBoxDown_Click(object sender, EventArgs e)
         {
-            if (this.AllEmployees.Count > this.ListaVrab.Count)
+            if (this.ShowingEmployees.Count > this.ListaVrab.Count)
             {
-                if (this.indVrab < this.AllEmployees.Count - this.ListaVrab.Count)
+                if (this.indVrab < this.ShowingEmployees.Count - this.ListaVrab.Count)
                     this.indVrab++;
-                this.PopolniVraboten();
+                this.FiltrirajVraboteni();
+                this.MarkSelection();
             }
         }
 
-        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        private void pictureBoxUp_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.LightArrowUp;
         }
 
-        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        private void pictureBoxUp_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.DarkArrowUp;
         }
 
-        private void pictureBox7_MouseEnter(object sender, EventArgs e)
+        private void pictureBoxDown_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.LightArrowDown;
         }
 
-        private void pictureBox7_MouseLeave(object sender, EventArgs e)
+        private void pictureBoxDown_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.DarkArrowDown;
@@ -231,7 +392,12 @@ namespace SmetkaZaNaracka
         {
             DodavanjeVraboten addEmpForm = new DodavanjeVraboten(this.Restoran, this.Conn);
             if (addEmpForm.ShowDialog() == DialogResult.Yes)
+            {
                 this.VcitajVraboteni();
+                this.CurrentEmp = null;
+                this.PopolniVraboten();
+                this.MarkSelection();
+            }
         }
 
         private void buttonPregledVrab_Click(object sender, EventArgs e)
@@ -240,12 +406,81 @@ namespace SmetkaZaNaracka
             {
                 PregledVraboten viewEmpForm = new PregledVraboten(this.CurrentEmp.VrabotenID, this.Restoran, this.Conn);
                 if (viewEmpForm.ShowDialog() == DialogResult.Yes)
+                {
                     this.VcitajVraboteni();
+                    this.CurrentEmp = null;
+                    this.PopolniVraboten();
+                    this.MarkSelection();
+                }
             }
             else
             {
                 MessageBoxForm mbf = new MessageBoxForm("Немате одбрано вработен!\nОдберете вработен и обидете се повторно", false);
                 mbf.ShowDialog();
+            }
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.LightArrowLeft;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.DarkArrowLeft;
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.LightArrowRight___Copy;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            pb.Image = Resources.DarkArrowRight;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (this.Pozicii.Count > 1)
+            {
+                this.PozInd = (this.PozInd + 1) % this.Pozicii.Count;
+                this.UpdatePozicii();
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (this.Pozicii.Count > 1)
+            {
+                if (this.PozInd == 0)
+                    this.PozInd = this.Pozicii.Count;
+                this.PozInd--;
+                this.UpdatePozicii();
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (this.Statusi.Count > 1)
+            {
+                if (this.indStatus == 0)
+                    this.indStatus = this.Statusi.Count;
+                this.indStatus--;
+                this.UpdateStatusi();
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (this.Statusi.Count > 1)
+            {
+                this.indStatus = (this.indStatus + 1) % this.Statusi.Count;
+                this.UpdateStatusi();
             }
         }
     }

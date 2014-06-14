@@ -19,5 +19,17 @@ namespace SmetkaZaNaracka
         {
             return string.Format("{0} {1}", this.Ime, this.Prezime);
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if (!(obj is VrabotenInfo))
+                return false;
+            if (this.VrabotenID == (obj as VrabotenInfo).VrabotenID)
+                return true;
+            else
+                return false;
+        }
     }
 }
