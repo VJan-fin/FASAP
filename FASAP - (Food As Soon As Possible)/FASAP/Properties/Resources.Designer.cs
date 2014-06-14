@@ -133,6 +133,16 @@ namespace SmetkaZaNaracka.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DarkCorrectButton {
+            get {
+                object obj = ResourceManager.GetObject("DarkCorrectButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ExitDark {
             get {
                 object obj = ResourceManager.GetObject("ExitDark", resourceCulture);
@@ -266,6 +276,16 @@ namespace SmetkaZaNaracka.Properties {
         internal static System.Drawing.Bitmap LightButton___Copy {
             get {
                 object obj = ResourceManager.GetObject("LightButton___Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LightCorrectButton {
+            get {
+                object obj = ResourceManager.GetObject("LightCorrectButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

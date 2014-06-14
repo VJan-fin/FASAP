@@ -50,7 +50,7 @@ namespace SmetkaZaNaracka
         {
             this.LblObject = obj;
             if (this.LblObject != null)
-                this.Text = String.Format(":{0}: ",this.LblObject.ToString());
+                Text = String.Format(":{0}: ",this.LblObject.ToString());
             else
                 this.Text = ": : ";
         }

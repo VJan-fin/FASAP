@@ -82,6 +82,10 @@ namespace SmetkaZaNaracka
             Dodatok dodatok = obj as Dodatok;
             if(ID != dodatok.ID || !Parent.Equals(dodatok.Parent))
                 return false;
+            if (Osnovna == null && dodatok.Osnovna == null)
+                return true;
+            if (Osnovna == null)
+                return false;
             if (!Osnovna.Equals(dodatok.Osnovna))
                 return false;
             return true;

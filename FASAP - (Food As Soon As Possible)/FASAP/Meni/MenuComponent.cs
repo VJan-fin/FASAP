@@ -8,6 +8,7 @@ namespace SmetkaZaNaracka
     public abstract class MenuComponent
     {
         public MenuComponent Parent { get; set; }
+        public String ImeGlavno { get; set; }
 
         public abstract List<MenuComponent> GetContent();
 

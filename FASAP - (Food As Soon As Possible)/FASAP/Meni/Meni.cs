@@ -9,6 +9,7 @@ namespace SmetkaZaNaracka
     {
         public string Ime { get; set; }
         public List<MenuComponent> Content { get; set; }
+        public bool ValidnostMeni { get; set; }
 
         public Meni(string ime)
         {

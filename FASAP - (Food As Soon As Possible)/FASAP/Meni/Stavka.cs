@@ -76,5 +76,13 @@ namespace SmetkaZaNaracka
                 return false;
             return true;
         }
+
+        public StavkaKey GetStavkaKey()
+        {
+            StavkaKey sid = new StavkaKey();
+            sid.IdStavka = ID;
+            sid.ImeGlavno = ImeGlavno;
+            return sid;
+        }
     }
 }

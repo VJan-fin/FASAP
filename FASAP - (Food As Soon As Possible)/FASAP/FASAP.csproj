@@ -157,6 +157,7 @@
     <Compile Include="Meni\Meni.cs" />
     <Compile Include="Meni\MenuComponent.cs" />
     <Compile Include="Meni\OrderComponent.cs" />
+    <Compile Include="Meni\StavkaKey.cs" />
     <Compile Include="Naracki\Naracka.cs" />
     <Compile Include="Naracki\Online.cs" />
     <Compile Include="Naracki\Onsite.cs" />
@@ -198,6 +199,12 @@
     </Compile>
     <Compile Include="PregledInformacii.Designer.cs">
       <DependentUpon>PregledInformacii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PregledMeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledMeni.Designer.cs">
+      <DependentUpon>PregledMeni.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,6 +296,9 @@
     <EmbeddedResource Include="PregledInformacii.resx">
       <DependentUpon>PregledInformacii.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PregledMeni.resx">
+      <DependentUpon>PregledMeni.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -362,6 +372,8 @@
     <None Include="Resources\LabelBackground2.png" />
     <None Include="Resources\DarkButton - Copy.png" />
     <None Include="Resources\LabelBackgroundSelected.png" />
+    <None Include="Resources\DarkCorrectButton.png" />
+    <None Include="Resources\LightCorrectButton.png" />
     <Content Include="Resources\Resized-HTAHM.png" />
     <None Include="Resources\Resized-HTAHM1.png" />
   </ItemGroup>
