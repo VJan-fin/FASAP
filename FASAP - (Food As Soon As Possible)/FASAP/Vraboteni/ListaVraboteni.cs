@@ -76,6 +76,9 @@ namespace SmetkaZaNaracka
 
         public void VcitajVraboteni()
         {
+            this.AllEmployees = new List<VrabotenInfo>();
+            this.indVrab = 0;
+
             string sqlVraboteni = @"SELECT VRABOTEN_ID, IME_VRABOTEN, PREZIME_VRABOTEN, POZICIJA, PLATA, STATUS, IZVRSHENI_NARACHKI FROM VRABOTEN NATURAL JOIN IZVRSHUVA WHERE RESTORAN_ID = :RES_ID ORDER BY VRABOTEN_ID";
             OracleCommand cmd = new OracleCommand(sqlVraboteni, Conn);
             OracleParameter prm = new OracleParameter("RES_ID", OracleDbType.Int64);
@@ -227,7 +230,8 @@ namespace SmetkaZaNaracka
         private void buttonDodadiVrab_Click(object sender, EventArgs e)
         {
             DodavanjeVraboten addEmpForm = new DodavanjeVraboten(this.Restoran, this.Conn);
-            addEmpForm.ShowDialog();
+            if (addEmpForm.ShowDialog() == DialogResult.Yes)
+                this.VcitajVraboteni();
         }
 
         private void buttonPregledVrab_Click(object sender, EventArgs e)
@@ -235,7 +239,8 @@ namespace SmetkaZaNaracka
             if (this.CurrentEmp != null)
             {
                 PregledVraboten viewEmpForm = new PregledVraboten(this.CurrentEmp.VrabotenID, this.Restoran, this.Conn);
-                viewEmpForm.ShowDialog();
+                if (viewEmpForm.ShowDialog() == DialogResult.Yes)
+                    this.VcitajVraboteni();
             }
             else
             {

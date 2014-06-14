@@ -226,7 +226,7 @@ namespace SmetkaZaNaracka
         /// <returns></returns>
         private int DodadiVoDBVraboten()
         {
-            string insertVrab = @"INSERT INTO VRABOTEN VALUES (:VRAB_ID, :IME, :PREZIME, :EMBG, TO_DATE(:DAT, 'dd.MM.yyyy'), :ADR)";
+            string insertVrab = @"INSERT INTO VRABOTEN (VRABOTEN_ID, IME_VRABOTEN, PREZIME_VRABOTEN, EMBG, DATUM_NA_RAGJANJE, ADRESA_NA_ZHIVEENJE) VALUES (:VRAB_ID, :IME, :PREZIME, :EMBG, :DAT, :ADR)";
             OracleCommand cmd = new OracleCommand(insertVrab, Conn);
             OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
             prm.Value = this.VrabotenID;
@@ -240,18 +240,34 @@ namespace SmetkaZaNaracka
             prm = new OracleParameter("EMBG", OracleDbType.Char);
             prm.Value = this.tbEmbg.Text.Trim();
             cmd.Parameters.Add(prm);
-            prm = new OracleParameter("ADR", OracleDbType.Varchar2);
-            string adresa = "";
-            adresa += this.tbAdresa.Text.Trim();
-            adresa += this.tbGrad.Text.Trim();
-            if (adresa != "")
-                prm.Value = adresa;
+            prm = new OracleParameter("DAT", OracleDbType.Date);
+            if (tbDen.Text.Trim() != "")
+            {
+                int d = int.Parse(tbDen.Text.Trim());
+                int m = int.Parse(tbMesec.Text.Trim());
+                int y = int.Parse(tbGodina.Text.Trim());
+                DateTime dt;
+                try
+                {
+                    dt = new DateTime(y, m, d);
+                    prm.Value = dt;
+                }
+                catch (Exception e)
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Невалиден датум!", false);
+                    mbf.Show();
+                }
+            }
             else
                 prm.Value = null;
             cmd.Parameters.Add(prm);
-            prm = new OracleParameter("DAT", OracleDbType.Date);
-            if (tbDen.Text.Trim() != "")
-                prm.Value = tbDen.Text.Trim() + "." + tbMesec.Text.Trim() + "." + tbGodina.Text.Trim();
+            prm = new OracleParameter("ADR", OracleDbType.Varchar2);
+            string adresa = "";
+            adresa += this.tbAdresa.Text.Trim();
+            if (this.tbGrad.Text.Trim() != "")
+                adresa += ", " + this.tbGrad.Text.Trim();
+            if (adresa != "")
+                prm.Value = adresa;
             else
                 prm.Value = null;
             cmd.Parameters.Add(prm);
@@ -264,7 +280,6 @@ namespace SmetkaZaNaracka
             }
             catch (Exception)
             {
-
                 br = -1;
             }
             
@@ -324,6 +339,7 @@ namespace SmetkaZaNaracka
                     {
                         MessageBoxForm mbf1 = new MessageBoxForm("Вработениот беше успешно додаден!", false);
                         mbf1.ShowDialog();
+                        this.DialogResult = DialogResult.Yes;
                         this.Close();
                     }
                     else

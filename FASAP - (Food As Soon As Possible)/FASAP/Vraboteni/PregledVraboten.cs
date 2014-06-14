@@ -173,11 +173,29 @@ namespace SmetkaZaNaracka
                 tbIme.Text = dr.GetString(1);
                 tbPrezime.Text = dr.GetString(2);
                 tbEmbg.Text = dr.GetString(3);
-                DateTime rag = dr.GetDateTime(4);
-                tbDenRagjanje.Text = rag.Day.ToString();
-                tbMesecRagjanje.Text = rag.Month.ToString();
-                tbGodinaRagjanje.Text = rag.Year.ToString();
-                tbAdresa.Text = dr.GetString(5);      
+                try
+                {
+                    DateTime rag = dr.GetDateTime(4);
+                    tbDenRagjanje.Text = rag.Day.ToString();
+                    tbMesecRagjanje.Text = rag.Month.ToString();
+                    tbGodinaRagjanje.Text = rag.Year.ToString();
+                }
+                catch (InvalidCastException e)
+                {
+                    tbDenRagjanje.Text = "";
+                    tbMesecRagjanje.Text = "";
+                    tbGodinaRagjanje.Text = "";
+                }
+
+                try
+                {
+                    tbAdresa.Text = dr.GetString(5);
+                }
+                catch (InvalidCastException e)
+                {
+                    tbAdresa.Text = "";
+                }
+                      
             }
 
             // Popolnuvanje na poziciite povrzani so rabotniot odnos
@@ -210,7 +228,7 @@ namespace SmetkaZaNaracka
                 if (st == "1")
                     this.StatusVrab = true;
                 else
-                    this.StatusVrab = true;
+                    this.StatusVrab = false;
                 this.UpdateStatusVrab();
                 tbPlata.Text = dr.GetInt64(5).ToString();
                 tbOdmor.Text = dr.GetInt64(6).ToString();
@@ -673,7 +691,10 @@ namespace SmetkaZaNaracka
                 }
             }
             else
+            {
+                this.DialogResult = DialogResult.Yes;
                 this.Close();
+            }
         }
     }
 }
