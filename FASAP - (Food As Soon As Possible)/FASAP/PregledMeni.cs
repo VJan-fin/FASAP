@@ -22,10 +22,12 @@ namespace SmetkaZaNaracka
         public MenuComponent SelectedComponent { get; set; }
         public bool ShowInactive { get; set; }
         public bool IsDecorator { get; set; }
+        public Semaphore LoadingSemaphore { get; set; }
         
         public PregledMeni()
         {
             InitializeComponent();
+            LoadingSemaphore = new Semaphore(0, 1);
             Opacity = 0;
             Restoran = new Restoran();
             Restoran.Ime = "Ресторан Бигор - Вруток";
@@ -156,6 +158,7 @@ namespace SmetkaZaNaracka
                 }
             }
             //lblOsnovnoMeni.UpdateObject(Restoran.GlavnoMeni);
+            LoadingSemaphore.WaitOne();
             SetObject(lblOsnovnoMeni, Restoran.GlavnoMeni);
             CurrMenu = Restoran.GlavnoMeni;
             PostaviPateka();
@@ -347,6 +350,8 @@ namespace SmetkaZaNaracka
         {
             Thread oThread = new Thread(new ThreadStart(KreirajMeni));
             oThread.Start();
+            indMeni = 0;
+            LoadingSemaphore.Release();
         }
 
         private void buttonFASAP2_Click(object sender, EventArgs e)
@@ -508,6 +513,11 @@ namespace SmetkaZaNaracka
                 indMeni++;
                 PopolniListaMenija();
             }
+        }
+
+        public override void LoadingMethod()
+        {
+            LoadingSemaphore.Release();
         }
     }
 }

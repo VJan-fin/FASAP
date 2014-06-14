@@ -57,7 +57,16 @@ namespace SmetkaZaNaracka
         {
             if (Opacity < 1)
                 Opacity += 0.07;
-            else timer1.Stop();
+            else
+            {
+                timer1.Stop();
+                LoadingMethod();
+            }
+        }
+
+        public virtual void LoadingMethod()
+        {
+
         }
     }
 }
