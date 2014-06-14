@@ -12,8 +12,6 @@ using SmetkaZaNaracka.Properties;
 namespace SmetkaZaNaracka
 {
     // sortiranje vo rastecki/opagacki redosled po: br. vraboten, ime, prezime, plata
-    // filtriranje na vrabotenite po: pozicija, status (posebno po dvata kriteriuma)
-    // default e da gi lista samo aktivnite vraboteni sortirani po vraboten broj
     public partial class ListaVraboteni : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
