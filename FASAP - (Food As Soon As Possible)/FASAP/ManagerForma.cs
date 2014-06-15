@@ -20,6 +20,8 @@ namespace SmetkaZaNaracka
         public ManagerForma(OracleConnection conn ,ManagerC manager)
         {
             InitializeComponent();
+            Manager = manager;
+            Conn = conn;
             init();
         }
         public ManagerForma() //probno
@@ -38,6 +40,7 @@ namespace SmetkaZaNaracka
         }
         private void init()
         {
+            
             string sqlVrab = @"SELECT IME_RESTORAN FROM RESTORAN WHERE RESTORAN_ID = :REST_ID";
             OracleCommand cmd = new OracleCommand(sqlVrab, this.Conn);
             cmd.CommandType = CommandType.Text;

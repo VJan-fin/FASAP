@@ -41,16 +41,23 @@
             // 
             // tbUserName
             // 
+            this.tbUserName.BackColor = System.Drawing.Color.Sienna;
+            this.tbUserName.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUserName.ForeColor = System.Drawing.Color.Khaki;
             this.tbUserName.Location = new System.Drawing.Point(636, 348);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(265, 20);
+            this.tbUserName.Size = new System.Drawing.Size(265, 30);
             this.tbUserName.TabIndex = 0;
             // 
             // tbPassword
             // 
+            this.tbPassword.BackColor = System.Drawing.Color.Sienna;
+            this.tbPassword.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.ForeColor = System.Drawing.Color.Khaki;
             this.tbPassword.Location = new System.Drawing.Point(636, 458);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(265, 20);
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(265, 30);
             this.tbPassword.TabIndex = 1;
             // 
             // labelFASAP1

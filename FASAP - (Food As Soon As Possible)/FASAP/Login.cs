@@ -19,6 +19,8 @@ namespace SmetkaZaNaracka
         private bool tocenUser;
         private bool tocenPass;
         private int VrabotenId;
+        private String ime;
+        private String prezime;
         private String pozicija="";
         private int RestoranId;
         public Login(OracleConnection conn)
@@ -27,6 +29,8 @@ namespace SmetkaZaNaracka
             Conn = conn;
             username = "";
             password = "";
+            ime = "";
+            prezime = "";
             tocenUser = false;
             tocenPass = false;
         }
@@ -87,8 +91,8 @@ namespace SmetkaZaNaracka
                 if (dr.Read())
                 {
                     VrabotenId = (int)dr.GetValue(0);
-                    string ime = dr.GetString(1);
-                    string prezime = dr.GetString(2);
+                    ime = dr.GetString(1);
+                    prezime = dr.GetString(2);
                     pozicija = dr.GetString(3);
                     RestoranId = (int)dr.GetValue(4);
 
@@ -99,13 +103,16 @@ namespace SmetkaZaNaracka
                 }
                 if (pozicija.ToLower() == "менаџер")
                 {
-                    Manager manager = new Manager(Conn, VrabotenId, RestoranId);
-                    manager.Show();
+                    ManagerC manager=new ManagerC(VrabotenId,RestoranId,ime,prezime,username,password);
+                    ManagerForma managerForma = new ManagerForma(Conn,manager);
+                    managerForma.Show();
+                    tbPassword.Clear();
                 }
                 else
                 {
                     VrabotenForma vf = new VrabotenForma(Conn,vraboten);
                     vf.Show();
+                    tbPassword.Clear();
                 }
 
                 //MessageBox.Show(String.Format("Vraboten: {0}, Pozicija: {1}, RestoranID: {2}",VrabotenId,pozicija,RestoranId));
