@@ -11,7 +11,6 @@ using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
-    // cursor = cursor.hand vo site mouse enter nastani
     public partial class PregledVraboten : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
@@ -21,8 +20,21 @@ namespace SmetkaZaNaracka
         private int PozInd { get; set; }
         private bool StatusVrab { get; set; }
 
+        /// <summary>
+        /// Pomosna lista koja gi sodrzi pomosnite znaci koi
+        /// vo nekoi od rezimite na raboti ne se vidlivi
+        /// </summary>
         private List<LabelFASAP> Nevidlivi { get; set; }
+        /// <summary>
+        /// Pomosna promenliva koja oznacuva koj e tekovniot
+        /// rezim na rabota
+        /// (true - Moze da se menuvaat podatocite; false)
+        /// </summary>
         private bool ModifyMode { get; set; }
+        /// <summary>
+        /// Pomosna lista koja gi sodrzi site kontroli koi mozat
+        /// da bidat izmeneti vo soodvetniot rezim na rabota
+        /// </summary>
         private List<TextBox> Writeable { get; set; }
 
         public PregledVraboten(int id, Restoran restoran, OracleConnection conn)
@@ -33,9 +45,8 @@ namespace SmetkaZaNaracka
             this.Conn = conn;
 
             this.Init();
-
         }
-
+        /*
         // samo za primer
         public PregledVraboten()
         {
@@ -53,7 +64,7 @@ namespace SmetkaZaNaracka
 
             this.Init();
         }
-
+        */
         private void Init()
         {
             this.Opacity = 0;
@@ -126,9 +137,20 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(sqlPozicii, this.Conn);
             cmd.CommandType = CommandType.Text;
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-                this.Pozicii.Add(dr.GetString(0));
+            try
+            {
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                    this.Pozicii.Add(dr.GetString(0));
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
 
             for (int i = 0; i < this.Pozicii.Count; i++)
                 if (this.Pozicii[i] == this.lblPozicija.Text)
@@ -168,35 +190,46 @@ namespace SmetkaZaNaracka
             prm.Value = this.VrabotenID;
             cmd.Parameters.Add(prm);
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                tbIme.Text = dr.GetString(1);
-                tbPrezime.Text = dr.GetString(2);
-                tbEmbg.Text = dr.GetString(3);
-                try
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    DateTime rag = dr.GetDateTime(4);
-                    tbDenRagjanje.Text = rag.Day.ToString();
-                    tbMesecRagjanje.Text = rag.Month.ToString();
-                    tbGodinaRagjanje.Text = rag.Year.ToString();
-                }
-                catch (InvalidCastException e)
-                {
-                    tbDenRagjanje.Text = "";
-                    tbMesecRagjanje.Text = "";
-                    tbGodinaRagjanje.Text = "";
-                }
+                    tbIme.Text = dr.GetString(1);
+                    tbPrezime.Text = dr.GetString(2);
+                    tbEmbg.Text = dr.GetString(3);
+                    try
+                    {
+                        DateTime rag = dr.GetDateTime(4);
+                        tbDenRagjanje.Text = rag.Day.ToString();
+                        tbMesecRagjanje.Text = rag.Month.ToString();
+                        tbGodinaRagjanje.Text = rag.Year.ToString();
+                    }
+                    catch (InvalidCastException e)
+                    {
+                        tbDenRagjanje.Text = "";
+                        tbMesecRagjanje.Text = "";
+                        tbGodinaRagjanje.Text = "";
+                    }
 
-                try
-                {
-                    tbAdresa.Text = dr.GetString(5);
+                    try
+                    {
+                        tbAdresa.Text = dr.GetString(5);
+                    }
+                    catch (InvalidCastException e)
+                    {
+                        tbAdresa.Text = "";
+                    }
+
                 }
-                catch (InvalidCastException e)
-                {
-                    tbAdresa.Text = "";
-                }
-                      
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
             }
 
             // Popolnuvanje na poziciite povrzani so rabotniot odnos
@@ -211,30 +244,41 @@ namespace SmetkaZaNaracka
             prm.Value = this.Restoran.RestoranID;
             cmd.Parameters.Add(prm);
 
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
+            try
             {
-                lblPozicija.Text = dr.GetString(2);
-                for (int i = 0; i < this.Pozicii.Count; i++)
-                    if (this.Pozicii[i] == lblPozicija.Text)
-                    {
-                        this.PozInd = i;
-                        break;
-                    }
-                DateTime vrab = dr.GetDateTime(3);
-                tbDenVrab.Text = vrab.Day.ToString();
-                tbMesecVrab.Text = vrab.Month.ToString();
-                tbGodVrab.Text = vrab.Year.ToString();
-                string st = dr.GetString(4);
-                if (st == "1")
-                    this.StatusVrab = true;
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lblPozicija.Text = dr.GetString(2);
+                    for (int i = 0; i < this.Pozicii.Count; i++)
+                        if (this.Pozicii[i] == lblPozicija.Text)
+                        {
+                            this.PozInd = i;
+                            break;
+                        }
+                    DateTime vrab = dr.GetDateTime(3);
+                    tbDenVrab.Text = vrab.Day.ToString();
+                    tbMesecVrab.Text = vrab.Month.ToString();
+                    tbGodVrab.Text = vrab.Year.ToString();
+                    string st = dr.GetString(4);
+                    if (st == "1")
+                        this.StatusVrab = true;
+                    else
+                        this.StatusVrab = false;
+                    this.UpdateStatusVrab();
+                    tbPlata.Text = dr.GetInt64(5).ToString();
+                    tbOdmor.Text = dr.GetInt64(6).ToString();
+                    tbVkNaracki.Text = dr.GetInt64(7).ToString();
+                    tbStaz.Text = dr.GetInt64(8).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
                 else
-                    this.StatusVrab = false;
-                this.UpdateStatusVrab();
-                tbPlata.Text = dr.GetInt64(5).ToString();
-                tbOdmor.Text = dr.GetInt64(6).ToString();
-                tbVkNaracki.Text = dr.GetInt64(7).ToString();
-                tbStaz.Text = dr.GetInt64(8).ToString();
+                    this.Close();
             }
         }
 
@@ -249,30 +293,42 @@ namespace SmetkaZaNaracka
             //string sqlVrab = @"UPDATE VRABOTEN SET IME_VRABOTEN = :IME WHERE VRABOTEN_ID = 7";
             OracleCommand cmd = new OracleCommand(sqlVrab, this.Conn);
             cmd.CommandType = CommandType.Text;
-            OracleParameter prm = new OracleParameter("IME", OracleDbType.Varchar2);
-            prm.Value = this.tbIme.Text.Trim();
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("PREZIME", OracleDbType.Varchar2);
-            prm.Value = this.tbPrezime.Text.Trim();
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("EMBG", OracleDbType.Char);
-            prm.Value = this.tbEmbg.Text.Trim();
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("DAT", OracleDbType.Varchar2);
-            if (tbDenRagjanje.Text.Trim() != "")
-                prm.Value = tbDenRagjanje.Text.Trim() + "." + tbMesecRagjanje.Text.Trim() + "." + tbGodinaRagjanje.Text.Trim();
-            else
-                prm.Value = null;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("ADR", OracleDbType.Varchar2);
-            if (this.tbAdresa.Text.Trim() != "")
-                prm.Value = this.tbAdresa.Text.Trim();
-            else
-                prm.Value = null;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = this.VrabotenID;
-            cmd.Parameters.Add(prm);
+
+            try
+            {
+                OracleParameter prm = new OracleParameter("IME", OracleDbType.Varchar2);
+                prm.Value = this.tbIme.Text.Trim();
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("PREZIME", OracleDbType.Varchar2);
+                prm.Value = this.tbPrezime.Text.Trim();
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("EMBG", OracleDbType.Char);
+                prm.Value = this.tbEmbg.Text.Trim();
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("DAT", OracleDbType.Varchar2);
+                if (tbDenRagjanje.Text.Trim() != "")
+                    prm.Value = tbDenRagjanje.Text.Trim() + "." + tbMesecRagjanje.Text.Trim() + "." + tbGodinaRagjanje.Text.Trim();
+                else
+                    prm.Value = null;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("ADR", OracleDbType.Varchar2);
+                if (this.tbAdresa.Text.Trim() != "")
+                    prm.Value = this.tbAdresa.Text.Trim();
+                else
+                    prm.Value = null;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
+                cmd.Parameters.Add(prm);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
 
             //cmd.ExecuteNonQuery();
             
@@ -292,40 +348,52 @@ namespace SmetkaZaNaracka
             // na vraboteniot vo dadeniot restoran
             string sqlIzvrsuva = @"UPDATE IZVRSHUVA SET POZICIJA = :POZ, DATUM_NA_VRABOTUVANJE = TO_DATE(:DAT, 'dd.MM.yyyy'), STATUS = :STAT, PLATA = :PLATA, GODISHEN_ODMOR = :ODMOR WHERE VRABOTEN_ID = :VRAB_ID AND RESTORAN_ID = :REST_ID";
             cmd = new OracleCommand(sqlIzvrsuva, this.Conn);
-            prm = new OracleParameter("POZ", OracleDbType.Varchar2);
-            prm.Value = this.lblPozicija.Text;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("DAT", OracleDbType.Varchar2);
-            if (tbDenVrab.Text.Trim() != "")
-                prm.Value = tbDenVrab.Text.Trim() + "." + tbMesecVrab.Text.Trim() + "." + tbGodVrab.Text.Trim();
-            else
-                prm.Value = null;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("STAT", OracleDbType.Char);
-            if (this.StatusVrab)
-                prm.Value = '1';
-            else
-                prm.Value = '0';
-            cmd.Parameters.Add(prm);
-            int plata = int.Parse(this.tbPlata.Text.Trim());
-            prm = new OracleParameter("PLATA", OracleDbType.Int64);
-            prm.Value = plata;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("ODMOR", OracleDbType.Int64);
-            if (tbOdmor.Text.Trim() != "")
+
+            try
             {
-                int odmor = int.Parse(this.tbOdmor.Text.Trim());
-                prm.Value = odmor;
+                OracleParameter prm = new OracleParameter("POZ", OracleDbType.Varchar2);
+                prm.Value = this.lblPozicija.Text;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("DAT", OracleDbType.Varchar2);
+                if (tbDenVrab.Text.Trim() != "")
+                    prm.Value = tbDenVrab.Text.Trim() + "." + tbMesecVrab.Text.Trim() + "." + tbGodVrab.Text.Trim();
+                else
+                    prm.Value = null;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("STAT", OracleDbType.Char);
+                if (this.StatusVrab)
+                    prm.Value = '1';
+                else
+                    prm.Value = '0';
+                cmd.Parameters.Add(prm);
+                int plata = int.Parse(this.tbPlata.Text.Trim());
+                prm = new OracleParameter("PLATA", OracleDbType.Int64);
+                prm.Value = plata;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("ODMOR", OracleDbType.Int64);
+                if (tbOdmor.Text.Trim() != "")
+                {
+                    int odmor = int.Parse(this.tbOdmor.Text.Trim());
+                    prm.Value = odmor;
+                }
+                else
+                    prm.Value = 0;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
             }
-            else
-                prm.Value = 0;            
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = this.VrabotenID;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-            prm.Value = this.Restoran.RestoranID;
-            cmd.Parameters.Add(prm);
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
 
             //cmd.ExecuteNonQuery();
             
@@ -393,24 +461,28 @@ namespace SmetkaZaNaracka
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.LightArrowLeft;
+            this.Cursor = Cursors.Hand;
         }
 
         private void pictureBox4_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.DarkArrowLeft;
+            this.Cursor = Cursors.Default;
         }
 
         private void pictureBox5_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.LightArrowRight___Copy;
+            this.Cursor = Cursors.Hand;
         }
 
         private void pictureBox5_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.DarkArrowRight;
+            this.Cursor = Cursors.Default;
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

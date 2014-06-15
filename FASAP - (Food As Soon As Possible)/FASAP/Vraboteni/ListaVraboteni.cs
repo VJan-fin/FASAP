@@ -37,10 +37,25 @@ namespace SmetkaZaNaracka
     {
         private OracleConnection Conn { get; set; }
         private Restoran Restoran { get; set; }
+        /// <summary>
+        /// Site mozni vraboteni koi se vo bazata, a se povrzani
+        /// so soodvetniot restoran
+        /// </summary>
         private List<VrabotenInfo> AllEmployees { get; set; }
+        /// <summary>
+        /// Vrabotenite koi se prikazuvaat vo listata na formata
+        /// </summary>
         private List<VrabotenInfo> ShowingEmployees { get; set; }
+        /// <summary>
+        /// Tekovniot vraboten cii podetalni podatoci se ispisani
+        /// na formata
+        /// </summary>
         private VrabotenInfo CurrentEmp { get; set; }
 
+        /// <summary>
+        /// Pomosna lista koja gi sodrzi labelite vo koi se 
+        /// prikazuvaat iminjata i preziminjata na vrabotenite
+        /// </summary>
         private List<LabelFASAP> ListaVrab { get; set; }
         private int indVrab { get; set; }
         private List<string> Pozicii { get; set; }
@@ -50,8 +65,13 @@ namespace SmetkaZaNaracka
 
         private SortingArg SortingParam { get; set; }
         private SortingOrder SortingStat { get; set; }
+        /// <summary>
+        /// Pomosna lista koja gi sodrzi kopcinjata koi go oznacuvaat
+        /// nacinot na podreduvanje po soodvetniot atribut
+        /// </summary>
         private List<PictureBox> OrderPics { get; set; }
 
+        /*
         // samo za primer
         public ListaVraboteni()
         {
@@ -68,6 +88,7 @@ namespace SmetkaZaNaracka
 
             this.Init();
         }
+        */
 
         public ListaVraboteni(Restoran restoran, OracleConnection conn)
         {
@@ -144,9 +165,20 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(sqlPozicii, this.Conn);
             cmd.CommandType = CommandType.Text;
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-                this.Pozicii.Add(dr.GetString(0));
+            try
+            {
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                    this.Pozicii.Add(dr.GetString(0));
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
 
             this.UpdatePozicii();
         }
@@ -162,27 +194,39 @@ namespace SmetkaZaNaracka
 
             string sqlVraboteni = @"SELECT VRABOTEN_ID, IME_VRABOTEN, PREZIME_VRABOTEN, POZICIJA, PLATA, STATUS, IZVRSHENI_NARACHKI FROM VRABOTEN NATURAL JOIN IZVRSHUVA WHERE RESTORAN_ID = :RES_ID ORDER BY VRABOTEN_ID";
             OracleCommand cmd = new OracleCommand(sqlVraboteni, Conn);
-            OracleParameter prm = new OracleParameter("RES_ID", OracleDbType.Int64);
-            prm.Value = Restoran.RestoranID;
-            cmd.Parameters.Add(prm);
-            cmd.CommandType = CommandType.Text;
-            OracleDataReader dr = cmd.ExecuteReader();
 
-            while (dr.Read())
+            try
             {
-                VrabotenInfo vr = new VrabotenInfo();
-                vr.VrabotenID = dr.GetInt32(0);
-                vr.Ime = dr.GetString(1);
-                vr.Prezime = dr.GetString(2);
-                vr.Pozicija = dr.GetString(3);
-                vr.Plata = dr.GetInt32(4);
-                int st;
-                if (int.TryParse(dr.GetString(5), out st))
-                    vr.Status = st;
-                vr.Naracki = dr.GetInt32(6);
-                this.AllEmployees.Add(vr);
-                //samo privremeno
-                //this.ShowingEmployees.Add(vr);
+                OracleParameter prm = new OracleParameter("RES_ID", OracleDbType.Int64);
+                prm.Value = Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    VrabotenInfo vr = new VrabotenInfo();
+                    vr.VrabotenID = dr.GetInt32(0);
+                    vr.Ime = dr.GetString(1);
+                    vr.Prezime = dr.GetString(2);
+                    vr.Pozicija = dr.GetString(3);
+                    vr.Plata = dr.GetInt32(4);
+                    int st;
+                    if (int.TryParse(dr.GetString(5), out st))
+                        vr.Status = st;
+                    vr.Naracki = dr.GetInt32(6);
+                    this.AllEmployees.Add(vr);
+                    //samo privremeno
+                    //this.ShowingEmployees.Add(vr);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
             }
 
             //this.FiltrirajVraboteni();
@@ -583,6 +627,7 @@ namespace SmetkaZaNaracka
             else
                 this.SortingStat = SortingOrder.Asc;
         }
+
         /*
         /// <summary>
         /// Promena na oznakata za redosledot na podreduvanje
@@ -598,6 +643,7 @@ namespace SmetkaZaNaracka
                 pb.Image = Resources.LightArrowDown;
         }
         */
+
         /// <summary>
         /// Postavuvanje na predodreden izgled na kontrolite
         /// za podreduvanje na vrabotenite

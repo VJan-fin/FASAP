@@ -74,8 +74,7 @@
             this.tbIme.Location = new System.Drawing.Point(75, 269);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(358, 35);
-            this.tbIme.TabIndex = 8;
-            this.tbIme.TabStop = false;
+            this.tbIme.TabIndex = 0;
             this.tbIme.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
             // 
             // labelFASAP1
@@ -146,8 +145,7 @@
             this.tbPrezime.Location = new System.Drawing.Point(75, 404);
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(358, 35);
-            this.tbPrezime.TabIndex = 12;
-            this.tbPrezime.TabStop = false;
+            this.tbPrezime.TabIndex = 1;
             this.tbPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
             // 
             // labelFASAP4
@@ -173,8 +171,7 @@
             this.tbEmbg.Location = new System.Drawing.Point(75, 542);
             this.tbEmbg.Name = "tbEmbg";
             this.tbEmbg.Size = new System.Drawing.Size(358, 35);
-            this.tbEmbg.TabIndex = 14;
-            this.tbEmbg.TabStop = false;
+            this.tbEmbg.TabIndex = 2;
             this.tbEmbg.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmbg_Validating);
             // 
             // labelFASAP5
@@ -201,8 +198,7 @@
             this.tbAdresa.Multiline = true;
             this.tbAdresa.Name = "tbAdresa";
             this.tbAdresa.Size = new System.Drawing.Size(358, 129);
-            this.tbAdresa.TabIndex = 16;
-            this.tbAdresa.TabStop = false;
+            this.tbAdresa.TabIndex = 6;
             // 
             // labelFASAP7
             // 
@@ -227,8 +223,7 @@
             this.tbDen.Location = new System.Drawing.Point(83, 673);
             this.tbDen.Name = "tbDen";
             this.tbDen.Size = new System.Drawing.Size(65, 35);
-            this.tbDen.TabIndex = 20;
-            this.tbDen.TabStop = false;
+            this.tbDen.TabIndex = 3;
             this.tbDen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbDen.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
@@ -255,8 +250,7 @@
             this.tbMesec.Location = new System.Drawing.Point(202, 673);
             this.tbMesec.Name = "tbMesec";
             this.tbMesec.Size = new System.Drawing.Size(65, 35);
-            this.tbMesec.TabIndex = 22;
-            this.tbMesec.TabStop = false;
+            this.tbMesec.TabIndex = 4;
             this.tbMesec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbMesec.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
@@ -283,8 +277,7 @@
             this.tbGodina.Location = new System.Drawing.Point(320, 673);
             this.tbGodina.Name = "tbGodina";
             this.tbGodina.Size = new System.Drawing.Size(106, 35);
-            this.tbGodina.TabIndex = 24;
-            this.tbGodina.TabStop = false;
+            this.tbGodina.TabIndex = 5;
             this.tbGodina.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbGodina.Validating += new System.ComponentModel.CancelEventHandler(this.tbGodina_Validating);
             // 
@@ -311,8 +304,7 @@
             this.tbGrad.Location = new System.Drawing.Point(508, 542);
             this.tbGrad.Name = "tbGrad";
             this.tbGrad.Size = new System.Drawing.Size(358, 35);
-            this.tbGrad.TabIndex = 26;
-            this.tbGrad.TabStop = false;
+            this.tbGrad.TabIndex = 7;
             // 
             // labelFASAP10
             // 
@@ -352,8 +344,7 @@
             this.tbPlata.Location = new System.Drawing.Point(949, 388);
             this.tbPlata.Name = "tbPlata";
             this.tbPlata.Size = new System.Drawing.Size(150, 35);
-            this.tbPlata.TabIndex = 32;
-            this.tbPlata.TabStop = false;
+            this.tbPlata.TabIndex = 8;
             this.tbPlata.Validating += new System.ComponentModel.CancelEventHandler(this.tbPlata_Validating);
             // 
             // labelFASAP12
@@ -456,7 +447,7 @@
             this.buttonFASAP1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonFASAP1.Name = "buttonFASAP1";
             this.buttonFASAP1.Size = new System.Drawing.Size(176, 54);
-            this.buttonFASAP1.TabIndex = 39;
+            this.buttonFASAP1.TabIndex = 9;
             this.buttonFASAP1.Text = "Додади";
             this.buttonFASAP1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP1.Click += new System.EventHandler(this.buttonFASAP1_Click);
@@ -474,7 +465,7 @@
             this.buttonFASAP2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonFASAP2.Name = "buttonFASAP2";
             this.buttonFASAP2.Size = new System.Drawing.Size(176, 54);
-            this.buttonFASAP2.TabIndex = 40;
+            this.buttonFASAP2.TabIndex = 10;
             this.buttonFASAP2.Text = "Откажи";
             this.buttonFASAP2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP2.Click += new System.EventHandler(this.buttonFASAP2_Click);

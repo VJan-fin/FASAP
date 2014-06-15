@@ -11,7 +11,6 @@ using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
-    // cursor = cursor.hand vo site mouse enter nastani
     public partial class DodavanjeVraboten : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
@@ -29,7 +28,7 @@ namespace SmetkaZaNaracka
             this.NajdiID();
             this.PopolniPozicii();
         }
-
+        /*
         // samo za primer
         public DodavanjeVraboten()
         {
@@ -48,7 +47,7 @@ namespace SmetkaZaNaracka
             this.NajdiID();
             this.PopolniPozicii();
         }
-
+        */
         /// <summary>
         /// Prezemanje na site mozni funkcii koi postojat vo bazata
         /// </summary>
@@ -61,9 +60,20 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(sqlPozicii, this.Conn);
             cmd.CommandType = CommandType.Text;
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-                this.Pozicii.Add(dr.GetString(0));
+            try
+            {
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                    this.Pozicii.Add(dr.GetString(0));
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
 
             UpdatePozicii();
         }
@@ -90,11 +100,22 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(sqlID, this.Conn);
             cmd.CommandType = CommandType.Text;
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-                this.VrabotenID = dr.GetInt32(0) + 1;
+            try
+            {
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                    this.VrabotenID = dr.GetInt32(0) + 1;
 
-            this.lblVrabotenID.Text = this.VrabotenID.ToString();
+                this.lblVrabotenID.Text = this.VrabotenID.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (this.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
         }
 
         private void tbIme_Validating(object sender, CancelEventArgs e)
@@ -229,49 +250,57 @@ namespace SmetkaZaNaracka
         {
             string insertVrab = @"INSERT INTO VRABOTEN (VRABOTEN_ID, IME_VRABOTEN, PREZIME_VRABOTEN, EMBG, DATUM_NA_RAGJANJE, ADRESA_NA_ZHIVEENJE) VALUES (:VRAB_ID, :IME, :PREZIME, :EMBG, :DAT, :ADR)";
             OracleCommand cmd = new OracleCommand(insertVrab, Conn);
-            OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = this.VrabotenID;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("IME", OracleDbType.Varchar2);
-            prm.Value = this.tbIme.Text.Trim();
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("PREZIME", OracleDbType.Varchar2);
-            prm.Value = this.tbPrezime.Text.Trim();
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("EMBG", OracleDbType.Char);
-            prm.Value = this.tbEmbg.Text.Trim();
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("DAT", OracleDbType.Date);
-            if (tbDen.Text.Trim() != "")
+
+            try
             {
-                int d = int.Parse(tbDen.Text.Trim());
-                int m = int.Parse(tbMesec.Text.Trim());
-                int y = int.Parse(tbGodina.Text.Trim());
-                DateTime dt;
-                try
+                OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("IME", OracleDbType.Varchar2);
+                prm.Value = this.tbIme.Text.Trim();
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("PREZIME", OracleDbType.Varchar2);
+                prm.Value = this.tbPrezime.Text.Trim();
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("EMBG", OracleDbType.Char);
+                prm.Value = this.tbEmbg.Text.Trim();
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("DAT", OracleDbType.Date);
+                if (tbDen.Text.Trim() != "")
                 {
-                    dt = new DateTime(y, m, d);
-                    prm.Value = dt;
+                    int d = int.Parse(tbDen.Text.Trim());
+                    int m = int.Parse(tbMesec.Text.Trim());
+                    int y = int.Parse(tbGodina.Text.Trim());
+                    DateTime dt;
+                    try
+                    {
+                        dt = new DateTime(y, m, d);
+                        prm.Value = dt;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBoxForm mbf = new MessageBoxForm("Невалиден датум!", false);
+                        mbf.Show();
+                    }
                 }
-                catch (Exception e)
-                {
-                    MessageBoxForm mbf = new MessageBoxForm("Невалиден датум!", false);
-                    mbf.Show();
-                }
+                else
+                    prm.Value = null;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("ADR", OracleDbType.Varchar2);
+                string adresa = "";
+                adresa += this.tbAdresa.Text.Trim();
+                if (this.tbGrad.Text.Trim() != "")
+                    adresa += ", " + this.tbGrad.Text.Trim();
+                if (adresa != "")
+                    prm.Value = adresa;
+                else
+                    prm.Value = null;
+                cmd.Parameters.Add(prm);
             }
-            else
-                prm.Value = null;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("ADR", OracleDbType.Varchar2);
-            string adresa = "";
-            adresa += this.tbAdresa.Text.Trim();
-            if (this.tbGrad.Text.Trim() != "")
-                adresa += ", " + this.tbGrad.Text.Trim();
-            if (adresa != "")
-                prm.Value = adresa;
-            else
-                prm.Value = null;
-            cmd.Parameters.Add(prm);
+            catch (Exception ex)
+            {
+                return -1;
+            }
 
             cmd.CommandType = CommandType.Text;
             int br;
@@ -295,30 +324,38 @@ namespace SmetkaZaNaracka
         {
             string insertVrab = @"INSERT INTO IZVRSHUVA (VRABOTEN_ID, RESTORAN_ID, POZICIJA, DATUM_NA_VRABOTUVANJE, PLATA) VALUES (:VRAB_ID, :REST_ID, :POZ, TO_DATE(:DAT, 'dd.MM.yyyy'), :PLATA)";
             OracleCommand cmd = new OracleCommand(insertVrab, Conn);
-            OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = this.VrabotenID;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-            prm.Value = this.Restoran.RestoranID;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("POZ", OracleDbType.Varchar2);
-            prm.Value = this.Pozicii[this.PozInd];
-            cmd.Parameters.Add(prm);
-            string datum = DateTime.Now.Day.ToString().Trim() + "." + DateTime.Now.Month.ToString().Trim() + "." + DateTime.Now.Year.ToString().Trim();
-            prm = new OracleParameter("DAT", OracleDbType.Varchar2);
-            prm.Value = datum;
-            cmd.Parameters.Add(prm);
-            int plata = int.Parse(this.tbPlata.Text.Trim());
-            prm = new OracleParameter("PLATA", OracleDbType.Int64);
-            prm.Value = plata;
-            cmd.Parameters.Add(prm);
+
+            try
+            {
+                OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("POZ", OracleDbType.Varchar2);
+                prm.Value = this.Pozicii[this.PozInd];
+                cmd.Parameters.Add(prm);
+                string datum = DateTime.Now.Day.ToString().Trim() + "." + DateTime.Now.Month.ToString().Trim() + "." + DateTime.Now.Year.ToString().Trim();
+                prm = new OracleParameter("DAT", OracleDbType.Varchar2);
+                prm.Value = datum;
+                cmd.Parameters.Add(prm);
+                int plata = int.Parse(this.tbPlata.Text.Trim());
+                prm = new OracleParameter("PLATA", OracleDbType.Int64);
+                prm.Value = plata;
+                cmd.Parameters.Add(prm);
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
 
             int br;
             try
             {
                 br = cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 br = -1;
@@ -365,48 +402,56 @@ namespace SmetkaZaNaracka
         {
             this.buttonFASAP1.Image = Resources.LightButton___Copy;
             this.buttonFASAP1.ForeColor = Color.Sienna;
+            this.Cursor = Cursors.Hand;
         }
 
         private void buttonFASAPPotvrdi_MouseLeave(object sender, EventArgs e)
         {
             this.buttonFASAP1.Image = Resources.DarkButton___Copy;
             this.buttonFASAP1.ForeColor = Color.Khaki;
+            this.Cursor = Cursors.Default;
         }
 
         private void buttonFASAP2_MouseEnter(object sender, EventArgs e)
         {
             this.buttonFASAP2.Image = Resources.LightButton___Copy;
             this.buttonFASAP2.ForeColor = Color.Sienna;
+            this.Cursor = Cursors.Hand;
         }
 
         private void buttonFASAP2_MouseLeave(object sender, EventArgs e)
         {
             this.buttonFASAP2.Image = Resources.DarkButton___Copy;
             this.buttonFASAP2.ForeColor = Color.Khaki;
+            this.Cursor = Cursors.Default;
         }
 
         private void pictureBox4_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.LightArrowLeft;
+            this.Cursor = Cursors.Hand;
         }
 
         private void pictureBox4_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.DarkArrowLeft;
+            this.Cursor = Cursors.Default;
         }
 
         private void pictureBox5_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.LightArrowRight___Copy;
+            this.Cursor = Cursors.Hand;
         }
 
         private void pictureBox5_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
             pb.Image = Resources.DarkArrowRight;
+            this.Cursor = Cursors.Default;
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

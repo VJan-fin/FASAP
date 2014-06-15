@@ -26,6 +26,7 @@ namespace SmetkaZaNaracka
         public void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             this.pictureBox1.Image = Resources.MinimizeLightLeft;
+            this.Cursor = Cursors.Hand;
         }
 
         public void pictureBox2_Click(object sender, EventArgs e)
@@ -36,16 +37,19 @@ namespace SmetkaZaNaracka
         public void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
             this.pictureBox2.Image = Resources.ExitLight;
+            this.Cursor = Cursors.Hand;
         }
 
         public void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox1.Image = Resources.MinimizeDarkLeft;
+            this.Cursor = Cursors.Default;
         }
 
         public void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox2.Image = Resources.ExitDark;
+            this.Cursor = Cursors.Default;
         }
 
         public void pictureBox1_Click(object sender, EventArgs e)

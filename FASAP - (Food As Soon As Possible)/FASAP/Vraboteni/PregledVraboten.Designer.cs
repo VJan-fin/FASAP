@@ -223,7 +223,7 @@
             this.tbPlata.Location = new System.Drawing.Point(673, 656);
             this.tbPlata.Name = "tbPlata";
             this.tbPlata.Size = new System.Drawing.Size(150, 32);
-            this.tbPlata.TabIndex = 65;
+            this.tbPlata.TabIndex = 11;
             this.tbPlata.TabStop = false;
             this.tbPlata.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbPlata.Click += new System.EventHandler(this.tbIme_Click);
@@ -282,7 +282,7 @@
             this.tbGodinaRagjanje.Location = new System.Drawing.Point(718, 261);
             this.tbGodinaRagjanje.Name = "tbGodinaRagjanje";
             this.tbGodinaRagjanje.Size = new System.Drawing.Size(92, 32);
-            this.tbGodinaRagjanje.TabIndex = 59;
+            this.tbGodinaRagjanje.TabIndex = 6;
             this.tbGodinaRagjanje.TabStop = false;
             this.tbGodinaRagjanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbGodinaRagjanje.Click += new System.EventHandler(this.tbIme_Click);
@@ -311,7 +311,7 @@
             this.tbMesecRagjanje.Location = new System.Drawing.Point(607, 261);
             this.tbMesecRagjanje.Name = "tbMesecRagjanje";
             this.tbMesecRagjanje.Size = new System.Drawing.Size(52, 32);
-            this.tbMesecRagjanje.TabIndex = 57;
+            this.tbMesecRagjanje.TabIndex = 5;
             this.tbMesecRagjanje.TabStop = false;
             this.tbMesecRagjanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbMesecRagjanje.Click += new System.EventHandler(this.tbIme_Click);
@@ -340,7 +340,7 @@
             this.tbDenRagjanje.Location = new System.Drawing.Point(496, 261);
             this.tbDenRagjanje.Name = "tbDenRagjanje";
             this.tbDenRagjanje.Size = new System.Drawing.Size(52, 32);
-            this.tbDenRagjanje.TabIndex = 55;
+            this.tbDenRagjanje.TabIndex = 4;
             this.tbDenRagjanje.TabStop = false;
             this.tbDenRagjanje.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbDenRagjanje.Click += new System.EventHandler(this.tbIme_Click);
@@ -370,7 +370,7 @@
             this.tbAdresa.Multiline = true;
             this.tbAdresa.Name = "tbAdresa";
             this.tbAdresa.Size = new System.Drawing.Size(308, 96);
-            this.tbAdresa.TabIndex = 53;
+            this.tbAdresa.TabIndex = 3;
             this.tbAdresa.TabStop = false;
             this.tbAdresa.Click += new System.EventHandler(this.tbIme_Click);
             // 
@@ -397,7 +397,7 @@
             this.tbEmbg.Location = new System.Drawing.Point(65, 465);
             this.tbEmbg.Name = "tbEmbg";
             this.tbEmbg.Size = new System.Drawing.Size(311, 32);
-            this.tbEmbg.TabIndex = 51;
+            this.tbEmbg.TabIndex = 2;
             this.tbEmbg.TabStop = false;
             this.tbEmbg.Click += new System.EventHandler(this.tbIme_Click);
             this.tbEmbg.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmbg_Validating);
@@ -425,7 +425,7 @@
             this.tbPrezime.Location = new System.Drawing.Point(65, 335);
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(311, 32);
-            this.tbPrezime.TabIndex = 49;
+            this.tbPrezime.TabIndex = 1;
             this.tbPrezime.TabStop = false;
             this.tbPrezime.Click += new System.EventHandler(this.tbIme_Click);
             this.tbPrezime.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
@@ -483,7 +483,7 @@
             this.tbIme.Location = new System.Drawing.Point(65, 210);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(311, 32);
-            this.tbIme.TabIndex = 45;
+            this.tbIme.TabIndex = 0;
             this.tbIme.TabStop = false;
             this.tbIme.Click += new System.EventHandler(this.tbIme_Click);
             this.tbIme.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
@@ -541,7 +541,7 @@
             this.tbGodVrab.Location = new System.Drawing.Point(718, 540);
             this.tbGodVrab.Name = "tbGodVrab";
             this.tbGodVrab.Size = new System.Drawing.Size(92, 32);
-            this.tbGodVrab.TabIndex = 80;
+            this.tbGodVrab.TabIndex = 9;
             this.tbGodVrab.TabStop = false;
             this.tbGodVrab.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbGodVrab.Click += new System.EventHandler(this.tbIme_Click);
@@ -570,7 +570,7 @@
             this.tbMesecVrab.Location = new System.Drawing.Point(607, 540);
             this.tbMesecVrab.Name = "tbMesecVrab";
             this.tbMesecVrab.Size = new System.Drawing.Size(52, 32);
-            this.tbMesecVrab.TabIndex = 78;
+            this.tbMesecVrab.TabIndex = 8;
             this.tbMesecVrab.TabStop = false;
             this.tbMesecVrab.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbMesecVrab.Click += new System.EventHandler(this.tbIme_Click);
@@ -599,7 +599,7 @@
             this.tbDenVrab.Location = new System.Drawing.Point(496, 540);
             this.tbDenVrab.Name = "tbDenVrab";
             this.tbDenVrab.Size = new System.Drawing.Size(52, 32);
-            this.tbDenVrab.TabIndex = 76;
+            this.tbDenVrab.TabIndex = 7;
             this.tbDenVrab.TabStop = false;
             this.tbDenVrab.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbDenVrab.Click += new System.EventHandler(this.tbIme_Click);
@@ -629,7 +629,7 @@
             this.tbStaz.Name = "tbStaz";
             this.tbStaz.ReadOnly = true;
             this.tbStaz.Size = new System.Drawing.Size(150, 32);
-            this.tbStaz.TabIndex = 83;
+            this.tbStaz.TabIndex = 10;
             this.tbStaz.TabStop = false;
             this.tbStaz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbStaz.Click += new System.EventHandler(this.tbStaz_Click);
@@ -657,7 +657,7 @@
             this.tbOdmor.Location = new System.Drawing.Point(925, 490);
             this.tbOdmor.Name = "tbOdmor";
             this.tbOdmor.Size = new System.Drawing.Size(186, 32);
-            this.tbOdmor.TabIndex = 85;
+            this.tbOdmor.TabIndex = 13;
             this.tbOdmor.TabStop = false;
             this.tbOdmor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbOdmor.Click += new System.EventHandler(this.tbIme_Click);
@@ -687,7 +687,7 @@
             this.tbVkNaracki.Name = "tbVkNaracki";
             this.tbVkNaracki.ReadOnly = true;
             this.tbVkNaracki.Size = new System.Drawing.Size(186, 32);
-            this.tbVkNaracki.TabIndex = 87;
+            this.tbVkNaracki.TabIndex = 12;
             this.tbVkNaracki.TabStop = false;
             this.tbVkNaracki.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbVkNaracki.Click += new System.EventHandler(this.tbStaz_Click);

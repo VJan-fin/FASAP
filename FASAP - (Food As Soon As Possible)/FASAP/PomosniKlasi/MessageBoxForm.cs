@@ -50,24 +50,28 @@ namespace SmetkaZaNaracka
         {
             this.buttonFASAPPotvrdi.Image = Resources.LightButton___Copy;
             this.buttonFASAPPotvrdi.ForeColor = Color.Sienna;
+            this.Cursor = Cursors.Hand;
         }
 
         private void buttonFASAPPotvrdi_MouseLeave(object sender, EventArgs e)
         {
             this.buttonFASAPPotvrdi.Image = Resources.DarkButton___Copy;
             this.buttonFASAPPotvrdi.ForeColor = Color.Khaki;
+            this.Cursor = Cursors.Default;
         }
 
         private void buttonFASAP2_MouseEnter(object sender, EventArgs e)
         {
             this.buttonFASAPOtkazi.Image = Resources.LightButton___Copy;
             this.buttonFASAPOtkazi.ForeColor = Color.Sienna;
+            this.Cursor = Cursors.Hand;
         }
 
         private void buttonFASAP2_MouseLeave(object sender, EventArgs e)
         {
             this.buttonFASAPOtkazi.Image = Resources.DarkButton___Copy;
             this.buttonFASAPOtkazi.ForeColor = Color.Khaki;
+            this.Cursor = Cursors.Default;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

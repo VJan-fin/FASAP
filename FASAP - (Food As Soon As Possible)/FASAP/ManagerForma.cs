@@ -13,6 +13,7 @@ namespace SmetkaZaNaracka
 {
     public partial class ManagerForma : BackgroundForm
     {
+        private Restoran CurrRestoran { get; set; }
         private ManagerC Manager { get; set; }
         private OracleConnection Conn { get; set; }
 
@@ -144,7 +145,10 @@ namespace SmetkaZaNaracka
 
         private void btnVraboteni_Click(object sender, EventArgs e)
         {
-            Vraboteni v = new Vraboteni(Conn,Manager.RestoranID);
+            // samo za primer
+            CurrRestoran = new Restoran() { RestoranID = 1, Ime = "Гостилница Лира" };
+            ListaVraboteni v = new ListaVraboteni(this.CurrRestoran, this.Conn);
+            //Vraboteni v = new Vraboteni(Conn, Manager.RestoranID);
             v.Show();
         }
 

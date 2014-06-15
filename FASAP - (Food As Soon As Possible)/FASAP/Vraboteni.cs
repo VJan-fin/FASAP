@@ -24,7 +24,6 @@ namespace SmetkaZaNaracka
             InitializeComponent();
             Conn = conn;
             RestoranID = restoranID;
-
         }
 
         private void btnDodadi_MouseEnter(object sender, EventArgs e)
@@ -44,8 +43,9 @@ namespace SmetkaZaNaracka
         private void btnDodadi_Click(object sender, EventArgs e)
         {
             //samo za proba
-            DodavanjeVraboten dv = new DodavanjeVraboten();
-            dv.Show();
+
+            //DodavanjeVraboten dv = new DodavanjeVraboten(this.RestoranID);
+            //dv.Show();
         }
     }
 }
