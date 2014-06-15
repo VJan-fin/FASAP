@@ -11,6 +11,7 @@ using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
+    // cursor = cursor.hand vo site mouse enter nastani
     public partial class PregledVraboten : BackgroundForm
     {
         private OracleConnection Conn { get; set; }

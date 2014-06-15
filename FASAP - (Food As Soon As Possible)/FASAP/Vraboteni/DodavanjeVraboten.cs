@@ -11,6 +11,7 @@ using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
+    // cursor = cursor.hand vo site mouse enter nastani
     public partial class DodavanjeVraboten : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
