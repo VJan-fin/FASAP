@@ -90,7 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dostavuvac.cs" />
+    <Compile Include="Vraboteni\EmployeeComparators.cs" />
     <Compile Include="Kelner.cs" />
+    <Compile Include="Vraboteni\OrderEmployees.cs" />
     <Compile Include="Vraboteni\VrabotenInfo.cs" />
     <Compile Include="Vraboteni\ListaVraboteni.cs">
       <SubType>Form</SubType>

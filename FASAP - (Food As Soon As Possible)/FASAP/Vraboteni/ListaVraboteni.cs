@@ -11,7 +11,28 @@ using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
-    // sortiranje vo rastecki/opagacki redosled po: br. vraboten, ime, prezime, plata
+    /// <summary>
+    /// Gi oznacuva site mozni parametri po koi moze
+    /// da se vrsi podreduvanjeto
+    /// </summary>
+    public enum SortingArg
+    {
+        Broj,
+        Ime,
+        Prezime,
+        Plata
+    }
+
+    /// <summary>
+    /// Go oznacuva redosledot po koj se vrsi podreduvanjeto
+    /// (Asc - rastecki; Desc - opagacki)
+    /// </summary>
+    public enum SortingOrder
+    {
+        Asc,
+        Desc
+    }
+
     public partial class ListaVraboteni : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
@@ -26,6 +47,10 @@ namespace SmetkaZaNaracka
         private int PozInd { get; set; }
         private List<string> Statusi { get; set; }
         private int indStatus { get; set; }
+
+        private SortingArg SortingParam { get; set; }
+        private SortingOrder SortingStat { get; set; }
+        private List<PictureBox> OrderPics { get; set; }
 
         // samo za primer
         public ListaVraboteni()
@@ -62,6 +87,8 @@ namespace SmetkaZaNaracka
             this.lblImeRestoran.Text = this.Restoran.Ime + " ";
             this.AllEmployees = new List<VrabotenInfo>();
             this.ShowingEmployees = new List<VrabotenInfo>();
+            this.SortingParam = SortingArg.Broj;
+            this.SortingStat = SortingOrder.Asc;
 
             this.ListaVrab = new List<LabelFASAP>();
             this.ListaVrab.Add(lbl1);
@@ -75,6 +102,12 @@ namespace SmetkaZaNaracka
             this.ListaVrab.Add(lbl9);
             this.ListaVrab.Add(lbl10);
             this.indVrab = 0;
+
+            this.OrderPics = new List<PictureBox>();
+            this.OrderPics.Add(pbBroj);
+            this.OrderPics.Add(pbIme);
+            this.OrderPics.Add(pbPrezime);
+            this.OrderPics.Add(pbPlata);
 
             this.VcitajPozicii();
             this.VcitajStatusi();
@@ -119,41 +152,6 @@ namespace SmetkaZaNaracka
         }
 
         /// <summary>
-        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
-        /// od listata pozicii
-        /// </summary>
-        private void UpdatePozicii()
-        {
-            if (this.Pozicii.Count != 0)
-                this.lblPozicijaFilter.Text = this.Pozicii[this.PozInd];
-            else
-                this.lblPozicijaFilter.Text = " ";
-
-            this.FiltrirajVraboteni();
-        }
-
-        /// <summary>
-        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
-        /// od listata statusi na vrabotenite
-        /// </summary>
-        private void UpdateStatusi()
-        {
-            if (this.Statusi.Count != 0)
-            {
-                if (this.Statusi[this.indStatus] == "0")
-                    this.lblStatusFilter.Text = "Неактивен";
-                else if (this.Statusi[this.indStatus] == "1")
-                    this.lblStatusFilter.Text = "Активен";
-                else
-                    this.lblStatusFilter.Text = this.Statusi[this.indStatus];
-            } 
-            else
-                this.lblStatusFilter.Text = " ";
-
-            this.FiltrirajVraboteni();
-        }
-
-        /// <summary>
         /// Prezemanje na site potrebni podatoci za vrabotenite
         /// od bazata na podatoci
         /// </summary>
@@ -187,7 +185,45 @@ namespace SmetkaZaNaracka
                 //this.ShowingEmployees.Add(vr);
             }
 
-            this.FiltrirajVraboteni();
+            //this.FiltrirajVraboteni();
+            this.UpdateScreen();
+        }
+
+        /// <summary>
+        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
+        /// od listata pozicii
+        /// </summary>
+        private void UpdatePozicii()
+        {
+            if (this.Pozicii.Count != 0)
+                this.lblPozicijaFilter.Text = this.Pozicii[this.PozInd];
+            else
+                this.lblPozicijaFilter.Text = " ";
+
+            //this.FiltrirajVraboteni();
+            this.UpdateScreen();
+        }
+
+        /// <summary>
+        /// Azuriranje na prikazot na labelata so soodvetna sodrzina
+        /// od listata statusi na vrabotenite
+        /// </summary>
+        private void UpdateStatusi()
+        {
+            if (this.Statusi.Count != 0)
+            {
+                if (this.Statusi[this.indStatus] == "0")
+                    this.lblStatusFilter.Text = "Неактивен";
+                else if (this.Statusi[this.indStatus] == "1")
+                    this.lblStatusFilter.Text = "Активен";
+                else
+                    this.lblStatusFilter.Text = this.Statusi[this.indStatus];
+            } 
+            else
+                this.lblStatusFilter.Text = " ";
+
+            //this.FiltrirajVraboteni();
+            this.UpdateScreen();
         }
 
         /// <summary>
@@ -208,6 +244,18 @@ namespace SmetkaZaNaracka
                     this.ListaVrab[i].UpdateObject(null);
             }
 
+            //this.MarkSelection();
+        }
+
+        /// <summary>
+        /// Metod kojsto vrsi obnovuvanje na podatocite na ekranot
+        /// </summary>
+        public void UpdateScreen()
+        {
+            this.FiltrirajVraboteni();
+            //OrderEmployees.OrderByName(this.ShowingEmployees, false);
+            this.PodrediVrab();
+            this.UpdateVrab();
             this.MarkSelection();
         }
 
@@ -285,7 +333,22 @@ namespace SmetkaZaNaracka
 
             //MessageBox.Show(this.ShowingEmployees.Count.ToString());
 
-            this.UpdateVrab();
+            //this.UpdateVrab();
+        }
+
+        /// <summary>
+        /// Sortiranje na listata vraboteni spored odbraniot parametar
+        /// </summary>
+        public void PodrediVrab()
+        {
+            if (this.SortingParam == SortingArg.Broj)
+                OrderEmployees.OrderByID(this.ShowingEmployees, this.SortingStat == SortingOrder.Asc);
+            else if (this.SortingParam == SortingArg.Ime)
+                OrderEmployees.OrderByName(this.ShowingEmployees, this.SortingStat == SortingOrder.Asc);
+            else if (this.SortingParam == SortingArg.Prezime)
+                OrderEmployees.OrderBySurname(this.ShowingEmployees, this.SortingStat == SortingOrder.Asc);
+            else if (this.SortingParam == SortingArg.Plata)
+                OrderEmployees.OrderBySalary(this.ShowingEmployees, this.SortingStat == SortingOrder.Asc);
         }
 
         private void lbl1_Click(object sender, EventArgs e)
@@ -305,8 +368,9 @@ namespace SmetkaZaNaracka
             {
                 if (this.indVrab != 0)
                     this.indVrab--;
-                this.FiltrirajVraboteni();
-                this.MarkSelection();
+                //this.FiltrirajVraboteni();
+                //this.MarkSelection();
+                this.UpdateScreen();
             }
         }
 
@@ -316,32 +380,37 @@ namespace SmetkaZaNaracka
             {
                 if (this.indVrab < this.ShowingEmployees.Count - this.ListaVrab.Count)
                     this.indVrab++;
-                this.FiltrirajVraboteni();
-                this.MarkSelection();
+                //this.FiltrirajVraboteni();
+                //this.MarkSelection();
+                this.UpdateScreen();
             }
         }
 
         private void pictureBoxUp_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Hand;
             pb.Image = Resources.LightArrowUp;
         }
 
         private void pictureBoxUp_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Default;
             pb.Image = Resources.DarkArrowUp;
         }
 
         private void pictureBoxDown_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Hand;
             pb.Image = Resources.LightArrowDown;
         }
 
         private void pictureBoxDown_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Default;
             pb.Image = Resources.DarkArrowDown;
         }
 
@@ -368,6 +437,7 @@ namespace SmetkaZaNaracka
         private void buttonOtkazi_MouseEnter(object sender, EventArgs e)
         {
             ButtonFASAP btn = sender as ButtonFASAP;
+            Cursor = Cursors.Hand;
             btn.Image = Resources.LightButton___Copy;
             btn.ForeColor = Color.Sienna;
             this.Cursor = Cursors.Hand;
@@ -376,6 +446,7 @@ namespace SmetkaZaNaracka
         private void buttonOtkazi_MouseLeave(object sender, EventArgs e)
         {
             ButtonFASAP btn = sender as ButtonFASAP;
+            Cursor = Cursors.Default;
             btn.Image = Resources.DarkButton___Copy;
             btn.ForeColor = Color.Khaki;
             this.Cursor = Cursors.Default;
@@ -421,24 +492,28 @@ namespace SmetkaZaNaracka
         private void pictureBox4_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Hand;
             pb.Image = Resources.LightArrowLeft;
         }
 
         private void pictureBox4_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Default;
             pb.Image = Resources.DarkArrowLeft;
         }
 
         private void pictureBox5_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Hand;
             pb.Image = Resources.LightArrowRight___Copy;
         }
 
         private void pictureBox5_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Default;
             pb.Image = Resources.DarkArrowRight;
         }
 
@@ -480,6 +555,131 @@ namespace SmetkaZaNaracka
                 this.indStatus = (this.indStatus + 1) % this.Statusi.Count;
                 this.UpdateStatusi();
             }
+        }
+
+        private void labelFASAP18_MouseEnter(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            Cursor = Cursors.Hand;
+            lb.Image = Resources.LightButton___Copy;
+            lb.ForeColor = Color.SaddleBrown;
+        }
+
+        private void labelFASAP18_MouseLeave(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            Cursor = Cursors.Default;
+            lb.Image = Resources.DarkButton___Copy;
+            lb.ForeColor = Color.Khaki;
+        }
+
+        /// <summary>
+        /// Promena na redosledot na podreduvanje
+        /// </summary>
+        private void ChangeOrder()
+        {
+            if (this.SortingStat == SortingOrder.Asc)
+                this.SortingStat = SortingOrder.Desc;
+            else
+                this.SortingStat = SortingOrder.Asc;
+        }
+        /*
+        /// <summary>
+        /// Promena na oznakata za redosledot na podreduvanje
+        /// na soodvetniot parametar po koj se vrsi istoto
+        /// </summary>
+        /// <param name="sender"></param>
+        private void ChangeImage(object sender)
+        {
+            PictureBox pb = sender as PictureBox;
+            if (this.SortingStat == SortingOrder.Asc)
+                pb.Image = Resources.LightArrowUp;
+            else
+                pb.Image = Resources.LightArrowDown;
+        }
+        */
+        /// <summary>
+        /// Postavuvanje na predodreden izgled na kontrolite
+        /// za podreduvanje na vrabotenite
+        /// </summary>
+        private void UpdateImages(PictureBox pb)
+        {
+            //PictureBox pb = sender as PictureBox;
+            foreach (var item in this.OrderPics)
+            {
+                if (pb == item && this.SortingStat == SortingOrder.Asc)
+                    item.Image = Resources.LightArrowUp;
+                else if (pb == item && this.SortingStat == SortingOrder.Desc)
+                    item.Image = Resources.LightArrowDown;
+                else if (pb != item)
+                    item.Image = Resources.DarkArrowUp;
+            }
+            /*
+            this.pbBroj.Image = Resources.DarkArrowUp;
+            this.pbIme.Image = Resources.DarkArrowUp;
+            this.pbPrezime.Image = Resources.DarkArrowUp;
+            this.pbPlata.Image = Resources.DarkArrowUp;
+            */
+        }
+
+        private void labelFASAP18_Click(object sender, EventArgs e)
+        {
+            if (this.SortingParam == SortingArg.Broj)
+                this.ChangeOrder();
+            else
+            {
+                this.SortingParam = SortingArg.Broj;
+                this.SortingStat = SortingOrder.Asc;
+            }
+            
+            //MessageBox.Show(this.SortingStat.ToString());
+            this.UpdateImages(pbBroj);
+            this.UpdateScreen();
+        }
+
+        private void labelFASAP19_Click(object sender, EventArgs e)
+        {
+            if (this.SortingParam == SortingArg.Ime)
+                this.ChangeOrder();
+            else
+            {
+                this.SortingParam = SortingArg.Ime;
+                this.SortingStat = SortingOrder.Asc;
+            }
+
+            //MessageBox.Show(this.SortingStat.ToString());
+            this.UpdateImages(pbIme);
+            this.UpdateScreen();
+        }
+
+        private void labelFASAP1_Click(object sender, EventArgs e)
+        {
+            if (this.SortingParam == SortingArg.Prezime)
+                this.ChangeOrder();
+            else
+            {
+                this.SortingParam = SortingArg.Prezime;
+                this.SortingStat = SortingOrder.Asc;
+            }
+
+            //MessageBox.Show(this.SortingStat.ToString());
+            this.UpdateImages(pbPrezime);
+            this.UpdateScreen();
+        }
+
+        private void labelFASAP2_Click(object sender, EventArgs e)
+        {
+            if (this.SortingParam == SortingArg.Plata)
+                this.ChangeOrder();
+            else
+            {
+                this.SortingParam = SortingArg.Plata;
+                this.SortingStat = SortingOrder.Asc;
+            }
+
+            //MessageBox.Show(this.SortingStat.ToString());
+            this.UpdateImages(pbPlata);
+            this.UpdateScreen();
         }
     }
 }
