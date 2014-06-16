@@ -525,6 +525,13 @@ namespace SmetkaZaNaracka
                     this.PopolniVraboten();
                     this.MarkSelection();
                 }
+                else
+                {
+                    this.VcitajVraboteni();
+                    this.CurrentEmp = null;
+                    this.PopolniVraboten();
+                    this.MarkSelection();
+                }
             }
             else
             {
