@@ -34,8 +34,8 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP3 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnLogIn = new SmetkaZaNaracka.ButtonFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,20 +86,6 @@
             this.labelFASAP2.TabIndex = 6;
             this.labelFASAP2.Text = "Лозинка:";
             // 
-            // labelFASAP3
-            // 
-            this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP3.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
-            this.labelFASAP3.LblObject = null;
-            this.labelFASAP3.Location = new System.Drawing.Point(715, 560);
-            this.labelFASAP3.Name = "labelFASAP3";
-            this.labelFASAP3.Size = new System.Drawing.Size(186, 61);
-            this.labelFASAP3.TabIndex = 7;
-            this.labelFASAP3.Text = "Логирај се";
-            this.labelFASAP3.Click += new System.EventHandler(this.labelFASAP3_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -110,13 +96,29 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
+            // btnLogIn
+            // 
+            this.btnLogIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogIn.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.btnLogIn.ForeColor = System.Drawing.Color.Khaki;
+            this.btnLogIn.Image = ((System.Drawing.Image)(resources.GetObject("btnLogIn.Image")));
+            this.btnLogIn.Location = new System.Drawing.Point(736, 582);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(165, 55);
+            this.btnLogIn.TabIndex = 9;
+            this.btnLogIn.Text = "Логирај се";
+            this.btnLogIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnLogIn.MouseEnter += new System.EventHandler(this.btnLogIn_MouseEnter);
+            this.btnLogIn.MouseLeave += new System.EventHandler(this.btnLogIn_MouseLeave);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.labelFASAP3);
             this.Controls.Add(this.labelFASAP2);
             this.Controls.Add(this.labelFASAP1);
             this.Controls.Add(this.tbPassword);
@@ -129,8 +131,8 @@
             this.Controls.SetChildIndex(this.tbPassword, 0);
             this.Controls.SetChildIndex(this.labelFASAP1, 0);
             this.Controls.SetChildIndex(this.labelFASAP2, 0);
-            this.Controls.SetChildIndex(this.labelFASAP3, 0);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
+            this.Controls.SetChildIndex(this.btnLogIn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,7 +145,7 @@
         private System.Windows.Forms.TextBox tbPassword;
         private LabelFASAP labelFASAP1;
         private LabelFASAP labelFASAP2;
-        private LabelFASAP labelFASAP3;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private ButtonFASAP btnLogIn;
     }
 }

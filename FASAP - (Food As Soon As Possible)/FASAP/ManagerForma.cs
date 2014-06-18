@@ -43,18 +43,110 @@ namespace SmetkaZaNaracka
             
             string sqlVrab = @"SELECT IME_RESTORAN FROM RESTORAN WHERE RESTORAN_ID = :REST_ID";
             OracleCommand cmd = new OracleCommand(sqlVrab, this.Conn);
-            cmd.CommandType = CommandType.Text;
-            OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-            prm.Value = this.Manager.RestoranID;
-            cmd.Parameters.Add(prm);
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            
+            try
             {
-                lblrest.Text = dr.GetString(0);
+                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.Manager.RestoranID;
+                cmd.Parameters.Add(prm);
+                cmd.CommandType = CommandType.Text;
+
+                OracleDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    lblrest.Text = dr.GetString(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            
+            }
+            lblManager.Text = Manager.Ime + " " + Manager.Prezime;
+        }
+
+        private void popolniRestoran()
+        {
+            string sqlRestoran = @"SELECT * FROM RESTORAN WHERE RESTORAN_ID = :REST_ID";
+            OracleCommand cmd = new OracleCommand(sqlRestoran, this.Conn);
+
+            try
+            {
+
+                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.Manager.RestoranID;
+                cmd.Parameters.Add(prm);
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                CurrRestoran = new Restoran();
+                if (dr.Read())
+                {
+
+                    CurrRestoran.RestoranID = (int)dr.GetValue(0);
+                    CurrRestoran.Ime = dr.GetString(2);
+                    if (!dr.IsDBNull(3))
+                    {
+                        CurrRestoran.Ulica = dr.GetString(3);
+                    }
+                    else CurrRestoran.Ulica = "";
+                    if (!dr.IsDBNull(4))
+                    {
+                        CurrRestoran.Grad = dr.GetString(4);
+                    }
+                    else CurrRestoran.Grad = "";
+
+                    CurrRestoran.Rejting = (float)dr.GetValue(5);
+                    if (!dr.IsDBNull(6))
+                    {
+                        CurrRestoran.RabotnoVreme = dr.GetString(6);
+                    }
+                    else CurrRestoran.RabotnoVreme = "";
+                    if (!dr.IsDBNull(7))
+                    {
+                        CurrRestoran.Kapacitet = dr.GetInt16(7);
+                    }
+                    else CurrRestoran.Kapacitet = null;
+                    if (!dr.IsDBNull(8))
+                    {
+                        CurrRestoran.BrojMasi = dr.GetInt16(8);
+                    }
+                    else CurrRestoran.BrojMasi = null;
+                    if (!dr.IsDBNull(9))
+                    {
+                        CurrRestoran.CenaZaDostava = dr.GetInt16(9);
+                    }
+                    else CurrRestoran.CenaZaDostava = null;
+                    if (!dr.IsDBNull(10))
+                    {
+                        CurrRestoran.PragZaDostava = dr.GetInt16(10);
+                    }
+                    else CurrRestoran.PragZaDostava = null;
+                    if (!dr.IsDBNull(11))
+                    {
+                        CurrRestoran.DatumNaOtvoranje = dr.GetDateTime(11);
+                    }
+                    else CurrRestoran.DatumNaOtvoranje = null;
+
+                    CurrRestoran.Kategorija = dr.GetString(12);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
             }
 
-            lblManager.Text = Manager.Ime + " " + Manager.Prezime;
+           
         }
         private void btnInfo_MouseEnter(object sender, EventArgs e)
         {
@@ -149,7 +241,8 @@ namespace SmetkaZaNaracka
         private void btnVraboteni_Click(object sender, EventArgs e)
         {
             // samo za primer
-            CurrRestoran = new Restoran() { RestoranID = 1, Ime = "Гостилница Лира" };
+          //  CurrRestoran = new Restoran() { RestoranID = 1, Ime = "Гостилница Лира" };
+            popolniRestoran();
             ListaVraboteni v = new ListaVraboteni(this.CurrRestoran, this.Conn);
             //Vraboteni v = new Vraboteni(Conn, Manager.RestoranID);
             v.Show();
