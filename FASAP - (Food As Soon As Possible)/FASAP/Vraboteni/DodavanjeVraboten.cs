@@ -69,7 +69,7 @@ namespace SmetkaZaNaracka
             catch (Exception ex)
             {
                 MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
-                if (this.ShowDialog() == DialogResult.Yes)
+                if (mbf.ShowDialog() == DialogResult.Yes)
                     this.Close();
                 else
                     this.Close();
@@ -111,7 +111,7 @@ namespace SmetkaZaNaracka
             catch (Exception ex)
             {
                 MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
-                if (this.ShowDialog() == DialogResult.Yes)
+                if (mbf.ShowDialog() == DialogResult.Yes)
                     this.Close();
                 else
                     this.Close();
