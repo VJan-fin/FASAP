@@ -74,6 +74,7 @@
             this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.pbPlata = new System.Windows.Forms.PictureBox();
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.buttonSmetka = new SmetkaZaNaracka.ButtonFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBroj)).BeginInit();
             this.dbLayoutPanel2.SuspendLayout();
@@ -89,15 +90,14 @@
             // 
             // lblImeRestoran
             // 
-            this.lblImeRestoran.AutoSize = true;
             this.lblImeRestoran.BackColor = System.Drawing.Color.Transparent;
             this.lblImeRestoran.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblImeRestoran.ForeColor = System.Drawing.Color.Khaki;
             this.lblImeRestoran.Image = ((System.Drawing.Image)(resources.GetObject("lblImeRestoran.Image")));
             this.lblImeRestoran.LblObject = null;
-            this.lblImeRestoran.Location = new System.Drawing.Point(69, 68);
+            this.lblImeRestoran.Location = new System.Drawing.Point(48, 26);
             this.lblImeRestoran.Name = "lblImeRestoran";
-            this.lblImeRestoran.Size = new System.Drawing.Size(319, 49);
+            this.lblImeRestoran.Size = new System.Drawing.Size(392, 100);
             this.lblImeRestoran.TabIndex = 5;
             this.lblImeRestoran.Text = "Ресторан: Име ";
             // 
@@ -553,7 +553,7 @@
             this.buttonPregledVrab.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonPregledVrab.ForeColor = System.Drawing.Color.Khaki;
             this.buttonPregledVrab.Image = ((System.Drawing.Image)(resources.GetObject("buttonPregledVrab.Image")));
-            this.buttonPregledVrab.Location = new System.Drawing.Point(1125, 258);
+            this.buttonPregledVrab.Location = new System.Drawing.Point(1125, 256);
             this.buttonPregledVrab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonPregledVrab.Name = "buttonPregledVrab";
             this.buttonPregledVrab.Size = new System.Drawing.Size(207, 73);
@@ -785,11 +785,30 @@
             this.labelFASAP2.MouseEnter += new System.EventHandler(this.labelFASAP18_MouseEnter);
             this.labelFASAP2.MouseLeave += new System.EventHandler(this.labelFASAP18_MouseLeave);
             // 
+            // buttonSmetka
+            // 
+            this.buttonSmetka.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSmetka.CausesValidation = false;
+            this.buttonSmetka.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonSmetka.ForeColor = System.Drawing.Color.Khaki;
+            this.buttonSmetka.Image = ((System.Drawing.Image)(resources.GetObject("buttonSmetka.Image")));
+            this.buttonSmetka.Location = new System.Drawing.Point(1125, 362);
+            this.buttonSmetka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.buttonSmetka.Name = "buttonSmetka";
+            this.buttonSmetka.Size = new System.Drawing.Size(207, 73);
+            this.buttonSmetka.TabIndex = 107;
+            this.buttonSmetka.Text = "Корисничка сметка";
+            this.buttonSmetka.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonSmetka.Click += new System.EventHandler(this.buttonSmetka_Click);
+            this.buttonSmetka.MouseEnter += new System.EventHandler(this.buttonOtkazi_MouseEnter);
+            this.buttonSmetka.MouseLeave += new System.EventHandler(this.buttonOtkazi_MouseLeave);
+            // 
             // ListaVraboteni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.buttonSmetka);
             this.Controls.Add(this.pbPlata);
             this.Controls.Add(this.labelFASAP2);
             this.Controls.Add(this.pbPrezime);
@@ -858,6 +877,7 @@
             this.Controls.SetChildIndex(this.pbPrezime, 0);
             this.Controls.SetChildIndex(this.labelFASAP2, 0);
             this.Controls.SetChildIndex(this.pbPlata, 0);
+            this.Controls.SetChildIndex(this.buttonSmetka, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBroj)).EndInit();
             this.dbLayoutPanel2.ResumeLayout(false);
@@ -921,5 +941,6 @@
         private LabelFASAP labelFASAP1;
         public System.Windows.Forms.PictureBox pbPlata;
         private LabelFASAP labelFASAP2;
+        private ButtonFASAP buttonSmetka;
     }
 }

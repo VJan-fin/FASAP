@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dostavuvac.cs" />
+    <Compile Include="Vraboteni\UpravuvanjeSmetki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vraboteni\UpravuvanjeSmetki.Designer.cs">
+      <DependentUpon>UpravuvanjeSmetki.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vraboteni\EmployeeComparators.cs" />
     <Compile Include="Kelner.cs" />
     <Compile Include="Vraboteni\OrderEmployees.cs" />
@@ -311,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchFilterForm\SearchFilter.resx">
       <DependentUpon>SearchFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vraboteni\UpravuvanjeSmetki.resx">
+      <DependentUpon>UpravuvanjeSmetki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VrabotenForma.resx">
       <DependentUpon>VrabotenForma.cs</DependentUpon>

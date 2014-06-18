@@ -734,5 +734,59 @@ namespace SmetkaZaNaracka
             this.UpdateImages(pbPlata);
             this.UpdateScreen();
         }
+
+        private void buttonSmetka_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentEmp != null)
+            {
+                // se vcituvaat korisnickoto ime i lozinkata
+                // ako ne postojat treba da se prasa da se kreiraat
+                string sqlSmetka = @"SELECT KORISNICHKO_IME, LOZINKA FROM KORISNIK WHERE RESTORAN_ID = :REST_ID AND VRABOTEN_ID = :VRAB_ID";
+                OracleCommand cmd = new OracleCommand(sqlSmetka, this.Conn);
+                cmd.CommandType = CommandType.Text;
+                OracleParameter prm;
+
+                try
+                {
+                    prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                    prm.Value = this.Restoran.RestoranID;
+                    cmd.Parameters.Add(prm);
+                    prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                    prm.Value = this.CurrentEmp.VrabotenID;
+                    cmd.Parameters.Add(prm);
+
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    if (!dr.HasRows)
+                    {
+                        MessageBoxForm mbf = new MessageBoxForm("Вработениот нема корисничка сметка!\nДали сакате да ја креирате?");
+                        if (mbf.ShowDialog() == DialogResult.Yes)
+                        {
+                            UpravuvanjeSmetki SmetkiForma = new UpravuvanjeSmetki(this.CurrentEmp.VrabotenID, this.Restoran, this.Conn);
+                            SmetkiForma.Show();
+                        }
+                    }
+                    else
+                    {
+                        string user = dr.GetString(0);
+                        string pass = dr.GetString(1);
+                        UpravuvanjeSmetki SmetkiForma = new UpravuvanjeSmetki(this.CurrentEmp.VrabotenID, this.Restoran, this.Conn, user, pass);
+                        SmetkiForma.Show();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                    if (mbf.ShowDialog() == DialogResult.Yes)
+                        this.Close();
+                    else
+                        this.Close();
+                }
+            }
+            else
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Немате одбрано вработен!\nОдберете вработен и обидете се повторно", false);
+                mbf.ShowDialog();
+            }
+        }
     }
 }

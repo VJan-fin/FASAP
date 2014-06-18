@@ -186,12 +186,14 @@ namespace SmetkaZaNaracka
             string sqlVrab = @"SELECT * FROM VRABOTEN WHERE VRABOTEN_ID = :VRAB_ID";
             OracleCommand cmd = new OracleCommand(sqlVrab, this.Conn);
             cmd.CommandType = CommandType.Text;
-            OracleParameter prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = this.VrabotenID;
-            cmd.Parameters.Add(prm);
+            OracleParameter prm;
 
             try
             {
+                prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
+                cmd.Parameters.Add(prm);
+
                 OracleDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -237,15 +239,16 @@ namespace SmetkaZaNaracka
             string sqlFunk = @"SELECT * FROM IZVRSHUVA WHERE VRABOTEN_ID = :VRAB_ID AND RESTORAN_ID = :REST_ID";
             cmd = new OracleCommand(sqlFunk, this.Conn);
             cmd.CommandType = CommandType.Text;
-            prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
-            prm.Value = this.VrabotenID;
-            cmd.Parameters.Add(prm);
-            prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-            prm.Value = this.Restoran.RestoranID;
-            cmd.Parameters.Add(prm);
 
             try
             {
+                prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
+                cmd.Parameters.Add(prm);
+                prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
                 OracleDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

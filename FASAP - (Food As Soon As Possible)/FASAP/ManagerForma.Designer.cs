@@ -59,7 +59,7 @@
             this.lblrest.LblObject = null;
             this.lblrest.Location = new System.Drawing.Point(43, 64);
             this.lblrest.Name = "lblrest";
-            this.lblrest.Size = new System.Drawing.Size(368, 69);
+            this.lblrest.Size = new System.Drawing.Size(368, 86);
             this.lblrest.TabIndex = 4;
             this.lblrest.Text = "labelFASAP1";
             // 
