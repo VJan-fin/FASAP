@@ -82,7 +82,7 @@
             this.tbPassword.TabIndex = 8;
             this.tbPassword.TabStop = false;
             this.tbPassword.Click += new System.EventHandler(this.tbUserName_Click);
-            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbUserName_Validating);
+            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // tbUserName
             // 

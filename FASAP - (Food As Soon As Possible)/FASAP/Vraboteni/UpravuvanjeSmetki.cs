@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using SmetkaZaNaracka.Properties;
+using System.Text.RegularExpressions;
 
 namespace SmetkaZaNaracka
 {
@@ -394,12 +395,46 @@ namespace SmetkaZaNaracka
             if (this.ModifyMode)
             {
                 TextBox tb = (sender as TextBox);
+                Regex regex = new Regex(@"[a-zA-Z0-9._%+-][a-zA-Z0-9._%+-]*@[a-zA-Z0-9._%+-][a-zA-Z0-9._%+-]*\.[a-zA-Z0-9._%+-][a-zA-Z0-9._%+-]*$");
+
                 if (tb.Text.Trim() == "")
                 {
                     MessageBoxForm mbf = new MessageBoxForm("Полето е задолжително!", false);
                     e.Cancel = true;
                     mbf.ShowDialog();
                 }
+                else if (!regex.IsMatch(tb.Text.Trim()))
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Корисничкото име треба да е во формат:\nexample@something.ex", false);
+                    e.Cancel = true;
+                    mbf.ShowDialog();
+                }
+
+                tb.SelectAll();
+            }
+        }
+
+        private void tbPassword_Validating(object sender, CancelEventArgs e)
+        {
+            if (this.ModifyMode)
+            {
+                TextBox tb = (sender as TextBox);
+                Regex regex = new Regex(@".*(?=.{8,})(?=.*\d)(?=.*[a-zA-Z]).*$");
+                Regex regex2 = new Regex(@".*[!@#$%^&*()-_=+,/?].*$");
+
+                if (tb.Text.Trim() == "")
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Полето е задолжително!", false);
+                    e.Cancel = true;
+                    mbf.ShowDialog();
+                }
+                else if (!regex.IsMatch(tb.Text.Trim()) || !regex2.IsMatch(tb.Text.Trim()))
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Лозинката мора да содржи барем 1 буква, барем 1 цифра и барем 1 специјален знак и вкупно да има најмалку 8 знаци!", false);
+                    e.Cancel = true;
+                    mbf.ShowDialog();
+                }
+
                 tb.SelectAll();
             }
         }
