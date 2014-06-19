@@ -213,7 +213,7 @@ namespace SmetkaZaNaracka
             if (lb.LblObject != null)
             {
                 Cursor = Cursors.Hand;
-                lb.Font = new Font("Trebuchet MS", 20, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                lb.Font = new Font("Trebuchet MS", 19, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
 

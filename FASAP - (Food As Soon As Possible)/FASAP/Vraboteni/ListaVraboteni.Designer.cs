@@ -120,7 +120,7 @@
             this.labelFASAP19.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP19.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP19.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP19.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
+            this.labelFASAP19.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP19.Image")));
             this.labelFASAP19.LblObject = null;
             this.labelFASAP19.Location = new System.Drawing.Point(648, 98);
             this.labelFASAP19.Name = "labelFASAP19";
@@ -150,7 +150,7 @@
             this.labelFASAP18.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP18.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP18.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP18.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
+            this.labelFASAP18.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP18.Image")));
             this.labelFASAP18.LblObject = null;
             this.labelFASAP18.Location = new System.Drawing.Point(523, 97);
             this.labelFASAP18.Name = "labelFASAP18";
@@ -744,7 +744,7 @@
             this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP1.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
+            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
             this.labelFASAP1.Location = new System.Drawing.Point(765, 98);
             this.labelFASAP1.Name = "labelFASAP1";
@@ -774,7 +774,7 @@
             this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP2.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
+            this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
             this.labelFASAP2.Location = new System.Drawing.Point(939, 98);
             this.labelFASAP2.Name = "labelFASAP2";

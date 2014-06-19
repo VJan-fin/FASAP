@@ -285,7 +285,7 @@
             this.dbLayoutPanel2.Controls.Add(this.pictureBox7, 0, 7);
             this.dbLayoutPanel2.Location = new System.Drawing.Point(12, 345);
             this.dbLayoutPanel2.Name = "dbLayoutPanel2";
-            this.dbLayoutPanel2.RowCount = 8;
+            this.dbLayoutPanel2.RowCount = 9;
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -294,6 +294,7 @@
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.dbLayoutPanel2.Size = new System.Drawing.Size(322, 396);
             this.dbLayoutPanel2.TabIndex = 15;
             // 
@@ -306,7 +307,7 @@
             this.lblMeni6.ForeColor = System.Drawing.Color.Gold;
             this.lblMeni6.Image = ((System.Drawing.Image)(resources.GetObject("lblMeni6.Image")));
             this.lblMeni6.LblObject = null;
-            this.lblMeni6.Location = new System.Drawing.Point(123, 305);
+            this.lblMeni6.Location = new System.Drawing.Point(123, 292);
             this.lblMeni6.Name = "lblMeni6";
             this.lblMeni6.Size = new System.Drawing.Size(75, 27);
             this.lblMeni6.TabIndex = 23;
@@ -324,7 +325,7 @@
             this.lblMeni5.ForeColor = System.Drawing.Color.Gold;
             this.lblMeni5.Image = ((System.Drawing.Image)(resources.GetObject("lblMeni5.Image")));
             this.lblMeni5.LblObject = null;
-            this.lblMeni5.Location = new System.Drawing.Point(123, 256);
+            this.lblMeni5.Location = new System.Drawing.Point(123, 245);
             this.lblMeni5.Name = "lblMeni5";
             this.lblMeni5.Size = new System.Drawing.Size(75, 27);
             this.lblMeni5.TabIndex = 22;
@@ -342,7 +343,7 @@
             this.lblMeni4.ForeColor = System.Drawing.Color.Gold;
             this.lblMeni4.Image = ((System.Drawing.Image)(resources.GetObject("lblMeni4.Image")));
             this.lblMeni4.LblObject = null;
-            this.lblMeni4.Location = new System.Drawing.Point(123, 207);
+            this.lblMeni4.Location = new System.Drawing.Point(123, 198);
             this.lblMeni4.Name = "lblMeni4";
             this.lblMeni4.Size = new System.Drawing.Size(75, 27);
             this.lblMeni4.TabIndex = 21;
@@ -360,11 +361,11 @@
             this.lblMeni3.ForeColor = System.Drawing.Color.Gold;
             this.lblMeni3.Image = ((System.Drawing.Image)(resources.GetObject("lblMeni3.Image")));
             this.lblMeni3.LblObject = null;
-            this.lblMeni3.Location = new System.Drawing.Point(46, 158);
+            this.lblMeni3.Location = new System.Drawing.Point(123, 151);
             this.lblMeni3.Name = "lblMeni3";
-            this.lblMeni3.Size = new System.Drawing.Size(229, 27);
+            this.lblMeni3.Size = new System.Drawing.Size(75, 27);
             this.lblMeni3.TabIndex = 20;
-            this.lblMeni3.Text = "Алкохолни пијалоци ";
+            this.lblMeni3.Text = "МЕНИ ";
             this.lblMeni3.Click += new System.EventHandler(this.lblMeni1_Click);
             this.lblMeni3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblMeni3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
@@ -378,11 +379,11 @@
             this.lblMeni2.ForeColor = System.Drawing.Color.Gold;
             this.lblMeni2.Image = ((System.Drawing.Image)(resources.GetObject("lblMeni2.Image")));
             this.lblMeni2.LblObject = null;
-            this.lblMeni2.Location = new System.Drawing.Point(26, 109);
+            this.lblMeni2.Location = new System.Drawing.Point(123, 104);
             this.lblMeni2.Name = "lblMeni2";
-            this.lblMeni2.Size = new System.Drawing.Size(270, 27);
+            this.lblMeni2.Size = new System.Drawing.Size(75, 27);
             this.lblMeni2.TabIndex = 19;
-            this.lblMeni2.Text = "Специјалитети на куќата ";
+            this.lblMeni2.Text = "МЕНИ ";
             this.lblMeni2.Click += new System.EventHandler(this.lblMeni1_Click);
             this.lblMeni2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblMeni2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
@@ -396,11 +397,11 @@
             this.lblMeni1.ForeColor = System.Drawing.Color.Gold;
             this.lblMeni1.Image = ((System.Drawing.Image)(resources.GetObject("lblMeni1.Image")));
             this.lblMeni1.LblObject = null;
-            this.lblMeni1.Location = new System.Drawing.Point(30, 60);
+            this.lblMeni1.Location = new System.Drawing.Point(123, 57);
             this.lblMeni1.Name = "lblMeni1";
-            this.lblMeni1.Size = new System.Drawing.Size(262, 27);
+            this.lblMeni1.Size = new System.Drawing.Size(75, 27);
             this.lblMeni1.TabIndex = 18;
-            this.lblMeni1.Text = "Безалкохолни пијалоци ";
+            this.lblMeni1.Text = "МЕНИ ";
             this.lblMeni1.Click += new System.EventHandler(this.lblMeni1_Click);
             this.lblMeni1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblMeni1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
@@ -411,7 +412,7 @@
             this.pictureBox6.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowUp;
             this.pictureBox6.Location = new System.Drawing.Point(111, 3);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 42);
+            this.pictureBox6.Size = new System.Drawing.Size(100, 41);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
@@ -423,9 +424,9 @@
             // 
             this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox7.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pictureBox7.Location = new System.Drawing.Point(111, 348);
+            this.pictureBox7.Location = new System.Drawing.Point(111, 332);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 43);
+            this.pictureBox7.Size = new System.Drawing.Size(100, 41);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;

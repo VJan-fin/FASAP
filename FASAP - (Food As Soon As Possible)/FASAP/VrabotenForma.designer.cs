@@ -378,9 +378,9 @@
             this.buttonFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP1.Image")));
             this.buttonFASAP1.Location = new System.Drawing.Point(44, 9);
             this.buttonFASAP1.Name = "buttonFASAP1";
-            this.buttonFASAP1.Size = new System.Drawing.Size(228, 29);
+            this.buttonFASAP1.Size = new System.Drawing.Size(235, 29);
             this.buttonFASAP1.TabIndex = 5;
-            this.buttonFASAP1.Text = "Превземи нарачка";
+            this.buttonFASAP1.Text = "Превземи нарачка ";
             this.buttonFASAP1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP1.Click += new System.EventHandler(this.buttonFASAP1_Click);
             this.buttonFASAP1.MouseEnter += new System.EventHandler(this.buttonFASAP1_MouseEnter);
@@ -639,9 +639,9 @@
             this.buttonFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP2.Image")));
             this.buttonFASAP2.Location = new System.Drawing.Point(459, 144);
             this.buttonFASAP2.Name = "buttonFASAP2";
-            this.buttonFASAP2.Size = new System.Drawing.Size(244, 29);
+            this.buttonFASAP2.Size = new System.Drawing.Size(251, 29);
             this.buttonFASAP2.TabIndex = 8;
-            this.buttonFASAP2.Text = "Реализирај нарачка";
+            this.buttonFASAP2.Text = "Реализирај нарачка ";
             this.buttonFASAP2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP2.Click += new System.EventHandler(this.buttonFASAP2_Click);
             this.buttonFASAP2.MouseEnter += new System.EventHandler(this.buttonFASAP1_MouseEnter);

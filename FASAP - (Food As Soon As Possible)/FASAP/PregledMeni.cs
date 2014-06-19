@@ -23,6 +23,17 @@ namespace SmetkaZaNaracka
         public bool ShowInactive { get; set; }
         public bool IsDecorator { get; set; }
         public Semaphore LoadingSemaphore { get; set; }
+        public Vraboten Vraboten { get; set; }
+
+        public PregledMeni(Restoran restoran, Vraboten vrab, OracleConnection conn)
+        {
+            InitializeComponent();
+            LoadingSemaphore = new Semaphore(0, 100);
+            Conn = conn;
+            Restoran = restoran;
+            Vraboten = vrab;
+            Opacity = 0;
+        }
         
         public PregledMeni()
         {
@@ -348,10 +359,12 @@ namespace SmetkaZaNaracka
 
         private void buttonFASAP1_Click(object sender, EventArgs e)
         {
+            buttonFASAP1.Enabled = false;
             Thread oThread = new Thread(new ThreadStart(KreirajMeni));
             oThread.Start();
             indMeni = 0;
             LoadingSemaphore.Release();
+            buttonFASAP1.Enabled = true;
         }
 
         private void buttonFASAP2_Click(object sender, EventArgs e)
@@ -518,6 +531,11 @@ namespace SmetkaZaNaracka
         public override void LoadingMethod()
         {
             LoadingSemaphore.Release();
+        }
+
+        private void PregledMeni_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Restoran.GlavnoMeni = null;
         }
     }
 }

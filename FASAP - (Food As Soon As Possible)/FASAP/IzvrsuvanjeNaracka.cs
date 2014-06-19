@@ -42,11 +42,11 @@ namespace SmetkaZaNaracka
             OrderList = new List<OrderComponent>();
             Opacity = 0;
 
-            // Vcituvanje meni za restoranot
+            // Вчитување на мени за ресторанот
             Thread oThread = new Thread(new ThreadStart(KreirajMeni));
             oThread.Start();
 
-            // Vcituvanje na logo za restoranot
+            // Вчитување на лого за ресторанот
             oThread = new Thread(new ThreadStart(LoadLogo));
             oThread.Start();
 
@@ -100,7 +100,6 @@ namespace SmetkaZaNaracka
         {
         }
 
-
         private void LoadLogo()
         {
             // Доколку нема линк постави ја предодредената слика
@@ -129,11 +128,18 @@ namespace SmetkaZaNaracka
             SetPbDefaultLogo(pictureBoxLogo, img);
         }
 
+        /// <summary>
+        /// Креирање на мени со помош на хеш мапи.
+        /// Идеја: Да се овозможи еднократно читање од база и потоа линеарно креирање на дрвото на менија.
+        /// 
+        /// Ги поставува: Restoran.GlavnoMeni и CurrMenu (иста истанца)
+        /// </summary>
         private void KreirajMeni()
         {
             Dictionary<string, Meni> Menus = new Dictionary<string, Meni>();
             Dictionary<StavkaKey, Stavka> Items = new Dictionary<StavkaKey, Stavka>();
 
+            // Вчитување на менија
             string sql = @"SELECT * FROM MENI WHERE RESTORAN_ID = :RES_ID AND VALIDNOST_MENI = 1";
             OracleCommand cmd = new OracleCommand(sql, Conn);
 
@@ -157,6 +163,8 @@ namespace SmetkaZaNaracka
                 else meni.ValidnostMeni = false;
                 Menus.Add(meni.Ime, meni);
             }
+
+            // Вчитување на ставки
             sql = @"SELECT * FROM STAVKA WHERE VALIDNOST_STAVKA LIKE '1' AND RESTORAN_ID = :RES_ID";
             cmd = new OracleCommand(sql, Conn);
 
@@ -238,13 +246,11 @@ namespace SmetkaZaNaracka
             for (int i = 0; i < this.ListaMeni.Count; i++)
                 if (ind < mc.GetContent().Count)
                 {
-                    //this.ListaMeni[i].UpdateObject(mc.GetContent()[ind]);
                     SetObject(ListaMeni[i], mc.GetContent()[ind]);
                     ind++;                  
                 }
                 else
                     SetObject(ListaMeni[i], null);
-                    //this.ListaMeni[i].UpdateObject(null);
         }
 
         private void PopolniListaStavki()
@@ -626,7 +632,6 @@ namespace SmetkaZaNaracka
         private Image ImageFromURL(string Url)
         {
             byte[] imageData = DownloadData(Url);
-            //ImageDetail imgDetail = new ImageDetail();
             Image img = null;
 
                 MemoryStream stream = new MemoryStream(imageData);

@@ -46,6 +46,7 @@ namespace SmetkaZaNaracka
             }
 
             // Draw text, centered vertically and horizontally
+            rectangle = new RectangleF(0, 0, this.Width, this.Height);
 
             StringFormat format = new StringFormat();
             format.LineAlignment = StringAlignment.Center;

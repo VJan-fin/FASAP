@@ -64,8 +64,10 @@ namespace SmetkaZaNaracka
                 e.Graphics.DrawImage(this.Image, rectangle);
             }
 
+
             // Draw text, centered vertically and horizontally
-            
+            rectangle = new RectangleF(0, 0, (int)(this.Width * 0.95), this.Height);
+
             StringFormat format = new StringFormat();
             format.LineAlignment = StringAlignment.Center;
             format.Alignment = StringAlignment.Center;

@@ -147,6 +147,7 @@
             this.btnPonuda.TabIndex = 11;
             this.btnPonuda.Text = "Понуда";
             this.btnPonuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPonuda.Click += new System.EventHandler(this.btnPonuda_Click);
             this.btnPonuda.MouseEnter += new System.EventHandler(this.btnPonuda_MouseEnter);
             this.btnPonuda.MouseLeave += new System.EventHandler(this.btnPonuda_MouseLeave);
             // 
@@ -202,9 +203,9 @@
             this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
             this.labelFASAP5.LblObject = null;
-            this.labelFASAP5.Location = new System.Drawing.Point(761, 226);
+            this.labelFASAP5.Location = new System.Drawing.Point(761, 236);
             this.labelFASAP5.Name = "labelFASAP5";
-            this.labelFASAP5.Size = new System.Drawing.Size(494, 85);
+            this.labelFASAP5.Size = new System.Drawing.Size(494, 75);
             this.labelFASAP5.TabIndex = 15;
             this.labelFASAP5.Text = "Листа на сите вработени, додавање и отстранување вработен, преглед и ажурирање на" +
                 " податоците за секој вработен";

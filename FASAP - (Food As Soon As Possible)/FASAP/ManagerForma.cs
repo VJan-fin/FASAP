@@ -21,6 +21,7 @@ namespace SmetkaZaNaracka
         {
             InitializeComponent();
             Manager = manager;
+            Opacity = 0;
             Conn = conn;
             init();
         }
@@ -67,6 +68,7 @@ namespace SmetkaZaNaracka
             
             }
             lblManager.Text = Manager.Ime + " " + Manager.Prezime;
+            popolniRestoran();
         }
 
         private void popolniRestoran()
@@ -244,6 +246,13 @@ namespace SmetkaZaNaracka
           //  CurrRestoran = new Restoran() { RestoranID = 1, Ime = "Гостилница Лира" };
             popolniRestoran();
             ListaVraboteni v = new ListaVraboteni(this.CurrRestoran, this.Conn);
+            //Vraboteni v = new Vraboteni(Conn, Manager.RestoranID);
+            v.Show();
+        }
+
+        private void btnPonuda_Click(object sender, EventArgs e)
+        {
+            PregledMeni v = new PregledMeni(this.CurrRestoran, Manager, this.Conn);
             //Vraboteni v = new Vraboteni(Conn, Manager.RestoranID);
             v.Show();
         }

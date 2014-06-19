@@ -392,9 +392,9 @@
             this.buttonFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP3.Image")));
             this.buttonFASAP3.Location = new System.Drawing.Point(474, 183);
             this.buttonFASAP3.Name = "buttonFASAP3";
-            this.buttonFASAP3.Size = new System.Drawing.Size(168, 29);
+            this.buttonFASAP3.Size = new System.Drawing.Size(175, 29);
             this.buttonFASAP3.TabIndex = 22;
-            this.buttonFASAP3.Text = "Додади мени";
+            this.buttonFASAP3.Text = "Додади мени ";
             this.buttonFASAP3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP3.MouseEnter += new System.EventHandler(this.buttonFASAP1_MouseEnter);
             this.buttonFASAP3.MouseLeave += new System.EventHandler(this.buttonFASAP1_MouseLeave);
@@ -408,9 +408,9 @@
             this.buttonFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP4.Image")));
             this.buttonFASAP4.Location = new System.Drawing.Point(474, 224);
             this.buttonFASAP4.Name = "buttonFASAP4";
-            this.buttonFASAP4.Size = new System.Drawing.Size(185, 29);
+            this.buttonFASAP4.Size = new System.Drawing.Size(192, 29);
             this.buttonFASAP4.TabIndex = 23;
-            this.buttonFASAP4.Text = "Додади ставка";
+            this.buttonFASAP4.Text = "Додади ставка ";
             this.buttonFASAP4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP4.MouseEnter += new System.EventHandler(this.buttonFASAP1_MouseEnter);
             this.buttonFASAP4.MouseLeave += new System.EventHandler(this.buttonFASAP1_MouseLeave);
@@ -592,9 +592,9 @@
             this.buttonFASAP7.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP7.Image")));
             this.buttonFASAP7.Location = new System.Drawing.Point(895, 672);
             this.buttonFASAP7.Name = "buttonFASAP7";
-            this.buttonFASAP7.Size = new System.Drawing.Size(211, 29);
+            this.buttonFASAP7.Size = new System.Drawing.Size(218, 29);
             this.buttonFASAP7.TabIndex = 35;
-            this.buttonFASAP7.Text = "Сочувај промени";
+            this.buttonFASAP7.Text = "Сочувај промени ";
             this.buttonFASAP7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonFASAP7.MouseEnter += new System.EventHandler(this.buttonFASAP1_MouseEnter);
             this.buttonFASAP7.MouseLeave += new System.EventHandler(this.buttonFASAP1_MouseLeave);
@@ -625,6 +625,7 @@
             this.Name = "PregledMeni";
             this.Opacity = 1D;
             this.Text = "PregledMeni";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PregledMeni_FormClosing);
             this.Load += new System.EventHandler(this.PregledMeni_Load);
             this.Controls.SetChildIndex(this.dbLayoutPanel3, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);

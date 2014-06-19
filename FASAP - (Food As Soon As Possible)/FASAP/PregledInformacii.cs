@@ -26,6 +26,7 @@ namespace SmetkaZaNaracka
             InitializeComponent();
             Conn = conn;
             this.RestoranID=RestoranID;
+            Opacity = 0;
             init();
         }
         public PregledInformacii() //probno
