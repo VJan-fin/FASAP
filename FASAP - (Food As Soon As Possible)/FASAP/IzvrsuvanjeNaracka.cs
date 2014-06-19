@@ -10,6 +10,8 @@ using SmetkaZaNaracka.Properties;
 using Oracle.DataAccess.Client;
 using System.Globalization;
 using System.Threading;
+using System.IO;
+using System.Net;
 
 namespace SmetkaZaNaracka
 {
@@ -39,6 +41,15 @@ namespace SmetkaZaNaracka
             Conn = conn;
             OrderList = new List<OrderComponent>();
             Opacity = 0;
+
+            // Vcituvanje meni za restoranot
+            Thread oThread = new Thread(new ThreadStart(KreirajMeni));
+            oThread.Start();
+
+            // Vcituvanje na logo za restoranot
+            oThread = new Thread(new ThreadStart(VcitajLogo));
+            oThread.Start();
+
             this.AddButtons();
 
             this.lblImeRestoran.Text = String.Format("{0} ", Restoran.Ime);
@@ -87,22 +98,17 @@ namespace SmetkaZaNaracka
 
         private void IzvrsuvanjeNaracka_Load(object sender, EventArgs e)
         {
-            // Vcituvanje meni za restoranot
-            Thread oThread = new Thread(new ThreadStart(KreirajMeni));
-            oThread.Start();
-
-            // Vcituvanje na logo za restoranot
-            oThread = new Thread(new ThreadStart(VcitajLogo));
-            oThread.Start();
         }
 
         private void VcitajLogo()
         {
             if (Restoran.LogoUrl == null)
                 return;
+            Image img = ImageFromURL(Restoran.LogoUrl);
+            LoadingSemaphore.WaitOne();
             try
             {
-                SetPbLogo(pictureBoxLogo, Restoran.LogoUrl);
+                SetPbDefaultLogo(pictureBoxLogo, img);
             }
             catch (Exception)
             {
@@ -541,7 +547,7 @@ namespace SmetkaZaNaracka
 
         public override void LoadingMethod()
         {
-            LoadingSemaphore.Release();
+            LoadingSemaphore.Release(2);
         }
 
         delegate void SetObjectCallback(LabelFASAP fs, Object obj);
@@ -601,6 +607,87 @@ namespace SmetkaZaNaracka
             {
                 fs.Image = obj;
             }
+        }
+
+
+        private Image ImageFromURL(string Url)
+        {
+            byte[] imageData = DownloadData(Url);
+            //ImageDetail imgDetail = new ImageDetail();
+            Image img = null;
+
+            try
+            {
+                MemoryStream stream = new MemoryStream(imageData);
+                img = Image.FromStream(stream);
+
+
+                stream.Close();
+            }
+            catch (Exception)
+            {
+            }
+
+            return img;
+        }
+
+        private byte[] DownloadData(string Url)
+        {
+            string empty = string.Empty;
+            return DownloadData(Url, out empty);
+        }
+
+        private byte[] DownloadData(string Url, out string responseUrl)
+        {
+            byte[] downloadedData = new byte[0];
+            try
+            {
+                //Get a data stream from the url  
+                WebRequest req = WebRequest.Create(Url);
+                WebResponse response = req.GetResponse();
+                Stream stream = response.GetResponseStream();
+
+                responseUrl = response.ResponseUri.ToString();
+
+                //Download in chuncks  
+                byte[] buffer = new byte[1024];
+
+                //Get Total Size  
+                int dataLength = (int)response.ContentLength;
+
+                //Download to memory  
+                //Note: adjust the streams here to download directly to the hard drive  
+                MemoryStream memStream = new MemoryStream();
+                while (true)
+                {
+                    //Try to read the data  
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+
+                    if (bytesRead == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        //Write the downloaded data  
+                        memStream.Write(buffer, 0, bytesRead);
+                    }
+                }
+
+                //Convert the downloaded stream to a byte array  
+                downloadedData = memStream.ToArray();
+
+                //Clean up  
+                stream.Close();
+                memStream.Close();
+            }
+            catch (Exception)
+            {
+                responseUrl = string.Empty;
+                return new byte[0];
+            }
+
+            return downloadedData;
         }
     }
 }
