@@ -47,7 +47,7 @@ namespace SmetkaZaNaracka
             oThread.Start();
 
             // Vcituvanje na logo za restoranot
-            oThread = new Thread(new ThreadStart(VcitajLogo));
+            oThread = new Thread(new ThreadStart(LoadLogo));
             oThread.Start();
 
             this.AddButtons();
@@ -100,20 +100,33 @@ namespace SmetkaZaNaracka
         {
         }
 
-        private void VcitajLogo()
+
+        private void LoadLogo()
         {
+            // Доколку нема линк постави ја предодредената слика
             if (Restoran.LogoUrl == null)
                 return;
-            Image img = ImageFromURL(Restoran.LogoUrl);
-            LoadingSemaphore.WaitOne();
+            Image img;
             try
             {
-                SetPbDefaultLogo(pictureBoxLogo, img);
+                // Пробај да ја вчиташ сликата
+                img = ImageFromURL(Restoran.LogoUrl);
+
+                // Забелешка: Вчитување со посебен метод за да се земе Image објект. Можно е и директно во PictureBox
+                // но така не е можно да се обезбеди паралелизам, а да не се примети кочење, бидејќи самите контроли
+                // синхронизираат и не дозволуваат во исто време две нишки да прават измени.
             }
             catch (Exception)
             {
-                SetPbDefaultLogo(pictureBoxLogo, Resources.FASAP_LOGO);
+                // Доколку не може да се вчита постави предодредена слика
+                img = Resources.FASAP_LOGO;
             }
+
+            // Чекај додека не заврши почетното исцртување на формата (важно за да не се приметува сецкање при појавувањето на формата)
+            LoadingSemaphore.WaitOne();
+
+            // Постави ја сликата на pictureBoxLogo
+            SetPbDefaultLogo(pictureBoxLogo, img);
         }
 
         private void KreirajMeni()
@@ -616,17 +629,11 @@ namespace SmetkaZaNaracka
             //ImageDetail imgDetail = new ImageDetail();
             Image img = null;
 
-            try
-            {
                 MemoryStream stream = new MemoryStream(imageData);
                 img = Image.FromStream(stream);
 
 
                 stream.Close();
-            }
-            catch (Exception)
-            {
-            }
 
             return img;
         }
