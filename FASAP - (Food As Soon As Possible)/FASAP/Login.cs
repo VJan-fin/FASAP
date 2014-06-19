@@ -28,6 +28,7 @@ namespace SmetkaZaNaracka
         public Login(OracleConnection conn)
         {
             InitializeComponent();
+            Opacity = 0;
             Conn = conn;
             username = "";
             password = "";

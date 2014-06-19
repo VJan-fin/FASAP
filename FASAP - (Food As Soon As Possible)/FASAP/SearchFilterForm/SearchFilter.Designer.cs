@@ -73,7 +73,6 @@
             this.labelFASAP19 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP9 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.pbRestoranLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda5)).BeginInit();
@@ -87,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbContactLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRejting)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRestoranLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox3
@@ -770,23 +768,11 @@
             this.labelFASAP9.TabIndex = 37;
             this.labelFASAP9.Text = ":Услуга: ";
             // 
-            // pbRestoranLogo
-            // 
-            this.pbRestoranLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pbRestoranLogo.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
-            this.pbRestoranLogo.Location = new System.Drawing.Point(836, 426);
-            this.pbRestoranLogo.Name = "pbRestoranLogo";
-            this.pbRestoranLogo.Size = new System.Drawing.Size(175, 175);
-            this.pbRestoranLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRestoranLogo.TabIndex = 38;
-            this.pbRestoranLogo.TabStop = false;
-            // 
             // SearchFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.pbRestoranLogo);
             this.Controls.Add(this.labelFASAP9);
             this.Controls.Add(this.labelFASAP8);
             this.Controls.Add(this.pbRejting);
@@ -851,7 +837,6 @@
             this.Controls.SetChildIndex(this.pbRejting, 0);
             this.Controls.SetChildIndex(this.labelFASAP8, 0);
             this.Controls.SetChildIndex(this.labelFASAP9, 0);
-            this.Controls.SetChildIndex(this.pbRestoranLogo, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbZvezda5)).EndInit();
@@ -866,7 +851,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbContactLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRejting)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRestoranLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -917,7 +901,6 @@
         private LabelFASAP labelFASAP9;
         public System.Windows.Forms.PictureBox pbIme;
         public System.Windows.Forms.PictureBox pbRejting;
-        private System.Windows.Forms.PictureBox pbRestoranLogo;
 
     }
 }

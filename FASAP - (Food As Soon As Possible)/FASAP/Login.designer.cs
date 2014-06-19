@@ -101,7 +101,7 @@
             this.btnLogIn.BackColor = System.Drawing.Color.Transparent;
             this.btnLogIn.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnLogIn.ForeColor = System.Drawing.Color.Khaki;
-            this.btnLogIn.Image = ((System.Drawing.Image)(resources.GetObject("btnLogIn.Image")));
+            this.btnLogIn.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
             this.btnLogIn.Location = new System.Drawing.Point(736, 582);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(165, 55);

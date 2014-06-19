@@ -18,6 +18,7 @@ namespace SmetkaZaNaracka
         public InfoForma(OracleConnection conn)
         {
             InitializeComponent();
+            Opacity = 0;
             Conn = conn;
             labeli = new List<LabelFASAP>();
         }

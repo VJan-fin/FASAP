@@ -77,6 +77,10 @@ namespace SmetkaZaNaracka
             while (dr.Read())
             {
                 res = new Restoran();
+                Object LogoUrl = dr.GetValue(13);
+                if (LogoUrl == null)
+                    res.LogoUrl = null;
+                else res.LogoUrl = LogoUrl as String;
                 res.RestoranID = (int)dr.GetValue(0);
                 res.Ime = dr.GetString(2);
                 if (!dr.IsDBNull(3))

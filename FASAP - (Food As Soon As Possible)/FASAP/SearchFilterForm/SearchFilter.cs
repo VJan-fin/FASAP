@@ -37,15 +37,6 @@ namespace SmetkaZaNaracka
             Restorani = restorani;
             Conn = conn;
             Opacity = 0;
-            //Vaka se cita slika od net :P
-            try
-            {
-                pbRestoranLogo.Load("http://www.reviewstl.com/wp-content/uploads/2010/07/amigos_logo.gif");
-            }
-            catch (Exception ex)
-            {
-                pbRestoranLogo.Image = Resources.FASAP_LOGO;
-            }
         }
 
         private void textBox1_MouseLeave(object sender, EventArgs e)

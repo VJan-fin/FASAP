@@ -35,5 +35,23 @@ namespace SmetkaZaNaracka
             this.ForeColor = Color.Khaki;
             this.Font = new Font("Trebuchet MS", 18, FontStyle.Bold);
         }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            // Draw image, sized to control
+            RectangleF rectangle = new RectangleF(0, 0, this.Width, this.Height);
+            if (this.Image != null)
+            {
+                e.Graphics.DrawImage(this.Image, rectangle);
+            }
+
+            // Draw text, centered vertically and horizontally
+
+            StringFormat format = new StringFormat();
+            format.LineAlignment = StringAlignment.Center;
+            format.Alignment = StringAlignment.Center;
+            e.Graphics.DrawString(this.Text, this.Font, new SolidBrush(ForeColor), rectangle, format);
+        }
+
     }
 }

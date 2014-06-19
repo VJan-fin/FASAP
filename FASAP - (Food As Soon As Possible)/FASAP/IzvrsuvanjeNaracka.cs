@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using SmetkaZaNaracka.Properties;
 using Oracle.DataAccess.Client;
 using System.Globalization;
+using System.Threading;
 
 namespace SmetkaZaNaracka
 {
@@ -27,16 +28,27 @@ namespace SmetkaZaNaracka
         private int indMeni { get; set; }
         private int indStavka { get; set; }
         private int indKupeni { get; set; }
+        public Semaphore LoadingSemaphore { get; set; }
         int errorMessageTime = 3;
 
         public IzvrsuvanjeNaracka(Restoran restoran, OracleConnection conn)
         {
             InitializeComponent();
+            LoadingSemaphore = new Semaphore(0, 100);
             Restoran = restoran;
             Conn = conn;
             OrderList = new List<OrderComponent>();
             Opacity = 0;
             this.AddButtons();
+
+            this.lblImeRestoran.Text = String.Format("{0} ", Restoran.Ime);
+            if (this.Restoran.Ulica != null && this.Restoran.Grad != null)
+                this.lblAdresa.Text = String.Format("{0}, {1} ", Restoran.Ulica, Restoran.Grad);
+            if (this.Restoran.RabotnoVreme != null)
+                this.lblRabVreme.Text = this.Restoran.RabotnoVreme + " ";
+            if (Restoran.PicturePath == null)
+                pictureBoxLogo.Image = Resources.FASAP_LOGO;
+
         }
 
         public IzvrsuvanjeNaracka()
@@ -75,74 +87,62 @@ namespace SmetkaZaNaracka
 
         private void IzvrsuvanjeNaracka_Load(object sender, EventArgs e)
         {
-            // Vcituvanje podatoci za restoranot
-            this.indKontakt = 0;
-            this.indMeni = 0;
-            this.indStavka = 0;
-            this.lblImeRestoran.Text = this.Restoran.Ime + " ";
-            if (this.Restoran.Ulica != null && this.Restoran.Grad != null)
-                this.lblAdresa.Text = this.Restoran.Ulica + ", " + Restoran.Grad + " ";
-            else
-                this.lblAdresa.Text = " ";
-            if (this.Restoran.RabotnoVreme != null)
-                this.lblRabVreme.Text = this.Restoran.RabotnoVreme + " ";
-            else
-                this.lblRabVreme.Text = " ";
-            if (Restoran.PicturePath == null)
-                pictureBoxLogo.Image = Resources.FASAP_LOGO;
+            // Vcituvanje meni za restoranot
+            Thread oThread = new Thread(new ThreadStart(KreirajMeni));
+            oThread.Start();
 
-            // Vcituvanje na osnovnite menija na restoranot
-            string sqlMeni = @"SELECT * FROM MENI WHERE VALIDNOST_MENI LIKE '1' AND RESTORAN_ID = :RES_ID AND IME_GLAVNO IS NULL";
-            OracleCommand cmd = new OracleCommand(sqlMeni, Conn);
+            // Vcituvanje na logo za restoranot
+            oThread = new Thread(new ThreadStart(VcitajLogo));
+            oThread.Start();
+        }
+
+        private void VcitajLogo()
+        {
+            if (Restoran.LogoUrl == null)
+                return;
+            try
+            {
+                SetPbLogo(pictureBoxLogo, Restoran.LogoUrl);
+            }
+            catch (Exception)
+            {
+                SetPbDefaultLogo(pictureBoxLogo, Resources.FASAP_LOGO);
+            }
+        }
+
+        private void KreirajMeni()
+        {
+            Dictionary<string, Meni> Menus = new Dictionary<string, Meni>();
+            Dictionary<StavkaKey, Stavka> Items = new Dictionary<StavkaKey, Stavka>();
+
+            string sql = @"SELECT * FROM MENI WHERE RESTORAN_ID = :RES_ID AND VALIDNOST_MENI = 1";
+            OracleCommand cmd = new OracleCommand(sql, Conn);
+
             OracleParameter prm = new OracleParameter("RES_ID", OracleDbType.Int64);
             prm.Value = Restoran.RestoranID;
             cmd.Parameters.Add(prm);
-            cmd.CommandType = CommandType.Text;
-            OracleDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-                Restoran.GlavnoMeni = new Meni(dr.GetString(1));
-            KreirajMeni(Restoran.GlavnoMeni);
-            PopolniListaMenija();
-
-            foreach (var item in this.ListaStavki)
-                item.UpdateObject(null);
-        }
-
-        private void KreirajMeni(MenuComponent mc)
-        {
-            string sql = @"SELECT * FROM MENI WHERE VALIDNOST_MENI LIKE '1' AND RESTORAN_ID = :RES_ID AND IME_GLAVNO LIKE :MENU_II";
-            OracleCommand cmd = new OracleCommand(sql, Conn);
-
-            OracleParameter prm = new OracleParameter("RES_ID", OracleDbType.Int64); 
-            prm.Value = Restoran.RestoranID; 
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("MENU_II", OracleDbType.Varchar2); 
-            prm.Value = mc.GetName(); 
-            cmd.Parameters.Add(prm);
 
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
-
             Meni meni;
             while (dr.Read())
             {
                 meni = new Meni(dr.GetString(1));
-                meni.Parent = mc;
-                mc.AddComp(meni);
-                KreirajMeni(meni);
+                Object obj = dr.GetValue(3);
+                if (obj == null)
+                    meni.ImeGlavno = null;
+                else meni.ImeGlavno = obj as String;
+                String IsValid = (string)dr.GetValue(2);
+                if (IsValid == "1")
+                    meni.ValidnostMeni = true;
+                else meni.ValidnostMeni = false;
+                Menus.Add(meni.Ime, meni);
             }
-
-            sql = @"SELECT * FROM STAVKA WHERE VALIDNOST_STAVKA LIKE '1' AND RESTORAN_ID = :RES_ID AND IME_MENI LIKE :MENU_II";
+            sql = @"SELECT * FROM STAVKA WHERE VALIDNOST_STAVKA LIKE '1' AND RESTORAN_ID = :RES_ID";
             cmd = new OracleCommand(sql, Conn);
 
-            prm = new OracleParameter("RES_ID", OracleDbType.Int64); 
-            prm.Value = Restoran.RestoranID; 
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("MENU_II", OracleDbType.Varchar2); 
-            prm.Value = mc.GetName(); 
+            prm = new OracleParameter("RES_ID", OracleDbType.Int64);
+            prm.Value = Restoran.RestoranID;
             cmd.Parameters.Add(prm);
 
             cmd.CommandType = CommandType.Text;
@@ -153,34 +153,79 @@ namespace SmetkaZaNaracka
             while (dr.Read())
             {
                 String IsDecorator = (string)dr.GetValue(5);
+                Object ImeGlavno = dr.GetValue(1);
+                Object OpisStavka = dr.GetValue(3);
                 if (IsDecorator == "1")
                 {
                     dodatok = new Dodatok((int)dr.GetValue(2), dr.GetString(7), (decimal)dr.GetValue(4));
-                    dodatok.Parent = mc;
-                    mc.AddComp(dodatok);
+                    if (ImeGlavno == null)
+                        dodatok.ImeGlavno = null;
+                    else dodatok.ImeGlavno = ImeGlavno as String;
+                    if (OpisStavka == null)
+                        dodatok.Opis = null;
+                    else dodatok.Opis = OpisStavka as String;
+                    Items.Add(dodatok.GetStavkaKey(), dodatok);
                 }
                 else
                 {
 
                     stavka = new Stavka((int)dr.GetValue(2), dr.GetString(7), (decimal)dr.GetValue(4));
-                    stavka.Parent = mc;
-                    mc.AddComp(stavka);
+                    if (ImeGlavno == null)
+                        stavka.ImeGlavno = null;
+                    else stavka.ImeGlavno = ImeGlavno as String;
+                    if (OpisStavka == null)
+                        stavka.Opis = null;
+                    else stavka.Opis = OpisStavka as String;
+                    Items.Add(stavka.GetStavkaKey(), stavka);
+                }
+
+            }
+
+            foreach (var obj in Menus)
+            {
+                Meni menu;
+                if (obj.Value.ImeGlavno != null && Menus.TryGetValue(obj.Value.ImeGlavno, out menu))
+                {
+                    menu.AddComp(obj.Value);
+                    obj.Value.Parent = menu;
+                }
+                else
+                {
+                    Restoran.GlavnoMeni = obj.Value;
                 }
             }
+
+            foreach (var obj in Items)
+            {
+                Meni menu;
+                if (Menus.TryGetValue(obj.Value.ImeGlavno, out menu))
+                {
+                    menu.AddComp(obj.Value);
+                    obj.Value.Parent = menu;
+                }
+            }
+            //lblOsnovnoMeni.UpdateObject(Restoran.GlavnoMeni);
+            LoadingSemaphore.WaitOne();
+            CurrMenu = Restoran.GlavnoMeni;
+            PopolniListaMenija();
         }
 
         private void PopolniListaMenija()
         {
             MenuComponent mc = this.Restoran.GlavnoMeni;
+            if (mc == null)
+                return;
             int ind = this.indMeni;
             for (int i = 0; i < this.ListaMeni.Count; i++)
                 if (ind < mc.GetContent().Count)
                 {
-                    this.ListaMeni[i].UpdateObject(mc.GetContent()[ind]);
+                    //this.ListaMeni[i].UpdateObject(mc.GetContent()[ind]);
+                    SetObject(ListaMeni[i], mc.GetContent()[ind]);
                     ind++;                  
                 }
                 else
-                    this.ListaMeni[i].UpdateObject(null);
+                    SetObject(ListaMeni[i], null);
+                    //this.ListaMeni[i].UpdateObject(null);
         }
 
         private void PopolniListaStavki()
@@ -406,7 +451,7 @@ namespace SmetkaZaNaracka
                 {
                     lblCenaProizvod.Text = String.Format("{0} ден.",CurrItem.ComputeCost().ToString());
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
             }
@@ -414,6 +459,8 @@ namespace SmetkaZaNaracka
 
         private void pictureBox14_Click(object sender, EventArgs e)
         {
+            if (CurrItem == null)
+                return;
             OrderComponent oc = new OrderComponent(CurrItem, int.Parse(lblKolicina.Text));
             int i = 0;
             for (i = 0; i < OrderList.Count; i++)
@@ -489,6 +536,70 @@ namespace SmetkaZaNaracka
                 if (lb.LblObject is Meni)
                     lb.Font = new Font("Trebuchet MS", 16, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 else lb.Font = new Font("Trebuchet MS", 16, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            }
+        }
+
+        public override void LoadingMethod()
+        {
+            LoadingSemaphore.Release();
+        }
+
+        delegate void SetObjectCallback(LabelFASAP fs, Object obj);
+
+        private void SetObject(LabelFASAP fs, Object obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetObjectCallback d = new SetObjectCallback(SetObject);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.UpdateObject(obj);
+            }
+        }
+
+        private void IzvrsuvanjeNaracka_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Restoran.GlavnoMeni = null;
+        }
+
+        delegate void SetLogoMethod(PictureBox fs, String obj);
+
+        private void SetPbLogo(PictureBox fs, String obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetLogoMethod d = new SetLogoMethod(SetPbLogo);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.Load(obj);
+            }
+        }
+
+        delegate void SetDefaultLogoMethod(PictureBox fs, Image obj);
+
+        private void SetPbDefaultLogo(PictureBox fs, Image obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetDefaultLogoMethod d = new SetDefaultLogoMethod(SetPbDefaultLogo);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.Image = obj;
             }
         }
     }
