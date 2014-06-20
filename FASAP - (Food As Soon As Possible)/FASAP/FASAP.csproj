@@ -89,6 +89,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Vraboteni\DodavanjePozicija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vraboteni\DodavanjePozicija.Designer.cs">
+      <DependentUpon>DodavanjePozicija.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dostavuvac.cs" />
     <Compile Include="Vraboteni\UpravuvanjeSmetki.cs">
       <SubType>Form</SubType>
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchFilterForm\SearchFilter.resx">
       <DependentUpon>SearchFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vraboteni\DodavanjePozicija.resx">
+      <DependentUpon>DodavanjePozicija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vraboteni\UpravuvanjeSmetki.resx">
       <DependentUpon>UpravuvanjeSmetki.cs</DependentUpon>

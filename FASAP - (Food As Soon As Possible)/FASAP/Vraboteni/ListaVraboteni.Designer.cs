@@ -75,6 +75,7 @@
             this.pbPlata = new System.Windows.Forms.PictureBox();
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.buttonSmetka = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.buttonPozicija = new SmetkaZaNaracka.ButtonFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBroj)).BeginInit();
             this.dbLayoutPanel2.SuspendLayout();
@@ -803,11 +804,27 @@
             this.buttonSmetka.MouseEnter += new System.EventHandler(this.buttonOtkazi_MouseEnter);
             this.buttonSmetka.MouseLeave += new System.EventHandler(this.buttonOtkazi_MouseLeave);
             // 
+            // buttonPozicija
+            // 
+            this.buttonPozicija.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPozicija.CausesValidation = false;
+            this.buttonPozicija.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonPozicija.ForeColor = System.Drawing.Color.Khaki;
+            this.buttonPozicija.Image = ((System.Drawing.Image)(resources.GetObject("buttonPozicija.Image")));
+            this.buttonPozicija.Location = new System.Drawing.Point(1125, 468);
+            this.buttonPozicija.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.buttonPozicija.Name = "buttonPozicija";
+            this.buttonPozicija.Size = new System.Drawing.Size(207, 73);
+            this.buttonPozicija.TabIndex = 108;
+            this.buttonPozicija.Text = "Преглед на позиции";
+            this.buttonPozicija.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ListaVraboteni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.buttonPozicija);
             this.Controls.Add(this.buttonSmetka);
             this.Controls.Add(this.pbPlata);
             this.Controls.Add(this.labelFASAP2);
@@ -878,6 +895,7 @@
             this.Controls.SetChildIndex(this.labelFASAP2, 0);
             this.Controls.SetChildIndex(this.pbPlata, 0);
             this.Controls.SetChildIndex(this.buttonSmetka, 0);
+            this.Controls.SetChildIndex(this.buttonPozicija, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBroj)).EndInit();
             this.dbLayoutPanel2.ResumeLayout(false);
@@ -942,5 +960,6 @@
         public System.Windows.Forms.PictureBox pbPlata;
         private LabelFASAP labelFASAP2;
         private ButtonFASAP buttonSmetka;
+        private ButtonFASAP buttonPozicija;
     }
 }
