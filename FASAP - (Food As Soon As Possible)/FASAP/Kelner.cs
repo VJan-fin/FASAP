@@ -54,7 +54,7 @@ namespace SmetkaZaNaracka
                 br = -1;
             }
             if (br == 0)
-                throw new NotImplementedException("Нема недоделени \"online\" нарачки.");
+                throw new NotImplementedException("Нема недоделени \"onsite\" нарачки.");
             if (br == -1)
                 throw new NotImplementedException("Нема пристап до базата на податоци");
             return true;

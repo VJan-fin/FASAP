@@ -104,7 +104,7 @@
             this.dbLayoutPanel2.Controls.Add(this.pbNarackiDown, 0, 13);
             this.dbLayoutPanel2.Controls.Add(this.lbl6, 0, 6);
             this.dbLayoutPanel2.Controls.Add(this.lbl11, 0, 11);
-            this.dbLayoutPanel2.Location = new System.Drawing.Point(12, 41);
+            this.dbLayoutPanel2.Location = new System.Drawing.Point(12, 56);
             this.dbLayoutPanel2.Name = "dbLayoutPanel2";
             this.dbLayoutPanel2.RowCount = 14;
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
@@ -371,14 +371,13 @@
             // 
             // buttonFASAP1
             // 
-            this.buttonFASAP1.AutoSize = true;
             this.buttonFASAP1.BackColor = System.Drawing.Color.Transparent;
             this.buttonFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.buttonFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP1.Image")));
-            this.buttonFASAP1.Location = new System.Drawing.Point(44, 9);
+            this.buttonFASAP1.Location = new System.Drawing.Point(12, 9);
             this.buttonFASAP1.Name = "buttonFASAP1";
-            this.buttonFASAP1.Size = new System.Drawing.Size(235, 29);
+            this.buttonFASAP1.Size = new System.Drawing.Size(298, 47);
             this.buttonFASAP1.TabIndex = 5;
             this.buttonFASAP1.Text = "Превземи нарачка ";
             this.buttonFASAP1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -632,14 +631,13 @@
             // buttonFASAP2
             // 
             this.buttonFASAP2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonFASAP2.AutoSize = true;
             this.buttonFASAP2.BackColor = System.Drawing.Color.Transparent;
             this.buttonFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.buttonFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP2.Image")));
-            this.buttonFASAP2.Location = new System.Drawing.Point(459, 144);
+            this.buttonFASAP2.Location = new System.Drawing.Point(429, 128);
             this.buttonFASAP2.Name = "buttonFASAP2";
-            this.buttonFASAP2.Size = new System.Drawing.Size(251, 29);
+            this.buttonFASAP2.Size = new System.Drawing.Size(297, 47);
             this.buttonFASAP2.TabIndex = 8;
             this.buttonFASAP2.Text = "Реализирај нарачка ";
             this.buttonFASAP2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -812,7 +810,6 @@
             this.lblKontaktOpis.Size = new System.Drawing.Size(106, 27);
             this.lblKontaktOpis.TabIndex = 44;
             this.lblKontaktOpis.Text = "Контакт:";
-            this.lblKontaktOpis.Visible = false;
             // 
             // VrabotenForma
             // 
