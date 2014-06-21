@@ -818,6 +818,9 @@
             this.buttonPozicija.TabIndex = 108;
             this.buttonPozicija.Text = "Преглед на позиции";
             this.buttonPozicija.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonPozicija.Click += new System.EventHandler(this.buttonPozicija_Click);
+            this.buttonPozicija.MouseEnter += new System.EventHandler(this.buttonOtkazi_MouseEnter);
+            this.buttonPozicija.MouseLeave += new System.EventHandler(this.buttonOtkazi_MouseLeave);
             // 
             // ListaVraboteni
             // 

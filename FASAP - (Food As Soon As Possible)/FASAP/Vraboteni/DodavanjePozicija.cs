@@ -39,7 +39,7 @@ namespace SmetkaZaNaracka
             this.Conn = conn;
             this.Init();
         }
-
+        /*
         // samo za primer
         public DodavanjePozicija()
         {
@@ -55,7 +55,7 @@ namespace SmetkaZaNaracka
 
             this.Init();
         }
-
+        */
         /// <summary>
         /// Inicijalizacija na potrebnite kontroli
         /// </summary>

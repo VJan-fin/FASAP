@@ -788,5 +788,14 @@ namespace SmetkaZaNaracka
                 mbf.ShowDialog();
             }
         }
+
+        private void buttonPozicija_Click(object sender, EventArgs e)
+        {
+            DodavanjePozicija dpf = new DodavanjePozicija(this.Conn);
+            if (dpf.ShowDialog() == DialogResult.Yes)
+                this.VcitajPozicii();
+            else
+                this.VcitajPozicii();
+        }
     }
 }
