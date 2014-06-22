@@ -22,6 +22,8 @@ namespace SmetkaZaNaracka
         {
             InitializeComponent();
             Conn = conn;
+            this.DoubleBuffered = true;
+            Opacity = 0;
             NajdiID();
         }
         private void NajdiID()

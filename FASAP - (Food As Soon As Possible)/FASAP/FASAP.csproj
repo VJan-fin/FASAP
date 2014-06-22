@@ -89,6 +89,14 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmpStatsComparators.cs" />
+    <Compile Include="Izv1PridonesVoPromet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izv1PridonesVoPromet.Designer.cs">
+      <DependentUpon>Izv1PridonesVoPromet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEmpStats.cs" />
     <Compile Include="Vraboteni\DodavanjePozicija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +285,7 @@
     <Compile Include="Vraboteni\PregledVraboten.Designer.cs">
       <DependentUpon>PregledVraboten.cs</DependentUpon>
     </Compile>
+    <Compile Include="VrabPrometProcent.cs" />
     <EmbeddedResource Include="FasapNaracka.resx">
       <DependentUpon>FasapNaracka.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InfoForma.resx">
       <DependentUpon>InfoForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izv1PridonesVoPromet.resx">
+      <DependentUpon>Izv1PridonesVoPromet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IzvrsuvanjeNaracka.resx">
       <DependentUpon>IzvrsuvanjeNaracka.cs</DependentUpon>

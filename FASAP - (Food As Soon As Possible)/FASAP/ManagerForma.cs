@@ -21,6 +21,7 @@ namespace SmetkaZaNaracka
         {
             InitializeComponent();
             Manager = manager;
+            this.DoubleBuffered = true;
             Opacity = 0;
             Conn = conn;
             init();
