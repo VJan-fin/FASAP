@@ -85,6 +85,8 @@
             this.flowLayoutPanelFasap1 = new SmetkaZaNaracka.FlowLayoutPanelFasap(this.components);
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnPotvrdi = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.btnOtkazi = new SmetkaZaNaracka.ButtonFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -621,7 +623,7 @@
             this.lblImeStavka.LblObject = null;
             this.lblImeStavka.Location = new System.Drawing.Point(668, 122);
             this.lblImeStavka.Name = "lblImeStavka";
-            this.lblImeStavka.Size = new System.Drawing.Size(546, 127);
+            this.lblImeStavka.Size = new System.Drawing.Size(520, 127);
             this.lblImeStavka.TabIndex = 18;
             // 
             // labelFASAP7
@@ -928,7 +930,7 @@
             this.lblCenaProizvod.ForeColor = System.Drawing.Color.White;
             this.lblCenaProizvod.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaProizvod.Image")));
             this.lblCenaProizvod.LblObject = null;
-            this.lblCenaProizvod.Location = new System.Drawing.Point(1220, 206);
+            this.lblCenaProizvod.Location = new System.Drawing.Point(1194, 203);
             this.lblCenaProizvod.Name = "lblCenaProizvod";
             this.lblCenaProizvod.Size = new System.Drawing.Size(127, 43);
             this.lblCenaProizvod.TabIndex = 32;
@@ -960,11 +962,45 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnPotvrdi
+            // 
+            this.btnPotvrdi.BackColor = System.Drawing.Color.Transparent;
+            this.btnPotvrdi.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.btnPotvrdi.ForeColor = System.Drawing.Color.Khaki;
+            this.btnPotvrdi.Image = ((System.Drawing.Image)(resources.GetObject("btnPotvrdi.Image")));
+            this.btnPotvrdi.Location = new System.Drawing.Point(1076, 693);
+            this.btnPotvrdi.Name = "btnPotvrdi";
+            this.btnPotvrdi.Size = new System.Drawing.Size(197, 66);
+            this.btnPotvrdi.TabIndex = 35;
+            this.btnPotvrdi.Text = "Потврди";
+            this.btnPotvrdi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
+            this.btnPotvrdi.MouseEnter += new System.EventHandler(this.btnOtkazi_MouseEnter);
+            this.btnPotvrdi.MouseLeave += new System.EventHandler(this.btnOtkazi_MouseLeave);
+            // 
+            // btnOtkazi
+            // 
+            this.btnOtkazi.BackColor = System.Drawing.Color.Transparent;
+            this.btnOtkazi.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.btnOtkazi.ForeColor = System.Drawing.Color.Khaki;
+            this.btnOtkazi.Image = ((System.Drawing.Image)(resources.GetObject("btnOtkazi.Image")));
+            this.btnOtkazi.Location = new System.Drawing.Point(773, 693);
+            this.btnOtkazi.Name = "btnOtkazi";
+            this.btnOtkazi.Size = new System.Drawing.Size(197, 66);
+            this.btnOtkazi.TabIndex = 36;
+            this.btnOtkazi.Text = "Откажи";
+            this.btnOtkazi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnOtkazi.Click += new System.EventHandler(this.btnOtkazi_Click);
+            this.btnOtkazi.MouseEnter += new System.EventHandler(this.btnOtkazi_MouseEnter);
+            this.btnOtkazi.MouseLeave += new System.EventHandler(this.btnOtkazi_MouseLeave);
+            // 
             // IzvrsuvanjeNaracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnOtkazi);
+            this.Controls.Add(this.btnPotvrdi);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.flowLayoutPanelFasap1);
             this.Controls.Add(this.lblCenaProizvod);
@@ -1031,6 +1067,8 @@
             this.Controls.SetChildIndex(this.lblCenaProizvod, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);
             this.Controls.SetChildIndex(this.lblErrorMessage, 0);
+            this.Controls.SetChildIndex(this.btnPotvrdi, 0);
+            this.Controls.SetChildIndex(this.btnOtkazi, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1114,5 +1152,7 @@
         private FlowLayoutPanelFasap flowLayoutPanelFasap1;
         private System.Windows.Forms.Label lblErrorMessage;
         private System.Windows.Forms.Timer timer1;
+        private ButtonFASAP btnPotvrdi;
+        private ButtonFASAP btnOtkazi;
     }
 }

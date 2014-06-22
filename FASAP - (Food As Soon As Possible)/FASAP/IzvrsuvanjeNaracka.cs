@@ -12,6 +12,7 @@ using System.Globalization;
 using System.Threading;
 using System.IO;
 using System.Net;
+using SmetkaZaNaracka.Narachki;
 
 namespace SmetkaZaNaracka
 {
@@ -22,7 +23,29 @@ namespace SmetkaZaNaracka
         private Restoran Restoran { get; set; }
         public MenuComponent CurrItem { get; set; }
         public List<OrderComponent> OrderList { get; set; }
-
+        private Naracka naracka;
+        public Naracka Naracka
+        {
+            get
+            {
+                return naracka;
+            }
+            set
+            {
+                naracka = value;
+                PostaviNaracka();
+                if (naracka.Stavki.Count == 0)
+                {
+                    btnOtkazi.Visible = false;
+                    btnPotvrdi.Visible = false;
+                }
+                else
+                {
+                    btnOtkazi.Visible = true;
+                    btnPotvrdi.Visible = true;
+                }
+            }
+        }
         private List<LabelFASAP> ListaMeni { get; set; }
         private List<LabelFASAP> ListaStavki { get; set; }
         private List<LabelFASAP> ListaKupeni { get; set; }
@@ -52,6 +75,8 @@ namespace SmetkaZaNaracka
 
             this.AddButtons();
 
+            Naracka = new Naracka(-1, 0, DateTime.Now);
+
             this.lblImeRestoran.Text = String.Format("{0} ", Restoran.Ime);
             if (this.Restoran.Ulica != null && this.Restoran.Grad != null)
                 this.lblAdresa.Text = String.Format("{0}, {1} ", Restoran.Ulica, Restoran.Grad);
@@ -59,7 +84,6 @@ namespace SmetkaZaNaracka
                 this.lblRabVreme.Text = this.Restoran.RabotnoVreme + " ";
             if (Restoran.PicturePath == null)
                 pictureBoxLogo.Image = Resources.FASAP_LOGO;
-
         }
 
         public IzvrsuvanjeNaracka()
@@ -247,7 +271,7 @@ namespace SmetkaZaNaracka
                 if (ind < mc.GetContent().Count)
                 {
                     SetObject(ListaMeni[i], mc.GetContent()[ind]);
-                    ind++;                  
+                    ind++;
                 }
                 else
                     SetObject(ListaMeni[i], null);
@@ -283,7 +307,7 @@ namespace SmetkaZaNaracka
             if (this.Restoran.Kontakt.Count != 0)
                 this.lblKontakt.Text = this.Restoran.Kontakt[this.indKontakt].ToString();
             else
-                this.lblKontakt.Text = " ";   
+                this.lblKontakt.Text = " ";
         }
 
         private void IzvrsuvanjeNaracka_Paint(object sender, PaintEventArgs e)
@@ -414,12 +438,12 @@ namespace SmetkaZaNaracka
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-             if (CurrMenu != null && this.CurrMenu.GetContent().Count > this.ListaStavki.Count)
-             {
-                 if (this.indStavka != 0)
-                     this.indStavka--;
-                 this.PopolniListaStavki();
-             }
+            if (CurrMenu != null && this.CurrMenu.GetContent().Count > this.ListaStavki.Count)
+            {
+                if (this.indStavka != 0)
+                    this.indStavka--;
+                this.PopolniListaStavki();
+            }
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -462,7 +486,7 @@ namespace SmetkaZaNaracka
                 }
                 catch (Exception ex)
                 {
-                    lblErrorMessage.Text = String.Format("{0}   ",ex.Message);
+                    lblErrorMessage.Text = String.Format("{0}   ", ex.Message);
                     timer1.Stop();
                     errorMessageTime = 3;
                     lblErrorMessage.Visible = true;
@@ -474,7 +498,7 @@ namespace SmetkaZaNaracka
                 lblImeStavka.Text = CurrItem.GetName();
                 try
                 {
-                    lblCenaProizvod.Text = String.Format("{0} ден.",CurrItem.ComputeCost().ToString());
+                    lblCenaProizvod.Text = String.Format("{0} ден.", CurrItem.ComputeCost().ToString());
                 }
                 catch (Exception)
                 {
@@ -487,26 +511,18 @@ namespace SmetkaZaNaracka
             if (CurrItem == null)
                 return;
             OrderComponent oc = new OrderComponent(CurrItem, int.Parse(lblKolicina.Text));
-            int i = 0;
-            for (i = 0; i < OrderList.Count; i++)
-                if (oc.Equals(OrderList[i]))
-                {
-                    OrderList[i].Quantity += oc.Quantity;
-                    break;
-                }
-            if(i == OrderList.Count)
-                OrderList.Add(oc);
-            PostaviNaracka();
+            Naracka.Add(oc);
+            Naracka = Naracka;
         }
 
         private void PostaviNaracka()
         {
             int Vkupno = 0;
-            foreach (var obj in OrderList)
+            foreach (var obj in Naracka.Stavki)
                 Vkupno += obj.ComputePrice();
             for (int i = 0; i < ListaKupeni.Count; i++)
-                if (i < OrderList.Count)
-                    ListaKupeni[i].UpdateObject(OrderList[i + indKupeni]);
+                if (i < Naracka.Stavki.Count)
+                    ListaKupeni[i].UpdateObject(Naracka.Stavki[i + indKupeni]);
                 else ListaKupeni[i].UpdateObject(null);
             lblCena.Text = Vkupno.ToString();
         }
@@ -634,11 +650,11 @@ namespace SmetkaZaNaracka
             byte[] imageData = DownloadData(Url);
             Image img = null;
 
-                MemoryStream stream = new MemoryStream(imageData);
-                img = Image.FromStream(stream);
+            MemoryStream stream = new MemoryStream(imageData);
+            img = Image.FromStream(stream);
 
 
-                stream.Close();
+            stream.Close();
 
             return img;
         }
@@ -700,6 +716,44 @@ namespace SmetkaZaNaracka
             }
 
             return downloadedData;
+        }
+
+        private void btnOtkazi_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            Label lb = sender as Label;
+            lb.Image = Resources.LightButton___Copy;
+            lb.ForeColor = Color.SaddleBrown;
+        }
+
+        private void btnOtkazi_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            Label lb = sender as Label;
+            lb.Image = Resources.DarkButton___Copy;
+            lb.ForeColor = Color.Khaki;
+        }
+
+        private void btnPotvrdi_Click(object sender, EventArgs e)
+        {
+            MessageBoxForm mbf = new MessageBoxForm("Дали сакате достава?");
+            if (mbf.ShowDialog() == DialogResult.Yes)
+            {
+                OnlineNarackaPodatoci onp = new OnlineNarackaPodatoci(Conn, Naracka, Restoran);
+                if (onp.ShowDialog() == DialogResult.Yes)
+                {
+                    Naracka = new Naracka(-1, 0, DateTime.Now);
+                }
+            }
+        }
+
+        private void btnOtkazi_Click(object sender, EventArgs e)
+        {
+            MessageBoxForm mbf = new MessageBoxForm("Дали навистина сакате да ја откажете нарачката?");
+            if (mbf.ShowDialog() == DialogResult.Yes)
+            {
+            }
+            Naracka = new Naracka(-1, 0, DateTime.Now);
         }
     }
 }

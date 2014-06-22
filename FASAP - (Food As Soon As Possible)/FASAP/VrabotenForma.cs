@@ -11,6 +11,7 @@ using SmetkaZaNaracka.Narachki;
 using SmetkaZaNaracka.Properties;
 using SmetkaZaNaracka.Naracki;
 using System.Globalization;
+using System.Threading;
 
 namespace SmetkaZaNaracka
 {
@@ -25,12 +26,14 @@ namespace SmetkaZaNaracka
         public int indStavki { get; set; }
         public List<Naracka> naracki { get; set; }
         public int ErrorMessageTime = 3;
+        public Semaphore LoadingSemaphore { get; set; }
 
         public VrabotenForma(OracleConnection conn, Vraboten vraboten)
         {
             InitializeComponent();
             this.Conn = conn;
             this.Vraboten = vraboten;
+            LoadingSemaphore = new Semaphore(0, 10);
             Opacity = 0;
         }
 
@@ -69,7 +72,7 @@ namespace SmetkaZaNaracka
                 lblKlientOpis.Visible = true;
                 lblKontakt.Visible = true;
             }
-            
+
 
             lblImeVraboten.Text = String.Format(":{0} - {1}: ", Vraboten.ToString(), Vraboten.GetFunkcija());
             Vraboten.PostaviRestoran(Conn);
@@ -88,7 +91,7 @@ namespace SmetkaZaNaracka
         }
 
         public void PostaviNaracki()
-        {    
+        {
             for (int i = 0; i < Naracki.Count; i++)
                 if (i < naracki.Count)
                 {
@@ -151,7 +154,7 @@ namespace SmetkaZaNaracka
                 }
             }
 
-            
+
         }
 
         private void lbl1_MouseEnter(object sender, EventArgs e)
@@ -306,13 +309,16 @@ namespace SmetkaZaNaracka
             try
             {
                 cmd.ExecuteNonQuery();
-                foreach(var obj in Stavki)
+                foreach (var obj in Stavki)
                     obj.Text = ": : ";
                 lblVreme.Text = " ";
                 lblVkupno.Text = " ";
                 lblMasa.Text = " ";
                 lblKontakt.Text = " ";
                 lblKlient.Text = " ";
+                Thread oThread = new Thread(new ThreadStart(IncrementOrderNumber));
+                oThread.Start();
+                LoadingSemaphore.WaitOne();
                 CurrNaracka = null;
                 PrevzemiNaracki();
                 timer2.Start();
@@ -325,6 +331,12 @@ namespace SmetkaZaNaracka
                 ErrorMessageTime = 3;
                 timer1.Start();
             }
+        }
+
+        public void IncrementOrderNumber()
+        {
+            Vraboten.IncrementOrderNumber(Conn, CurrNaracka);
+            LoadingSemaphore.Release();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

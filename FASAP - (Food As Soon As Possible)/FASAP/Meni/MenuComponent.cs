@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
+using SmetkaZaNaracka.Naracki;
 
 namespace SmetkaZaNaracka
 {
@@ -9,6 +11,19 @@ namespace SmetkaZaNaracka
     {
         public MenuComponent Parent { get; set; }
         public String ImeGlavno { get; set; }
+        public VklucuvaKey DodatokKey { get; set; }
+        public VklucuvaKey VklucuvaKey { get; set; }
+        public int Kolicina { get; set; }
+
+        public VklucuvaKey getVklucuvaKey()
+        {
+            return VklucuvaKey;
+        }
+
+        public VklucuvaKey getDodatokKey()
+        {
+            return DodatokKey;
+        }
 
         public abstract List<MenuComponent> GetContent();
 
@@ -23,6 +38,12 @@ namespace SmetkaZaNaracka
         public abstract void AddComp(MenuComponent mc);
 
         public abstract void RemoveComp(MenuComponent mc);
+
+        public abstract void SetName(String name);
+
+        public abstract void SetDescription(String description);
+
+        public abstract void SetCost(int cost);
 
         /// <summary>
         /// Важен метод за да се креира нов објект идентичен на постоечкиот кој ќе уечествува во нарачката.
@@ -41,5 +62,13 @@ namespace SmetkaZaNaracka
         {
             return this.Equals(obj);
         }
+
+        public abstract void SqlInsert(OracleConnection conn, int resID);
+
+        public abstract void SqlDelete(OracleConnection conn, int resID);
+
+        public abstract void SqlActivate(OracleConnection conn, int resID);
+
+        public abstract void SQLUpdate(OracleConnection conn, int resID);
     }
 }

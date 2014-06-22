@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SmetkaZaNaracka.Narachki;
+using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka.Naracki
 {
@@ -15,5 +16,10 @@ namespace SmetkaZaNaracka.Naracki
         {
             BrojMasa = brojMasa;
         }
+
+        public override void SqlInsert(OracleConnection conn, int resID)
+        {
+        }
+
     }
 }

@@ -59,8 +59,9 @@ namespace SmetkaZaNaracka
 
         public override List<Narachki.Naracka> ListaNaracki(Oracle.DataAccess.Client.OracleConnection conn)
         {
+            Dictionary<VklucuvaKey, Stavka> Stavki = new Dictionary<VklucuvaKey, Stavka>();
             List<Naracka> lista = new List<Naracka>();
-            string sqlMeni = @"SELECT n.Narachka_ID, n.VKUPNA_CENA, n.VREME, line.ADRESA_ZA_DOSTAVA, line.KONTAKT, line.IME_KLIENT, line.PREZIME_KLIENT, st.stavka_id, st.ime_stavka, st.opis_stavka, st.cena_stavka, st.dodatok_stavka, vk.kolichina_stavka
+            string sqlMeni = @"SELECT n.Narachka_ID, n.VKUPNA_CENA, n.VREME, line.ADRESA_ZA_DOSTAVA, line.KONTAKT, line.IME_KLIENT, line.PREZIME_KLIENT, st.stavka_id, st.ime_stavka, st.opis_stavka, st.cena_stavka, st.dodatok_stavka, vk.kolichina_stavka, vk.vkluchuva_id, vk.dodatok_id
                                 FROM Korisnik k, Vraboten v, Online_narachka line, Narachka n, Vkluchuva vk, Stavka st
                                 WHERE k.Vraboten_ID = v.Vraboten_ID AND line.Vraboten_ID = v.Vraboten_ID
 		                                AND n.Narachka_ID = line.Narachka_ID AND n.Restoran_ID = line.Restoran_ID
@@ -85,48 +86,67 @@ namespace SmetkaZaNaracka
             Naracka naracka;
             //lista.Add(new Online(1, 1, DateTime.Now, "12", "12", "12", "12"));
             //return lista;
+            Dictionary<int, Naracka> Naracki = new Dictionary<int, Naracka>();
             while (dr.Read())
             {
+                int narid = dr.GetInt32(0);
+                if (!Naracki.ContainsKey(narid))
+                {
+                    Naracka nar = new Online(narid, dr.GetInt16(1), dr.GetDateTime(2), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6));
+                    Naracki.Add(narid, nar);
+                    lista.Add(nar);
+                }
+                int vklucuvaid = dr.GetInt32(13);
+                int? dodatokid;
+                object obj1 = dr.GetValue(14);
+                if (obj1 == null)
+                    dodatokid = null;
+                else dodatokid = obj1 as int?;
                 Object obj = dr.GetValue(9);
                 String pomosen;
                 if (obj == null)
                     pomosen = null;
                 else pomosen = obj as String;
-                int narid = dr.GetInt16(0);
-                if (lista.Count == 0)
+                String IsDecorator = (string)dr.GetValue(11);
+                if (IsDecorator == "1")
                 {
-                    naracka = new Online(narid, dr.GetInt16(1), dr.GetDateTime(2), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6));
-                    Stavka stavka = new Stavka(dr.GetInt16(7), dr.GetString(8), (decimal)dr.GetValue(10), pomosen);
-                    OrderComponent oc = new OrderComponent(stavka, dr.GetInt16(12)); 
-                    naracka.Add(oc);
-                    lista.Add(naracka);
-                }
-                else if (narid == lista.Last().NarackaID)
-                {
-                    String IsDecorator = (string)dr.GetValue(11);
-                    if (IsDecorator == "1")
-                    {
-                        Dodatok dodatok = new Dodatok(dr.GetInt16(7), dr.GetString(8), (decimal)dr.GetValue(10), pomosen);
-                        dodatok.Osnovna = lista.Last().Stavki.Last().Item;
-                        lista.Last().Stavki.Last().Item = dodatok;
-                    }
-                    else
-                    {
-                        Stavka stavka = new Stavka(dr.GetInt16(7), dr.GetString(8), (decimal)dr.GetValue(10), pomosen);
-                        OrderComponent oc = new OrderComponent(stavka, dr.GetInt16(12));
-                        lista.Last().Add(oc);
-                    }
+                    Dodatok dodatok = new Dodatok(dr.GetInt16(7), dr.GetString(8), (decimal)dr.GetValue(10), pomosen);
+                    dodatok.DodatokKey = new VklucuvaKey(narid, dodatokid);
+                    dodatok.VklucuvaKey = new VklucuvaKey(narid, vklucuvaid);
+                    dodatok.Kolicina = dr.GetInt32(12);
+                    Stavki.Add(new VklucuvaKey(narid, vklucuvaid), dodatok);
                 }
                 else
                 {
-                    naracka = new Online(narid, dr.GetInt16(1), dr.GetDateTime(2), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6));
                     Stavka stavka = new Stavka(dr.GetInt16(7), dr.GetString(8), (decimal)dr.GetValue(10), pomosen);
-                    OrderComponent oc = new OrderComponent(stavka, dr.GetInt16(12));
-                    naracka.Add(oc);
-                    lista.Add(naracka);
+                    stavka.DodatokKey = new VklucuvaKey(narid, dodatokid);
+                    stavka.VklucuvaKey = new VklucuvaKey(narid, vklucuvaid);
+                    stavka.Kolicina = dr.GetInt32(12);
+                    Stavki.Add(new VklucuvaKey(narid, vklucuvaid), stavka);
                 }
-                
             }
+
+            Dictionary<VklucuvaKey, Stavka> StavkiKoiSeRef = new Dictionary<VklucuvaKey, Stavka>();
+            foreach (var obj in Stavki)
+            {
+                Stavka st;
+                if (Stavki.TryGetValue(obj.Value.getDodatokKey(), out st))
+                {
+                    (obj.Value as Dodatok).Osnovna = st;
+                    StavkiKoiSeRef.Add(obj.Value.getDodatokKey(), st);
+                }
+            }
+
+            foreach (var obj in Stavki)
+            {
+                if (!StavkiKoiSeRef.ContainsKey(obj.Value.getVklucuvaKey()))
+                {
+                    Naracka nar;
+                    if (Naracki.TryGetValue(obj.Value.VklucuvaKey.NarackaID, out nar))
+                        nar.Add(new OrderComponent(obj.Value, obj.Value.Kolicina));
+                }
+            }
+
             return lista;
         }
         public override string GetFunkcija()
@@ -164,6 +184,34 @@ namespace SmetkaZaNaracka
             catch (Exception)
             {
                 throw new NotImplementedException("Нема пристап до базата на податоци" + br.ToString());
+            }
+        }
+
+        public override void IncrementOrderNumber(OracleConnection conn, Naracka nar)
+        {
+            string updateOnsite = @"update IZVRSHUVA
+                                    set IZVRSHENI_NARACHKI = IZVRSHENI_NARACHKI + 1
+                                    where VRABOTEN_ID = :VrabotenID
+                                    AND restoran_id = :ResID
+                                    AND POZICIJA = 'Доставувач'";
+
+            OracleCommand cmd = new OracleCommand(updateOnsite, conn);
+
+            OracleParameter prm = new OracleParameter("VrabotenID", OracleDbType.Int64);
+            prm.Value = VrabotenID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = RestoranID;
+            cmd.Parameters.Add(prm);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

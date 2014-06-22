@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
@@ -83,6 +84,179 @@ namespace SmetkaZaNaracka
             sid.IdStavka = ID;
             sid.ImeGlavno = ImeGlavno;
             return sid;
+        }
+
+        public override void SqlInsert(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"INSERT INTO STAVKA (RESTORAN_ID, IME_MENI, STAVKA_ID, OPIS_STAVKA, CENA_STAVKA, DODATOK_STAVKA, IME_STAVKA) VALUES (:ResID, :ImeMeni, NVL((select max(stavka_id) from stavka where restoran_id = :ResID1 AND ime_meni = :ImeMeni1), 0) + 1, :OpisStavka, :CenaStavka, 0, :ImeStavka)";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ResID1", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni1", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("OpisStavka", OracleDbType.Varchar2);
+            prm.Value = Opis;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("CenaStavka", OracleDbType.Int64);
+            prm.Value = Cena;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeStavka", OracleDbType.Varchar2);
+            prm.Value = Ime;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+        }
+
+        public override void SqlDelete(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"UPDATE STAVKA
+                                SET VALIDNOST_STAVKA = 0
+                                WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni AND STAVKA_ID = :StavkaID";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("StavkaID", OracleDbType.Int64);
+            prm.Value = ID;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+
+            if (br == 0)
+                throw new NotImplementedException("Не постои ставката");
+            Parent.RemoveComp(this);
+        }
+
+        public override void SqlActivate(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"UPDATE STAVKA
+                                SET VALIDNOST_STAVKA = 1
+                                WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni AND STAVKA_ID = :StavkaID";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("StavkaID", OracleDbType.Int64);
+            prm.Value = ID;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+
+            if (br == 0)
+                throw new DuplicatePrimaryKeyException("Не постои ставката");
+        }
+
+        public override void SQLUpdate(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"UPDATE STAVKA
+                                SET OPIS_STAVKA = :OpisStavka, CENA_STAVKA = :CenaStavka, IME_STAVKA = :ImeStavka
+                                WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni AND STAVKA_ID = :StavkaID";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("OpisStavka", OracleDbType.Varchar2);
+            prm.Value = Opis;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("CenaStavka", OracleDbType.Int64);
+            prm.Value = this.ComputeCost();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeStavka", OracleDbType.Varchar2);
+            prm.Value = Ime;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("StavkaID", OracleDbType.Int64);
+            prm.Value = ID;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+
+            if (br == 0)
+                throw new DuplicatePrimaryKeyException("Не постои ставката");
+        }
+
+        public override void SetName(string name)
+        {
+            Ime = name;
+        }
+
+        public override void SetDescription(string description)
+        {
+            Opis = description;
+        }
+
+        public override void SetCost(int cost)
+        {
+            Cena = cost;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SmetkaZaNaracka.Narachki;
 
 namespace SmetkaZaNaracka
 {
@@ -31,6 +32,11 @@ namespace SmetkaZaNaracka
         }
 
         public override void OslobodiNaracki(Oracle.DataAccess.Client.OracleConnection conn)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void IncrementOrderNumber(Oracle.DataAccess.Client.OracleConnection conn, Naracka nar)
         {
             throw new NotImplementedException();
         }

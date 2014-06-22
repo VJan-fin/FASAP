@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka.Narachki
 {
@@ -22,7 +23,22 @@ namespace SmetkaZaNaracka.Narachki
 
         public void Add(OrderComponent oc)
         {
-            Stavki.Add(oc);
+            int i = 0;
+            for (i = 0; i < Stavki.Count; i++)
+                if (oc.Equals(Stavki[i]))
+                {
+                    Stavki[i].Quantity += oc.Quantity;
+                    break;
+                }
+            if (i == Stavki.Count)
+                Stavki.Add(oc);
+            VkupnaCena += oc.ComputePrice();
+        }
+
+        public void Remove(OrderComponent oc)
+        {
+            if (Stavki.Remove(oc))
+                VkupnaCena -= oc.ComputePrice();
         }
 
         public override string ToString()
@@ -34,12 +50,21 @@ namespace SmetkaZaNaracka.Narachki
         {
             if (obj == null)
                 return false;
-            if(!(obj is Naracka))
+            if (!(obj is Naracka))
                 return false;
             Naracka nar = obj as Naracka;
             if (nar.NarackaID != NarackaID)
                 return false;
             return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public virtual void SqlInsert(OracleConnection conn, int resID)
+        {
         }
     }
 }

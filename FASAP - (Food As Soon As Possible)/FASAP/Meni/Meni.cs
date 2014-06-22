@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
+using System.Data.SqlClient;
 
 namespace SmetkaZaNaracka
 {
@@ -81,5 +83,135 @@ namespace SmetkaZaNaracka
         {
             return base.GetHashCode();
         }
+
+        public override void SqlInsert(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"INSERT INTO MENI (RESTORAN_ID, IME_MENI, IME_GLAVNO) VALUES (:ResID, :ImeMeni, :ImeGlavno)";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Ime;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeGlavno", OracleDbType.Varchar2);
+            prm.Value = this.Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (OracleException ex)
+            {
+                if (ex.Errors.Count > 0) // Assume the interesting stuff is in the first error
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 0001: // Primary key violation
+                            throw new DuplicatePrimaryKeyException(String.Format("Менито \"{0}\" веќе постои, ве молиме пробајте друго име.", Ime));
+                        default:
+                            throw new NotImplementedException("Проверете ја вашата конекција");
+                    }
+                }
+            }
+        }
+
+        public override void SqlDelete(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"UPDATE MENI
+                                SET VALIDNOST_MENI = 0
+                                WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Ime;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+
+            if (br == 0)
+                throw new DuplicatePrimaryKeyException("Не постои ставката");
+            ValidnostMeni = false;
+        }
+
+        public override void SqlActivate(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"UPDATE MENI
+                                SET VALIDNOST_MENI = 1
+                                WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Ime;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+
+            if (br == 0)
+                throw new NotImplementedException("Не постои ставката");
+            ValidnostMeni = true;
+        }
+
+        public override void SQLUpdate(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            throw new NotImplementedException("Не е имплементирано");
+        }
+
+        public override void SetName(string name)
+        {
+            Ime = name;
+        }
+
+        public override void SetDescription(string description)
+        {
+        }
+
+        public override void SetCost(int cost)
+        {
+        }
+    }
+}
+
+public class DuplicatePrimaryKeyException : Exception
+{
+    public DuplicatePrimaryKeyException()
+        : base()
+    {
+    }
+
+    public DuplicatePrimaryKeyException(String message)
+        : base(message)
+    {
     }
 }
