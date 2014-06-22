@@ -19,7 +19,8 @@ namespace SmetkaZaNaracka
             // Application.Run(new FasapPocetenEkran());
            // Application.Run(new ListaVraboteni());
             //Application.Run(new PregledMeni());
-            Application.Run(new Izv1PridonesVoPromet());
+            Application.Run(new PregledKvartalnaSostojba());
+            //Application.Run(new Izv1PridonesVoPromet());
         }
     }
 }
