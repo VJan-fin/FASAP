@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PregledKvartalnaSostojba));
             this.dbLayoutPanel1 = new SmetkaZaNaracka.DBLayoutPanel(this.components);
+            this.labelFASAP4 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP3 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblSostojba4 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblTrosoci4 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblDodatok4 = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -46,21 +49,18 @@
             this.labelFASAP7 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP6 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP5 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP3 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPromet1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPromet2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPromet3 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPromet4 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP4 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPlata1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPlata2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPlata3 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPlata4 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblNaslovProcent = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblNaslovPromet = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblnaslovIme = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP29 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.pbRightG = new System.Windows.Forms.PictureBox();
             this.pbLeftG = new System.Windows.Forms.PictureBox();
@@ -83,6 +83,9 @@
             this.dbLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.dbLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.dbLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.dbLayoutPanel1.Controls.Add(this.labelFASAP4, 0, 4);
+            this.dbLayoutPanel1.Controls.Add(this.labelFASAP3, 0, 3);
+            this.dbLayoutPanel1.Controls.Add(this.labelFASAP2, 0, 2);
             this.dbLayoutPanel1.Controls.Add(this.lblSostojba4, 5, 4);
             this.dbLayoutPanel1.Controls.Add(this.lblTrosoci4, 4, 4);
             this.dbLayoutPanel1.Controls.Add(this.lblDodatok4, 3, 4);
@@ -98,21 +101,18 @@
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP7, 5, 0);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP6, 4, 0);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP5, 3, 0);
-            this.dbLayoutPanel1.Controls.Add(this.labelFASAP2, 0, 2);
-            this.dbLayoutPanel1.Controls.Add(this.labelFASAP3, 0, 3);
             this.dbLayoutPanel1.Controls.Add(this.lblPromet1, 1, 1);
             this.dbLayoutPanel1.Controls.Add(this.lblPromet2, 1, 2);
             this.dbLayoutPanel1.Controls.Add(this.lblPromet3, 1, 3);
             this.dbLayoutPanel1.Controls.Add(this.lblPromet4, 1, 4);
-            this.dbLayoutPanel1.Controls.Add(this.labelFASAP4, 0, 4);
             this.dbLayoutPanel1.Controls.Add(this.lblPlata1, 2, 1);
             this.dbLayoutPanel1.Controls.Add(this.lblPlata2, 2, 2);
             this.dbLayoutPanel1.Controls.Add(this.lblPlata3, 2, 3);
             this.dbLayoutPanel1.Controls.Add(this.lblPlata4, 2, 4);
             this.dbLayoutPanel1.Controls.Add(this.lblNaslovProcent, 2, 0);
-            this.dbLayoutPanel1.Controls.Add(this.labelFASAP1, 0, 1);
             this.dbLayoutPanel1.Controls.Add(this.lblNaslovPromet, 1, 0);
             this.dbLayoutPanel1.Controls.Add(this.lblnaslovIme, 0, 0);
+            this.dbLayoutPanel1.Controls.Add(this.labelFASAP1, 0, 1);
             this.dbLayoutPanel1.Location = new System.Drawing.Point(42, 245);
             this.dbLayoutPanel1.Name = "dbLayoutPanel1";
             this.dbLayoutPanel1.RowCount = 5;
@@ -121,21 +121,64 @@
             this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.70913F));
             this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.70913F));
             this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.70913F));
+            this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.dbLayoutPanel1.Size = new System.Drawing.Size(1291, 472);
             this.dbLayoutPanel1.TabIndex = 16;
+            // 
+            // labelFASAP4
+            // 
+            this.labelFASAP4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelFASAP4.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP4.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
+            this.labelFASAP4.LblObject = null;
+            this.labelFASAP4.Location = new System.Drawing.Point(3, 400);
+            this.labelFASAP4.Name = "labelFASAP4";
+            this.labelFASAP4.Size = new System.Drawing.Size(209, 62);
+            this.labelFASAP4.TabIndex = 64;
+            this.labelFASAP4.Text = "Четврт квартал ";
+            // 
+            // labelFASAP3
+            // 
+            this.labelFASAP3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP3.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
+            this.labelFASAP3.LblObject = null;
+            this.labelFASAP3.Location = new System.Drawing.Point(3, 321);
+            this.labelFASAP3.Name = "labelFASAP3";
+            this.labelFASAP3.Size = new System.Drawing.Size(209, 62);
+            this.labelFASAP3.TabIndex = 63;
+            this.labelFASAP3.Text = "Трет квартал ";
+            // 
+            // labelFASAP2
+            // 
+            this.labelFASAP2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP2.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
+            this.labelFASAP2.LblObject = null;
+            this.labelFASAP2.Location = new System.Drawing.Point(3, 243);
+            this.labelFASAP2.Name = "labelFASAP2";
+            this.labelFASAP2.Size = new System.Drawing.Size(209, 62);
+            this.labelFASAP2.TabIndex = 62;
+            this.labelFASAP2.Text = "Втор квартал ";
             // 
             // lblSostojba4
             // 
             this.lblSostojba4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSostojba4.AutoSize = true;
             this.lblSostojba4.BackColor = System.Drawing.Color.Transparent;
-            this.lblSostojba4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSostojba4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblSostojba4.ForeColor = System.Drawing.Color.White;
             this.lblSostojba4.Image = ((System.Drawing.Image)(resources.GetObject("lblSostojba4.Image")));
             this.lblSostojba4.LblObject = null;
-            this.lblSostojba4.Location = new System.Drawing.Point(1106, 418);
+            this.lblSostojba4.Location = new System.Drawing.Point(1100, 417);
             this.lblSostojba4.Name = "lblSostojba4";
-            this.lblSostojba4.Size = new System.Drawing.Size(153, 27);
+            this.lblSostojba4.Size = new System.Drawing.Size(166, 29);
             this.lblSostojba4.TabIndex = 60;
             this.lblSostojba4.Text = "labelFASAP28";
             // 
@@ -144,13 +187,13 @@
             this.lblTrosoci4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTrosoci4.AutoSize = true;
             this.lblTrosoci4.BackColor = System.Drawing.Color.Transparent;
-            this.lblTrosoci4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTrosoci4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTrosoci4.ForeColor = System.Drawing.Color.White;
             this.lblTrosoci4.Image = ((System.Drawing.Image)(resources.GetObject("lblTrosoci4.Image")));
             this.lblTrosoci4.LblObject = null;
-            this.lblTrosoci4.Location = new System.Drawing.Point(891, 418);
+            this.lblTrosoci4.Location = new System.Drawing.Point(884, 417);
             this.lblTrosoci4.Name = "lblTrosoci4";
-            this.lblTrosoci4.Size = new System.Drawing.Size(153, 27);
+            this.lblTrosoci4.Size = new System.Drawing.Size(166, 29);
             this.lblTrosoci4.TabIndex = 59;
             this.lblTrosoci4.Text = "labelFASAP27";
             // 
@@ -159,13 +202,13 @@
             this.lblDodatok4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDodatok4.AutoSize = true;
             this.lblDodatok4.BackColor = System.Drawing.Color.Transparent;
-            this.lblDodatok4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblDodatok4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblDodatok4.ForeColor = System.Drawing.Color.White;
             this.lblDodatok4.Image = ((System.Drawing.Image)(resources.GetObject("lblDodatok4.Image")));
             this.lblDodatok4.LblObject = null;
-            this.lblDodatok4.Location = new System.Drawing.Point(676, 418);
+            this.lblDodatok4.Location = new System.Drawing.Point(669, 417);
             this.lblDodatok4.Name = "lblDodatok4";
-            this.lblDodatok4.Size = new System.Drawing.Size(153, 27);
+            this.lblDodatok4.Size = new System.Drawing.Size(166, 29);
             this.lblDodatok4.TabIndex = 58;
             this.lblDodatok4.Text = "labelFASAP26";
             // 
@@ -174,13 +217,13 @@
             this.lblSostojba3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSostojba3.AutoSize = true;
             this.lblSostojba3.BackColor = System.Drawing.Color.Transparent;
-            this.lblSostojba3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSostojba3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblSostojba3.ForeColor = System.Drawing.Color.White;
             this.lblSostojba3.Image = ((System.Drawing.Image)(resources.GetObject("lblSostojba3.Image")));
             this.lblSostojba3.LblObject = null;
-            this.lblSostojba3.Location = new System.Drawing.Point(1106, 338);
+            this.lblSostojba3.Location = new System.Drawing.Point(1100, 337);
             this.lblSostojba3.Name = "lblSostojba3";
-            this.lblSostojba3.Size = new System.Drawing.Size(153, 27);
+            this.lblSostojba3.Size = new System.Drawing.Size(166, 29);
             this.lblSostojba3.TabIndex = 57;
             this.lblSostojba3.Text = "labelFASAP25";
             // 
@@ -189,13 +232,13 @@
             this.lblTrosoci3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTrosoci3.AutoSize = true;
             this.lblTrosoci3.BackColor = System.Drawing.Color.Transparent;
-            this.lblTrosoci3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTrosoci3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTrosoci3.ForeColor = System.Drawing.Color.White;
             this.lblTrosoci3.Image = ((System.Drawing.Image)(resources.GetObject("lblTrosoci3.Image")));
             this.lblTrosoci3.LblObject = null;
-            this.lblTrosoci3.Location = new System.Drawing.Point(891, 338);
+            this.lblTrosoci3.Location = new System.Drawing.Point(884, 337);
             this.lblTrosoci3.Name = "lblTrosoci3";
-            this.lblTrosoci3.Size = new System.Drawing.Size(153, 27);
+            this.lblTrosoci3.Size = new System.Drawing.Size(166, 29);
             this.lblTrosoci3.TabIndex = 56;
             this.lblTrosoci3.Text = "labelFASAP20";
             // 
@@ -204,13 +247,13 @@
             this.lblDodatok3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDodatok3.AutoSize = true;
             this.lblDodatok3.BackColor = System.Drawing.Color.Transparent;
-            this.lblDodatok3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblDodatok3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblDodatok3.ForeColor = System.Drawing.Color.White;
             this.lblDodatok3.Image = ((System.Drawing.Image)(resources.GetObject("lblDodatok3.Image")));
             this.lblDodatok3.LblObject = null;
-            this.lblDodatok3.Location = new System.Drawing.Point(676, 338);
+            this.lblDodatok3.Location = new System.Drawing.Point(669, 337);
             this.lblDodatok3.Name = "lblDodatok3";
-            this.lblDodatok3.Size = new System.Drawing.Size(153, 27);
+            this.lblDodatok3.Size = new System.Drawing.Size(166, 29);
             this.lblDodatok3.TabIndex = 55;
             this.lblDodatok3.Text = "labelFASAP19";
             // 
@@ -219,13 +262,13 @@
             this.lblSostojba2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSostojba2.AutoSize = true;
             this.lblSostojba2.BackColor = System.Drawing.Color.Transparent;
-            this.lblSostojba2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSostojba2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblSostojba2.ForeColor = System.Drawing.Color.White;
             this.lblSostojba2.Image = ((System.Drawing.Image)(resources.GetObject("lblSostojba2.Image")));
             this.lblSostojba2.LblObject = null;
-            this.lblSostojba2.Location = new System.Drawing.Point(1106, 260);
+            this.lblSostojba2.Location = new System.Drawing.Point(1100, 259);
             this.lblSostojba2.Name = "lblSostojba2";
-            this.lblSostojba2.Size = new System.Drawing.Size(153, 27);
+            this.lblSostojba2.Size = new System.Drawing.Size(166, 29);
             this.lblSostojba2.TabIndex = 54;
             this.lblSostojba2.Text = "labelFASAP18";
             // 
@@ -234,13 +277,13 @@
             this.lblTrosoci2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTrosoci2.AutoSize = true;
             this.lblTrosoci2.BackColor = System.Drawing.Color.Transparent;
-            this.lblTrosoci2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTrosoci2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTrosoci2.ForeColor = System.Drawing.Color.White;
             this.lblTrosoci2.Image = ((System.Drawing.Image)(resources.GetObject("lblTrosoci2.Image")));
             this.lblTrosoci2.LblObject = null;
-            this.lblTrosoci2.Location = new System.Drawing.Point(891, 260);
+            this.lblTrosoci2.Location = new System.Drawing.Point(884, 259);
             this.lblTrosoci2.Name = "lblTrosoci2";
-            this.lblTrosoci2.Size = new System.Drawing.Size(153, 27);
+            this.lblTrosoci2.Size = new System.Drawing.Size(166, 29);
             this.lblTrosoci2.TabIndex = 53;
             this.lblTrosoci2.Text = "labelFASAP17";
             // 
@@ -249,13 +292,13 @@
             this.lblDodatok2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDodatok2.AutoSize = true;
             this.lblDodatok2.BackColor = System.Drawing.Color.Transparent;
-            this.lblDodatok2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblDodatok2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblDodatok2.ForeColor = System.Drawing.Color.White;
             this.lblDodatok2.Image = ((System.Drawing.Image)(resources.GetObject("lblDodatok2.Image")));
             this.lblDodatok2.LblObject = null;
-            this.lblDodatok2.Location = new System.Drawing.Point(676, 260);
+            this.lblDodatok2.Location = new System.Drawing.Point(669, 259);
             this.lblDodatok2.Name = "lblDodatok2";
-            this.lblDodatok2.Size = new System.Drawing.Size(153, 27);
+            this.lblDodatok2.Size = new System.Drawing.Size(166, 29);
             this.lblDodatok2.TabIndex = 52;
             this.lblDodatok2.Text = "labelFASAP16";
             // 
@@ -264,13 +307,13 @@
             this.lblSostojba1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSostojba1.AutoSize = true;
             this.lblSostojba1.BackColor = System.Drawing.Color.Transparent;
-            this.lblSostojba1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSostojba1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblSostojba1.ForeColor = System.Drawing.Color.White;
             this.lblSostojba1.Image = ((System.Drawing.Image)(resources.GetObject("lblSostojba1.Image")));
             this.lblSostojba1.LblObject = null;
-            this.lblSostojba1.Location = new System.Drawing.Point(1106, 175);
+            this.lblSostojba1.Location = new System.Drawing.Point(1100, 174);
             this.lblSostojba1.Name = "lblSostojba1";
-            this.lblSostojba1.Size = new System.Drawing.Size(153, 27);
+            this.lblSostojba1.Size = new System.Drawing.Size(166, 29);
             this.lblSostojba1.TabIndex = 51;
             this.lblSostojba1.Text = "labelFASAP15";
             // 
@@ -279,13 +322,13 @@
             this.lblTrosoci1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTrosoci1.AutoSize = true;
             this.lblTrosoci1.BackColor = System.Drawing.Color.Transparent;
-            this.lblTrosoci1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTrosoci1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTrosoci1.ForeColor = System.Drawing.Color.White;
             this.lblTrosoci1.Image = ((System.Drawing.Image)(resources.GetObject("lblTrosoci1.Image")));
             this.lblTrosoci1.LblObject = null;
-            this.lblTrosoci1.Location = new System.Drawing.Point(891, 175);
+            this.lblTrosoci1.Location = new System.Drawing.Point(884, 174);
             this.lblTrosoci1.Name = "lblTrosoci1";
-            this.lblTrosoci1.Size = new System.Drawing.Size(153, 27);
+            this.lblTrosoci1.Size = new System.Drawing.Size(166, 29);
             this.lblTrosoci1.TabIndex = 50;
             this.lblTrosoci1.Text = "labelFASAP10";
             // 
@@ -294,13 +337,13 @@
             this.lblDodatok1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDodatok1.AutoSize = true;
             this.lblDodatok1.BackColor = System.Drawing.Color.Transparent;
-            this.lblDodatok1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblDodatok1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblDodatok1.ForeColor = System.Drawing.Color.White;
             this.lblDodatok1.Image = ((System.Drawing.Image)(resources.GetObject("lblDodatok1.Image")));
             this.lblDodatok1.LblObject = null;
-            this.lblDodatok1.Location = new System.Drawing.Point(682, 175);
+            this.lblDodatok1.Location = new System.Drawing.Point(676, 174);
             this.lblDodatok1.Name = "lblDodatok1";
-            this.lblDodatok1.Size = new System.Drawing.Size(140, 27);
+            this.lblDodatok1.Size = new System.Drawing.Size(152, 29);
             this.lblDodatok1.TabIndex = 49;
             this.lblDodatok1.Text = "labelFASAP9";
             // 
@@ -316,7 +359,7 @@
             this.labelFASAP7.Name = "labelFASAP7";
             this.labelFASAP7.Size = new System.Drawing.Size(183, 94);
             this.labelFASAP7.TabIndex = 35;
-            this.labelFASAP7.Text = "Состојба";
+            this.labelFASAP7.Text = "Финансиска состојба";
             // 
             // labelFASAP6
             // 
@@ -346,48 +389,18 @@
             this.labelFASAP5.TabIndex = 33;
             this.labelFASAP5.Text = "Вкупен трошок за додатоци";
             // 
-            // labelFASAP2
-            // 
-            this.labelFASAP2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelFASAP2.AutoSize = true;
-            this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelFASAP2.ForeColor = System.Drawing.Color.White;
-            this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
-            this.labelFASAP2.LblObject = null;
-            this.labelFASAP2.Location = new System.Drawing.Point(30, 260);
-            this.labelFASAP2.Name = "labelFASAP2";
-            this.labelFASAP2.Size = new System.Drawing.Size(154, 27);
-            this.labelFASAP2.TabIndex = 1;
-            this.labelFASAP2.Text = "Втор квартал";
-            // 
-            // labelFASAP3
-            // 
-            this.labelFASAP3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelFASAP3.AutoSize = true;
-            this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelFASAP3.ForeColor = System.Drawing.Color.White;
-            this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
-            this.labelFASAP3.LblObject = null;
-            this.labelFASAP3.Location = new System.Drawing.Point(30, 338);
-            this.labelFASAP3.Name = "labelFASAP3";
-            this.labelFASAP3.Size = new System.Drawing.Size(155, 27);
-            this.labelFASAP3.TabIndex = 2;
-            this.labelFASAP3.Text = "Трет квартал";
-            // 
             // lblPromet1
             // 
             this.lblPromet1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPromet1.AutoSize = true;
             this.lblPromet1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPromet1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPromet1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPromet1.ForeColor = System.Drawing.Color.White;
             this.lblPromet1.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet1.Image")));
             this.lblPromet1.LblObject = null;
-            this.lblPromet1.Location = new System.Drawing.Point(246, 175);
+            this.lblPromet1.Location = new System.Drawing.Point(239, 174);
             this.lblPromet1.Name = "lblPromet1";
-            this.lblPromet1.Size = new System.Drawing.Size(153, 27);
+            this.lblPromet1.Size = new System.Drawing.Size(166, 29);
             this.lblPromet1.TabIndex = 10;
             this.lblPromet1.Text = "labelFASAP11";
             // 
@@ -396,13 +409,13 @@
             this.lblPromet2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPromet2.AutoSize = true;
             this.lblPromet2.BackColor = System.Drawing.Color.Transparent;
-            this.lblPromet2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPromet2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPromet2.ForeColor = System.Drawing.Color.White;
             this.lblPromet2.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet2.Image")));
             this.lblPromet2.LblObject = null;
-            this.lblPromet2.Location = new System.Drawing.Point(246, 260);
+            this.lblPromet2.Location = new System.Drawing.Point(239, 259);
             this.lblPromet2.Name = "lblPromet2";
-            this.lblPromet2.Size = new System.Drawing.Size(153, 27);
+            this.lblPromet2.Size = new System.Drawing.Size(166, 29);
             this.lblPromet2.TabIndex = 11;
             this.lblPromet2.Text = "labelFASAP12";
             // 
@@ -411,13 +424,13 @@
             this.lblPromet3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPromet3.AutoSize = true;
             this.lblPromet3.BackColor = System.Drawing.Color.Transparent;
-            this.lblPromet3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPromet3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPromet3.ForeColor = System.Drawing.Color.White;
             this.lblPromet3.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet3.Image")));
             this.lblPromet3.LblObject = null;
-            this.lblPromet3.Location = new System.Drawing.Point(246, 338);
+            this.lblPromet3.Location = new System.Drawing.Point(239, 337);
             this.lblPromet3.Name = "lblPromet3";
-            this.lblPromet3.Size = new System.Drawing.Size(153, 27);
+            this.lblPromet3.Size = new System.Drawing.Size(166, 29);
             this.lblPromet3.TabIndex = 12;
             this.lblPromet3.Text = "labelFASAP13";
             // 
@@ -426,43 +439,28 @@
             this.lblPromet4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPromet4.AutoSize = true;
             this.lblPromet4.BackColor = System.Drawing.Color.Transparent;
-            this.lblPromet4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPromet4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPromet4.ForeColor = System.Drawing.Color.White;
             this.lblPromet4.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet4.Image")));
             this.lblPromet4.LblObject = null;
-            this.lblPromet4.Location = new System.Drawing.Point(246, 418);
+            this.lblPromet4.Location = new System.Drawing.Point(239, 417);
             this.lblPromet4.Name = "lblPromet4";
-            this.lblPromet4.Size = new System.Drawing.Size(153, 27);
+            this.lblPromet4.Size = new System.Drawing.Size(166, 29);
             this.lblPromet4.TabIndex = 13;
             this.lblPromet4.Text = "labelFASAP14";
-            // 
-            // labelFASAP4
-            // 
-            this.labelFASAP4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelFASAP4.AutoSize = true;
-            this.labelFASAP4.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP4.Font = new System.Drawing.Font("Trebuchet MS", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelFASAP4.ForeColor = System.Drawing.Color.White;
-            this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
-            this.labelFASAP4.LblObject = null;
-            this.labelFASAP4.Location = new System.Drawing.Point(18, 418);
-            this.labelFASAP4.Name = "labelFASAP4";
-            this.labelFASAP4.Size = new System.Drawing.Size(178, 27);
-            this.labelFASAP4.TabIndex = 3;
-            this.labelFASAP4.Text = "Четврт квартал";
             // 
             // lblPlata1
             // 
             this.lblPlata1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlata1.AutoSize = true;
             this.lblPlata1.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlata1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPlata1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPlata1.ForeColor = System.Drawing.Color.White;
             this.lblPlata1.Image = ((System.Drawing.Image)(resources.GetObject("lblPlata1.Image")));
             this.lblPlata1.LblObject = null;
-            this.lblPlata1.Location = new System.Drawing.Point(461, 175);
+            this.lblPlata1.Location = new System.Drawing.Point(454, 174);
             this.lblPlata1.Name = "lblPlata1";
-            this.lblPlata1.Size = new System.Drawing.Size(153, 27);
+            this.lblPlata1.Size = new System.Drawing.Size(166, 29);
             this.lblPlata1.TabIndex = 20;
             this.lblPlata1.Text = "labelFASAP21";
             // 
@@ -471,13 +469,13 @@
             this.lblPlata2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlata2.AutoSize = true;
             this.lblPlata2.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlata2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPlata2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPlata2.ForeColor = System.Drawing.Color.White;
             this.lblPlata2.Image = ((System.Drawing.Image)(resources.GetObject("lblPlata2.Image")));
             this.lblPlata2.LblObject = null;
-            this.lblPlata2.Location = new System.Drawing.Point(461, 260);
+            this.lblPlata2.Location = new System.Drawing.Point(454, 259);
             this.lblPlata2.Name = "lblPlata2";
-            this.lblPlata2.Size = new System.Drawing.Size(153, 27);
+            this.lblPlata2.Size = new System.Drawing.Size(166, 29);
             this.lblPlata2.TabIndex = 21;
             this.lblPlata2.Text = "labelFASAP22";
             // 
@@ -486,13 +484,13 @@
             this.lblPlata3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlata3.AutoSize = true;
             this.lblPlata3.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlata3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPlata3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPlata3.ForeColor = System.Drawing.Color.White;
             this.lblPlata3.Image = ((System.Drawing.Image)(resources.GetObject("lblPlata3.Image")));
             this.lblPlata3.LblObject = null;
-            this.lblPlata3.Location = new System.Drawing.Point(461, 338);
+            this.lblPlata3.Location = new System.Drawing.Point(454, 337);
             this.lblPlata3.Name = "lblPlata3";
-            this.lblPlata3.Size = new System.Drawing.Size(153, 27);
+            this.lblPlata3.Size = new System.Drawing.Size(166, 29);
             this.lblPlata3.TabIndex = 22;
             this.lblPlata3.Text = "labelFASAP23";
             // 
@@ -501,13 +499,13 @@
             this.lblPlata4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlata4.AutoSize = true;
             this.lblPlata4.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlata4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPlata4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPlata4.ForeColor = System.Drawing.Color.White;
             this.lblPlata4.Image = ((System.Drawing.Image)(resources.GetObject("lblPlata4.Image")));
             this.lblPlata4.LblObject = null;
-            this.lblPlata4.Location = new System.Drawing.Point(461, 418);
+            this.lblPlata4.Location = new System.Drawing.Point(454, 417);
             this.lblPlata4.Name = "lblPlata4";
-            this.lblPlata4.Size = new System.Drawing.Size(153, 27);
+            this.lblPlata4.Size = new System.Drawing.Size(166, 29);
             this.lblPlata4.TabIndex = 23;
             this.lblPlata4.Text = "labelFASAP24";
             // 
@@ -524,21 +522,6 @@
             this.lblNaslovProcent.Size = new System.Drawing.Size(183, 94);
             this.lblNaslovProcent.TabIndex = 32;
             this.lblNaslovProcent.Text = "Вкупен трошок за плата";
-            // 
-            // labelFASAP1
-            // 
-            this.labelFASAP1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelFASAP1.AutoSize = true;
-            this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelFASAP1.ForeColor = System.Drawing.Color.White;
-            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
-            this.labelFASAP1.LblObject = null;
-            this.labelFASAP1.Location = new System.Drawing.Point(35, 175);
-            this.labelFASAP1.Name = "labelFASAP1";
-            this.labelFASAP1.Size = new System.Drawing.Size(144, 27);
-            this.labelFASAP1.TabIndex = 0;
-            this.labelFASAP1.Text = "Прв квартал";
             // 
             // lblNaslovPromet
             // 
@@ -568,10 +551,24 @@
             this.lblnaslovIme.TabIndex = 31;
             this.lblnaslovIme.Text = "Квартал";
             // 
+            // labelFASAP1
+            // 
+            this.labelFASAP1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP1.ForeColor = System.Drawing.Color.White;
+            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
+            this.labelFASAP1.LblObject = null;
+            this.labelFASAP1.Location = new System.Drawing.Point(3, 157);
+            this.labelFASAP1.Name = "labelFASAP1";
+            this.labelFASAP1.Size = new System.Drawing.Size(209, 62);
+            this.labelFASAP1.TabIndex = 61;
+            this.labelFASAP1.Text = "Прв квартал ";
+            // 
             // labelFASAP29
             // 
             this.labelFASAP29.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP29.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP29.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFASAP29.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP29.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP29.Image")));
             this.labelFASAP29.LblObject = null;
@@ -591,6 +588,9 @@
             this.pbRightG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRightG.TabIndex = 32;
             this.pbRightG.TabStop = false;
+            this.pbRightG.Click += new System.EventHandler(this.pbRightG_Click);
+            this.pbRightG.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
+            this.pbRightG.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             // 
             // pbLeftG
             // 
@@ -602,11 +602,14 @@
             this.pbLeftG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLeftG.TabIndex = 31;
             this.pbLeftG.TabStop = false;
+            this.pbLeftG.Click += new System.EventHandler(this.pbLeftG_Click);
+            this.pbLeftG.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pbLeftG.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             // 
             // lblGodina
             // 
             this.lblGodina.BackColor = System.Drawing.Color.Transparent;
-            this.lblGodina.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGodina.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblGodina.ForeColor = System.Drawing.Color.Khaki;
             this.lblGodina.Image = ((System.Drawing.Image)(resources.GetObject("lblGodina.Image")));
             this.lblGodina.LblObject = null;
@@ -628,6 +631,9 @@
             this.btnTekoven.TabIndex = 34;
             this.btnTekoven.Text = "Тековна година";
             this.btnTekoven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTekoven.Click += new System.EventHandler(this.btnTekoven_Click);
+            this.btnTekoven.MouseEnter += new System.EventHandler(this.btnTekoven_MouseEnter);
+            this.btnTekoven.MouseLeave += new System.EventHandler(this.btnTekoven_MouseLeave);
             // 
             // labelFASAP8
             // 
@@ -694,19 +700,15 @@
         #endregion
 
         private DBLayoutPanel dbLayoutPanel1;
-        private LabelFASAP labelFASAP2;
-        private LabelFASAP labelFASAP3;
         private LabelFASAP lblPromet1;
         private LabelFASAP lblPromet2;
         private LabelFASAP lblPromet3;
         private LabelFASAP lblPromet4;
-        private LabelFASAP labelFASAP4;
         private LabelFASAP lblPlata1;
         private LabelFASAP lblPlata2;
         private LabelFASAP lblPlata3;
         private LabelFASAP lblPlata4;
         private LabelFASAP lblNaslovProcent;
-        private LabelFASAP labelFASAP1;
         private LabelFASAP lblNaslovPromet;
         private LabelFASAP lblnaslovIme;
         private LabelFASAP labelFASAP7;
@@ -731,5 +733,9 @@
         private LabelFASAP lblSostojba1;
         private LabelFASAP lblTrosoci1;
         private LabelFASAP lblDodatok1;
+        private LabelFASAP labelFASAP4;
+        private LabelFASAP labelFASAP3;
+        private LabelFASAP labelFASAP2;
+        private LabelFASAP labelFASAP1;
     }
 }
