@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpStatsComparators.cs" />
+    <Compile Include="FasapPoceten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FasapPoceten.Designer.cs">
+      <DependentUpon>FasapPoceten.cs</DependentUpon>
+    </Compile>
     <Compile Include="Izv1PridonesVoPromet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     <Compile Include="VrabPrometProcent.cs" />
     <EmbeddedResource Include="FasapNaracka.resx">
       <DependentUpon>FasapNaracka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FasapPoceten.resx">
+      <DependentUpon>FasapPoceten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FasapPocetenEkran.resx">
       <DependentUpon>FasapPocetenEkran.cs</DependentUpon>
