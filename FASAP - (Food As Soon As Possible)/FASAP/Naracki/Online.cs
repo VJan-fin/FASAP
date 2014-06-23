@@ -28,7 +28,7 @@ namespace SmetkaZaNaracka.Naracki
         public override void SqlInsert(OracleConnection conn, int resID)
         {
 
-            string sqlID = @"SELECT MAX(NARACHKA_ID) FROM NARACHKA WHERE RESTORAN_ID = :ResID";
+            string sqlID = @"SELECT NVL(MAX(NARACHKA_ID), - 1) FROM NARACHKA WHERE RESTORAN_ID = :ResID";
             OracleCommand cmd = new OracleCommand(sqlID, conn);
 
             OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);

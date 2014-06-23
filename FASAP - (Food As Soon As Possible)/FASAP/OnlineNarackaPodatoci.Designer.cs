@@ -52,7 +52,17 @@
             this.lblNaracano = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP13 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP7 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.pbZvezda3 = new System.Windows.Forms.PictureBox();
+            this.pbZvezda5 = new System.Windows.Forms.PictureBox();
+            this.pbZvezda4 = new System.Windows.Forms.PictureBox();
+            this.pbZvezda2 = new System.Windows.Forms.PictureBox();
+            this.pbZvezda1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbIme
@@ -214,7 +224,7 @@
             this.lblNaplataZaDostava.ForeColor = System.Drawing.Color.Khaki;
             this.lblNaplataZaDostava.Image = ((System.Drawing.Image)(resources.GetObject("lblNaplataZaDostava.Image")));
             this.lblNaplataZaDostava.LblObject = null;
-            this.lblNaplataZaDostava.Location = new System.Drawing.Point(751, 184);
+            this.lblNaplataZaDostava.Location = new System.Drawing.Point(751, 167);
             this.lblNaplataZaDostava.Name = "lblNaplataZaDostava";
             this.lblNaplataZaDostava.Size = new System.Drawing.Size(244, 66);
             this.lblNaplataZaDostava.TabIndex = 18;
@@ -228,7 +238,7 @@
             this.labelFASAP9.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP9.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP9.Image")));
             this.labelFASAP9.LblObject = null;
-            this.labelFASAP9.Location = new System.Drawing.Point(751, 157);
+            this.labelFASAP9.Location = new System.Drawing.Point(751, 140);
             this.labelFASAP9.Name = "labelFASAP9";
             this.labelFASAP9.Size = new System.Drawing.Size(222, 27);
             this.labelFASAP9.TabIndex = 17;
@@ -237,13 +247,13 @@
             // lblVkupno
             // 
             this.lblVkupno.BackColor = System.Drawing.Color.Transparent;
-            this.lblVkupno.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVkupno.Font = new System.Drawing.Font("Trebuchet MS", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVkupno.ForeColor = System.Drawing.Color.Khaki;
             this.lblVkupno.Image = ((System.Drawing.Image)(resources.GetObject("lblVkupno.Image")));
             this.lblVkupno.LblObject = null;
-            this.lblVkupno.Location = new System.Drawing.Point(751, 481);
+            this.lblVkupno.Location = new System.Drawing.Point(751, 413);
             this.lblVkupno.Name = "lblVkupno";
-            this.lblVkupno.Size = new System.Drawing.Size(288, 87);
+            this.lblVkupno.Size = new System.Drawing.Size(307, 87);
             this.lblVkupno.TabIndex = 20;
             this.lblVkupno.Text = "0";
             // 
@@ -255,7 +265,7 @@
             this.labelFASAP11.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP11.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP11.Image")));
             this.labelFASAP11.LblObject = null;
-            this.labelFASAP11.Location = new System.Drawing.Point(751, 454);
+            this.labelFASAP11.Location = new System.Drawing.Point(751, 386);
             this.labelFASAP11.Name = "labelFASAP11";
             this.labelFASAP11.Size = new System.Drawing.Size(88, 27);
             this.labelFASAP11.TabIndex = 19;
@@ -305,7 +315,7 @@
             this.lblNaracano.ForeColor = System.Drawing.Color.Khaki;
             this.lblNaracano.Image = ((System.Drawing.Image)(resources.GetObject("lblNaracano.Image")));
             this.lblNaracano.LblObject = null;
-            this.lblNaracano.Location = new System.Drawing.Point(751, 334);
+            this.lblNaracano.Location = new System.Drawing.Point(751, 294);
             this.lblNaracano.Name = "lblNaracano";
             this.lblNaracano.Size = new System.Drawing.Size(244, 66);
             this.lblNaracano.TabIndex = 24;
@@ -319,7 +329,7 @@
             this.labelFASAP13.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP13.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP13.Image")));
             this.labelFASAP13.LblObject = null;
-            this.labelFASAP13.Location = new System.Drawing.Point(753, 307);
+            this.labelFASAP13.Location = new System.Drawing.Point(753, 267);
             this.labelFASAP13.Name = "labelFASAP13";
             this.labelFASAP13.Size = new System.Drawing.Size(122, 27);
             this.labelFASAP13.TabIndex = 23;
@@ -339,11 +349,86 @@
             this.labelFASAP7.TabIndex = 5;
             this.labelFASAP7.Text = "Име:";
             // 
+            // pbZvezda3
+            // 
+            this.pbZvezda3.BackColor = System.Drawing.Color.Transparent;
+            this.pbZvezda3.Image = global::SmetkaZaNaracka.Properties.Resources.Polna_zvezda;
+            this.pbZvezda3.Location = new System.Drawing.Point(832, 518);
+            this.pbZvezda3.Name = "pbZvezda3";
+            this.pbZvezda3.Size = new System.Drawing.Size(100, 100);
+            this.pbZvezda3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbZvezda3.TabIndex = 27;
+            this.pbZvezda3.TabStop = false;
+            this.pbZvezda3.Click += new System.EventHandler(this.pbZvezda1_Click);
+            this.pbZvezda3.MouseEnter += new System.EventHandler(this.pbZvezda1_MouseEnter);
+            this.pbZvezda3.MouseLeave += new System.EventHandler(this.pbZvezda1_MouseLeave);
+            // 
+            // pbZvezda5
+            // 
+            this.pbZvezda5.BackColor = System.Drawing.Color.Transparent;
+            this.pbZvezda5.Image = global::SmetkaZaNaracka.Properties.Resources.Prazna_zvezda;
+            this.pbZvezda5.Location = new System.Drawing.Point(1044, 518);
+            this.pbZvezda5.Name = "pbZvezda5";
+            this.pbZvezda5.Size = new System.Drawing.Size(100, 100);
+            this.pbZvezda5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbZvezda5.TabIndex = 29;
+            this.pbZvezda5.TabStop = false;
+            this.pbZvezda5.Click += new System.EventHandler(this.pbZvezda1_Click);
+            this.pbZvezda5.MouseEnter += new System.EventHandler(this.pbZvezda1_MouseEnter);
+            this.pbZvezda5.MouseLeave += new System.EventHandler(this.pbZvezda1_MouseLeave);
+            // 
+            // pbZvezda4
+            // 
+            this.pbZvezda4.BackColor = System.Drawing.Color.Transparent;
+            this.pbZvezda4.Image = global::SmetkaZaNaracka.Properties.Resources.Pola_zvezda;
+            this.pbZvezda4.Location = new System.Drawing.Point(938, 518);
+            this.pbZvezda4.Name = "pbZvezda4";
+            this.pbZvezda4.Size = new System.Drawing.Size(100, 100);
+            this.pbZvezda4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbZvezda4.TabIndex = 28;
+            this.pbZvezda4.TabStop = false;
+            this.pbZvezda4.Click += new System.EventHandler(this.pbZvezda1_Click);
+            this.pbZvezda4.MouseEnter += new System.EventHandler(this.pbZvezda1_MouseEnter);
+            this.pbZvezda4.MouseLeave += new System.EventHandler(this.pbZvezda1_MouseLeave);
+            // 
+            // pbZvezda2
+            // 
+            this.pbZvezda2.BackColor = System.Drawing.Color.Transparent;
+            this.pbZvezda2.Image = global::SmetkaZaNaracka.Properties.Resources.Polna_zvezda;
+            this.pbZvezda2.Location = new System.Drawing.Point(726, 518);
+            this.pbZvezda2.Name = "pbZvezda2";
+            this.pbZvezda2.Size = new System.Drawing.Size(100, 100);
+            this.pbZvezda2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbZvezda2.TabIndex = 26;
+            this.pbZvezda2.TabStop = false;
+            this.pbZvezda2.Click += new System.EventHandler(this.pbZvezda1_Click);
+            this.pbZvezda2.MouseEnter += new System.EventHandler(this.pbZvezda1_MouseEnter);
+            this.pbZvezda2.MouseLeave += new System.EventHandler(this.pbZvezda1_MouseLeave);
+            // 
+            // pbZvezda1
+            // 
+            this.pbZvezda1.BackColor = System.Drawing.Color.Transparent;
+            this.pbZvezda1.Image = global::SmetkaZaNaracka.Properties.Resources.Polna_zvezda;
+            this.pbZvezda1.Location = new System.Drawing.Point(620, 518);
+            this.pbZvezda1.Name = "pbZvezda1";
+            this.pbZvezda1.Size = new System.Drawing.Size(100, 100);
+            this.pbZvezda1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbZvezda1.TabIndex = 25;
+            this.pbZvezda1.TabStop = false;
+            this.pbZvezda1.Click += new System.EventHandler(this.pbZvezda1_Click);
+            this.pbZvezda1.MouseEnter += new System.EventHandler(this.pbZvezda1_MouseEnter);
+            this.pbZvezda1.MouseLeave += new System.EventHandler(this.pbZvezda1_MouseLeave);
+            // 
             // OnlineNarackaPodatoci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pbZvezda3);
+            this.Controls.Add(this.pbZvezda5);
+            this.Controls.Add(this.pbZvezda4);
+            this.Controls.Add(this.pbZvezda2);
+            this.Controls.Add(this.pbZvezda1);
             this.Controls.Add(this.lblNaracano);
             this.Controls.Add(this.labelFASAP13);
             this.Controls.Add(this.buttonFASAP2);
@@ -390,7 +475,17 @@
             this.Controls.SetChildIndex(this.buttonFASAP2, 0);
             this.Controls.SetChildIndex(this.labelFASAP13, 0);
             this.Controls.SetChildIndex(this.lblNaracano, 0);
+            this.Controls.SetChildIndex(this.pbZvezda1, 0);
+            this.Controls.SetChildIndex(this.pbZvezda2, 0);
+            this.Controls.SetChildIndex(this.pbZvezda4, 0);
+            this.Controls.SetChildIndex(this.pbZvezda5, 0);
+            this.Controls.SetChildIndex(this.pbZvezda3, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbZvezda1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,5 +515,10 @@
         private LabelFASAP lblNaracano;
         private LabelFASAP labelFASAP13;
         private LabelFASAP labelFASAP7;
+        private System.Windows.Forms.PictureBox pbZvezda3;
+        private System.Windows.Forms.PictureBox pbZvezda5;
+        private System.Windows.Forms.PictureBox pbZvezda4;
+        private System.Windows.Forms.PictureBox pbZvezda2;
+        private System.Windows.Forms.PictureBox pbZvezda1;
     }
 }

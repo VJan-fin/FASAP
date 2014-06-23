@@ -55,6 +55,7 @@ namespace SmetkaZaNaracka
         private int indKupeni { get; set; }
         public Semaphore LoadingSemaphore { get; set; }
         int errorMessageTime = 3;
+        public OrderComponent CurrOrderComponent { get; set; }
 
         public IzvrsuvanjeNaracka(Restoran restoran, OracleConnection conn)
         {
@@ -279,6 +280,8 @@ namespace SmetkaZaNaracka
 
         private void PopolniListaStavki()
         {
+            if (CurrMenu == null)
+                return;
             int ind = this.indStavka;
             for (int i = 0; i < this.ListaStavki.Count; i++)
                 if (ind < this.CurrMenu.GetContent().Count)
@@ -410,7 +413,7 @@ namespace SmetkaZaNaracka
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            if (this.Restoran.GlavnoMeni.GetContent().Count > this.ListaMeni.Count)
+            if (Restoran.GlavnoMeni != null && this.Restoran.GlavnoMeni.GetContent().Count > this.ListaMeni.Count)
             {
                 if (this.indMeni != 0)
                     this.indMeni--;
@@ -420,7 +423,7 @@ namespace SmetkaZaNaracka
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            if (this.Restoran.GlavnoMeni.GetContent().Count > this.ListaMeni.Count)
+            if (Restoran.GlavnoMeni != null && this.Restoran.GlavnoMeni.GetContent().Count > this.ListaMeni.Count)
             {
                 if (this.indMeni < this.Restoran.GlavnoMeni.GetContent().Count - this.ListaMeni.Count)
                     this.indMeni++;
@@ -519,8 +522,25 @@ namespace SmetkaZaNaracka
         {
             for (int i = 0; i < ListaKupeni.Count; i++)
                 if (i < Naracka.Stavki.Count)
+                {
                     ListaKupeni[i].UpdateObject(Naracka.Stavki[i + indKupeni]);
-                else ListaKupeni[i].UpdateObject(null);
+                    if (Naracka.Stavki[i + indKupeni].Equals(CurrOrderComponent))
+                    {
+                        ListaKupeni[i].Image = Resources.LabelBackgroundSelected;
+                        ListaKupeni[i].ForeColor = Color.SaddleBrown;
+                    }
+                    else
+                    {
+                        ListaKupeni[i].Image = Resources.LabelBackground2;
+                        ListaKupeni[i].ForeColor = Color.White;
+                    }
+                }
+                else
+                {
+                    ListaKupeni[i].UpdateObject(null);
+                    ListaKupeni[i].Image = Resources.LabelBackground2;
+                    ListaKupeni[i].ForeColor = Color.White;
+                }
             lblCena.Text = ((int)Naracka.VkupnaCena).ToString();
         }
 
@@ -759,6 +779,32 @@ namespace SmetkaZaNaracka
             {
             }
             Naracka = new Naracka(-1, 0, DateTime.Now);
+        }
+
+        private void lblKupeno5_Click(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                foreach (var obj in ListaKupeni)
+                {
+                    obj.Image = Resources.LabelBackground2;
+                    obj.ForeColor = Color.White;
+                }
+                CurrOrderComponent = lb.LblObject as OrderComponent;
+                lb.Image = Resources.LabelBackgroundSelected;
+                lb.ForeColor = Color.SaddleBrown;
+            }
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            if (CurrOrderComponent != null)
+            {
+                Naracka.Remove(CurrOrderComponent);
+                CurrOrderComponent = null;
+                Naracka = Naracka;
+            }
         }
     }
 }

@@ -37,15 +37,78 @@ namespace SmetkaZaNaracka
                 else pbUp.Visible = true;
             }
         }
+        private double Rejting { get; set; }
+        private bool isVoted { get; set; }
+        private List<PictureBox> lista { get; set; }
 
         public OnsiteNarackaPodatoci(OracleConnection conn, Naracka nar, Restoran res)
         {
             InitializeComponent();
             Naracka = nar;
             Restoran = res;
+            Rejting = Restoran.Rejting;
+            lista = new List<PictureBox>();
+            lista.Add(pbZvezda1);
+            lista.Add(pbZvezda2);
+            lista.Add(pbZvezda3);
+            lista.Add(pbZvezda4);
+            lista.Add(pbZvezda5);
+            postaviRejting(Rejting);
             Conn = conn;
             BrMasa = 1;
             Opacity = 0;
+        }
+
+        private void postaviRejting(double rejting)
+        {
+            int i = 0;
+            foreach (PictureBox pb in lista)
+            {
+                i += 2;
+                if (i <= rejting || System.Math.Abs((i - rejting)) <= 0.5)
+                    pb.Image = Resources.Polna_zvezda;
+                else if (System.Math.Abs((i - rejting)) <= 1.5)
+                    pb.Image = Resources.Pola_zvezda;
+                else pb.Image = Resources.Prazna_zvezda;
+
+            }
+
+        }
+
+        private void pbZvezda1_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+            if (lista[0].Equals(sender))
+                postaviRejting(2);
+            else if (lista[1].Equals(sender))
+                postaviRejting(4);
+            else if (lista[2].Equals(sender))
+                postaviRejting(6);
+            else if (lista[3].Equals(sender))
+                postaviRejting(8);
+            else if (lista[4].Equals(sender))
+                postaviRejting(10);
+        }
+
+        private void pbZvezda1_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+            postaviRejting(Rejting);
+        }
+
+        private void pbZvezda1_Click(object sender, EventArgs e)
+        {
+            if (lista[0].Equals(sender))
+                Rejting = 2;
+            else if (lista[1].Equals(sender))
+                Rejting = 4;
+            else if (lista[2].Equals(sender))
+                Rejting = 6;
+            else if (lista[3].Equals(sender))
+                Rejting = 8;
+            else if (lista[4].Equals(sender))
+                Rejting = 10;
+            isVoted = true;
         }
 
         private void buttonFASAP1_Click(object sender, EventArgs e)
@@ -55,9 +118,37 @@ namespace SmetkaZaNaracka
 
         private void buttonFASAP2_Click(object sender, EventArgs e)
         {
+            if (isVoted)
+            {
+                string updateOnsite = @"UPDATE RESTORAN
+                                        SET REJTING = ((REJTING * PRIMEROK) + :Rejting) / (PRIMEROK + 1), PRIMEROK = PRIMEROK + 1
+                                        WHERE RESTORAN_ID = :ResID";
+
+                OracleCommand cmd = new OracleCommand(updateOnsite, Conn);
+
+                OracleParameter prm = new OracleParameter("Rejting", OracleDbType.Double);
+                prm.Value = Rejting;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("ResID", OracleDbType.Int64);
+                prm.Value = Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                int br;
+                try
+                {
+                    br = cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    
+                }
+            }
             Onsite online = new Onsite(Naracka.NarackaID, Naracka.VkupnaCena, DateTime.Now, BrMasa);
             online.Stavki = Naracka.Stavki;
             online.SqlInsert(Conn, Restoran.RestoranID);
+            UspesnostNaNaracka up = new UspesnostNaNaracka();
+            up.ShowDialog();
             DialogResult = DialogResult.Yes;
         }
 

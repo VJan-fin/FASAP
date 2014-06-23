@@ -720,6 +720,7 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 28;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             this.pictureBox13.MouseEnter += new System.EventHandler(this.pictureBox15_MouseEnter);
             this.pictureBox13.MouseLeave += new System.EventHandler(this.pictureBox15_MouseLeave);
             // 
@@ -733,6 +734,7 @@
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 27;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.pictureBox13_Click);
             this.pictureBox15.MouseEnter += new System.EventHandler(this.pictureBox15_MouseEnter);
             this.pictureBox15.MouseLeave += new System.EventHandler(this.pictureBox15_MouseLeave);
             // 
@@ -792,6 +794,7 @@
             this.lblKupeno6.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno6.TabIndex = 24;
             this.lblKupeno6.Text = ": : ";
+            this.lblKupeno6.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
@@ -809,6 +812,7 @@
             this.lblKupeno5.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno5.TabIndex = 23;
             this.lblKupeno5.Text = ": : ";
+            this.lblKupeno5.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
@@ -826,6 +830,7 @@
             this.lblKupeno4.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno4.TabIndex = 22;
             this.lblKupeno4.Text = ": : ";
+            this.lblKupeno4.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
@@ -843,6 +848,7 @@
             this.lblKupeno3.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno3.TabIndex = 21;
             this.lblKupeno3.Text = ": : ";
+            this.lblKupeno3.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
@@ -860,6 +866,7 @@
             this.lblKupeno2.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno2.TabIndex = 20;
             this.lblKupeno2.Text = ": : ";
+            this.lblKupeno2.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
@@ -877,6 +884,7 @@
             this.lblKupeno1.Size = new System.Drawing.Size(40, 27);
             this.lblKupeno1.TabIndex = 19;
             this.lblKupeno1.Text = ": : ";
+            this.lblKupeno1.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 

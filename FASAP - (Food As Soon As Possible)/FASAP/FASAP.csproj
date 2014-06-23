@@ -122,6 +122,12 @@
     <Compile Include="PregledKvartalnaSostojba.Designer.cs">
       <DependentUpon>PregledKvartalnaSostojba.cs</DependentUpon>
     </Compile>
+    <Compile Include="UspesnostNaNaracka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UspesnostNaNaracka.Designer.cs">
+      <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vraboteni\DodavanjePozicija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchFilterForm\SearchFilter.resx">
       <DependentUpon>SearchFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UspesnostNaNaracka.resx">
+      <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vraboteni\DodavanjePozicija.resx">
       <DependentUpon>DodavanjePozicija.cs</DependentUpon>
