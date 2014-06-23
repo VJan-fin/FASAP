@@ -122,16 +122,15 @@
     <Compile Include="PregledKvartalnaSostojba.Designer.cs">
       <DependentUpon>PregledKvartalnaSostojba.cs</DependentUpon>
     </Compile>
+    <Compile Include="PregledPromet.cs" />
+    <Compile Include="PregledPromet.Designer.cs">
+      <DependentUpon>PregledPromet.cs</DependentUpon>
+    </Compile>
     <Compile Include="UspesnostNaNaracka.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UspesnostNaNaracka.Designer.cs">
       <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
-    <Compile Include="PregledPromet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PregledPromet.Designer.cs">
-      <DependentUpon>PregledPromet.cs</DependentUpon>
     </Compile>
     <Compile Include="Vraboteni\DodavanjePozicija.cs">
       <SubType>Form</SubType>
