@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using SmetkaZaNaracka.Properties;
 using Oracle.DataAccess.Client;
 using SmetkaZaNaracka.SearchFilterForm;
+using System.Threading;
 
 namespace SmetkaZaNaracka
 {
@@ -27,6 +28,7 @@ namespace SmetkaZaNaracka
         public int CurrKontakt { get; set; }
         public List<Restoran> Restorani { get; set; }
         public OracleConnection Conn { get; set; }
+        public List<Restoran> GlavniRestorani { get; set; }
         List<PictureBox> lista;
         List<LabelFASAP> labeli;
         public SearchFilter(List<Restoran> restorani, OracleConnection conn)
@@ -34,6 +36,7 @@ namespace SmetkaZaNaracka
             InitializeComponent();
             DoubleBuffered = true;
             labeli = new List<LabelFASAP>();
+            GlavniRestorani = restorani;
             Restorani = restorani;
             Conn = conn;
             Opacity = 0;
@@ -191,20 +194,27 @@ namespace SmetkaZaNaracka
 
         public void PostaviRestorani()
         {
-            for (int i = 0; i < Restorani.Count && i < labeli.Count; i++)
-            {
-                labeli[i].UpdateObject(Restorani[i + CurrRestorani]);
-                if (Restoran != null && Restorani[i + CurrRestorani].Equals(Restoran))
+            for (int i = 0; i < labeli.Count; i++)
+                if (i < Restorani.Count)
                 {
-                    labeli[i].Image = Resources.LabelBackgroundSelected;
-                    labeli[i].ForeColor = Color.SaddleBrown;
+                    labeli[i].UpdateObject(Restorani[i + CurrRestorani]);
+                    if (Restoran != null && Restorani[i + CurrRestorani].Equals(Restoran))
+                    {
+                        labeli[i].Image = Resources.LabelBackgroundSelected;
+                        labeli[i].ForeColor = Color.SaddleBrown;
+                    }
+                    else
+                    {
+                        labeli[i].Image = Resources.LabelBackground2;
+                        labeli[i].ForeColor = Color.Gold;
+                    }
                 }
                 else
                 {
+                    labeli[i].UpdateObject(null);
                     labeli[i].Image = Resources.LabelBackground2;
                     labeli[i].ForeColor = Color.Gold;
                 }
-            }
         }
 
         private void lbl1_MouseEnter(object sender, EventArgs e)
@@ -237,6 +247,8 @@ namespace SmetkaZaNaracka
                 this.Focus();
                 textBox1.Visible = true;
                 Restoran = lb.LblObject as Restoran;
+                Thread oThread = new Thread(new ThreadStart(PostaviSlobodniMasi));
+                oThread.Start();
                 CurrKontakt = 0;
                 foreach (var obj in labeli)
                 {
@@ -246,6 +258,19 @@ namespace SmetkaZaNaracka
                 lb.Image = Resources.LabelBackgroundSelected;
                 lb.ForeColor = Color.SaddleBrown;
                 PostaviLabeli();
+            }
+        }
+
+        public void PostaviSlobodniMasi()
+        {
+            if (Restoran != null)
+            {
+                SetObject(lblSlobodniMasi, Restoran.SlobodniMasi);
+                Restoran r = Restoran;
+                string pom = Restoran.GetSlobodniMasi(Conn);
+                if (Restoran.Equals(r))
+                    SetObject(lblSlobodniMasi, pom);
+                
             }
         }
 
@@ -259,6 +284,9 @@ namespace SmetkaZaNaracka
                 lblSlobodniMasi.UpdateObject(Restoran.SlobodniMasi);
                 lblRabotnoVreme.UpdateObject(Restoran.RabotnoVreme);
                 postaviRejting(Restoran.Rejting);
+                lblDatumNaOtvoranje.UpdateObject(Restoran.DatumNaOtvoranje.Value.ToString("dd/MM/yyyy"));
+                lblKapacitet.UpdateObject(Restoran.Kapacitet);
+                lblBrojMasi.UpdateObject(Restoran.BrojMasi);
                 CurrKontakt = 0;
                 PostaviKontakt();
             }
@@ -337,9 +365,9 @@ namespace SmetkaZaNaracka
         {
             if (textBox1.Text.Length == 0)
             {
+                textBox1.ForeColor = Color.Khaki;
                 textBox1.Text = "Пребарај FASAP - Ресторани";
                 textBox1.BackColor = Color.Sienna;
-                textBox1.ForeColor = Color.Khaki;
                 pictureBox3.BackColor = Color.Sienna;
                 textBox1.Font = new Font("Trebuchet MS", 12, FontStyle.Italic);
             }
@@ -373,6 +401,48 @@ namespace SmetkaZaNaracka
                 PostaviRestorani();
             }
             
+        }
+
+        delegate void SetObjectCallback(LabelFASAP fs, Object obj);
+
+        private void SetObject(LabelFASAP fs, Object obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetObjectCallback d = new SetObjectCallback(SetObject);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.UpdateObject(obj);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.ForeColor == Color.Khaki)
+                return;
+            if (textBox1.Text.Trim() == "")
+            {
+                Restorani = GlavniRestorani;
+                PostaviRestorani();
+                return;
+            }
+            String[] zborovi = textBox1.Text.Split(new string[] {" ", "\t", "\n"}, StringSplitOptions.None);
+            Restorani = new List<Restoran>();
+            foreach (var obj in GlavniRestorani)
+            {
+                int i = 0;
+                for(i = 0; i < zborovi.Length; i++)
+                    if(!obj.Sodrzi(zborovi[i]))
+                        break;
+                if (i == zborovi.Length)
+                    Restorani.Add(obj);
+            }
+            PostaviRestorani();
         }
     }
 }
