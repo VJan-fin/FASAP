@@ -503,7 +503,7 @@ namespace SmetkaZaNaracka
             {
                 CurrMenu = Restoran.GlavnoMeni;
                 PostaviPateka();
-                indMeni = 0;
+                indStavka = 0;
                 CurrMenu = lb.LblObject as Meni;
                 LabelFASAP label1 = new LabelFASAP();
                 LabelFASAP label2 = new LabelFASAP();
