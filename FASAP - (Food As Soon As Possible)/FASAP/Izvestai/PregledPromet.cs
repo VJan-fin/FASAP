@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
@@ -80,6 +81,7 @@ namespace SmetkaZaNaracka
         {
             foreach (var item in this.PrometMeseci)
                 item.Text = " - ";
+            this.lblPromet.Text = " - ";
         }
 
         /// <summary>
@@ -90,7 +92,7 @@ namespace SmetkaZaNaracka
         {
             this.lblGodina.Text = this.tekovnaGodina.ToString();
             this.ClearLabels();
-            //this.VcitajPodatoci();
+            this.VcitajPodatoci();
         }
 
         /// <summary>
@@ -99,24 +101,16 @@ namespace SmetkaZaNaracka
         /// </summary>
         private void VcitajPodatoci()
         {
-            String sqlTab = "";
+            String sqlTab = @"SELECT MESEC_PROMET, IZNOS_PROMET
+                            FROM PROMET
+                            WHERE RESTORAN_ID = :REST_ID AND GODINA_PROMET = :GOD
+                            ORDER BY MESEC_PROMET";
+
             OracleCommand cmd = new OracleCommand(sqlTab, Conn);
 
             try
             {
-                OracleParameter prm = new OracleParameter("REST_ID1", OracleDbType.Int64);
-                prm.Value = this.Restoran.RestoranID;
-                cmd.Parameters.Add(prm);
-
-                prm = new OracleParameter("REST_ID2", OracleDbType.Int64);
-                prm.Value = this.Restoran.RestoranID;
-                cmd.Parameters.Add(prm);
-
-                prm = new OracleParameter("REST_ID3", OracleDbType.Int64);
-                prm.Value = this.Restoran.RestoranID;
-                cmd.Parameters.Add(prm);
-
-                prm = new OracleParameter("REST_ID4", OracleDbType.Int64);
+                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
                 prm.Value = this.Restoran.RestoranID;
                 cmd.Parameters.Add(prm);
 
@@ -128,23 +122,103 @@ namespace SmetkaZaNaracka
                 OracleDataReader dr = cmd.ExecuteReader();
 
                 int ind = 0;
+                int godPromet = 0;
                 while (dr.Read())
                 {
-                    /*this.VkPromet[ind].Text = dr.GetInt32(2).ToString() + " äåí. ";
-                    this.VkPlata[ind].Text = dr.GetInt32(3).ToString() + " äåí. ";
-                    this.VkDodatoci[ind].Text = dr.GetInt32(4).ToString() + " äåí. ";
-                    this.VkTrosoci[ind].Text = dr.GetInt32(5).ToString() + " äåí. ";
-                    this.Sostojba[ind].Text = dr.GetInt32(6).ToString() + " äåí. ";
-                    ind++;*/
+                    int tmp = dr.GetInt32(1);
+                    this.PrometMeseci[ind].Text = tmp.ToString() + " ден. ";
+                    godPromet += tmp;
+                    ind++;
                 }
+
+                if (ind != 0)
+                    this.lblPromet.Text = godPromet.ToString() + " ден. ";
+                else
+                    this.lblPromet.Text = " - ";
             }
             catch (Exception ex)
             {
-                MessageBoxForm mbf = new MessageBoxForm("blabla", false);
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
                 if (mbf.ShowDialog() == DialogResult.Yes)
                     this.Close();
                 else
                     this.Close();
+            }
+        }
+
+        private void btnTekoven_Click(object sender, EventArgs e)
+        {
+            this.tekovnaGodina = DateTime.Now.Year;
+            this.ObnoviEkran();
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Hand;
+            pb.Image = Resources.LightArrowLeft;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Default;
+            pb.Image = Resources.DarkArrowLeft;
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Hand;
+            pb.Image = Resources.LightArrowRight___Copy;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+            Cursor = Cursors.Default;
+            pb.Image = Resources.DarkArrowRight;
+        }
+
+        private void btnTekoven_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnTekoven.Image = Resources.LightButton___Copy;
+            this.btnTekoven.ForeColor = Color.Sienna;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void btnTekoven_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnTekoven.Image = Resources.DarkButton___Copy;
+            this.btnTekoven.ForeColor = Color.Khaki;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pbLeftG_Click(object sender, EventArgs e)
+        {
+            if (this.tekovnaGodina > 1950)
+            {
+                this.tekovnaGodina--;
+                this.ObnoviEkran();
+            }
+            else
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Извештаи постари од 1950 не може да бидат прикажани", false);
+                mbf.ShowDialog();
+            }
+        }
+
+        private void pbRightG_Click(object sender, EventArgs e)
+        {
+            if (this.tekovnaGodina < DateTime.Now.Year)
+            {
+                this.tekovnaGodina++;
+                this.ObnoviEkran();
+            }
+            else
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Прикажана е тековната година", false);
+                mbf.ShowDialog();
             }
         }
     }

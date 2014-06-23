@@ -165,6 +165,9 @@
             this.pbLeftG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLeftG.TabIndex = 51;
             this.pbLeftG.TabStop = false;
+            this.pbLeftG.Click += new System.EventHandler(this.pbLeftG_Click);
+            this.pbLeftG.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pbLeftG.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             // 
             // lblGodina
             // 
@@ -510,6 +513,9 @@
             this.pbRightG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRightG.TabIndex = 52;
             this.pbRightG.TabStop = false;
+            this.pbRightG.Click += new System.EventHandler(this.pbRightG_Click);
+            this.pbRightG.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
+            this.pbRightG.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             // 
             // lblImeRestoran
             // 
@@ -551,6 +557,9 @@
             this.btnTekoven.TabIndex = 54;
             this.btnTekoven.Text = "Тековна година";
             this.btnTekoven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTekoven.Click += new System.EventHandler(this.btnTekoven_Click);
+            this.btnTekoven.MouseEnter += new System.EventHandler(this.btnTekoven_MouseEnter);
+            this.btnTekoven.MouseLeave += new System.EventHandler(this.btnTekoven_MouseLeave);
             // 
             // labelFASAP5
             // 
@@ -576,7 +585,7 @@
             this.lblPromet.Name = "lblPromet";
             this.lblPromet.Size = new System.Drawing.Size(302, 55);
             this.lblPromet.TabIndex = 57;
-            this.lblPromet.Text = "142000 ден.";
+            this.lblPromet.Text = " ден.";
             // 
             // PregledPromet
             // 
