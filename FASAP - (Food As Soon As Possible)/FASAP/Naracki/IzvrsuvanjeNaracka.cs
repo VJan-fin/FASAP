@@ -258,8 +258,72 @@ namespace SmetkaZaNaracka
             }
             //lblOsnovnoMeni.UpdateObject(Restoran.GlavnoMeni);
             LoadingSemaphore.WaitOne();
+            SetObject(lblOsnovnoMeni, Restoran.GlavnoMeni);
             CurrMenu = Restoran.GlavnoMeni;
             PopolniListaMenija();
+        }
+
+        private void lblOsnovnoMeni_MouseEnter(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+
+            if (lb.LblObject != null)
+            {
+                Cursor = Cursors.Hand;
+                lb.Image = Resources.LabelBackgroundSelected;
+                lb.ForeColor = Color.SaddleBrown;
+            }
+        }
+
+        private void lblOsnovnoMeni_MouseLeave(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+
+            if (lb.LblObject != null)
+            {
+                Cursor = Cursors.Default;
+                lb.Image = Resources.LabelBackground2;
+                lb.ForeColor = Color.Gold;
+            }
+        }
+
+        private void lblOsnovnoMeni_Click(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            indStavka = 0;
+
+            if (lb.LblObject != null && lb.LblObject is Meni)
+            {
+                CurrMenu = lb.LblObject as Meni;
+                PostaviPateka();
+                PopolniListaStavki();
+            }
+        }
+
+        private void PostaviPateka()
+        {
+            for (int i = flowLayoutPanelFasap1.Controls.Count - 1; i >= 1; i--)
+                if (CurrMenu.Equals((flowLayoutPanelFasap1.Controls[i] as LabelFASAP).LblObject))
+                    break;
+                else RemoveFlowLayoutPanelControl(flowLayoutPanelFasap1, flowLayoutPanelFasap1.Controls[i]);
+        }
+
+        delegate void RemFlowLayoutpanelControl(FlowLayoutPanel fs, Control obj);
+
+        private void RemoveFlowLayoutPanelControl(FlowLayoutPanel fs, Control obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                RemFlowLayoutpanelControl d = new RemFlowLayoutpanelControl(RemoveFlowLayoutPanelControl);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.Controls.Remove(obj);
+            }
         }
 
         private void PopolniListaMenija()
@@ -434,8 +498,30 @@ namespace SmetkaZaNaracka
         private void lblMeni1_Click(object sender, EventArgs e)
         {
             LabelFASAP lb = sender as LabelFASAP;
-            if (lb.LblObject != null)
-                CurrMenu = lb.LblObject as MenuComponent;
+
+            if (lb.LblObject != null && lb.LblObject is Meni)
+            {
+                CurrMenu = Restoran.GlavnoMeni;
+                PostaviPateka();
+                indMeni = 0;
+                CurrMenu = lb.LblObject as Meni;
+                LabelFASAP label1 = new LabelFASAP();
+                LabelFASAP label2 = new LabelFASAP();
+                flowLayoutPanelFasap1.Controls.Add(label2);
+                flowLayoutPanelFasap1.Controls.Add(label1);
+                label1.Font = new Font("Trebuchet MS", 12, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                label1.UpdateObject(CurrMenu);
+                label1.ForeColor = Color.Gold;
+                label1.MouseEnter += new EventHandler(lblOsnovnoMeni_MouseEnter);
+                label1.MouseLeave += new EventHandler(lblOsnovnoMeni_MouseLeave);
+                label1.Click += new EventHandler(lblOsnovnoMeni_Click);
+                label1.AutoSize = true;
+                label2.Font = new Font("Trebuchet MS", 12, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                label2.ForeColor = Color.White;
+                label2.Text = ">>";
+                label2.AutoSize = true;
+                flowLayoutPanelFasap1.Invalidate(true);
+            }
             this.PopolniListaStavki();
         }
 
@@ -480,12 +566,34 @@ namespace SmetkaZaNaracka
                 if (mc is Meni)
                 {
                     CurrMenu = mc;
+                    if (lb.LblObject != null && lb.LblObject is Meni)
+                    {
+                        indMeni = 0;
+                        CurrMenu = lb.LblObject as Meni;
+                        LabelFASAP label1 = new LabelFASAP();
+                        LabelFASAP label2 = new LabelFASAP();
+                        flowLayoutPanelFasap1.Controls.Add(label2);
+                        flowLayoutPanelFasap1.Controls.Add(label1);
+                        label1.Font = new Font("Trebuchet MS", 12, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                        label1.UpdateObject(CurrMenu);
+                        label1.ForeColor = Color.Gold;
+                        label1.MouseEnter += new EventHandler(lblOsnovnoMeni_MouseEnter);
+                        label1.MouseLeave += new EventHandler(lblOsnovnoMeni_MouseLeave);
+                        label1.Click += new EventHandler(lblOsnovnoMeni_Click);
+                        label1.AutoSize = true;
+                        label2.Font = new Font("Trebuchet MS", 12, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                        label2.ForeColor = Color.White;
+                        label2.Text = ">>";
+                        label2.AutoSize = true;
+                        flowLayoutPanelFasap1.Invalidate(true);
+                    }
                     PopolniListaStavki();
                     return;
                 }
                 try
                 {
                     CurrItem = mc.GetReference(CurrItem);
+
                 }
                 catch (Exception ex)
                 {

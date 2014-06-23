@@ -82,11 +82,12 @@
             this.lblCena = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP16 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblCenaProizvod = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.flowLayoutPanelFasap1 = new SmetkaZaNaracka.FlowLayoutPanelFasap(this.components);
             this.lblErrorMessage = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnPotvrdi = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.btnOtkazi = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.flowLayoutPanelFasap1 = new SmetkaZaNaracka.FlowLayoutPanelFasap(this.components);
+            this.lblOsnovnoMeni = new SmetkaZaNaracka.LabelFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -105,6 +106,7 @@
             this.dbLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            this.flowLayoutPanelFasap1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dbLayoutPanel1
@@ -944,14 +946,6 @@
             this.lblCenaProizvod.TabIndex = 32;
             this.lblCenaProizvod.Text = "0 ден.";
             // 
-            // flowLayoutPanelFasap1
-            // 
-            this.flowLayoutPanelFasap1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelFasap1.Location = new System.Drawing.Point(21, 10);
-            this.flowLayoutPanelFasap1.Name = "flowLayoutPanelFasap1";
-            this.flowLayoutPanelFasap1.Size = new System.Drawing.Size(1155, 51);
-            this.flowLayoutPanelFasap1.TabIndex = 33;
-            // 
             // lblErrorMessage
             // 
             this.lblErrorMessage.AutoSize = true;
@@ -1002,15 +996,41 @@
             this.btnOtkazi.MouseEnter += new System.EventHandler(this.btnOtkazi_MouseEnter);
             this.btnOtkazi.MouseLeave += new System.EventHandler(this.btnOtkazi_MouseLeave);
             // 
+            // flowLayoutPanelFasap1
+            // 
+            this.flowLayoutPanelFasap1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelFasap1.Controls.Add(this.lblOsnovnoMeni);
+            this.flowLayoutPanelFasap1.Location = new System.Drawing.Point(4, 7);
+            this.flowLayoutPanelFasap1.Name = "flowLayoutPanelFasap1";
+            this.flowLayoutPanelFasap1.Size = new System.Drawing.Size(1184, 54);
+            this.flowLayoutPanelFasap1.TabIndex = 37;
+            // 
+            // lblOsnovnoMeni
+            // 
+            this.lblOsnovnoMeni.AutoSize = true;
+            this.lblOsnovnoMeni.BackColor = System.Drawing.Color.Transparent;
+            this.lblOsnovnoMeni.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOsnovnoMeni.ForeColor = System.Drawing.Color.Gold;
+            this.lblOsnovnoMeni.Image = ((System.Drawing.Image)(resources.GetObject("lblOsnovnoMeni.Image")));
+            this.lblOsnovnoMeni.LblObject = null;
+            this.lblOsnovnoMeni.Location = new System.Drawing.Point(3, 0);
+            this.lblOsnovnoMeni.Name = "lblOsnovnoMeni";
+            this.lblOsnovnoMeni.Size = new System.Drawing.Size(122, 22);
+            this.lblOsnovnoMeni.TabIndex = 12;
+            this.lblOsnovnoMeni.Text = "ОсновноМени ";
+            this.lblOsnovnoMeni.Click += new System.EventHandler(this.lblOsnovnoMeni_Click);
+            this.lblOsnovnoMeni.MouseEnter += new System.EventHandler(this.lblOsnovnoMeni_MouseEnter);
+            this.lblOsnovnoMeni.MouseLeave += new System.EventHandler(this.lblOsnovnoMeni_MouseLeave);
+            // 
             // IzvrsuvanjeNaracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.flowLayoutPanelFasap1);
             this.Controls.Add(this.btnOtkazi);
             this.Controls.Add(this.btnPotvrdi);
             this.Controls.Add(this.lblErrorMessage);
-            this.Controls.Add(this.flowLayoutPanelFasap1);
             this.Controls.Add(this.lblCenaProizvod);
             this.Controls.Add(this.labelFASAP16);
             this.Controls.Add(this.lblCena);
@@ -1073,10 +1093,10 @@
             this.Controls.SetChildIndex(this.lblCena, 0);
             this.Controls.SetChildIndex(this.labelFASAP16, 0);
             this.Controls.SetChildIndex(this.lblCenaProizvod, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);
             this.Controls.SetChildIndex(this.lblErrorMessage, 0);
             this.Controls.SetChildIndex(this.btnPotvrdi, 0);
             this.Controls.SetChildIndex(this.btnOtkazi, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1098,6 +1118,8 @@
             this.dbLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            this.flowLayoutPanelFasap1.ResumeLayout(false);
+            this.flowLayoutPanelFasap1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1157,10 +1179,11 @@
         private LabelFASAP lblCena;
         private LabelFASAP labelFASAP16;
         private LabelFASAP lblCenaProizvod;
-        private FlowLayoutPanelFasap flowLayoutPanelFasap1;
         private System.Windows.Forms.Label lblErrorMessage;
         private System.Windows.Forms.Timer timer1;
         private ButtonFASAP btnPotvrdi;
         private ButtonFASAP btnOtkazi;
+        private FlowLayoutPanelFasap flowLayoutPanelFasap1;
+        private LabelFASAP lblOsnovnoMeni;
     }
 }
