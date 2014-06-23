@@ -518,7 +518,7 @@ namespace SmetkaZaNaracka
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            DodavanjeRestoran r = new DodavanjeRestoran(Conn);
+            Register r = new Register(Conn);
             r.Show();
         }
 
