@@ -536,6 +536,9 @@
             this.lblNaj3.Size = new System.Drawing.Size(38, 29);
             this.lblNaj3.TabIndex = 4;
             this.lblNaj3.Text = ": :";
+            this.lblNaj3.Click += new System.EventHandler(this.lblNaj1_Click);
+            this.lblNaj3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblNaj3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblNaj4
             // 
@@ -551,6 +554,9 @@
             this.lblNaj4.Size = new System.Drawing.Size(38, 29);
             this.lblNaj4.TabIndex = 5;
             this.lblNaj4.Text = ": :";
+            this.lblNaj4.Click += new System.EventHandler(this.lblNaj1_Click);
+            this.lblNaj4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblNaj4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblNaj1
             // 
@@ -566,6 +572,9 @@
             this.lblNaj1.Size = new System.Drawing.Size(38, 29);
             this.lblNaj1.TabIndex = 2;
             this.lblNaj1.Text = ": :";
+            this.lblNaj1.Click += new System.EventHandler(this.lblNaj1_Click);
+            this.lblNaj1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblNaj1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblNaj2
             // 
@@ -581,6 +590,9 @@
             this.lblNaj2.Size = new System.Drawing.Size(38, 29);
             this.lblNaj2.TabIndex = 3;
             this.lblNaj2.Text = ": :";
+            this.lblNaj2.Click += new System.EventHandler(this.lblNaj1_Click);
+            this.lblNaj2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblNaj2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblNaj5
             // 
@@ -596,6 +608,9 @@
             this.lblNaj5.Size = new System.Drawing.Size(38, 29);
             this.lblNaj5.TabIndex = 6;
             this.lblNaj5.Text = ": :";
+            this.lblNaj5.Click += new System.EventHandler(this.lblNaj1_Click);
+            this.lblNaj5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblNaj5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // btnRegister
             // 

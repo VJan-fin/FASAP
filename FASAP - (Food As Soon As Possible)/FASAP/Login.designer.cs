@@ -42,47 +42,47 @@
             // tbUserName
             // 
             this.tbUserName.BackColor = System.Drawing.Color.Sienna;
-            this.tbUserName.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUserName.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUserName.ForeColor = System.Drawing.Color.Khaki;
-            this.tbUserName.Location = new System.Drawing.Point(636, 348);
+            this.tbUserName.Location = new System.Drawing.Point(636, 362);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(265, 30);
+            this.tbUserName.Size = new System.Drawing.Size(328, 35);
             this.tbUserName.TabIndex = 0;
             // 
             // tbPassword
             // 
             this.tbPassword.BackColor = System.Drawing.Color.Sienna;
-            this.tbPassword.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.ForeColor = System.Drawing.Color.Khaki;
             this.tbPassword.Location = new System.Drawing.Point(636, 458);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(265, 30);
+            this.tbPassword.Size = new System.Drawing.Size(328, 35);
             this.tbPassword.TabIndex = 1;
             // 
             // labelFASAP1
             // 
             this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
-            this.labelFASAP1.Location = new System.Drawing.Point(363, 341);
+            this.labelFASAP1.Location = new System.Drawing.Point(337, 347);
             this.labelFASAP1.Name = "labelFASAP1";
-            this.labelFASAP1.Size = new System.Drawing.Size(219, 44);
+            this.labelFASAP1.Size = new System.Drawing.Size(245, 52);
             this.labelFASAP1.TabIndex = 5;
             this.labelFASAP1.Text = "Корисничко име:";
             // 
             // labelFASAP2
             // 
             this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
-            this.labelFASAP2.Location = new System.Drawing.Point(447, 451);
+            this.labelFASAP2.Location = new System.Drawing.Point(426, 442);
             this.labelFASAP2.Name = "labelFASAP2";
-            this.labelFASAP2.Size = new System.Drawing.Size(135, 45);
+            this.labelFASAP2.Size = new System.Drawing.Size(156, 52);
             this.labelFASAP2.TabIndex = 6;
             this.labelFASAP2.Text = "Лозинка:";
             // 
@@ -90,9 +90,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
-            this.pictureBox3.Location = new System.Drawing.Point(67, 22);
+            this.pictureBox3.Location = new System.Drawing.Point(73, 24);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(369, 276);
+            this.pictureBox3.Size = new System.Drawing.Size(291, 293);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
@@ -102,9 +103,9 @@
             this.btnLogIn.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnLogIn.ForeColor = System.Drawing.Color.Khaki;
             this.btnLogIn.Image = global::SmetkaZaNaracka.Properties.Resources.DarkButton___Copy;
-            this.btnLogIn.Location = new System.Drawing.Point(736, 582);
+            this.btnLogIn.Location = new System.Drawing.Point(731, 573);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(165, 55);
+            this.btnLogIn.Size = new System.Drawing.Size(179, 69);
             this.btnLogIn.TabIndex = 9;
             this.btnLogIn.Text = "Логирај се";
             this.btnLogIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

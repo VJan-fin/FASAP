@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodavanjeRestoran));
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP3 = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -61,18 +60,7 @@
             this.btnOtkazi = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.labelFASAP17 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.tbDatum = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
-            this.pictureBox3.Location = new System.Drawing.Point(67, 22);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(369, 276);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
             // 
             // labelFASAP1
             // 
@@ -451,7 +439,7 @@
             this.tbDatum.TabIndex = 22;
             this.tbDatum.Validating += new System.ComponentModel.CancelEventHandler(this.tbDatum_Validating);
             // 
-            // Register
+            // DodavanjeRestoran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -486,12 +474,10 @@
             this.Controls.Add(this.labelFASAP3);
             this.Controls.Add(this.labelFASAP2);
             this.Controls.Add(this.labelFASAP1);
-            this.Controls.Add(this.pictureBox3);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Register";
+            this.Name = "DodavanjeRestoran";
             this.Opacity = 1D;
             this.Text = "Register";
-            this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.labelFASAP1, 0);
             this.Controls.SetChildIndex(this.labelFASAP2, 0);
             this.Controls.SetChildIndex(this.labelFASAP3, 0);
@@ -522,7 +508,6 @@
             this.Controls.SetChildIndex(this.btnOtkazi, 0);
             this.Controls.SetChildIndex(this.labelFASAP17, 0);
             this.Controls.SetChildIndex(this.tbDatum, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,7 +515,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox3;
         private LabelFASAP labelFASAP1;
         private LabelFASAP labelFASAP2;
         private LabelFASAP labelFASAP3;

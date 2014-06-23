@@ -111,7 +111,7 @@ namespace SmetkaZaNaracka
             }
             vcituvanje();
             popolniLabeli();
-
+            MarkSelection();
 
         }
         public void refresh()
@@ -122,7 +122,9 @@ namespace SmetkaZaNaracka
             tekovenGrad = "Сите";
             tekovnaKat = "Сите";
             vcituvanje();
+            MarkSelection();
             popolniLabeli();
+            //MessageBox.Show("I'm refreshing :p");
 
         }
         private void FiltrirajRestorani()
@@ -145,10 +147,17 @@ namespace SmetkaZaNaracka
         }
         public void popolniLabeliNajbarani()
         {
-            for (int i = 0; i < 5; i++)
+
+            int ind = 0;
+            for (int i = 0; i < this.labeliNajbarani.Count; i++)
             {
-                if (i >= Najbarani5.Count) break;
-                labeliNajbarani[i].Text = String.Format(": {0} :", Najbarani5[i]);
+                if (ind < this.Najbarani5.Count)
+                {
+                    this.labeliNajbarani[i].UpdateObject(this.Najbarani5[ind]);
+                    ind++;
+                }
+                else
+                    this.labeliNajbarani[i].UpdateObject(null);
             }
         }
         public void popolniLabeliGrad()
@@ -222,6 +231,7 @@ namespace SmetkaZaNaracka
         }
         public void vcitajNajbarani()
         {
+            Najbarani = new List<String>();
             string sql = "SELECT IME_RESTORAN, ONLINE_SMETKI, KLIENTI FROM ( SELECT R.IME_RESTORAN, G.SMETKI ONLINE_SMETKI, G.KLIENTI FROM RESTORAN R JOIN ( SELECT RES.RESTORAN_ID, COUNT(ONL.RESTORAN_ID) AS SMETKI, COUNT(DISTINCT ONL.IME_KLIENT || ONL.PREZIME_KLIENT || ADRESA_ZA_DOSTAVA) AS KLIENTI FROM RESTORAN RES LEFT OUTER JOIN NARACHKA NAR ON RES.RESTORAN_ID = NAR.RESTORAN_ID AND MONTHS_BETWEEN(SYSDATE, NAR.VREME) <= 1 LEFT OUTER JOIN ONLINE_NARACHKA ONL ON NAR.RESTORAN_ID = ONL.RESTORAN_ID AND NAR.NARACHKA_ID = ONL.NARACHKA_ID GROUP BY RES.RESTORAN_ID ) G ON R.RESTORAN_ID = G.RESTORAN_ID ORDER BY G.SMETKI DESC, G.KLIENTI DESC, R.IME_RESTORAN ASC )"; // C#
             OracleCommand cmd = new OracleCommand(sql, Conn);
             cmd.CommandType = CommandType.Text;
@@ -234,7 +244,7 @@ namespace SmetkaZaNaracka
                 {
                     //
                     // lbNajbarani.Items.Add((i + 1) + ". " + dr.GetString(0));
-                    Najbarani.Add(String.Format("{0}.{1}", i + 1, dr.GetString(0)));
+                    Najbarani.Add( dr.GetString(0));
                     i++;
                 }
             }
@@ -250,6 +260,7 @@ namespace SmetkaZaNaracka
         }
         public void popolniNajbarani5()
         {
+            Najbarani5 = new List<String>();
             for (int i = 0; i < 5; i++)
             {
                 if (i >= Najbarani.Count) break;
@@ -258,7 +269,8 @@ namespace SmetkaZaNaracka
         }
         public void vcitajKategorija()
         {
-
+            Kategorija = new List<String>();
+            Kategorija.Add("Сите");
             string sql = "Select distinct KATEGORIJA from RESTORAN ORDER BY KATEGORIJA"; // C#
             OracleCommand cmd = new OracleCommand(sql, Conn);
             cmd.CommandType = CommandType.Text;
@@ -283,6 +295,8 @@ namespace SmetkaZaNaracka
         }
         public void vcitajGrad()
         {
+            Gradovi = new List<String>();
+            Gradovi.Add("Сите");
             string sql = "Select distinct GRAD from RESTORAN ORDER BY GRAD"; // C#
             OracleCommand cmd = new OracleCommand(sql, Conn);
             cmd.CommandType = CommandType.Text;
@@ -311,6 +325,7 @@ namespace SmetkaZaNaracka
         }
         public void vcitajRestorani()
         {
+            Restorani = new List<Restoran>();
             string sql = "Select * from RESTORAN"; // C#
             OracleCommand cmd = new OracleCommand(sql, Conn);
             cmd.CommandType = CommandType.Text;
@@ -499,7 +514,16 @@ namespace SmetkaZaNaracka
             {
                 Restoran obj = lb.LblObject as Restoran;
                 IzvrsuvanjeNaracka fasapNaracka = new IzvrsuvanjeNaracka(obj, Conn);
-                fasapNaracka.Show();
+                if (fasapNaracka.ShowDialog() == DialogResult.OK)
+                {
+                    refresh();
+
+                }
+                else
+                {
+                    refresh();
+
+                }
 
             }
         }
@@ -514,13 +538,31 @@ namespace SmetkaZaNaracka
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Login l = new Login(Conn);
-            l.Show();
+            if (l.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+
+            }
+            else
+            {
+                refresh();
+
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             DodavanjeRestoran r = new DodavanjeRestoran(Conn);
-            r.Show();
+            if (r.ShowDialog() == DialogResult.OK)
+            {
+                refresh();
+              
+            }
+            else
+            {
+                refresh();
+               
+            }
         }
 
         private void buttonFASAP1_Click(object sender, EventArgs e)
@@ -632,6 +674,38 @@ namespace SmetkaZaNaracka
                 if (this.indexR != 0)
                     this.indexR--;
                 popolniLabeliRestorani();
+            }
+        }
+
+        // labelite za Najbarani restrani sodrzat samo iminja na restorani
+        // zatoa vo listata so restorani go baram restoranot koj go ima imeto na labelata sto e kliknata
+        
+        private void lblNaj1_Click(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                String restIme = lb.LblObject as String;
+                Restoran obj=null;
+                foreach (Restoran r in Restorani)
+                {
+                    if(restIme.Equals(r.Ime))
+                    {
+                        obj = r; break;
+                    }
+                }
+                IzvrsuvanjeNaracka fasapNaracka = new IzvrsuvanjeNaracka(obj, Conn);
+                if (fasapNaracka.ShowDialog() == DialogResult.OK)
+                {
+                    refresh();
+
+                }
+                else
+                {
+                    refresh();
+
+                }
+
             }
         }
 
