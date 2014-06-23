@@ -17,10 +17,20 @@ namespace SmetkaZaNaracka
 
         private int tekovnaGodina { get; set; }
         /// <summary>
-        /// Pomosna lista koja gi sodrzi poziciite koi
-        /// treba da se popolnat so podatocite za promet
+        /// Pomosna lista koja gi sodrzi prvite 4 meseci vo
+        /// godinata: januari, fevruari, mart i april
         /// </summary>
-        private List<LabelFASAP> PrometMeseci { get; set; }
+        private List<LabelFASAP> PrometMeseci1234 { get; set; }
+        /// <summary>
+        /// Pomosna lista koja gi sodrzi vtorite 4 meseci vo
+        /// godinata: maj, juni, juli i avgust
+        /// </summary>
+        private List<LabelFASAP> PrometMeseci5678 { get; set; }
+        /// <summary>
+        /// Pomosna lista koja gi sodrzi tretite 4 meseci vo
+        /// godinata: septemvri, oktomvri, noemvri i dekemvri
+        /// </summary>
+        private List<LabelFASAP> PrometMeseci9101112 { get; set; }
 
         public PregledPromet(OracleConnection conn, Restoran rest)
         {
@@ -56,41 +66,9 @@ namespace SmetkaZaNaracka
             this.lblGodina.Text = this.tekovnaGodina.ToString();
             this.lblImeRestoran.Text = this.Restoran.Ime + " ";
 
-            this.PrometMeseci = new List<LabelFASAP>();
-            this.PrometMeseci.Add(this.lblPromet1);
-            this.PrometMeseci.Add(this.lblPromet2);
-            this.PrometMeseci.Add(this.lblPromet3);
-            this.PrometMeseci.Add(this.lblPromet4);
-            this.PrometMeseci.Add(this.lblPromet5);
-            this.PrometMeseci.Add(this.lblPromet6);
-            this.PrometMeseci.Add(this.lblPromet7);
-            this.PrometMeseci.Add(this.lblPromet8);
-            this.PrometMeseci.Add(this.lblPromet9);
-            this.PrometMeseci.Add(this.lblPromet10);
-            this.PrometMeseci.Add(this.lblPromet11);
-            this.PrometMeseci.Add(this.lblPromet12);
+            
 
-            this.ObnoviEkran();
-        }
-
-        /// <summary>
-        /// Inicijalizacija na labelite vo tabelata
-        /// </summary>
-        private void ClearLabels()
-        {
-            foreach (var item in this.PrometMeseci)
-                item.Text = " - ";
-        }
-
-        /// <summary>
-        /// Inicijalizacija na labelite i povtorno vcituvanje
-        /// na podatocite od bazata
-        /// </summary>
-        private void ObnoviEkran()
-        {
-            this.lblGodina.Text = this.tekovnaGodina.ToString();
-            this.ClearLabels();
-            this.VcitajPodatoci();
+            //this.ObnoviEkran();
         }
     }
 }
