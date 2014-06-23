@@ -153,7 +153,7 @@ namespace SmetkaZaNaracka
                         }
 
 
-                        if (status == 0) //ako vraboteniot e neaktiven, nema privilegii za pristap
+                        if (VrabotenId!=0 && status == 0) //ako vraboteniot e neaktiven i ne e admin, nema privilegii za pristap
                         {
                             MessageBoxForm mbf = new MessageBoxForm("Немате привилегии за пристап!", false);
                             if (mbf.ShowDialog() == DialogResult.Yes)
@@ -168,14 +168,21 @@ namespace SmetkaZaNaracka
                             else if (pozicija.ToLower() == "келнер")
                                 vraboten = new Kelner(VrabotenId, RestoranId, ime, prezime, username, password);
 
-                            if (pozicija.ToLower() == "менаџер")
+                            if (VrabotenId == 0) // ako e admin
+                            {
+                                ManagerC manager = new ManagerC(VrabotenId, RestoranId, "ADMIN", "", username, password);
+                                ManagerForma managerForma = new ManagerForma(Conn, manager);
+                                managerForma.Show();
+                                tbPassword.Clear();
+                            }
+                            else if ( pozicija.ToLower() == "менаџер") //ako e  manager
                             {
                                 ManagerC manager = new ManagerC(VrabotenId, RestoranId, ime, prezime, username, password);
                                 ManagerForma managerForma = new ManagerForma(Conn, manager);
                                 managerForma.Show();
                                 tbPassword.Clear();
                             }
-                            else
+                            else //ako e obicen vraboten 
                             {
                                 VrabotenForma vf = new VrabotenForma(Conn, vraboten);
                                 vf.Show();

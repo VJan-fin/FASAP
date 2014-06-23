@@ -32,80 +32,189 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(sqlID, this.Conn);
             cmd.CommandType = CommandType.Text;
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-                this.RestoranID = dr.GetInt32(0) + 1;
-            //MessageBox.Show(string.Format("{0}",RestoranID));
-        }
-
-        private int DodadiVoDBRestoran()
-        {
-            string insertRest = @"INSERT INTO RESTORAN (RESTORAN_ID, IME_RESTORAN, KATEGORIJA, ULICA, GRAD, RABOTNO_VREME, KAPACITET, BROJ_MASI, CENA_ZA_DOSTAVA, DATUM_NA_OTVORANJE) VALUES (:REST_ID, :IME, :KAT, :UL, :GRAD, :RAB, :KAP, :MASI, :DOSTAVA, :DATUM)";
-            OracleCommand cmd = new OracleCommand(insertRest, Conn);
-
-            OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-            prm.Value = this.RestoranID;
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("IME", OracleDbType.Varchar2);
-            prm.Value = this.tbIme.Text.Trim();
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("KAT", OracleDbType.Varchar2);
-            prm.Value = this.tbKategorija.Text.Trim();
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("UL", OracleDbType.Varchar2);
-            if (tbUlica.Text.Trim() != "") prm.Value = this.tbUlica.Text.Trim();
-            else prm.Value = null;
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("GRAD", OracleDbType.Varchar2);
-            if (tbGrad.Text.Trim() != "")
-                prm.Value = this.tbGrad.Text.Trim();
-            else prm.Value = null;
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("RAB", OracleDbType.Varchar2);
-            if (tbRabotnoVreme.Text.Trim() != "") prm.Value = this.tbRabotnoVreme.Text;
-            else prm.Value = null;
-            cmd.Parameters.Add(prm);
-
-
-            prm = new OracleParameter("KAP", OracleDbType.Int64);
-            if (tbkapacitet.Text.Trim() != "") prm.Value = int.Parse(this.tbkapacitet.Text.Trim());
-            else prm.Value = null;
-            cmd.Parameters.Add(prm);
-
-            prm = new OracleParameter("MASI", OracleDbType.Int64);
-            if (tbBrMasi.Text.Trim() != "")
-                prm.Value = int.Parse(this.tbBrMasi.Text.Trim());
-            else prm.Value = null;
-            cmd.Parameters.Add(prm);
-
-
-            prm = new OracleParameter("DOSTAVA", OracleDbType.Int64);
-            if (tbDostava.Text.Trim() != "")
-                prm.Value = int.Parse(this.tbDostava.Text.Trim());
-            else
-                prm.Value = null;
-
-            cmd.Parameters.Add(prm);
-            //
-            prm = new OracleParameter("DATUM", OracleDbType.Date);
-            if (tbDatum.Text.Trim() != "")
+            try
             {
-                char[] sepa = { '/' };
-                String[] dates = tbDatum.Text.Trim().Split(sepa);
-                DateTime dt = new DateTime(int.Parse(dates[2]), int.Parse(dates[1]), int.Parse(dates[0]));
-                prm.Value = dt;
+                OracleDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                    this.RestoranID = dr.GetInt32(0) + 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
+           
+        }
+        private int dodadiVoImenik(){
+            string insertImenik = @"Insert into IMENIK (RESTORAN_ID,TELEFON) values (:REST_ID,:TEL)";
+            OracleCommand cmd = new OracleCommand(insertImenik, Conn);
+
+            try
+            {
+                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("TEL", OracleDbType.Varchar2);
+                if (tbTel.Text.Trim() != "")
+                    prm.Value = this.tbTel.Text.Trim();
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+            }
+            catch (Exception ex)
+            {
+               return  -1;
             }
 
-            else
+            int br;
+
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                br = -1;
+            }
+
+            return br;
+        }
+        private int dodadiGlavnoMeni()
+        {
+            string sql = @"INSERT INTO MENI (RESTORAN_ID,IME_MENI,VALIDNOST_MENI,IME_GLAVNO) VALUES (:REST_ID, :IME, :VAL, :GLAVNO)";
+            OracleCommand cmd = new OracleCommand(sql, Conn);
+            try
+            {
+                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("IME", OracleDbType.Varchar2);
+                string ime ="Мени "+ tbIme.Text.Trim();
+                prm.Value = ime;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("VAL", OracleDbType.Char);
+                prm.Value = '1';
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("GLAVNO", OracleDbType.Varchar2);
                 prm.Value = null;
-            cmd.Parameters.Add(prm);
-            //MessageBox.Show(tbDatum.Text);
-            cmd.ExecuteNonQuery();
+                cmd.Parameters.Add(prm);
+
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+
+            int br;
+
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                br = -1;
+            }
+
+            return br;
+        }
+        private int DodadiVoDBRestoran()
+        {
+            string insertRest = @"INSERT INTO RESTORAN (RESTORAN_ID, IME_RESTORAN, KATEGORIJA, ULICA, GRAD, RABOTNO_VREME, KAPACITET, BROJ_MASI, CENA_ZA_DOSTAVA,PRAG_DOSTAVA, DATUM_NA_OTVORANJE,SLIKA) VALUES (:REST_ID, :IME, :KAT, :UL, :GRAD, :RAB, :KAP, :MASI, :DOSTAVA,:PRAG, :DATUM,:S)";
+            OracleCommand cmd = new OracleCommand(insertRest, Conn);
+
+            try
+            {
+                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("IME", OracleDbType.Varchar2);
+                prm.Value = this.tbIme.Text.Trim();
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("KAT", OracleDbType.Varchar2);
+                prm.Value = this.tbKategorija.Text.Trim();
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("UL", OracleDbType.Varchar2);
+                if (tbUlica.Text.Trim() != "") prm.Value = this.tbUlica.Text.Trim();
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("GRAD", OracleDbType.Varchar2);
+                if (tbGrad.Text.Trim() != "")
+                    prm.Value = this.tbGrad.Text.Trim();
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("RAB", OracleDbType.Varchar2);
+                if (tbRabotnoVreme.Text.Trim() != "") prm.Value = this.tbRabotnoVreme.Text;
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+
+                prm = new OracleParameter("KAP", OracleDbType.Int64);
+                if (tbkapacitet.Text.Trim() != "") prm.Value = int.Parse(this.tbkapacitet.Text.Trim());
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("MASI", OracleDbType.Int64);
+                if (tbBrMasi.Text.Trim() != "")
+                    prm.Value = int.Parse(this.tbBrMasi.Text.Trim());
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+
+                prm = new OracleParameter("DOSTAVA", OracleDbType.Int64);
+                if (tbDostava.Text.Trim() != "")
+                    prm.Value = int.Parse(this.tbDostava.Text.Trim());
+                else
+                    prm.Value = null;
+
+                cmd.Parameters.Add(prm);
+                //
+                prm = new OracleParameter("PRAG", OracleDbType.Int64);
+                if (tbPrag.Text.Trim() != "")
+                    prm.Value = int.Parse(this.tbPrag.Text.Trim());
+                else
+                    prm.Value = null;
+
+                cmd.Parameters.Add(prm);
+                //
+                prm = new OracleParameter("DATUM", OracleDbType.Date);
+                if (tbDatum.Text.Trim() != "")
+                {
+                    char[] sepa = { '/' };
+                    String[] dates = tbDatum.Text.Trim().Split(sepa);
+                    DateTime dt = new DateTime(int.Parse(dates[2]), int.Parse(dates[1]), int.Parse(dates[0]));
+                    prm.Value = dt;
+                }
+
+                else
+                    prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+                //
+                prm = new OracleParameter("S", OracleDbType.Varchar2);
+                if (tbUrl.Text.Trim() != "")
+                    prm.Value = this.tbUrl.Text.Trim();
+                else prm.Value = null;
+                cmd.Parameters.Add(prm);
+
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
 
 
             int br;
@@ -113,7 +222,7 @@ namespace SmetkaZaNaracka
             {
                 br = cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 br = -1;
@@ -129,25 +238,31 @@ namespace SmetkaZaNaracka
             string insertRest = @"INSERT INTO KORISNIK (KORISNICHKO_IME,RESTORAN_ID,LOZINKA,VRABOTEN_ID) VALUES (:KIME, :REST_ID, :LOZ, :VRAB_ID)";
             OracleCommand cmd = new OracleCommand(insertRest, Conn);
 
-            OracleParameter prm = new OracleParameter("KIME", OracleDbType.Varchar2);
+            try
+            {
+                OracleParameter prm = new OracleParameter("KIME", OracleDbType.Varchar2);
 
-            prm.Value = tbUser.Text.Trim();
-            cmd.Parameters.Add(prm);
+                prm.Value = tbUser.Text.Trim();
+                cmd.Parameters.Add(prm);
 
-            prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-            prm.Value = this.RestoranID;
-            cmd.Parameters.Add(prm);
+                prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.RestoranID;
+                cmd.Parameters.Add(prm);
 
-            prm = new OracleParameter("LOZ", OracleDbType.Varchar2);
-            prm.Value = tbPass.Text.Trim();
-            cmd.Parameters.Add(prm);
+                prm = new OracleParameter("LOZ", OracleDbType.Varchar2);
+                prm.Value = tbPass.Text.Trim();
+                cmd.Parameters.Add(prm);
 
-            prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
 
-            prm.Value = 0;
-            cmd.Parameters.Add(prm);
-
-            cmd.ExecuteNonQuery();
+                prm.Value = 0;
+                cmd.Parameters.Add(prm);
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            
             int br;
             try
             {
@@ -188,24 +303,26 @@ namespace SmetkaZaNaracka
 
         private void tbPass_Validating(object sender, CancelEventArgs e)
         {
-            TextBox tb = (sender as TextBox);
-            Regex regex = new Regex(@".*(?=.{8,})(?=.*\d)(?=.*[a-zA-Z]).*$");
-            string txt = tb.Text.Trim();
+           
+                TextBox tb = (sender as TextBox);
+                Regex regex = new Regex(@".*(?=.{8,})(?=.*\d)(?=.*[a-zA-Z]).*$");
+                Regex regex2 = new Regex(@".*[!@#$%^&*()-_=+,/?].*$");
 
-            if (txt == "")
-            {
-                MessageBoxForm mbf = new MessageBoxForm("Полето е задолжително!", false);
-                e.Cancel = true;
-                mbf.ShowDialog();
-            }
-            else if (!regex.IsMatch(txt))
-            {
-                MessageBoxForm mbf = new MessageBoxForm("Лозинката мора да содржи барем 1 буква, барем 1 цифра и барем 1 специјален знак и вкупно да има најмалку 8 знаци  !", false);
-                e.Cancel = true;
-                mbf.ShowDialog();
-            }
+                if (tb.Text.Trim() == "")
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Полето е задолжително!", false);
+                    e.Cancel = true;
+                    mbf.ShowDialog();
+                }
+                else if (!regex.IsMatch(tb.Text.Trim()) || !regex2.IsMatch(tb.Text.Trim()))
+                {
+                    MessageBoxForm mbf = new MessageBoxForm("Лозинката мора да содржи барем 1 буква, барем 1 цифра и барем 1 специјален знак и вкупно да има најмалку 8 знаци!", false);
+                    e.Cancel = true;
+                    mbf.ShowDialog();
+                }
 
-            tb.SelectAll();
+                tb.SelectAll();
+            
         }
 
         private void tbkapacitet_Validating(object sender, CancelEventArgs e)
@@ -304,24 +421,76 @@ namespace SmetkaZaNaracka
             //proverka dali username e unique
             string sql = "Select KORISNICHKO_IME from KORISNIK";
             OracleCommand cmd = new OracleCommand(sql, Conn);
-            cmd.CommandType = CommandType.Text;
-            OracleDataReader dr = cmd.ExecuteReader(); // C#
-            dr = cmd.ExecuteReader();
-            bool correct = true;
-            while (dr.Read())
+            bool uniqueUser = true;
+            bool uniqueRest = true;
+
+            try
             {
-                string usr = dr.GetString(0);
-                if (tbUser.Text.Trim() == usr)
+
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader(); // C#
+                dr = cmd.ExecuteReader();
+              
+                while (dr.Read())
                 {
-                    correct = false;
-                    break;
+                    string usr = dr.GetString(0);
+                    if (tbUser.Text.Trim() == usr)
+                    {
+                        uniqueUser = false;
+                        break;
+                    }
                 }
             }
-            if (!correct)
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
+
+            // proverka dali imeto na restoranot e unique
+             sql = "Select IME_RESTORAN from RESTORAN";
+             cmd = new OracleCommand(sql, Conn);
+
+            try
+            {
+
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader(); // C#
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string ime = dr.GetString(0);
+                    if (tbIme.Text.Trim() == ime)
+                    {
+                        uniqueRest = false;
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
+
+            if (!uniqueUser)
             {
                 MessageBoxForm m = new MessageBoxForm("Корисничкото име веќе постои! Изберете друго.", false);
                 m.ShowDialog();
                 tbUser.SelectAll();
+            }
+            else if (!uniqueRest)
+            {
+                MessageBoxForm m = new MessageBoxForm("Името на ресторанот веќе постои! Изберете друго.", false);
+                m.ShowDialog();
+                tbIme.SelectAll();
             }
             else //ako e ok
             {
@@ -332,8 +501,10 @@ namespace SmetkaZaNaracka
 
                     int br1 = this.DodadiVoDBRestoran();
                     int br2 = this.dodadiVoDBKorisnik();
+                    int br3 = this.dodadiVoImenik();
+                    int br4 = this.dodadiGlavnoMeni();
 
-                    if (br1 == 1 && br2 == 1)
+                    if (br1 == 1 && br2 == 1 && br3 == 1 && br4==1)
                     {
                         MessageBoxForm mbf1 = new MessageBoxForm("Ресторанот беше успешно додаден!", false);
                         mbf1.ShowDialog();
