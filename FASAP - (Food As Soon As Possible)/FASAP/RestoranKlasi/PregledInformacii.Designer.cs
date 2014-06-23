@@ -520,9 +520,9 @@
             this.btnIzbrisiTel.Image = ((System.Drawing.Image)(resources.GetObject("btnIzbrisiTel.Image")));
             this.btnIzbrisiTel.Location = new System.Drawing.Point(1004, 295);
             this.btnIzbrisiTel.Name = "btnIzbrisiTel";
-            this.btnIzbrisiTel.Size = new System.Drawing.Size(176, 24);
+            this.btnIzbrisiTel.Size = new System.Drawing.Size(182, 24);
             this.btnIzbrisiTel.TabIndex = 82;
-            this.btnIzbrisiTel.Text = "Избриши телефон";
+            this.btnIzbrisiTel.Text = "Избриши телефон ";
             this.btnIzbrisiTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnIzbrisiTel.Click += new System.EventHandler(this.btnIzbrisiTel_Click);
             this.btnIzbrisiTel.MouseEnter += new System.EventHandler(this.btnIzbrisiTel_MouseEnter);
@@ -537,9 +537,9 @@
             this.btnDodadiTel.Image = ((System.Drawing.Image)(resources.GetObject("btnDodadiTel.Image")));
             this.btnDodadiTel.Location = new System.Drawing.Point(1002, 360);
             this.btnDodadiTel.Name = "btnDodadiTel";
-            this.btnDodadiTel.Size = new System.Drawing.Size(178, 24);
+            this.btnDodadiTel.Size = new System.Drawing.Size(184, 24);
             this.btnDodadiTel.TabIndex = 83;
-            this.btnDodadiTel.Text = "Додади телефон: ";
+            this.btnDodadiTel.Text = "Додади телефон:  ";
             this.btnDodadiTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDodadiTel.Click += new System.EventHandler(this.btnDodadiTel_Click);
             this.btnDodadiTel.MouseEnter += new System.EventHandler(this.btnDodadiTel_MouseEnter);

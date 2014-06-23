@@ -39,7 +39,7 @@ namespace SmetkaZaNaracka
 
         private void lbRegister_Click(object sender, EventArgs e)
         {
-            Register register = new Register(Conn);
+            DodavanjeRestoran register = new DodavanjeRestoran(Conn);
             register.Show();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace SmetkaZaNaracka
 {
-    partial class Register
+    partial class DodavanjeRestoran
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodavanjeRestoran));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);

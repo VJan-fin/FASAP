@@ -12,13 +12,13 @@ using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
-    public partial class Register : BackgroundForm
+    public partial class DodavanjeRestoran : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
         private int RestoranID { get; set; }
 
 
-        public Register(OracleConnection conn)
+        public DodavanjeRestoran(OracleConnection conn)
         {
             InitializeComponent();
             Conn = conn;
