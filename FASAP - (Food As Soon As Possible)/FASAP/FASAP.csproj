@@ -127,6 +127,11 @@
     </Compile>
     <Compile Include="UspesnostNaNaracka.Designer.cs">
       <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
+    <Compile Include="PregledPromet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledPromet.Designer.cs">
+      <DependentUpon>PregledPromet.cs</DependentUpon>
     </Compile>
     <Compile Include="Vraboteni\DodavanjePozicija.cs">
       <SubType>Form</SubType>
@@ -367,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PregledMeni.resx">
       <DependentUpon>PregledMeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledPromet.resx">
+      <DependentUpon>PregledPromet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
