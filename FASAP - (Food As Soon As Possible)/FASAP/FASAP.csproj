@@ -162,6 +162,97 @@
       <DependentUpon>Vraboteni.cs</DependentUpon>
     </Compile>
     <Compile Include="PomosniKlasi\BackgroundForm.cs" />
+    <Compile Include="Vraboteni\EmpStatsComparators.cs" />
+    <Compile Include="FasapPoceten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FasapPoceten.Designer.cs">
+      <DependentUpon>FasapPoceten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izvestai\Izv1PridonesVoPromet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvestai\Izv1PridonesVoPromet.Designer.cs">
+      <DependentUpon>Izv1PridonesVoPromet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Naracki\VklucuvaKey.cs" />
+    <Compile Include="Naracki\OnlineNarackaPodatoci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Naracki\OnlineNarackaPodatoci.Designer.cs">
+      <DependentUpon>OnlineNarackaPodatoci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Naracki\OnsiteNarackaPodatoci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Naracki\OnsiteNarackaPodatoci.Designer.cs">
+      <DependentUpon>OnsiteNarackaPodatoci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vraboteni\OrderEmpStats.cs" />
+    <Compile Include="Izvestai\PregledKvartalnaSostojba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvestai\PregledKvartalnaSostojba.Designer.cs">
+      <DependentUpon>PregledKvartalnaSostojba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izvestai\PregledPromet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvestai\PregledPromet.Designer.cs">
+      <DependentUpon>PregledPromet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PomosniKlasi\UspesnostNaNaracka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PomosniKlasi\UspesnostNaNaracka.Designer.cs">
+      <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\DodavanjePozicija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\DodavanjePozicija.Designer.cs">
+      <DependentUpon>DodavanjePozicija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vraboteni\Dostavuvac.cs" />
+    <Compile Include="MenadziranjeVraboteni\UpravuvanjeSmetki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\UpravuvanjeSmetki.Designer.cs">
+      <DependentUpon>UpravuvanjeSmetki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\EmployeeComparators.cs" />
+    <Compile Include="Vraboteni\Kelner.cs" />
+    <Compile Include="MenadziranjeVraboteni\OrderEmployees.cs" />
+    <Compile Include="MenadziranjeVraboteni\VrabotenInfo.cs" />
+    <Compile Include="MenadziranjeVraboteni\ListaVraboteni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\ListaVraboteni.Designer.cs">
+      <DependentUpon>ListaVraboteni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vraboteni\ManagerC.cs" />
+    <Compile Include="Vraboteni\ManagerForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vraboteni\ManagerForma.Designer.cs">
+      <DependentUpon>ManagerForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meni\Dodatok.cs" />
+    <Compile Include="Nepotrebni formi\FasapNaracka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nepotrebni formi\FasapNaracka.Designer.cs">
+      <DependentUpon>FasapNaracka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nepotrebni formi\FasapPocetenEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nepotrebni formi\FasapPocetenEkran.Designer.cs">
+      <DependentUpon>FasapPocetenEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PomosniKlasi\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PomosniKlasi\BackgroundForm.Designer.cs">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
     </Compile>
@@ -195,6 +286,11 @@
     <Compile Include="InfoForma.cs" />
     <Compile Include="InfoForma.designer.cs">
       <DependentUpon>InfoForma.cs</DependentUpon>
+    <Compile Include="Naracki\IzvrsuvanjeNaracka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Naracki\IzvrsuvanjeNaracka.Designer.cs">
+      <DependentUpon>IzvrsuvanjeNaracka.cs</DependentUpon>
     </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
@@ -205,6 +301,12 @@
     <Compile Include="Login.cs" />
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nepotrebni formi\Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nepotrebni formi\Manager.designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="Meni\Meni.cs" />
     <Compile Include="Meni\MenuComponent.cs" />
@@ -246,12 +348,30 @@
     <Compile Include="PomosniKlasi\SearchButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RestoranKlasi\PregledInformacii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestoranKlasi\PregledInformacii.Designer.cs">
+      <DependentUpon>PregledInformacii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meni\PregledMeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meni\PregledMeni.Designer.cs">
+      <DependentUpon>PregledMeni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RestoranKlasi\DodavanjeRestoran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestoranKlasi\DodavanjeRestoran.designer.cs">
+      <DependentUpon>DodavanjeRestoran.cs</DependentUpon>
     </Compile>
     <Compile Include="RestoranKlasi\NameAscendingComparer.cs" />
     <Compile Include="RestoranKlasi\NameDescendingComparer.cs" />
@@ -274,6 +394,44 @@
     <EmbeddedResource Include="FasapPoceten.resx">
       <DependentUpon>FasapPoceten.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Vraboteni\Vraboten.cs" />
+    <Compile Include="Vraboteni\VrabotenForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vraboteni\VrabotenForma.designer.cs">
+      <DependentUpon>VrabotenForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nepotrebni formi\Vraboteni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nepotrebni formi\Vraboteni.Designer.cs">
+      <DependentUpon>Vraboteni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\DodavanjeVraboten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\DodavanjeVraboten.Designer.cs">
+      <DependentUpon>DodavanjeVraboten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\PregledVraboten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\PregledVraboten.Designer.cs">
+      <DependentUpon>PregledVraboten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vraboteni\VrabPrometProcent.cs" />
+    <EmbeddedResource Include="Nepotrebni formi\FasapNaracka.resx">
+      <DependentUpon>FasapNaracka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FasapPoceten.resx">
+      <DependentUpon>FasapPoceten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nepotrebni formi\FasapPocetenEkran.resx">
+      <DependentUpon>FasapPocetenEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PomosniKlasi\BackgroundForm.resx">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InfoForma.resx">
       <DependentUpon>InfoForma.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +443,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Izvestai\PregledPromet.resx">
       <DependentUpon>PregledPromet.cs</DependentUpon>
+    <EmbeddedResource Include="Naracki\IzvrsuvanjeNaracka.resx">
+      <DependentUpon>IzvrsuvanjeNaracka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
@@ -312,6 +472,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Naracki\IzvrsuvanjeNaracka.resx">
       <DependentUpon>IzvrsuvanjeNaracka.cs</DependentUpon>
+    <EmbeddedResource Include="Nepotrebni formi\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vraboteni\ManagerForma.resx">
+      <DependentUpon>ManagerForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Naracki\OnlineNarackaPodatoci.resx">
       <DependentUpon>OnlineNarackaPodatoci.cs</DependentUpon>
@@ -339,6 +504,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PomosniKlasi\UspesnostNaNaracka.resx">
       <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
+    <EmbeddedResource Include="RestoranKlasi\PregledInformacii.resx">
+      <DependentUpon>PregledInformacii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvestai\PregledKvartalnaSostojba.resx">
+      <DependentUpon>PregledKvartalnaSostojba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meni\PregledMeni.resx">
+      <DependentUpon>PregledMeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvestai\PregledPromet.resx">
+      <DependentUpon>PregledPromet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -356,9 +532,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vraboteni\ManagerForma.resx">
       <DependentUpon>ManagerForma.cs</DependentUpon>
+    <EmbeddedResource Include="PomosniKlasi\UspesnostNaNaracka.resx">
+      <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenadziranjeVraboteni\DodavanjePozicija.resx">
+      <DependentUpon>DodavanjePozicija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenadziranjeVraboteni\UpravuvanjeSmetki.resx">
+      <DependentUpon>UpravuvanjeSmetki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vraboteni\VrabotenForma.resx">
       <DependentUpon>VrabotenForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nepotrebni formi\Vraboteni.resx">
+      <DependentUpon>Vraboteni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenadziranjeVraboteni\DodavanjeVraboten.resx">
+      <DependentUpon>DodavanjeVraboten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenadziranjeVraboteni\ListaVraboteni.resx">
+      <DependentUpon>ListaVraboteni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenadziranjeVraboteni\PregledVraboten.resx">
+      <DependentUpon>PregledVraboten.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
