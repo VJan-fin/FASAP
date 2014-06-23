@@ -402,7 +402,8 @@ namespace SmetkaZaNaracka
         private void lblMeni1_MouseEnter(object sender, EventArgs e)
         {
             LabelFASAP lb = sender as LabelFASAP;
-            
+            if (lb == null)
+                MessageBox.Show("Ednakvo na null vo MouseEnter");
             if (lb.LblObject != null)
             {
                 Cursor = Cursors.Hand;
@@ -413,10 +414,12 @@ namespace SmetkaZaNaracka
         private void lblMeni1_MouseLeave(object sender, EventArgs e)
         {
             LabelFASAP lb = sender as LabelFASAP;
+            if (lb == null)
+                MessageBox.Show("Ednakvo na null vo MouseLeave");
             if (lb.LblObject != null)
             {
                 Cursor = Cursors.Default;
-                lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
            

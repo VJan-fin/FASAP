@@ -557,10 +557,8 @@
             this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.dbLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.dbLayoutPanel1.Size = new System.Drawing.Size(330, 462);
+            this.dbLayoutPanel1.Size = new System.Drawing.Size(376, 462);
             this.dbLayoutPanel1.TabIndex = 14;
-            this.dbLayoutPanel1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
-            this.dbLayoutPanel1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblRest8
             // 
@@ -571,11 +569,13 @@
             this.lblRest8.ForeColor = System.Drawing.Color.White;
             this.lblRest8.Image = ((System.Drawing.Image)(resources.GetObject("lblRest8.Image")));
             this.lblRest8.LblObject = null;
-            this.lblRest8.Location = new System.Drawing.Point(147, 377);
+            this.lblRest8.Location = new System.Drawing.Point(170, 377);
             this.lblRest8.Name = "lblRest8";
             this.lblRest8.Size = new System.Drawing.Size(35, 27);
             this.lblRest8.TabIndex = 17;
             this.lblRest8.Text = ": :";
+            this.lblRest8.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest8.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblRest7
             // 
@@ -586,11 +586,13 @@
             this.lblRest7.ForeColor = System.Drawing.Color.White;
             this.lblRest7.Image = ((System.Drawing.Image)(resources.GetObject("lblRest7.Image")));
             this.lblRest7.LblObject = null;
-            this.lblRest7.Location = new System.Drawing.Point(147, 331);
+            this.lblRest7.Location = new System.Drawing.Point(170, 331);
             this.lblRest7.Name = "lblRest7";
             this.lblRest7.Size = new System.Drawing.Size(35, 27);
             this.lblRest7.TabIndex = 16;
             this.lblRest7.Text = ": :";
+            this.lblRest7.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest7.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblRest6
             // 
@@ -601,18 +603,20 @@
             this.lblRest6.ForeColor = System.Drawing.Color.White;
             this.lblRest6.Image = ((System.Drawing.Image)(resources.GetObject("lblRest6.Image")));
             this.lblRest6.LblObject = null;
-            this.lblRest6.Location = new System.Drawing.Point(147, 285);
+            this.lblRest6.Location = new System.Drawing.Point(170, 285);
             this.lblRest6.Name = "lblRest6";
             this.lblRest6.Size = new System.Drawing.Size(35, 27);
             this.lblRest6.TabIndex = 15;
             this.lblRest6.Text = ": :";
+            this.lblRest6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // pbRestUp
             // 
             this.pbRestUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbRestUp.BackColor = System.Drawing.Color.Transparent;
             this.pbRestUp.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowUp;
-            this.pbRestUp.Location = new System.Drawing.Point(130, 5);
+            this.pbRestUp.Location = new System.Drawing.Point(153, 5);
             this.pbRestUp.Name = "pbRestUp";
             this.pbRestUp.Size = new System.Drawing.Size(70, 35);
             this.pbRestUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -628,7 +632,7 @@
             this.lblRest1.ForeColor = System.Drawing.Color.White;
             this.lblRest1.Image = ((System.Drawing.Image)(resources.GetObject("lblRest1.Image")));
             this.lblRest1.LblObject = null;
-            this.lblRest1.Location = new System.Drawing.Point(147, 55);
+            this.lblRest1.Location = new System.Drawing.Point(170, 55);
             this.lblRest1.Name = "lblRest1";
             this.lblRest1.Size = new System.Drawing.Size(35, 27);
             this.lblRest1.TabIndex = 2;
@@ -645,11 +649,13 @@
             this.lblRest2.ForeColor = System.Drawing.Color.White;
             this.lblRest2.Image = ((System.Drawing.Image)(resources.GetObject("lblRest2.Image")));
             this.lblRest2.LblObject = null;
-            this.lblRest2.Location = new System.Drawing.Point(147, 101);
+            this.lblRest2.Location = new System.Drawing.Point(170, 101);
             this.lblRest2.Name = "lblRest2";
             this.lblRest2.Size = new System.Drawing.Size(35, 27);
             this.lblRest2.TabIndex = 3;
             this.lblRest2.Text = ": :";
+            this.lblRest2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblRest3
             // 
@@ -660,11 +666,13 @@
             this.lblRest3.ForeColor = System.Drawing.Color.White;
             this.lblRest3.Image = ((System.Drawing.Image)(resources.GetObject("lblRest3.Image")));
             this.lblRest3.LblObject = null;
-            this.lblRest3.Location = new System.Drawing.Point(147, 147);
+            this.lblRest3.Location = new System.Drawing.Point(170, 147);
             this.lblRest3.Name = "lblRest3";
             this.lblRest3.Size = new System.Drawing.Size(35, 27);
             this.lblRest3.TabIndex = 4;
             this.lblRest3.Text = ": :";
+            this.lblRest3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblRest4
             // 
@@ -675,11 +683,13 @@
             this.lblRest4.ForeColor = System.Drawing.Color.White;
             this.lblRest4.Image = ((System.Drawing.Image)(resources.GetObject("lblRest4.Image")));
             this.lblRest4.LblObject = null;
-            this.lblRest4.Location = new System.Drawing.Point(147, 193);
+            this.lblRest4.Location = new System.Drawing.Point(170, 193);
             this.lblRest4.Name = "lblRest4";
             this.lblRest4.Size = new System.Drawing.Size(35, 27);
             this.lblRest4.TabIndex = 5;
             this.lblRest4.Text = ": :";
+            this.lblRest4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // lblRest5
             // 
@@ -690,17 +700,19 @@
             this.lblRest5.ForeColor = System.Drawing.Color.White;
             this.lblRest5.Image = ((System.Drawing.Image)(resources.GetObject("lblRest5.Image")));
             this.lblRest5.LblObject = null;
-            this.lblRest5.Location = new System.Drawing.Point(147, 239);
+            this.lblRest5.Location = new System.Drawing.Point(170, 239);
             this.lblRest5.Name = "lblRest5";
             this.lblRest5.Size = new System.Drawing.Size(35, 27);
             this.lblRest5.TabIndex = 6;
             this.lblRest5.Text = ": :";
+            this.lblRest5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
+            this.lblRest5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
             // 
             // pbRestDown
             // 
             this.pbRestDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbRestDown.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowDown;
-            this.pbRestDown.Location = new System.Drawing.Point(130, 420);
+            this.pbRestDown.Location = new System.Drawing.Point(153, 420);
             this.pbRestDown.Name = "pbRestDown";
             this.pbRestDown.Size = new System.Drawing.Size(70, 35);
             this.pbRestDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
