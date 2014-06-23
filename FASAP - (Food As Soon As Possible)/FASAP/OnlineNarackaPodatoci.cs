@@ -46,6 +46,8 @@ namespace SmetkaZaNaracka
 
         private void buttonFASAP2_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+                return;
             Online online = new Online(Naracka.NarackaID, Naracka.VkupnaCena, DateTime.Now, String.Format("{0} \"{1}\"", tbNaselenoMesto.Text, tbAdresa.Text), tbKontakt.Text, tbIme.Text, tbPrezime.Text);
             online.Stavki = Naracka.Stavki;
             if (online.VkupnaCena < Restoran.PragZaDostava)

@@ -527,7 +527,7 @@
             this.lblOpis.ForeColor = System.Drawing.Color.Khaki;
             this.lblOpis.Image = ((System.Drawing.Image)(resources.GetObject("lblOpis.Image")));
             this.lblOpis.LblObject = null;
-            this.lblOpis.Location = new System.Drawing.Point(718, 328);
+            this.lblOpis.Location = new System.Drawing.Point(718, 330);
             this.lblOpis.Name = "lblOpis";
             this.lblOpis.Size = new System.Drawing.Size(72, 27);
             this.lblOpis.TabIndex = 29;
@@ -542,7 +542,7 @@
             this.lblDodatok.ForeColor = System.Drawing.Color.Khaki;
             this.lblDodatok.Image = ((System.Drawing.Image)(resources.GetObject("lblDodatok.Image")));
             this.lblDodatok.LblObject = null;
-            this.lblDodatok.Location = new System.Drawing.Point(548, 544);
+            this.lblDodatok.Location = new System.Drawing.Point(549, 544);
             this.lblDodatok.Name = "lblDodatok";
             this.lblDodatok.Size = new System.Drawing.Size(111, 27);
             this.lblDodatok.TabIndex = 30;

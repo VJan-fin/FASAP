@@ -968,7 +968,7 @@
             this.btnPotvrdi.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnPotvrdi.ForeColor = System.Drawing.Color.Khaki;
             this.btnPotvrdi.Image = ((System.Drawing.Image)(resources.GetObject("btnPotvrdi.Image")));
-            this.btnPotvrdi.Location = new System.Drawing.Point(1076, 693);
+            this.btnPotvrdi.Location = new System.Drawing.Point(773, 693);
             this.btnPotvrdi.Name = "btnPotvrdi";
             this.btnPotvrdi.Size = new System.Drawing.Size(197, 66);
             this.btnPotvrdi.TabIndex = 35;
@@ -984,7 +984,7 @@
             this.btnOtkazi.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnOtkazi.ForeColor = System.Drawing.Color.Khaki;
             this.btnOtkazi.Image = ((System.Drawing.Image)(resources.GetObject("btnOtkazi.Image")));
-            this.btnOtkazi.Location = new System.Drawing.Point(773, 693);
+            this.btnOtkazi.Location = new System.Drawing.Point(1076, 693);
             this.btnOtkazi.Name = "btnOtkazi";
             this.btnOtkazi.Size = new System.Drawing.Size(197, 66);
             this.btnOtkazi.TabIndex = 36;

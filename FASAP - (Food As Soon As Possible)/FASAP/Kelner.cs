@@ -143,7 +143,7 @@ namespace SmetkaZaNaracka
                 {
                     Naracka nar;
                     if (Naracki.TryGetValue(obj.Value.VklucuvaKey.NarackaID, out nar))
-                        nar.Add(new OrderComponent(obj.Value, obj.Value.Kolicina));
+                        nar.AddA(new OrderComponent(obj.Value, obj.Value.Kolicina));
                 }
             }
 

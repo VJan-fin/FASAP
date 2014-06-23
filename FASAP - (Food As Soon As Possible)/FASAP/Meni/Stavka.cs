@@ -258,5 +258,41 @@ namespace SmetkaZaNaracka
         {
             Cena = cost;
         }
+
+        public override int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q)
+        {
+            OracleCommand myCommand = conn.CreateCommand();
+            myCommand.Transaction = myTrans;
+
+            myCommand.CommandText = "INSERT INTO VKLUCHUVA (RESTORAN_ID, NARACHKA_ID, VKLUCHUVA_ID, IME_MENI, STAVKA_ID, KOLICHINA_STAVKA) VALUES (:ResID, :NarID, :VkID, :ImeMeni, :StavkaID, :Kolicina)";
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("NarachkaID", OracleDbType.Int64);
+            prm.Value = narID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("VkID", OracleDbType.Int64);
+            prm.Value = vkID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("StavkaID", OracleDbType.Int64);
+            prm.Value = ID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("Kolicina", OracleDbType.Int64);
+            prm.Value = q;
+            myCommand.Parameters.Add(prm);
+
+            myCommand.ExecuteNonQuery();
+
+            return vkID + 1;
+        }
     }
 }

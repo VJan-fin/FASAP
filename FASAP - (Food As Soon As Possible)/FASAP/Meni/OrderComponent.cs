@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
 
 namespace SmetkaZaNaracka
 {
@@ -54,6 +55,11 @@ namespace SmetkaZaNaracka
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        public int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID)
+        {
+            return Item.SqlVklucuva(conn, myTrans, resID, narID, vkID, Quantity);
         }
     }
 }

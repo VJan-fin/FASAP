@@ -83,9 +83,6 @@ namespace SmetkaZaNaracka
             cmd.Parameters.Add(prm);
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
-            Naracka naracka;
-            //lista.Add(new Online(1, 1, DateTime.Now, "12", "12", "12", "12"));
-            //return lista;
             Dictionary<int, Naracka> Naracki = new Dictionary<int, Naracka>();
             while (dr.Read())
             {
@@ -143,7 +140,7 @@ namespace SmetkaZaNaracka
                 {
                     Naracka nar;
                     if (Naracki.TryGetValue(obj.Value.VklucuvaKey.NarackaID, out nar))
-                        nar.Add(new OrderComponent(obj.Value, obj.Value.Kolicina));
+                        nar.AddA(new OrderComponent(obj.Value, obj.Value.Kolicina));
                 }
             }
 

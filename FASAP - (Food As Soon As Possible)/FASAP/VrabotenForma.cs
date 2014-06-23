@@ -153,8 +153,6 @@ namespace SmetkaZaNaracka
                     lblKontakt.Text = os.Kontakt;
                 }
             }
-
-
         }
 
         private void lbl1_MouseEnter(object sender, EventArgs e)

@@ -517,14 +517,11 @@ namespace SmetkaZaNaracka
 
         private void PostaviNaracka()
         {
-            int Vkupno = 0;
-            foreach (var obj in Naracka.Stavki)
-                Vkupno += obj.ComputePrice();
             for (int i = 0; i < ListaKupeni.Count; i++)
                 if (i < Naracka.Stavki.Count)
                     ListaKupeni[i].UpdateObject(Naracka.Stavki[i + indKupeni]);
                 else ListaKupeni[i].UpdateObject(null);
-            lblCena.Text = Vkupno.ToString();
+            lblCena.Text = ((int)Naracka.VkupnaCena).ToString();
         }
 
         private void pictureBox17_Click(object sender, EventArgs e)
@@ -740,6 +737,14 @@ namespace SmetkaZaNaracka
             if (mbf.ShowDialog() == DialogResult.Yes)
             {
                 OnlineNarackaPodatoci onp = new OnlineNarackaPodatoci(Conn, Naracka, Restoran);
+                if (onp.ShowDialog() == DialogResult.Yes)
+                {
+                    Naracka = new Naracka(-1, 0, DateTime.Now);
+                }
+            }
+            else
+            {
+                OnsiteNarackaPodatoci onp = new OnsiteNarackaPodatoci(Conn, Naracka, Restoran);
                 if (onp.ShowDialog() == DialogResult.Yes)
                 {
                     Naracka = new Naracka(-1, 0, DateTime.Now);

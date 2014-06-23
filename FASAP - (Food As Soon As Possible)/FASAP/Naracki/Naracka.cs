@@ -21,9 +21,17 @@ namespace SmetkaZaNaracka.Narachki
             Stavki = new List<OrderComponent>();
         }
 
+        public void AddA(OrderComponent oc)
+        {
+            if (oc == null)
+                return;
+            Stavki.Add(oc);
+        }
+
         public void Add(OrderComponent oc)
         {
             int i = 0;
+            VkupnaCena += oc.ComputePrice();
             for (i = 0; i < Stavki.Count; i++)
                 if (oc.Equals(Stavki[i]))
                 {
@@ -32,7 +40,6 @@ namespace SmetkaZaNaracka.Narachki
                 }
             if (i == Stavki.Count)
                 Stavki.Add(oc);
-            VkupnaCena += oc.ComputePrice();
         }
 
         public void Remove(OrderComponent oc)

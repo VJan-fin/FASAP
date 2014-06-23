@@ -200,6 +200,11 @@ namespace SmetkaZaNaracka
         public override void SetCost(int cost)
         {
         }
+
+        public override int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

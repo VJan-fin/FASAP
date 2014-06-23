@@ -70,5 +70,7 @@ namespace SmetkaZaNaracka
         public abstract void SqlActivate(OracleConnection conn, int resID);
 
         public abstract void SQLUpdate(OracleConnection conn, int resID);
+
+        public abstract int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q);
     }
 }

@@ -109,6 +109,12 @@
     <Compile Include="OnlineNarackaPodatoci.Designer.cs">
       <DependentUpon>OnlineNarackaPodatoci.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnsiteNarackaPodatoci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnsiteNarackaPodatoci.Designer.cs">
+      <DependentUpon>OnsiteNarackaPodatoci.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderEmpStats.cs" />
     <Compile Include="PregledKvartalnaSostojba.cs">
       <SubType>Form</SubType>
@@ -337,6 +343,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForma.resx">
       <DependentUpon>ManagerForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnlineNarackaPodatoci.resx">
+      <DependentUpon>OnlineNarackaPodatoci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnsiteNarackaPodatoci.resx">
+      <DependentUpon>OnsiteNarackaPodatoci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PomosniKlasi\MessageBoxForm.resx">
       <DependentUpon>MessageBoxForm.cs</DependentUpon>

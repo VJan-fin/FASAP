@@ -52,17 +52,6 @@
             this.lblNaracano = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP13 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP7 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP10 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP12 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP14 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP15 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP16 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP17 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP18 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP19 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP20 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP21 = new SmetkaZaNaracka.LabelFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +72,7 @@
             this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
             this.labelFASAP1.Location = new System.Drawing.Point(43, 34);
             this.labelFASAP1.Name = "labelFASAP1";
@@ -96,6 +86,7 @@
             this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
             this.labelFASAP2.Location = new System.Drawing.Point(43, 173);
             this.labelFASAP2.Name = "labelFASAP2";
@@ -120,6 +111,7 @@
             this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP3.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
             this.labelFASAP3.LblObject = null;
             this.labelFASAP3.Location = new System.Drawing.Point(43, 319);
             this.labelFASAP3.Name = "labelFASAP3";
@@ -133,6 +125,7 @@
             this.labelFASAP4.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP4.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
             this.labelFASAP4.LblObject = null;
             this.labelFASAP4.Location = new System.Drawing.Point(43, 481);
             this.labelFASAP4.Name = "labelFASAP4";
@@ -157,6 +150,7 @@
             this.labelFASAP5.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP5.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
             this.labelFASAP5.LblObject = null;
             this.labelFASAP5.Location = new System.Drawing.Point(43, 647);
             this.labelFASAP5.Name = "labelFASAP5";
@@ -192,6 +186,7 @@
             this.labelFASAP6.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP6.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP6.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
             this.labelFASAP6.LblObject = null;
             this.labelFASAP6.Location = new System.Drawing.Point(751, 17);
             this.labelFASAP6.Name = "labelFASAP6";
@@ -204,6 +199,7 @@
             this.lblPragZaDostava.BackColor = System.Drawing.Color.Transparent;
             this.lblPragZaDostava.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPragZaDostava.ForeColor = System.Drawing.Color.Khaki;
+            this.lblPragZaDostava.Image = ((System.Drawing.Image)(resources.GetObject("lblPragZaDostava.Image")));
             this.lblPragZaDostava.LblObject = null;
             this.lblPragZaDostava.Location = new System.Drawing.Point(751, 44);
             this.lblPragZaDostava.Name = "lblPragZaDostava";
@@ -216,6 +212,7 @@
             this.lblNaplataZaDostava.BackColor = System.Drawing.Color.Transparent;
             this.lblNaplataZaDostava.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNaplataZaDostava.ForeColor = System.Drawing.Color.Khaki;
+            this.lblNaplataZaDostava.Image = ((System.Drawing.Image)(resources.GetObject("lblNaplataZaDostava.Image")));
             this.lblNaplataZaDostava.LblObject = null;
             this.lblNaplataZaDostava.Location = new System.Drawing.Point(751, 184);
             this.lblNaplataZaDostava.Name = "lblNaplataZaDostava";
@@ -229,6 +226,7 @@
             this.labelFASAP9.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP9.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP9.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP9.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP9.Image")));
             this.labelFASAP9.LblObject = null;
             this.labelFASAP9.Location = new System.Drawing.Point(751, 157);
             this.labelFASAP9.Name = "labelFASAP9";
@@ -255,6 +253,7 @@
             this.labelFASAP11.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP11.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP11.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP11.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP11.Image")));
             this.labelFASAP11.LblObject = null;
             this.labelFASAP11.Location = new System.Drawing.Point(751, 454);
             this.labelFASAP11.Name = "labelFASAP11";
@@ -269,7 +268,7 @@
             this.buttonFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.buttonFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP1.Image")));
-            this.buttonFASAP1.Location = new System.Drawing.Point(664, 660);
+            this.buttonFASAP1.Location = new System.Drawing.Point(903, 660);
             this.buttonFASAP1.Name = "buttonFASAP1";
             this.buttonFASAP1.Size = new System.Drawing.Size(193, 52);
             this.buttonFASAP1.TabIndex = 21;
@@ -285,7 +284,7 @@
             this.buttonFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.buttonFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP2.Image")));
-            this.buttonFASAP2.Location = new System.Drawing.Point(895, 660);
+            this.buttonFASAP2.Location = new System.Drawing.Point(669, 660);
             this.buttonFASAP2.Name = "buttonFASAP2";
             this.buttonFASAP2.Size = new System.Drawing.Size(191, 52);
             this.buttonFASAP2.TabIndex = 22;
@@ -304,6 +303,7 @@
             this.lblNaracano.BackColor = System.Drawing.Color.Transparent;
             this.lblNaracano.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNaracano.ForeColor = System.Drawing.Color.Khaki;
+            this.lblNaracano.Image = ((System.Drawing.Image)(resources.GetObject("lblNaracano.Image")));
             this.lblNaracano.LblObject = null;
             this.lblNaracano.Location = new System.Drawing.Point(751, 334);
             this.lblNaracano.Name = "lblNaracano";
@@ -317,6 +317,7 @@
             this.labelFASAP13.BackColor = System.Drawing.Color.Transparent;
             this.labelFASAP13.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP13.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP13.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP13.Image")));
             this.labelFASAP13.LblObject = null;
             this.labelFASAP13.Location = new System.Drawing.Point(753, 307);
             this.labelFASAP13.Name = "labelFASAP13";
@@ -338,188 +339,26 @@
             this.labelFASAP7.TabIndex = 5;
             this.labelFASAP7.Text = "Име:";
             // 
-            // labelFASAP8
-            // 
-            this.labelFASAP8.AutoSize = true;
-            this.labelFASAP8.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP8.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP8.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP8.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP8.Image")));
-            this.labelFASAP8.LblObject = null;
-            this.labelFASAP8.Location = new System.Drawing.Point(43, 173);
-            this.labelFASAP8.Name = "labelFASAP8";
-            this.labelFASAP8.Size = new System.Drawing.Size(114, 27);
-            this.labelFASAP8.TabIndex = 7;
-            this.labelFASAP8.Text = "Презиме:";
-            // 
-            // labelFASAP10
-            // 
-            this.labelFASAP10.AutoSize = true;
-            this.labelFASAP10.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP10.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP10.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP10.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP10.Image")));
-            this.labelFASAP10.LblObject = null;
-            this.labelFASAP10.Location = new System.Drawing.Point(43, 319);
-            this.labelFASAP10.Name = "labelFASAP10";
-            this.labelFASAP10.Size = new System.Drawing.Size(106, 27);
-            this.labelFASAP10.TabIndex = 9;
-            this.labelFASAP10.Text = "Контакт:";
-            // 
-            // labelFASAP12
-            // 
-            this.labelFASAP12.AutoSize = true;
-            this.labelFASAP12.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP12.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP12.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP12.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP12.Image")));
-            this.labelFASAP12.LblObject = null;
-            this.labelFASAP12.Location = new System.Drawing.Point(43, 481);
-            this.labelFASAP12.Name = "labelFASAP12";
-            this.labelFASAP12.Size = new System.Drawing.Size(194, 27);
-            this.labelFASAP12.TabIndex = 11;
-            this.labelFASAP12.Text = "Населено место:";
-            // 
-            // labelFASAP14
-            // 
-            this.labelFASAP14.AutoSize = true;
-            this.labelFASAP14.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP14.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP14.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP14.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP14.Image")));
-            this.labelFASAP14.LblObject = null;
-            this.labelFASAP14.Location = new System.Drawing.Point(43, 647);
-            this.labelFASAP14.Name = "labelFASAP14";
-            this.labelFASAP14.Size = new System.Drawing.Size(97, 27);
-            this.labelFASAP14.TabIndex = 13;
-            this.labelFASAP14.Text = "Адреса:";
-            // 
-            // labelFASAP15
-            // 
-            this.labelFASAP15.AutoSize = true;
-            this.labelFASAP15.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP15.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP15.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP15.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP15.Image")));
-            this.labelFASAP15.LblObject = null;
-            this.labelFASAP15.Location = new System.Drawing.Point(751, 17);
-            this.labelFASAP15.Name = "labelFASAP15";
-            this.labelFASAP15.Size = new System.Drawing.Size(184, 27);
-            this.labelFASAP15.TabIndex = 15;
-            this.labelFASAP15.Text = "Праг за достава";
-            // 
-            // labelFASAP16
-            // 
-            this.labelFASAP16.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP16.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP16.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP16.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP16.Image")));
-            this.labelFASAP16.LblObject = null;
-            this.labelFASAP16.Location = new System.Drawing.Point(751, 44);
-            this.labelFASAP16.Name = "labelFASAP16";
-            this.labelFASAP16.Size = new System.Drawing.Size(244, 66);
-            this.labelFASAP16.TabIndex = 16;
-            this.labelFASAP16.Text = "0";
-            // 
-            // labelFASAP17
-            // 
-            this.labelFASAP17.AutoSize = true;
-            this.labelFASAP17.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP17.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP17.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP17.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP17.Image")));
-            this.labelFASAP17.LblObject = null;
-            this.labelFASAP17.Location = new System.Drawing.Point(751, 157);
-            this.labelFASAP17.Name = "labelFASAP17";
-            this.labelFASAP17.Size = new System.Drawing.Size(222, 27);
-            this.labelFASAP17.TabIndex = 17;
-            this.labelFASAP17.Text = "Наплата за достава";
-            // 
-            // labelFASAP18
-            // 
-            this.labelFASAP18.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP18.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP18.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP18.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP18.Image")));
-            this.labelFASAP18.LblObject = null;
-            this.labelFASAP18.Location = new System.Drawing.Point(751, 184);
-            this.labelFASAP18.Name = "labelFASAP18";
-            this.labelFASAP18.Size = new System.Drawing.Size(244, 66);
-            this.labelFASAP18.TabIndex = 18;
-            this.labelFASAP18.Text = "0";
-            // 
-            // labelFASAP19
-            // 
-            this.labelFASAP19.AutoSize = true;
-            this.labelFASAP19.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP19.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP19.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP19.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP19.Image")));
-            this.labelFASAP19.LblObject = null;
-            this.labelFASAP19.Location = new System.Drawing.Point(751, 454);
-            this.labelFASAP19.Name = "labelFASAP19";
-            this.labelFASAP19.Size = new System.Drawing.Size(88, 27);
-            this.labelFASAP19.TabIndex = 19;
-            this.labelFASAP19.Text = "Вкупно";
-            // 
-            // labelFASAP20
-            // 
-            this.labelFASAP20.AutoSize = true;
-            this.labelFASAP20.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP20.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
-            this.labelFASAP20.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP20.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP20.Image")));
-            this.labelFASAP20.LblObject = null;
-            this.labelFASAP20.Location = new System.Drawing.Point(753, 307);
-            this.labelFASAP20.Name = "labelFASAP20";
-            this.labelFASAP20.Size = new System.Drawing.Size(122, 27);
-            this.labelFASAP20.TabIndex = 23;
-            this.labelFASAP20.Text = "Нарачано:";
-            // 
-            // labelFASAP21
-            // 
-            this.labelFASAP21.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP21.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP21.ForeColor = System.Drawing.Color.Khaki;
-            this.labelFASAP21.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP21.Image")));
-            this.labelFASAP21.LblObject = null;
-            this.labelFASAP21.Location = new System.Drawing.Point(751, 334);
-            this.labelFASAP21.Name = "labelFASAP21";
-            this.labelFASAP21.Size = new System.Drawing.Size(244, 66);
-            this.labelFASAP21.TabIndex = 24;
-            this.labelFASAP21.Text = "0";
-            // 
             // OnlineNarackaPodatoci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.labelFASAP21);
             this.Controls.Add(this.lblNaracano);
-            this.Controls.Add(this.labelFASAP20);
             this.Controls.Add(this.labelFASAP13);
             this.Controls.Add(this.buttonFASAP2);
             this.Controls.Add(this.buttonFASAP1);
             this.Controls.Add(this.lblVkupno);
-            this.Controls.Add(this.labelFASAP19);
-            this.Controls.Add(this.labelFASAP18);
             this.Controls.Add(this.labelFASAP11);
-            this.Controls.Add(this.labelFASAP17);
             this.Controls.Add(this.lblNaplataZaDostava);
-            this.Controls.Add(this.labelFASAP16);
             this.Controls.Add(this.labelFASAP9);
-            this.Controls.Add(this.labelFASAP15);
             this.Controls.Add(this.lblPragZaDostava);
             this.Controls.Add(this.labelFASAP6);
-            this.Controls.Add(this.labelFASAP14);
             this.Controls.Add(this.tbKontakt);
             this.Controls.Add(this.labelFASAP5);
-            this.Controls.Add(this.labelFASAP12);
             this.Controls.Add(this.tbAdresa);
             this.Controls.Add(this.labelFASAP4);
-            this.Controls.Add(this.labelFASAP10);
             this.Controls.Add(this.tbNaselenoMesto);
-            this.Controls.Add(this.labelFASAP8);
             this.Controls.Add(this.labelFASAP3);
             this.Controls.Add(this.labelFASAP2);
             this.Controls.Add(this.labelFASAP7);
@@ -536,32 +375,21 @@
             this.Controls.SetChildIndex(this.labelFASAP7, 0);
             this.Controls.SetChildIndex(this.labelFASAP2, 0);
             this.Controls.SetChildIndex(this.labelFASAP3, 0);
-            this.Controls.SetChildIndex(this.labelFASAP8, 0);
             this.Controls.SetChildIndex(this.tbNaselenoMesto, 0);
-            this.Controls.SetChildIndex(this.labelFASAP10, 0);
             this.Controls.SetChildIndex(this.labelFASAP4, 0);
             this.Controls.SetChildIndex(this.tbAdresa, 0);
-            this.Controls.SetChildIndex(this.labelFASAP12, 0);
             this.Controls.SetChildIndex(this.labelFASAP5, 0);
             this.Controls.SetChildIndex(this.tbKontakt, 0);
-            this.Controls.SetChildIndex(this.labelFASAP14, 0);
             this.Controls.SetChildIndex(this.labelFASAP6, 0);
             this.Controls.SetChildIndex(this.lblPragZaDostava, 0);
-            this.Controls.SetChildIndex(this.labelFASAP15, 0);
             this.Controls.SetChildIndex(this.labelFASAP9, 0);
-            this.Controls.SetChildIndex(this.labelFASAP16, 0);
             this.Controls.SetChildIndex(this.lblNaplataZaDostava, 0);
-            this.Controls.SetChildIndex(this.labelFASAP17, 0);
             this.Controls.SetChildIndex(this.labelFASAP11, 0);
-            this.Controls.SetChildIndex(this.labelFASAP18, 0);
-            this.Controls.SetChildIndex(this.labelFASAP19, 0);
             this.Controls.SetChildIndex(this.lblVkupno, 0);
             this.Controls.SetChildIndex(this.buttonFASAP1, 0);
             this.Controls.SetChildIndex(this.buttonFASAP2, 0);
             this.Controls.SetChildIndex(this.labelFASAP13, 0);
-            this.Controls.SetChildIndex(this.labelFASAP20, 0);
             this.Controls.SetChildIndex(this.lblNaracano, 0);
-            this.Controls.SetChildIndex(this.labelFASAP21, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -591,17 +419,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private LabelFASAP lblNaracano;
         private LabelFASAP labelFASAP13;
-        private LabelFASAP labelFASAP21;
-        private LabelFASAP labelFASAP20;
-        private LabelFASAP labelFASAP19;
-        private LabelFASAP labelFASAP18;
-        private LabelFASAP labelFASAP17;
-        private LabelFASAP labelFASAP16;
-        private LabelFASAP labelFASAP15;
-        private LabelFASAP labelFASAP14;
-        private LabelFASAP labelFASAP12;
-        private LabelFASAP labelFASAP10;
-        private LabelFASAP labelFASAP8;
         private LabelFASAP labelFASAP7;
     }
 }

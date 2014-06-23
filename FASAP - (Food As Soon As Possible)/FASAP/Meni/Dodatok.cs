@@ -129,6 +129,50 @@ namespace SmetkaZaNaracka
 
                 throw new NotImplementedException("Проверете ја вашата конекција");
             }
+
+
+        }
+
+        public override int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q)
+        {
+            OracleCommand myCommand = conn.CreateCommand();
+            myCommand.Transaction = myTrans;
+
+            int pomID = Osnovna.SqlVklucuva(conn, myTrans, resID, narID, vkID, q);
+            myCommand.CommandText = "INSERT INTO VKLUCHUVA (RESTORAN_ID, NARACHKA_ID, VKLUCHUVA_ID, IME_MENI, STAVKA_ID, KOLICHINA_STAVKA, DODATOK_ID) VALUES (:ResID, :NarID, :VkID, :ImeMeni, :StavkaID, :Kolicina, :DodatokID)";
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("NarachkaID", OracleDbType.Int64);
+            prm.Value = narID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("VkID", OracleDbType.Int64);
+            prm.Value = pomID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("StavkaID", OracleDbType.Int64);
+            prm.Value = ID;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("Kolicina", OracleDbType.Int64);
+            prm.Value = q;
+            myCommand.Parameters.Add(prm);
+
+            prm = new OracleParameter("DodatokID", OracleDbType.Int64);
+            prm.Value = pomID - 1;
+            myCommand.Parameters.Add(prm);
+
+
+            myCommand.ExecuteNonQuery();
+
+            return pomID + 1;
         }
     }
 }

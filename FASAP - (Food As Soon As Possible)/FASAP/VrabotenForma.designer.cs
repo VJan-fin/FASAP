@@ -676,7 +676,7 @@
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
-            this.labelFASAP1.Location = new System.Drawing.Point(1008, 71);
+            this.labelFASAP1.Location = new System.Drawing.Point(1008, 72);
             this.labelFASAP1.Name = "labelFASAP1";
             this.labelFASAP1.Size = new System.Drawing.Size(88, 27);
             this.labelFASAP1.TabIndex = 36;
