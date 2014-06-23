@@ -43,7 +43,7 @@
             this.labelFASAP20 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP19 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP15 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.lblPromet4 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblPromet44 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP11 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP12 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP13 = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -53,7 +53,7 @@
             this.lblPromet1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPromet2 = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.labelFASAP17 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblPromet3 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblDodatok2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP9 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP18 = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -62,6 +62,8 @@
             this.lblImeRestoran = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.btnTekoven = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.labelFASAP5 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblPromet = new SmetkaZaNaracka.LabelFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftG)).BeginInit();
             this.dbLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightG)).BeginInit();
@@ -74,7 +76,7 @@
             this.labelFASAP29.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP29.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP29.Image")));
             this.labelFASAP29.LblObject = null;
-            this.labelFASAP29.Location = new System.Drawing.Point(850, 125);
+            this.labelFASAP29.Location = new System.Drawing.Point(823, 119);
             this.labelFASAP29.Name = "labelFASAP29";
             this.labelFASAP29.Size = new System.Drawing.Size(129, 34);
             this.labelFASAP29.TabIndex = 53;
@@ -157,7 +159,7 @@
             // 
             this.pbLeftG.BackColor = System.Drawing.Color.Transparent;
             this.pbLeftG.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowLeft;
-            this.pbLeftG.Location = new System.Drawing.Point(824, 172);
+            this.pbLeftG.Location = new System.Drawing.Point(797, 166);
             this.pbLeftG.Name = "pbLeftG";
             this.pbLeftG.Size = new System.Drawing.Size(33, 37);
             this.pbLeftG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +173,7 @@
             this.lblGodina.ForeColor = System.Drawing.Color.Khaki;
             this.lblGodina.Image = ((System.Drawing.Image)(resources.GetObject("lblGodina.Image")));
             this.lblGodina.LblObject = null;
-            this.lblGodina.Location = new System.Drawing.Point(863, 172);
+            this.lblGodina.Location = new System.Drawing.Point(836, 166);
             this.lblGodina.Name = "lblGodina";
             this.lblGodina.Size = new System.Drawing.Size(101, 37);
             this.lblGodina.TabIndex = 50;
@@ -193,7 +195,7 @@
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP15, 4, 3);
             this.dbLayoutPanel1.Controls.Add(this.lblSostojba4, 5, 4);
             this.dbLayoutPanel1.Controls.Add(this.lblDodatok4, 3, 4);
-            this.dbLayoutPanel1.Controls.Add(this.lblPromet4, 1, 4);
+            this.dbLayoutPanel1.Controls.Add(this.lblPromet44, 1, 4);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP11, 0, 3);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP12, 1, 3);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP13, 2, 3);
@@ -204,7 +206,7 @@
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP2, 1, 0);
             this.dbLayoutPanel1.Controls.Add(this.lblPromet2, 1, 1);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP3, 2, 0);
-            this.dbLayoutPanel1.Controls.Add(this.labelFASAP17, 2, 1);
+            this.dbLayoutPanel1.Controls.Add(this.lblPromet3, 2, 1);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP4, 3, 0);
             this.dbLayoutPanel1.Controls.Add(this.lblDodatok2, 3, 1);
             this.dbLayoutPanel1.Controls.Add(this.labelFASAP9, 4, 0);
@@ -282,20 +284,20 @@
             this.labelFASAP15.TabIndex = 70;
             this.labelFASAP15.Text = "Ноември ";
             // 
-            // lblPromet4
+            // lblPromet44
             // 
-            this.lblPromet4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPromet4.AutoSize = true;
-            this.lblPromet4.BackColor = System.Drawing.Color.Transparent;
-            this.lblPromet4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPromet4.ForeColor = System.Drawing.Color.White;
-            this.lblPromet4.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet4.Image")));
-            this.lblPromet4.LblObject = null;
-            this.lblPromet4.Location = new System.Drawing.Point(239, 325);
-            this.lblPromet4.Name = "lblPromet4";
-            this.lblPromet4.Size = new System.Drawing.Size(166, 29);
-            this.lblPromet4.TabIndex = 13;
-            this.lblPromet4.Text = "labelFASAP14";
+            this.lblPromet44.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPromet44.AutoSize = true;
+            this.lblPromet44.BackColor = System.Drawing.Color.Transparent;
+            this.lblPromet44.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPromet44.ForeColor = System.Drawing.Color.White;
+            this.lblPromet44.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet44.Image")));
+            this.lblPromet44.LblObject = null;
+            this.lblPromet44.Location = new System.Drawing.Point(239, 325);
+            this.lblPromet44.Name = "lblPromet44";
+            this.lblPromet44.Size = new System.Drawing.Size(166, 29);
+            this.lblPromet44.TabIndex = 13;
+            this.lblPromet44.Text = "labelFASAP14";
             // 
             // labelFASAP11
             // 
@@ -425,20 +427,20 @@
             this.lblPromet2.TabIndex = 11;
             this.lblPromet2.Text = "labelFASAP12";
             // 
-            // labelFASAP17
+            // lblPromet3
             // 
-            this.labelFASAP17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelFASAP17.AutoSize = true;
-            this.labelFASAP17.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP17.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFASAP17.ForeColor = System.Drawing.Color.White;
-            this.labelFASAP17.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP17.Image")));
-            this.labelFASAP17.LblObject = null;
-            this.labelFASAP17.Location = new System.Drawing.Point(454, 117);
-            this.labelFASAP17.Name = "labelFASAP17";
-            this.labelFASAP17.Size = new System.Drawing.Size(166, 29);
-            this.labelFASAP17.TabIndex = 57;
-            this.labelFASAP17.Text = "labelFASAP11";
+            this.lblPromet3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPromet3.AutoSize = true;
+            this.lblPromet3.BackColor = System.Drawing.Color.Transparent;
+            this.lblPromet3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPromet3.ForeColor = System.Drawing.Color.White;
+            this.lblPromet3.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet3.Image")));
+            this.lblPromet3.LblObject = null;
+            this.lblPromet3.Location = new System.Drawing.Point(454, 117);
+            this.lblPromet3.Name = "lblPromet3";
+            this.lblPromet3.Size = new System.Drawing.Size(166, 29);
+            this.lblPromet3.TabIndex = 57;
+            this.lblPromet3.Text = "labelFASAP11";
             // 
             // lblDodatok2
             // 
@@ -502,7 +504,7 @@
             // 
             this.pbRightG.BackColor = System.Drawing.Color.Transparent;
             this.pbRightG.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
-            this.pbRightG.Location = new System.Drawing.Point(970, 172);
+            this.pbRightG.Location = new System.Drawing.Point(943, 166);
             this.pbRightG.Name = "pbRightG";
             this.pbRightG.Size = new System.Drawing.Size(31, 37);
             this.pbRightG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -543,18 +545,46 @@
             this.btnTekoven.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTekoven.ForeColor = System.Drawing.Color.Khaki;
             this.btnTekoven.Image = ((System.Drawing.Image)(resources.GetObject("btnTekoven.Image")));
-            this.btnTekoven.Location = new System.Drawing.Point(1060, 153);
+            this.btnTekoven.Location = new System.Drawing.Point(1033, 147);
             this.btnTekoven.Name = "btnTekoven";
             this.btnTekoven.Size = new System.Drawing.Size(130, 56);
             this.btnTekoven.TabIndex = 54;
             this.btnTekoven.Text = "Тековна година";
             this.btnTekoven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelFASAP5
+            // 
+            this.labelFASAP5.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP5.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
+            this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
+            this.labelFASAP5.LblObject = null;
+            this.labelFASAP5.Location = new System.Drawing.Point(852, 271);
+            this.labelFASAP5.Name = "labelFASAP5";
+            this.labelFASAP5.Size = new System.Drawing.Size(179, 37);
+            this.labelFASAP5.TabIndex = 58;
+            this.labelFASAP5.Text = "Вкупен промет: ";
+            // 
+            // lblPromet
+            // 
+            this.lblPromet.BackColor = System.Drawing.Color.Transparent;
+            this.lblPromet.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblPromet.ForeColor = System.Drawing.Color.Khaki;
+            this.lblPromet.Image = ((System.Drawing.Image)(resources.GetObject("lblPromet.Image")));
+            this.lblPromet.LblObject = null;
+            this.lblPromet.Location = new System.Drawing.Point(1065, 271);
+            this.lblPromet.Name = "lblPromet";
+            this.lblPromet.Size = new System.Drawing.Size(186, 37);
+            this.lblPromet.TabIndex = 57;
+            this.lblPromet.Text = "labelFASAP1";
+            // 
             // PregledPromet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.labelFASAP5);
+            this.Controls.Add(this.lblPromet);
             this.Controls.Add(this.labelFASAP29);
             this.Controls.Add(this.pbLeftG);
             this.Controls.Add(this.lblGodina);
@@ -575,6 +605,8 @@
             this.Controls.SetChildIndex(this.lblGodina, 0);
             this.Controls.SetChildIndex(this.pbLeftG, 0);
             this.Controls.SetChildIndex(this.labelFASAP29, 0);
+            this.Controls.SetChildIndex(this.lblPromet, 0);
+            this.Controls.SetChildIndex(this.labelFASAP5, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftG)).EndInit();
             this.dbLayoutPanel1.ResumeLayout(false);
             this.dbLayoutPanel1.PerformLayout();
@@ -598,7 +630,7 @@
         private LabelFASAP lblDodatok2;
         private LabelFASAP lblPromet1;
         private LabelFASAP lblPromet2;
-        private LabelFASAP lblPromet4;
+        private LabelFASAP lblPromet44;
         private LabelFASAP labelFASAP1;
         private System.Windows.Forms.PictureBox pbRightG;
         private LabelFASAP lblImeRestoran;
@@ -616,7 +648,9 @@
         private LabelFASAP labelFASAP20;
         private LabelFASAP labelFASAP19;
         private LabelFASAP labelFASAP18;
-        private LabelFASAP labelFASAP17;
+        private LabelFASAP lblPromet3;
         private LabelFASAP labelFASAP2;
+        private LabelFASAP labelFASAP5;
+        private LabelFASAP lblPromet;
     }
 }

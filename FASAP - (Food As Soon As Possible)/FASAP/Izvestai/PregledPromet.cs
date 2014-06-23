@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,20 +20,10 @@ namespace SmetkaZaNaracka
 
         private int tekovnaGodina { get; set; }
         /// <summary>
-        /// Pomosna lista koja gi sodrzi prvite 4 meseci vo
-        /// godinata: januari, fevruari, mart i april
+        /// Pomosna lista koja gi sodrzi poziciite vo
+        /// koi treba da se vnesat podatocite za prometot
         /// </summary>
-        private List<LabelFASAP> PrometMeseci1234 { get; set; }
-        /// <summary>
-        /// Pomosna lista koja gi sodrzi vtorite 4 meseci vo
-        /// godinata: maj, juni, juli i avgust
-        /// </summary>
-        private List<LabelFASAP> PrometMeseci5678 { get; set; }
-        /// <summary>
-        /// Pomosna lista koja gi sodrzi tretite 4 meseci vo
-        /// godinata: septemvri, oktomvri, noemvri i dekemvri
-        /// </summary>
-        private List<LabelFASAP> PrometMeseci9101112 { get; set; }
+        private List<LabelFASAP> PrometMeseci { get; set; }
 
         public PregledPromet(OracleConnection conn, Restoran rest)
         {
@@ -44,7 +37,7 @@ namespace SmetkaZaNaracka
         {
             InitializeComponent();
 
-            this.Restoran = new Restoran() { RestoranID = 1, Ime = "Гостилница Лира" };
+            this.Restoran = new Restoran() { RestoranID = 1, Ime = "Ãîñòèëíèöà Ëèðà" };
 
             string oradb = "Data Source=(DESCRIPTION="
           + "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1620))"
@@ -66,9 +59,96 @@ namespace SmetkaZaNaracka
             this.lblGodina.Text = this.tekovnaGodina.ToString();
             this.lblImeRestoran.Text = this.Restoran.Ime + " ";
 
-            
+            /*this.PrometMeseci = new List<LabelFASAP>();
+            this.PrometMeseci.Add(this.lblPromet1);
+            this.PrometMeseci.Add(this.lblPromet2);
+            this.PrometMeseci.Add(this.lblPromet3);
+            this.PrometMeseci.Add(this.lblPromet4);
+            this.PrometMeseci.Add(this.lblPromet5);
+            this.PrometMeseci.Add(this.lblPromet6);
+            this.PrometMeseci.Add(this.lblPromet7);
+            this.PrometMeseci.Add(this.lblPromet8);
+            this.PrometMeseci.Add(this.lblPromet9);
+            this.PrometMeseci.Add(this.lblPromet10);
+            this.PrometMeseci.Add(this.lblPromet11);
+            this.PrometMeseci.Add(this.lblPromet12);*/
 
-            //this.ObnoviEkran();
+            this.ObnoviEkran();
+        }
+
+        /// <summary>
+        /// Inicijalizacija na labelite vo tabelata
+        /// </summary>
+        private void ClearLabels()
+        {
+            foreach (var item in this.PrometMeseci)
+                item.Text = " - ";
+        }
+
+        /// <summary>
+        /// Inicijalizacija na labelite i povtorno vcituvanje
+        /// na podatocite od bazata
+        /// </summary>
+        private void ObnoviEkran()
+        {
+            this.lblGodina.Text = this.tekovnaGodina.ToString();
+            this.ClearLabels();
+            this.VcitajPodatoci();
+        }
+
+        /// <summary>
+        /// Popolnuvanje na tabelata so soodvetnite
+        /// podatoci koi vleguvaat vo izvestajot
+        /// </summary>
+        private void VcitajPodatoci()
+        {
+            String sqlTab = "";
+            OracleCommand cmd = new OracleCommand(sqlTab, Conn);
+
+            try
+            {
+                OracleParameter prm = new OracleParameter("REST_ID1", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("REST_ID2", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("REST_ID3", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("REST_ID4", OracleDbType.Int64);
+                prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("GOD", OracleDbType.Int64);
+                prm.Value = this.tekovnaGodina;
+                cmd.Parameters.Add(prm);
+
+                cmd.CommandType = CommandType.Text;
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                int ind = 0;
+                while (dr.Read())
+                {
+                    /*this.VkPromet[ind].Text = dr.GetInt32(2).ToString() + " äåí. ";
+                    this.VkPlata[ind].Text = dr.GetInt32(3).ToString() + " äåí. ";
+                    this.VkDodatoci[ind].Text = dr.GetInt32(4).ToString() + " äåí. ";
+                    this.VkTrosoci[ind].Text = dr.GetInt32(5).ToString() + " äåí. ";
+                    this.Sostojba[ind].Text = dr.GetInt32(6).ToString() + " äåí. ";
+                    ind++;*/
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("blabla", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
         }
     }
 }
