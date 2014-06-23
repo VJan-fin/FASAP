@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -37,7 +34,7 @@ namespace SmetkaZaNaracka
         {
             InitializeComponent();
 
-            this.Restoran = new Restoran() { RestoranID = 1, Ime = "Ãîñòèëíèöà Ëèðà" };
+            this.Restoran = new Restoran() { RestoranID = 1, Ime = "Ресторан Лира" };
 
             string oradb = "Data Source=(DESCRIPTION="
           + "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1620))"
@@ -59,7 +56,7 @@ namespace SmetkaZaNaracka
             this.lblGodina.Text = this.tekovnaGodina.ToString();
             this.lblImeRestoran.Text = this.Restoran.Ime + " ";
 
-            /*this.PrometMeseci = new List<LabelFASAP>();
+            this.PrometMeseci = new List<LabelFASAP>();
             this.PrometMeseci.Add(this.lblPromet1);
             this.PrometMeseci.Add(this.lblPromet2);
             this.PrometMeseci.Add(this.lblPromet3);
@@ -71,7 +68,7 @@ namespace SmetkaZaNaracka
             this.PrometMeseci.Add(this.lblPromet9);
             this.PrometMeseci.Add(this.lblPromet10);
             this.PrometMeseci.Add(this.lblPromet11);
-            this.PrometMeseci.Add(this.lblPromet12);*/
+            this.PrometMeseci.Add(this.lblPromet12);
 
             this.ObnoviEkran();
         }
@@ -93,7 +90,7 @@ namespace SmetkaZaNaracka
         {
             this.lblGodina.Text = this.tekovnaGodina.ToString();
             this.ClearLabels();
-            this.VcitajPodatoci();
+            //this.VcitajPodatoci();
         }
 
         /// <summary>
