@@ -313,6 +313,16 @@ namespace SmetkaZaNaracka.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NoteBackground {
+            get {
+                object obj = ResourceManager.GetObject("NoteBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pola_zvezda {
             get {
                 object obj = ResourceManager.GetObject("Pola_zvezda", resourceCulture);

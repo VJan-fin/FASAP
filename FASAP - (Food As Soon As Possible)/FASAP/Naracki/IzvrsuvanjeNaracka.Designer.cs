@@ -88,6 +88,7 @@
             this.btnOtkazi = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.flowLayoutPanelFasap1 = new SmetkaZaNaracka.FlowLayoutPanelFasap(this.components);
             this.lblOsnovnoMeni = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblDescription = new SmetkaZaNaracka.LabelFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -497,6 +498,7 @@
             this.lblStavka6.Click += new System.EventHandler(this.lblStavka1_Click);
             this.lblStavka6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblStavka6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblStavka6.MouseHover += new System.EventHandler(this.lblStavka1_MouseHover);
             // 
             // lblStavka5
             // 
@@ -515,6 +517,7 @@
             this.lblStavka5.Click += new System.EventHandler(this.lblStavka1_Click);
             this.lblStavka5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblStavka5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblStavka5.MouseHover += new System.EventHandler(this.lblStavka1_MouseHover);
             // 
             // lblStavka4
             // 
@@ -533,6 +536,7 @@
             this.lblStavka4.Click += new System.EventHandler(this.lblStavka1_Click);
             this.lblStavka4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblStavka4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblStavka4.MouseHover += new System.EventHandler(this.lblStavka1_MouseHover);
             // 
             // lblStavka3
             // 
@@ -551,6 +555,7 @@
             this.lblStavka3.Click += new System.EventHandler(this.lblStavka1_Click);
             this.lblStavka3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblStavka3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblStavka3.MouseHover += new System.EventHandler(this.lblStavka1_MouseHover);
             // 
             // lblStavka2
             // 
@@ -569,6 +574,7 @@
             this.lblStavka2.Click += new System.EventHandler(this.lblStavka1_Click);
             this.lblStavka2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblStavka2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblStavka2.MouseHover += new System.EventHandler(this.lblStavka1_MouseHover);
             // 
             // lblStavka1
             // 
@@ -587,6 +593,7 @@
             this.lblStavka1.Click += new System.EventHandler(this.lblStavka1_Click);
             this.lblStavka1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblStavka1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblStavka1.MouseHover += new System.EventHandler(this.lblStavka1_MouseHover);
             // 
             // pictureBox8
             // 
@@ -627,6 +634,8 @@
             this.lblImeStavka.Name = "lblImeStavka";
             this.lblImeStavka.Size = new System.Drawing.Size(520, 127);
             this.lblImeStavka.TabIndex = 18;
+            this.lblImeStavka.MouseLeave += new System.EventHandler(this.lblImeStavka_MouseLeave);
+            this.lblImeStavka.MouseHover += new System.EventHandler(this.lblImeStavka_MouseHover);
             // 
             // labelFASAP7
             // 
@@ -799,6 +808,7 @@
             this.lblKupeno6.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno6.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno6.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblKupeno6.MouseHover += new System.EventHandler(this.lblKupeno6_MouseHover);
             // 
             // lblKupeno5
             // 
@@ -817,6 +827,7 @@
             this.lblKupeno5.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblKupeno5.MouseHover += new System.EventHandler(this.lblKupeno6_MouseHover);
             // 
             // lblKupeno4
             // 
@@ -835,6 +846,7 @@
             this.lblKupeno4.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblKupeno4.MouseHover += new System.EventHandler(this.lblKupeno6_MouseHover);
             // 
             // lblKupeno3
             // 
@@ -853,6 +865,7 @@
             this.lblKupeno3.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblKupeno3.MouseHover += new System.EventHandler(this.lblKupeno6_MouseHover);
             // 
             // lblKupeno2
             // 
@@ -871,6 +884,7 @@
             this.lblKupeno2.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblKupeno2.MouseHover += new System.EventHandler(this.lblKupeno6_MouseHover);
             // 
             // lblKupeno1
             // 
@@ -889,6 +903,7 @@
             this.lblKupeno1.Click += new System.EventHandler(this.lblKupeno5_Click);
             this.lblKupeno1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
             this.lblKupeno1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblKupeno1.MouseHover += new System.EventHandler(this.lblKupeno6_MouseHover);
             // 
             // pictureBox17
             // 
@@ -1022,11 +1037,28 @@
             this.lblOsnovnoMeni.MouseEnter += new System.EventHandler(this.lblOsnovnoMeni_MouseEnter);
             this.lblOsnovnoMeni.MouseLeave += new System.EventHandler(this.lblOsnovnoMeni_MouseLeave);
             // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblDescription.Image = global::SmetkaZaNaracka.Properties.Resources.NoteBackground;
+            this.lblDescription.LblObject = null;
+            this.lblDescription.Location = new System.Drawing.Point(203, 203);
+            this.lblDescription.MaximumSize = new System.Drawing.Size(250, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(49, 22);
+            this.lblDescription.TabIndex = 38;
+            this.lblDescription.Text = "Опис";
+            this.lblDescription.Visible = false;
+            // 
             // IzvrsuvanjeNaracka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.flowLayoutPanelFasap1);
             this.Controls.Add(this.btnOtkazi);
             this.Controls.Add(this.btnPotvrdi);
@@ -1097,6 +1129,7 @@
             this.Controls.SetChildIndex(this.btnPotvrdi, 0);
             this.Controls.SetChildIndex(this.btnOtkazi, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanelFasap1, 0);
+            this.Controls.SetChildIndex(this.lblDescription, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1185,5 +1218,6 @@
         private ButtonFASAP btnOtkazi;
         private FlowLayoutPanelFasap flowLayoutPanelFasap1;
         private LabelFASAP lblOsnovnoMeni;
+        private LabelFASAP lblDescription;
     }
 }

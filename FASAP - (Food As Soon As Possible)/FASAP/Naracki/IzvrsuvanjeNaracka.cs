@@ -695,6 +695,7 @@ namespace SmetkaZaNaracka
 
         private void lblMeni1_MouseLeave(object sender, EventArgs e)
         {
+            lblDescription.Visible = false;
             LabelFASAP lb = sender as LabelFASAP;
             if (lb.LblObject != null)
             {
@@ -912,6 +913,56 @@ namespace SmetkaZaNaracka
                 Naracka.Remove(CurrOrderComponent);
                 CurrOrderComponent = null;
                 Naracka = Naracka;
+            }
+        }
+
+        private void lblStavka1_MouseHover(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                MenuComponent mc = lb.LblObject as MenuComponent;
+                if (mc.GetDescription() != null && mc.GetDescription().Trim() != "")
+                {
+                    lblDescription.Location = Cursor.Position + new Size(10, 30);
+                    lblDescription.Text = mc.GetDescription() + "  ";
+                    lblDescription.Visible = true;
+                }
+            }
+        }
+
+        private void lblImeStavka_MouseLeave(object sender, EventArgs e)
+        {
+            lblDescription.Visible = false;
+        }
+
+        private void lblKupeno6_MouseHover(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                OrderComponent mc = lb.LblObject as OrderComponent;
+                if (mc.Item.GetDescription() != null && mc.Item.GetDescription().Trim() != "")
+                {
+                    lblDescription.Location = Cursor.Position + new Size(10, 30);
+                    lblDescription.Text = mc.Item.GetDescription() + "  ";
+                    lblDescription.Visible = true;
+                }
+            }
+        }
+
+        private void lblImeStavka_MouseHover(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb.LblObject != null)
+            {
+                MenuComponent mc = lb.LblObject as MenuComponent;
+                if (mc.GetDescription() != null && mc.GetDescription().Trim() != "")
+                {
+                    lblDescription.Location = Cursor.Position + new Size(10, 30);
+                    lblDescription.Text = mc.GetDescription() + "  ";
+                    lblDescription.Visible = true;
+                }
             }
         }
     }

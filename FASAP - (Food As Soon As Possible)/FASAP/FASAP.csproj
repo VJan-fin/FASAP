@@ -461,6 +461,7 @@
     <None Include="Resources\LabelBackgroundSelected.png" />
     <None Include="Resources\DarkCorrectButton.png" />
     <None Include="Resources\LightCorrectButton.png" />
+    <None Include="Resources\NoteBackground.png" />
     <Content Include="Resources\Resized-HTAHM.png" />
     <None Include="Resources\Resized-HTAHM1.png" />
   </ItemGroup>

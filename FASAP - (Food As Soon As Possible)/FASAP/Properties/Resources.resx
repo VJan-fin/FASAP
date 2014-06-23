@@ -121,8 +121,14 @@
   <data name="LightArrowUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LightArrowUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LightCorrectButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightCorrectButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Boards-Wooden-Surface-Background-Texture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Boards-Wooden-Surface-Background-Texture.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Resized-HTAHM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Resized-HTAHM1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DarkButton___Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DarkButton - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,9 +169,6 @@
   <data name="FasapBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FasapBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MinimizeLightLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MinimizeLightLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DarkArrowLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DarkArrowLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,8 +202,8 @@
   <data name="ExitLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExitLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Resized-HTAHM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Resized-HTAHM1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MinimizeLightLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinimizeLightLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LightButton___Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LightButton - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +211,7 @@
   <data name="Prazna_zvezda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Prazna_zvezda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LightCorrectButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LightCorrectButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NoteBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NoteBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
