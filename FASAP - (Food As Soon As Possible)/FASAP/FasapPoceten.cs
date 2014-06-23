@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
-using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
@@ -95,45 +94,15 @@ namespace SmetkaZaNaracka
            + "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1620))"
            + "(CONNECT_DATA=(SERVICE_NAME=ORCL)));"
            + "User Id=DBA_20132014L_GRP_020;Password=7734924;";
-            try
-            {
-                Conn = new OracleConnection();
-                Conn.ConnectionString = oradb;
-                Conn.Open();
-            }
-            catch(Exception ex){
-                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!Проверете ја конекцијата", false);
-                if (mbf.ShowDialog() == DialogResult.Yes)
-                    this.Close();
-                else
-                    this.Close();
-            }
+
+            Conn = new OracleConnection();
+            Conn.ConnectionString = oradb;
+            Conn.Open();
+
             vcituvanje();
             popolniLabeli();
 
 
-        }
-        public void refresh()
-        {
-            indexG = 0;
-            indexK = 0;
-            indexR = 0;
-            tekovenGrad = "Сите";
-            tekovnaKat = "Сите";
-            vcituvanje();
-            popolniLabeli();
-           
-        }
-        private void FiltrirajRestorani()
-        {
-            this.ShowRestorani = new List<Restoran>(Restorani);
-           
-            if (this.tekovenGrad != "Сите")
-                this.ShowRestorani.RemoveAll(w => w.Grad != tekovenGrad);
-            if (this.tekovnaKat != "Сите")
-                this.ShowRestorani.RemoveAll(w => w.Kategorija != this.tekovnaKat);
-
-            this.popolniLabeliRestorani();
         }
         public void popolniLabeli()
         {
@@ -407,50 +376,16 @@ namespace SmetkaZaNaracka
                     this.Close();
             }
         }
-        private void MarkSelection()
-        {
-            foreach (var item in this.labeliGrad)
-            {
-                if (this.tekovenGrad != null && this.tekovenGrad.Equals(item.LblObject as String))
-                {
-                    item.Image = Resources.LabelBackgroundSelected;
-                    item.ForeColor = Color.SaddleBrown;
-
-                }
-                else
-                {
-                    item.Image = Resources.LabelBackground2;
-                    item.ForeColor = Color.White;
-                }
-            }
-            foreach (var item in this.labeliKategorija)
-            {
-                if (this.tekovnaKat != null && this.tekovnaKat.Equals(item.LblObject as String))
-                {
-                    item.Image = Resources.LabelBackgroundSelected;
-                    item.ForeColor = Color.SaddleBrown;
-
-                }
-                else
-                {
-                    item.Image = Resources.LabelBackground2;
-                    item.ForeColor = Color.White;
-                }
-            }
-        }
 
         private void lblGrad1_Click(object sender, EventArgs e)
         {
             LabelFASAP lb = sender as LabelFASAP;
             if (lb.LblObject != null)
             {
-                this.tekovenGrad = lb.LblObject as String;
-                MarkSelection();
-                indexR = 0;
-                FiltrirajRestorani();
+                //this.CurrentEmp = lb.LblObject as VrabotenInfo;
+               // this.MarkSelection();
+               // this.PopolniVraboten();
             }
-          //  MessageBox.Show("Tekoven grad: " +tekovenGrad+"tekovna k: "+tekovnaKat);
-          
         }
 
         private void lblKat1_Click(object sender, EventArgs e)
@@ -458,13 +393,10 @@ namespace SmetkaZaNaracka
             LabelFASAP lb = sender as LabelFASAP;
             if (lb.LblObject != null)
             {
-                this.tekovnaKat = lb.LblObject as String;
-                MarkSelection();
-                indexR = 0;
-                FiltrirajRestorani();
+               // this.CurrentEmp = lb.LblObject as VrabotenInfo;
+               // this.MarkSelection();
+                //this.PopolniVraboten();
             }
-           // MessageBox.Show("Tekoven grad: " + tekovenGrad + "tekovna k: " + tekovnaKat);
-          
         }
 
         private void lblMeni1_MouseEnter(object sender, EventArgs e)
@@ -490,155 +422,6 @@ namespace SmetkaZaNaracka
                 lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
-
-        private void lblRest1_Click(object sender, EventArgs e)
-        {
-            LabelFASAP lb = sender as LabelFASAP;
-            if (lb.LblObject != null)
-            {
-                Restoran obj =lb.LblObject as Restoran;
-                IzvrsuvanjeNaracka fasapNaracka = new IzvrsuvanjeNaracka(obj, Conn);
-                fasapNaracka.Show();
-             
-            }
-        }
-
-
-        private void btnInfo_Click(object sender, EventArgs e)
-        {
-            InfoForma i = new InfoForma(Conn);
-            i.Show();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            Login l = new Login(Conn);
-            l.Show();
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            Register r = new Register(Conn);
-            r.Show();
-        }
-
-        private void buttonFASAP1_Click(object sender, EventArgs e)
-        {
-            SearchFilter sf = new SearchFilter(Restorani, Conn);
-            sf.Show();
-        }
-
-        private void btnInfo_MouseEnter(object sender, EventArgs e)
-        {
-            ButtonFASAP btn = sender as ButtonFASAP;
-            Cursor = Cursors.Hand;
-            btn.Image = Resources.LightButton___Copy;
-            btn.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void btnInfo_MouseLeave(object sender, EventArgs e)
-        {
-            ButtonFASAP btn = sender as ButtonFASAP;
-            Cursor = Cursors.Default;
-            btn.Image = Resources.DarkButton___Copy;
-            btn.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
-        }
-
-        private void pbGradUp_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox pb = sender as PictureBox;
-            Cursor = Cursors.Hand;
-            pb.Image = Resources.LightArrowUp;
-        }
-
-        private void pbGradUp_MouseLeave(object sender, EventArgs e)
-        {
-             PictureBox pb = sender as PictureBox;
-            Cursor = Cursors.Default;
-            pb.Image = Resources.DarkArrowUp;
-        }
-
-        private void pbGradDown_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox pb = sender as PictureBox;
-            Cursor = Cursors.Hand;
-            pb.Image = Resources.LightArrowDown;
-        }
-
-        private void pbGradDown_MouseLeave(object sender, EventArgs e)
-        {
-            PictureBox pb = sender as PictureBox;
-            Cursor = Cursors.Default;
-            pb.Image = Resources.DarkArrowDown;
-        }
-
-        private void pbGradUp_Click(object sender, EventArgs e)
-        {
-            if (this.Gradovi.Count > this.labeliGrad.Count)
-            {
-                if (this.indexG != 0)
-                    this.indexG--;
-                popolniLabeliGrad();
-            }
-        }
-
-        private void pbGradDown_Click(object sender, EventArgs e)
-        {
-            if (this.Gradovi.Count > this.labeliGrad.Count)
-            {
-                if (this.indexG < this.Gradovi.Count - this.labeliGrad.Count)
-                    this.indexG++;
-                popolniLabeliGrad();
-            }
-        }
-
-        private void pbKatUp_Click(object sender, EventArgs e)
-        {
-            if (this.Kategorija.Count > this.labeliKategorija.Count)
-            {
-                if (this.indexK != 0)
-                    this.indexK--;
-                popolniLabeliKategorija();
-            }
-        }
-
-        private void pbKatDown_Click(object sender, EventArgs e)
-        {
-            if (this.Kategorija.Count > this.labeliKategorija.Count)
-            {
-                if (this.indexK < this.Kategorija.Count - this.labeliKategorija.Count)
-                    this.indexK++;
-                popolniLabeliKategorija();
-            }
-        }
-
-        private void pbRestDown_Click(object sender, EventArgs e)
-        {
-            if (this.ShowRestorani.Count > this.labeliRestorani.Count)
-            {
-                if (this.indexR < this.ShowRestorani.Count - this.labeliRestorani.Count)
-                    this.indexR++;
-                popolniLabeliRestorani();
-            }
-        }
-
-        private void pbRestUp_Click(object sender, EventArgs e)
-        {
-            if (this.ShowRestorani.Count > this.labeliRestorani.Count)
-            {
-                if (this.indexR != 0)
-                    this.indexR--;
-                popolniLabeliRestorani();
-            }
-        }
-
-
-
-
-        }
-
-       
            
     }
+}
