@@ -61,7 +61,7 @@ namespace SmetkaZaNaracka
         {
             Dictionary<VklucuvaKey, Stavka> Stavki = new Dictionary<VklucuvaKey, Stavka>();
             List<Naracka> lista = new List<Naracka>();
-            string sqlMeni = @"SELECT n.Narachka_ID, n.VKUPNA_CENA, n.VREME, line.ADRESA_ZA_DOSTAVA, line.KONTAKT, line.IME_KLIENT, line.PREZIME_KLIENT, st.stavka_id, st.ime_stavka, st.opis_stavka, st.cena_stavka, st.dodatok_stavka, vk.kolichina_stavka, vk.vkluchuva_id, vk.dodatok_id
+            string sqlMeni = @"SELECT n.Narachka_ID, n.VKUPNA_CENA, n.VREME, line.ADRESA_ZA_DOSTAVA, line.KONTAKT, line.IME_KLIENT, line.PREZIME_KLIENT, st.stavka_id, st.ime_stavka, st.opis_stavka, st.cena_stavka, st.dodatok_stavka, vk.kolichina_stavka, vk.vkluchuva_id, vk.dodatok_id, line.CENA_ZA_DOSTAVA
                                 FROM Korisnik k, Vraboten v, Online_narachka line, Narachka n, Vkluchuva vk, Stavka st
                                 WHERE k.Vraboten_ID = v.Vraboten_ID AND line.Vraboten_ID = v.Vraboten_ID
 		                                AND n.Narachka_ID = line.Narachka_ID AND n.Restoran_ID = line.Restoran_ID
@@ -89,7 +89,7 @@ namespace SmetkaZaNaracka
                 int narid = dr.GetInt32(0);
                 if (!Naracki.ContainsKey(narid))
                 {
-                    Naracka nar = new Online(narid, dr.GetInt16(1), dr.GetDateTime(2), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6));
+                    Naracka nar = new Online(narid, dr.GetInt16(1), dr.GetDateTime(2), dr.GetString(3), dr.GetString(4), dr.GetString(5), dr.GetString(6), dr.GetInt32(15));
                     Naracki.Add(narid, nar);
                     lista.Add(nar);
                 }

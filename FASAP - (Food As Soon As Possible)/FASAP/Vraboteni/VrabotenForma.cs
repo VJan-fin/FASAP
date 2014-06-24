@@ -37,6 +37,33 @@ namespace SmetkaZaNaracka
             Opacity = 0;
         }
 
+        public VrabotenForma()
+        {
+            InitializeComponent();
+            string oradb = "Data Source=(DESCRIPTION="
+          + "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1620))"
+          + "(CONNECT_DATA=(SERVICE_NAME=ORCL)));"
+          + "User Id=DBA_20132014L_GRP_020;Password=7734924;";
+            try
+            {
+                Conn = new OracleConnection();
+                Conn.ConnectionString = oradb;
+                Conn.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!Проверете ја конекцијата", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
+            LoadingSemaphore = new Semaphore(0, 10);
+            //Vraboten = new Dostavuvac(4, 2, "Бојан", "Бојоски", "bojanbojoski@gmail.com", "1707994678005");
+            Vraboten = new Kelner(2, 2, "Радослав", "Стрезоски", "radoslavstrezoski@gmail.com", "510969678006");
+            Opacity = 0;
+        }
+
         private void VrabotenForma_Load(object sender, EventArgs e)
         {
             Naracki = new List<LabelFASAP>();
@@ -67,10 +94,12 @@ namespace SmetkaZaNaracka
             if (Vraboten.GetFunkcija() == "Доставувач")
             {
                 lblMasaOpis.Text = "Адреса за достава: ";
+                lblKontaktOpis.Visible = true;
                 lblKlient.Visible = true;
                 lblKontakt.Visible = true;
                 lblKlientOpis.Visible = true;
-                lblKontakt.Visible = true;
+                lblCenaZaDostavaOpis.Visible = true;
+                lblCenaZaDostava.Visible = true;
             }
 
 
@@ -148,6 +177,7 @@ namespace SmetkaZaNaracka
                 else
                 {
                     Online os = CurrNaracka as Online;
+                    lblCenaZaDostava.UpdateObject(os.CenaZaDostava);
                     lblMasa.Text = os.AdresaZaDostava;
                     lblKlient.Text = String.Format("{0} {1} ", os.ImeKlient, os.PrezimeKlient);
                     lblKontakt.Text = os.Kontakt;
@@ -314,8 +344,14 @@ namespace SmetkaZaNaracka
                 lblMasa.Text = " ";
                 lblKontakt.Text = " ";
                 lblKlient.Text = " ";
-                Thread oThread = new Thread(new ThreadStart(IncrementOrderNumber));
+                Thread oThread = new Thread(new ThreadStart(PostaviDodatok));
                 oThread.Start();
+                oThread = new Thread(new ThreadStart(IncrementOrderNumber));
+                oThread.Start();
+                oThread = new Thread(new ThreadStart(PostaviPromet));
+                oThread.Start();
+                LoadingSemaphore.WaitOne();
+                LoadingSemaphore.WaitOne();
                 LoadingSemaphore.WaitOne();
                 CurrNaracka = null;
                 PrevzemiNaracki();
@@ -329,6 +365,66 @@ namespace SmetkaZaNaracka
                 ErrorMessageTime = 3;
                 timer1.Start();
             }
+        }
+
+        public void PostaviPromet()
+        {
+            string updateOnsite = @"insert into PROMET (RESTORAN_ID, MESEC_PROMET, GODINA_PROMET, IZNOS_PROMET) VALUES (:ResID, :Month, :Year, 0)";
+            OracleCommand cmd = new OracleCommand(updateOnsite, Conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int32);
+            prm.Value = Vraboten.RestoranID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Month", OracleDbType.Char);
+            prm.Value = String.Format("{0:00}", DateTime.Now.Month);
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Year", OracleDbType.Char);
+            prm.Value = DateTime.Now.Year.ToString();
+            cmd.Parameters.Add(prm);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+            }
+
+            updateOnsite = @"Update PROMET SET IZNOS_PROMET = IZNOS_PROMET + :Vkupno where RESTORAN_ID = :ResID AND MESEC_PROMET = :Month AND GODINA_PROMET = :YEAR";
+
+            cmd = new OracleCommand(updateOnsite, Conn);
+
+            prm = new OracleParameter("Vkupno", OracleDbType.Int32);
+            prm.Value = CurrNaracka.VkupnaCena;
+            cmd.Parameters.Add(prm);
+            LoadingSemaphore.Release();
+            prm = new OracleParameter("ResID", OracleDbType.Int32);
+            prm.Value = Vraboten.RestoranID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Month", OracleDbType.Char);
+            prm.Value = String.Format("{0:00}", DateTime.Now.Month);
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Year", OracleDbType.Char);
+            prm.Value = DateTime.Now.Year.ToString();
+            cmd.Parameters.Add(prm);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        public void PostaviDodatok()
+        {
+            CurrNaracka.PostaviDodatok(Conn, Vraboten.RestoranID, Vraboten.VrabotenID);
+            LoadingSemaphore.Release();
         }
 
         public void IncrementOrderNumber()

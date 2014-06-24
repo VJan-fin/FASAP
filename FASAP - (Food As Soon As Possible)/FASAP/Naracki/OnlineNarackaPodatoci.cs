@@ -102,7 +102,7 @@ namespace SmetkaZaNaracka
 
                 }
             }
-            Online online = new Online(Naracka.NarackaID, Naracka.VkupnaCena, DateTime.Now, String.Format("{0} \"{1}\"", tbNaselenoMesto.Text, tbAdresa.Text), tbKontakt.Text, tbIme.Text, tbPrezime.Text);
+            Online online = new Online(Naracka.NarackaID, Naracka.VkupnaCena, DateTime.Now, String.Format("{0} \"{1}\"", tbNaselenoMesto.Text, tbAdresa.Text), tbKontakt.Text, tbIme.Text, tbPrezime.Text, 0);
             online.Stavki = Naracka.Stavki;
             if (online.VkupnaCena < Restoran.PragZaDostava)
             {

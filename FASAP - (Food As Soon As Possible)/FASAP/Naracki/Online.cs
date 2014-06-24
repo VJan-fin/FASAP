@@ -16,13 +16,14 @@ namespace SmetkaZaNaracka.Naracki
         public string PrezimeKlient { get; set; }
         public int CenaZaDostava { get; set; }
 
-        public Online(int narackaID, int vkupnaCena, DateTime vreme, string adresaZaDostava, string kontakt, string imeKlient, string prezimeKlient)
+        public Online(int narackaID, int vkupnaCena, DateTime vreme, string adresaZaDostava, string kontakt, string imeKlient, string prezimeKlient, int cenaZaDostava)
             : base(narackaID, vkupnaCena, vreme)
         {
             AdresaZaDostava = adresaZaDostava;
             Kontakt = kontakt;
             ImeKlient = imeKlient;
             PrezimeKlient = prezimeKlient;
+            CenaZaDostava = cenaZaDostava;
         }
 
         public override void SqlInsert(OracleConnection conn, int resID)
@@ -114,6 +115,69 @@ namespace SmetkaZaNaracka.Naracki
                 myTrans.Rollback();
                 throw new NotImplementedException("Трансакцијата не помина");
             }
+        }
+
+        public override void PostaviDodatok(OracleConnection conn, int resID, int narID)
+        {
+            string updateOnsite = @"insert into DODATOK (RESTORAN_ID, VRABOTEN_ID, MESEC_DODATOK, GODINA_DODATOK, IZNOS_DODATOK) VALUES (:ResID, :VrabID, :Month, :Year, 0)";
+            OracleCommand cmd = new OracleCommand(updateOnsite, conn);
+
+            OracleParameter prm = new OracleParameter("ResID", OracleDbType.Int32);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("VrabID", OracleDbType.Int32);
+            prm.Value = narID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Month", OracleDbType.Char);
+            prm.Value = String.Format("{0:00}", DateTime.Now.Month);
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Year", OracleDbType.Char);
+            prm.Value = DateTime.Now.Year.ToString();
+            cmd.Parameters.Add(prm);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+            }
+
+            updateOnsite = @"UPDATE DODATOK SET IZNOS_DODATOK = IZNOS_DODATOK + :Vkupno where RESTORAN_ID = :ResID AND VRABOTEN_ID = :VrabID AND MESEC_DODATOK = :Month AND GODINA_DODATOK = :Year";
+
+            cmd = new OracleCommand(updateOnsite, conn);
+
+            prm = new OracleParameter("Vkupno", OracleDbType.Int32);
+            prm.Value = (int)Math.Round((VkupnaCena - CenaZaDostava) * 0.02 + (CenaZaDostava * 0.2));
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ResID", OracleDbType.Int32);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("VrabID", OracleDbType.Int32);
+            prm.Value = narID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Month", OracleDbType.Char);
+            prm.Value = String.Format("{0:00}", DateTime.Now.Month);
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("Year", OracleDbType.Char);
+            prm.Value = DateTime.Now.Year.ToString();
+            cmd.Parameters.Add(prm);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+            }
+
         }
     }
 }

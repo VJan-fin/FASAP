@@ -21,6 +21,10 @@ namespace SmetkaZaNaracka.Narachki
             Stavki = new List<OrderComponent>();
         }
 
+        public virtual void PostaviDodatok(OracleConnection conn, int resID, int narID)
+        {
+        }
+
         public void AddA(OrderComponent oc)
         {
             if (oc == null)

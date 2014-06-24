@@ -75,6 +75,8 @@
             this.lblKlientOpis = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblKontakt = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblKontaktOpis = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblCenaZaDostava = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblCenaZaDostavaOpis = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.dbLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarackiUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarackiDown)).BeginInit();
@@ -698,17 +700,16 @@
             // 
             // lblVkupno
             // 
-            this.lblVkupno.AutoSize = true;
             this.lblVkupno.BackColor = System.Drawing.Color.Transparent;
             this.lblVkupno.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVkupno.ForeColor = System.Drawing.Color.Khaki;
+            this.lblVkupno.ForeColor = System.Drawing.Color.Lime;
             this.lblVkupno.Image = ((System.Drawing.Image)(resources.GetObject("lblVkupno.Image")));
             this.lblVkupno.LblObject = null;
             this.lblVkupno.Location = new System.Drawing.Point(827, 681);
             this.lblVkupno.Name = "lblVkupno";
-            this.lblVkupno.Size = new System.Drawing.Size(103, 43);
+            this.lblVkupno.Size = new System.Drawing.Size(240, 69);
             this.lblVkupno.TabIndex = 39;
-            this.lblVkupno.Text = "1300";
+            this.lblVkupno.Text = "0";
             // 
             // labelFASAP4
             // 
@@ -732,7 +733,7 @@
             this.lblMasa.ForeColor = System.Drawing.Color.White;
             this.lblMasa.Image = ((System.Drawing.Image)(resources.GetObject("lblMasa.Image")));
             this.lblMasa.LblObject = null;
-            this.lblMasa.Location = new System.Drawing.Point(858, 253);
+            this.lblMasa.Location = new System.Drawing.Point(858, 212);
             this.lblMasa.Name = "lblMasa";
             this.lblMasa.Size = new System.Drawing.Size(26, 27);
             this.lblMasa.TabIndex = 41;
@@ -746,7 +747,7 @@
             this.lblMasaOpis.ForeColor = System.Drawing.Color.Khaki;
             this.lblMasaOpis.Image = ((System.Drawing.Image)(resources.GetObject("lblMasaOpis.Image")));
             this.lblMasaOpis.LblObject = null;
-            this.lblMasaOpis.Location = new System.Drawing.Point(858, 225);
+            this.lblMasaOpis.Location = new System.Drawing.Point(858, 184);
             this.lblMasaOpis.Name = "lblMasaOpis";
             this.lblMasaOpis.Size = new System.Drawing.Size(125, 27);
             this.lblMasaOpis.TabIndex = 40;
@@ -760,7 +761,7 @@
             this.lblKlient.ForeColor = System.Drawing.Color.White;
             this.lblKlient.Image = ((System.Drawing.Image)(resources.GetObject("lblKlient.Image")));
             this.lblKlient.LblObject = null;
-            this.lblKlient.Location = new System.Drawing.Point(858, 362);
+            this.lblKlient.Location = new System.Drawing.Point(858, 330);
             this.lblKlient.Name = "lblKlient";
             this.lblKlient.Size = new System.Drawing.Size(26, 27);
             this.lblKlient.TabIndex = 43;
@@ -775,7 +776,7 @@
             this.lblKlientOpis.ForeColor = System.Drawing.Color.Khaki;
             this.lblKlientOpis.Image = ((System.Drawing.Image)(resources.GetObject("lblKlientOpis.Image")));
             this.lblKlientOpis.LblObject = null;
-            this.lblKlientOpis.Location = new System.Drawing.Point(858, 334);
+            this.lblKlientOpis.Location = new System.Drawing.Point(858, 302);
             this.lblKlientOpis.Name = "lblKlientOpis";
             this.lblKlientOpis.Size = new System.Drawing.Size(97, 27);
             this.lblKlientOpis.TabIndex = 42;
@@ -790,7 +791,7 @@
             this.lblKontakt.ForeColor = System.Drawing.Color.White;
             this.lblKontakt.Image = ((System.Drawing.Image)(resources.GetObject("lblKontakt.Image")));
             this.lblKontakt.LblObject = null;
-            this.lblKontakt.Location = new System.Drawing.Point(858, 477);
+            this.lblKontakt.Location = new System.Drawing.Point(858, 444);
             this.lblKontakt.Name = "lblKontakt";
             this.lblKontakt.Size = new System.Drawing.Size(26, 27);
             this.lblKontakt.TabIndex = 45;
@@ -805,17 +806,50 @@
             this.lblKontaktOpis.ForeColor = System.Drawing.Color.Khaki;
             this.lblKontaktOpis.Image = ((System.Drawing.Image)(resources.GetObject("lblKontaktOpis.Image")));
             this.lblKontaktOpis.LblObject = null;
-            this.lblKontaktOpis.Location = new System.Drawing.Point(858, 449);
+            this.lblKontaktOpis.Location = new System.Drawing.Point(858, 416);
             this.lblKontaktOpis.Name = "lblKontaktOpis";
             this.lblKontaktOpis.Size = new System.Drawing.Size(106, 27);
             this.lblKontaktOpis.TabIndex = 44;
             this.lblKontaktOpis.Text = "Контакт:";
+            this.lblKontaktOpis.Visible = false;
+            // 
+            // lblCenaZaDostava
+            // 
+            this.lblCenaZaDostava.AutoSize = true;
+            this.lblCenaZaDostava.BackColor = System.Drawing.Color.Transparent;
+            this.lblCenaZaDostava.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblCenaZaDostava.ForeColor = System.Drawing.Color.White;
+            this.lblCenaZaDostava.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaZaDostava.Image")));
+            this.lblCenaZaDostava.LblObject = null;
+            this.lblCenaZaDostava.Location = new System.Drawing.Point(848, 565);
+            this.lblCenaZaDostava.Name = "lblCenaZaDostava";
+            this.lblCenaZaDostava.Size = new System.Drawing.Size(26, 27);
+            this.lblCenaZaDostava.TabIndex = 47;
+            this.lblCenaZaDostava.Text = "  ";
+            this.lblCenaZaDostava.Visible = false;
+            // 
+            // lblCenaZaDostavaOpis
+            // 
+            this.lblCenaZaDostavaOpis.AutoSize = true;
+            this.lblCenaZaDostavaOpis.BackColor = System.Drawing.Color.Transparent;
+            this.lblCenaZaDostavaOpis.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
+            this.lblCenaZaDostavaOpis.ForeColor = System.Drawing.Color.Khaki;
+            this.lblCenaZaDostavaOpis.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaZaDostavaOpis.Image")));
+            this.lblCenaZaDostavaOpis.LblObject = null;
+            this.lblCenaZaDostavaOpis.Location = new System.Drawing.Point(848, 537);
+            this.lblCenaZaDostavaOpis.Name = "lblCenaZaDostavaOpis";
+            this.lblCenaZaDostavaOpis.Size = new System.Drawing.Size(230, 27);
+            this.lblCenaZaDostavaOpis.TabIndex = 46;
+            this.lblCenaZaDostavaOpis.Text = "Наплата за достава:";
+            this.lblCenaZaDostavaOpis.Visible = false;
             // 
             // VrabotenForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lblCenaZaDostava);
+            this.Controls.Add(this.lblCenaZaDostavaOpis);
             this.Controls.Add(this.lblKontakt);
             this.Controls.Add(this.lblKontaktOpis);
             this.Controls.Add(this.lblKlient);
@@ -854,6 +888,8 @@
             this.Controls.SetChildIndex(this.lblKlient, 0);
             this.Controls.SetChildIndex(this.lblKontaktOpis, 0);
             this.Controls.SetChildIndex(this.lblKontakt, 0);
+            this.Controls.SetChildIndex(this.lblCenaZaDostavaOpis, 0);
+            this.Controls.SetChildIndex(this.lblCenaZaDostava, 0);
             this.dbLayoutPanel2.ResumeLayout(false);
             this.dbLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNarackiUp)).EndInit();
@@ -916,6 +952,8 @@
         private LabelFASAP lblKlientOpis;
         private LabelFASAP lblKontakt;
         private LabelFASAP lblKontaktOpis;
+        private LabelFASAP lblCenaZaDostava;
+        private LabelFASAP lblCenaZaDostavaOpis;
 
     }
 }

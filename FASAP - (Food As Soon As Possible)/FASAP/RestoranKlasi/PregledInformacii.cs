@@ -282,9 +282,9 @@ namespace SmetkaZaNaracka
         private bool azurirajInfo()
         {
             // Azuriranje na podatocite za restoranot
-            string sqlRest = @"UPDATE RESTORAN SET IME_RESTORAN = :IME, ULICA = :UL, GRAD = :GR, RABOTNO_VREME = :RB, KAPACITET = :KAP, BROJ_MASI = :BR_M, CENA_ZA_DOSTAVA = :CENA, PRAG_DOSTAVA = :PRAG, DATUM_NA_OTVORANJE= :DAT, KATEGORIJA = :KAT WHERE RESTORAN_ID = :REST_ID";
-        
-            OracleCommand cmd = new OracleCommand(sqlRest, this.Conn); 
+            string sqlRest = @"UPDATE RESTORAN SET IME_RESTORAN = :IME, ULICA = :UL, GRAD = :GR, RABOTNO_VREME = :RB, KAPACITET = :KAP, BROJ_MASI = :BR_M, CENA_ZA_DOSTAVA = :CENA, PRAG_DOSTAVA = :PRAG, DATUM_NA_OTVORANJE = :DAT, KATEGORIJA = :KAT WHERE RESTORAN_ID = :REST_ID";
+
+            OracleCommand cmd = new OracleCommand(sqlRest, this.Conn);
             cmd.CommandType = CommandType.Text;
 
           //  try
@@ -311,25 +311,26 @@ namespace SmetkaZaNaracka
                 cmd.Parameters.Add(prm);
 
 
-                prm = new OracleParameter("KAP", OracleDbType.Int64);
+                prm = new OracleParameter("KAP", OracleDbType.Int32);
                 if (tbKapacitet.Text.Trim() != "") prm.Value = int.Parse(this.tbKapacitet.Text.Trim());
                 else prm.Value = null;
                 cmd.Parameters.Add(prm);
                 MessageBox.Show(""+prm.Value);
-                prm = new OracleParameter("BR_M", OracleDbType.Int64);
+
+                prm = new OracleParameter("BR_M", OracleDbType.Int32);
                 if (tbBrojMasi.Text.Trim() != "")
                     prm.Value = int.Parse(this.tbBrojMasi.Text.Trim());
                 else prm.Value = null;
                 cmd.Parameters.Add(prm);
 
             
-                prm = new OracleParameter("CENA", OracleDbType.Int64);
+                prm = new OracleParameter("CENA", OracleDbType.Int32);
                 if (tbCenaDostava.Text.Trim() != "")
                     prm.Value = int.Parse(this.tbCenaDostava.Text.Trim());
                 else
                     prm.Value = null;
             
-                prm = new OracleParameter("PRAG", OracleDbType.Int64);
+                prm = new OracleParameter("PRAG", OracleDbType.Int32);
                 if (tbPragDostava.Text.Trim() != "")
                     prm.Value = int.Parse(this.tbPragDostava.Text.Trim());
                 else
@@ -351,9 +352,11 @@ namespace SmetkaZaNaracka
                 prm.Value = this.tbKategoorija.Text.Trim();
                 cmd.Parameters.Add(prm);
 
-                prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm = new OracleParameter("REST_ID", OracleDbType.Int32);
                 prm.Value = this.RestoranID;
                 cmd.Parameters.Add(prm);
+
+
                 
                 //cmd.ExecuteNonQuery();
            // }
@@ -366,7 +369,6 @@ namespace SmetkaZaNaracka
         //            this.Close();
         //    }
 
-            cmd.CommandType = CommandType.Text;
             int br1;
           //  try
           //  {
