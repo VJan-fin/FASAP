@@ -809,6 +809,7 @@ namespace SmetkaZaNaracka
             }
             if (SelectedComponent != null)
             {
+                SelectedComponent.SqlDelete(Conn, Restoran.RestoranID);
                 if (IsDecorator)
                 {
                     Dodatok dodatok = new Dodatok((SelectedComponent as Stavka).ID, tbIme.Text, int.Parse(tbCena.Text), tbOpis.Text);
@@ -824,7 +825,7 @@ namespace SmetkaZaNaracka
 
                 try
                 {
-                    SelectedComponent.SQLUpdate(Conn, Restoran.RestoranID);
+                    SelectedComponent.SqlInsert(Conn, Restoran.RestoranID);
                     isChanged = false;
                     Thread oThread = new Thread(new ThreadStart(KreirajMeni));
                     oThread.Start();

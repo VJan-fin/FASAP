@@ -219,5 +219,12 @@ namespace SmetkaZaNaracka
 
             return pomID + 1;
         }
+
+        public override MenuComponent GetSameComponent(MenuComponent mc)
+        {
+            if (base.Equals(mc))
+                return this;
+            return null;
+        }
     }
 }
