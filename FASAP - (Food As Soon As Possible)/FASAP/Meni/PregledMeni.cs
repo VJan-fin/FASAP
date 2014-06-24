@@ -809,7 +809,18 @@ namespace SmetkaZaNaracka
             }
             if (SelectedComponent != null)
             {
-                SelectedComponent.SqlDelete(Conn, Restoran.RestoranID);
+                try
+                {
+                    SelectedComponent.SqlDelete(Conn, Restoran.RestoranID);
+                }
+                catch (Exception ex)
+                {
+                    timer1.Stop();
+                    ButtonFasapSetText(lblErrorMessage, ex.Message);
+                    ButtonFasapSetVisible(lblErrorMessage, true);
+                    timer1.Start();
+                    return;
+                }
                 if (IsDecorator)
                 {
                     Dodatok dodatok = new Dodatok((SelectedComponent as Stavka).ID, tbIme.Text, int.Parse(tbCena.Text), tbOpis.Text);
@@ -826,7 +837,7 @@ namespace SmetkaZaNaracka
                 try
                 {
                     SelectedComponent.SqlInsert(Conn, Restoran.RestoranID);
-                    isChanged = false;
+                    IsChanged = false;
                     Thread oThread = new Thread(new ThreadStart(KreirajMeni));
                     oThread.Start();
                     LoadingSemaphore.Release();
