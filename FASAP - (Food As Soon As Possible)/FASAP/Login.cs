@@ -122,73 +122,101 @@ namespace SmetkaZaNaracka
                     //ako e vnesen tocniot password vcitaj gi podatocite za vraboteniot
                     if (tocenPass)
                     {
-                        sql = @"Select v.vraboten_id, v.ime_vraboten, v.prezime_vraboten,i.Pozicija, i.status,r.restoran_id From Korisnik k join Vraboten v on k.Vraboten_ID=v.Vraboten_ID Join Izvrshuva i on i.Vraboten_ID=v.Vraboten_ID Join Restoran r on r.Restoran_ID=i.Restoran_ID where korisnichko_ime = :KOR_IME";
-                        cmd = new OracleCommand(sql, Conn);
-                        try
+                        if (VrabotenId != 0) // ako vraboteniot ne e ADMIN
                         {
-                            OracleParameter prm = new OracleParameter("KOR_IME", OracleDbType.Varchar2);
-                            prm.Value = username;
-                            cmd.Parameters.Add(prm);
-                            cmd.CommandType = CommandType.Text;
-                            OracleDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
+                            sql = @"Select v.vraboten_id, v.ime_vraboten, v.prezime_vraboten,i.Pozicija, i.status,r.restoran_id From Korisnik k join Vraboten v on k.Vraboten_ID=v.Vraboten_ID Join Izvrshuva i on i.Vraboten_ID=v.Vraboten_ID Join Restoran r on r.Restoran_ID=i.Restoran_ID where korisnichko_ime = :KOR_IME";
+                            cmd = new OracleCommand(sql, Conn);
+                            try
                             {
-                                VrabotenId = (int)dr.GetValue(0);
-                                ime = dr.GetString(1);
-                                prezime = dr.GetString(2);
-                                pozicija = dr.GetString(3);
-                                int st;
-                                if (int.TryParse(dr.GetString(4), out st))
-                                    status = st;
-                                RestoranId = (int)dr.GetValue(5);
+                                OracleParameter prm = new OracleParameter("KOR_IME", OracleDbType.Varchar2);
+                                prm.Value = username;
+                                cmd.Parameters.Add(prm);
+                                cmd.CommandType = CommandType.Text;
+                                OracleDataReader dr = cmd.ExecuteReader();
+                                if (dr.Read())
+                                {
+                                    VrabotenId = (int)dr.GetValue(0);
+                                    ime = dr.GetString(1);
+                                    prezime = dr.GetString(2);
+                                    pozicija = dr.GetString(3);
+                                    int st;
+                                    if (int.TryParse(dr.GetString(4), out st))
+                                        status = st;
+                                    RestoranId = (int)dr.GetValue(5);
+                                }
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
-                            if (mbf.ShowDialog() == DialogResult.Yes)
-                                this.Close();
+                            catch (Exception ex)
+                            {
+                                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                                if (mbf.ShowDialog() == DialogResult.Yes)
+                                    this.Close();
+                                else
+                                    this.Close();
+                            }
+
+                            if (status == 0) //ako vraboteniot e neaktiven i ne e admin, nema privilegii za pristap
+                            {
+                                MessageBoxForm mbf = new MessageBoxForm("Немате привилегии за пристап!", false);
+                                if (mbf.ShowDialog() == DialogResult.Yes)
+                                    this.Close();
+                                else
+                                    this.Close();
+                            }
                             else
-                                this.Close();
+                            {
+                                if (pozicija.ToLower() == "доставувач")
+                                    vraboten = new Dostavuvac(VrabotenId, RestoranId, ime, prezime, username, password);
+                                else if (pozicija.ToLower() == "келнер")
+                                    vraboten = new Kelner(VrabotenId, RestoranId, ime, prezime, username, password);
+
+                                if (pozicija.ToLower() == "менаџер") //ako e  manager
+                                {
+                                    ManagerC manager = new ManagerC(VrabotenId, RestoranId, ime, prezime, username, password);
+                                    ManagerForma managerForma = new ManagerForma(Conn, manager);
+                                    managerForma.Show();
+                                    tbPassword.Clear();
+                                }
+                                else //ako e obicen vraboten 
+                                {
+                                    VrabotenForma vf = new VrabotenForma(Conn, vraboten);
+                                    vf.Show();
+                                    tbPassword.Clear();
+                                }
+                            }
                         }
-
-
-                        if (VrabotenId!=0 && status == 0) //ako vraboteniot e neaktiven i ne e admin, nema privilegii za pristap
+                        else // ako vraboteniot e admin, t.e. vrabId=0
                         {
-                            MessageBoxForm mbf = new MessageBoxForm("Немате привилегии за пристап!", false);
-                            if (mbf.ShowDialog() == DialogResult.Yes)
-                                this.Close();
-                            else
-                                this.Close();
-                        }
-                        else
-                        {
-                            if (pozicija.ToLower() == "доставувач")
-                                vraboten = new Dostavuvac(VrabotenId, RestoranId, ime, prezime, username, password);
-                            else if (pozicija.ToLower() == "келнер")
-                                vraboten = new Kelner(VrabotenId, RestoranId, ime, prezime, username, password);
+                            sql = @"Select RESTORAN_ID from KORISNIK where KORISNICHKO_IME= : KOR_IME";
+                            cmd = new OracleCommand(sql, Conn);
+                            try
+                            {
+                                OracleParameter prm = new OracleParameter("KOR_IME", OracleDbType.Varchar2);
+                                prm.Value = username;
+                                cmd.Parameters.Add(prm);
+                                cmd.CommandType = CommandType.Text;
 
-                            if (VrabotenId == 0) // ako e admin
-                            {
-                                ManagerC manager = new ManagerC(VrabotenId, RestoranId, "ADMIN", "", username, password);
-                                ManagerForma managerForma = new ManagerForma(Conn, manager);
-                                managerForma.Show();
-                                tbPassword.Clear();
+                                OracleDataReader dr = cmd.ExecuteReader();
+                                if (dr.Read())
+                                {
+                                    RestoranId = (int)dr.GetValue(0);
+                                }
                             }
-                            else if ( pozicija.ToLower() == "менаџер") //ako e  manager
+                            catch (Exception ex)
                             {
-                                ManagerC manager = new ManagerC(VrabotenId, RestoranId, ime, prezime, username, password);
-                                ManagerForma managerForma = new ManagerForma(Conn, manager);
-                                managerForma.Show();
-                                tbPassword.Clear();
+                                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                                if (mbf.ShowDialog() == DialogResult.Yes)
+                                    this.Close();
+                                else
+                                    this.Close();
                             }
-                            else //ako e obicen vraboten 
-                            {
-                                VrabotenForma vf = new VrabotenForma(Conn, vraboten);
-                                vf.Show();
-                                tbPassword.Clear();
-                            }
+
+                            ManagerC manager = new ManagerC(VrabotenId, RestoranId, "ADMIN", "", username, password);
+                            ManagerForma managerForma = new ManagerForma(Conn, manager);
+                            managerForma.Show();
+                            tbPassword.Clear();
                         }
+
+                      
                         //MessageBox.Show(String.Format("Vraboten: {0}, Pozicija: {1}, RestoranID: {2}",VrabotenId,pozicija,RestoranId));
                     }
                 }
