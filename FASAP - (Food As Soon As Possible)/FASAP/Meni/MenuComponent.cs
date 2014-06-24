@@ -72,5 +72,7 @@ namespace SmetkaZaNaracka
         public abstract void SQLUpdate(OracleConnection conn, int resID);
 
         public abstract int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q);
+
+        public abstract MenuComponent GetSameComponent(MenuComponent mc);
     }
 }

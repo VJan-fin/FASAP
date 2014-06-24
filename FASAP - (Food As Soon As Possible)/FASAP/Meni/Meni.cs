@@ -79,6 +79,16 @@ namespace SmetkaZaNaracka
             return true;
         }
 
+        public override bool Sodrzi(Object obj)
+        {
+            if (Equals(obj))
+                return true;
+            foreach (var obj1 in Content)
+                if (obj1.Sodrzi(obj))
+                    return true;
+            return false;
+        }
+
         public override int GetHashCode()
         {
             return base.GetHashCode();
@@ -204,6 +214,18 @@ namespace SmetkaZaNaracka
         public override int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q)
         {
             throw new NotImplementedException();
+        }
+
+        public override MenuComponent GetSameComponent(MenuComponent mc)
+        {
+            if (Equals(mc))
+                return this;
+            foreach (var obj in Content)
+            {
+                MenuComponent mm = obj.GetSameComponent(mc);
+                if (mm != null) return mm;
+            }
+            return null;
         }
     }
 }

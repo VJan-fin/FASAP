@@ -259,7 +259,18 @@ namespace SmetkaZaNaracka
             //lblOsnovnoMeni.UpdateObject(Restoran.GlavnoMeni);
             LoadingSemaphore.WaitOne();
             SetObject(lblOsnovnoMeni, Restoran.GlavnoMeni);
-            CurrMenu = Restoran.GlavnoMeni;
+            MenuComponent mm = Restoran.GetSameComponent(CurrMenu);
+            if (mm == null)
+            {
+                CurrMenu = Restoran.GlavnoMeni;
+                SelectedComponent = null;
+            }
+            else
+            {
+                CurrMenu = mm;
+            }
+            SelectedComponent = Restoran.GetSameComponent(SelectedComponent);
+            
             PostaviPateka();
             PopolniListaMenija();
         }
@@ -522,6 +533,7 @@ namespace SmetkaZaNaracka
                 IsDecorator = true;
                 btnDodatok.Image = Resources.LightCorrectButton;
             }
+            IsChanged = true;
         }
 
         private void buttonFASAP6_MouseEnter(object sender, EventArgs e)
@@ -786,11 +798,30 @@ namespace SmetkaZaNaracka
 
         private void SocuvajPromeni()
         {
+            if (!ValidateChildren())
+            {
+                timer1.Stop();
+                ButtonFasapSetText(lblErrorMessage, "Лошо внесени податоци, промените се одбиени");
+                ButtonFasapSetVisible(lblErrorMessage, true);
+                timer1.Start();
+                IsChanged = false;
+                return;
+            }
             if (SelectedComponent != null)
             {
-                SelectedComponent.SetName(tbIme.Text);
-                SelectedComponent.SetDescription(tbOpis.Text);
-                SelectedComponent.SetCost(int.Parse(tbCena.Text));
+                if (IsDecorator)
+                {
+                    Dodatok dodatok = new Dodatok((SelectedComponent as Stavka).ID, tbIme.Text, int.Parse(tbCena.Text), tbOpis.Text);
+                    dodatok.Parent = SelectedComponent.Parent;
+                    SelectedComponent = dodatok;
+                }
+                else
+                {
+                    Stavka dodatok = new Stavka((SelectedComponent as Stavka).ID, tbIme.Text, int.Parse(tbCena.Text), tbOpis.Text);
+                    dodatok.Parent = SelectedComponent.Parent;
+                    SelectedComponent = dodatok;
+                }
+
                 try
                 {
                     SelectedComponent.SQLUpdate(Conn, Restoran.RestoranID);
@@ -971,9 +1002,11 @@ namespace SmetkaZaNaracka
 
         private void tbCena_Validating(object sender, CancelEventArgs e)
         {
-            if (tbIme.Text == "")
+            if (SelectedComponent is Meni)
+                return;
+            if (tbCena.Text == "")
             {
-                errorProvider1.SetError(tbIme, "Ова поле не смее да биде празно!");
+                errorProvider1.SetError(tbCena, "Ова поле не смее да биде празно!");
                 e.Cancel = true;
             }
             else
@@ -982,14 +1015,14 @@ namespace SmetkaZaNaracka
                 bool pom1 = int.TryParse(tbCena.Text, out pom);
                 if (!pom1)
                 {
-                    errorProvider1.SetError(tbIme, "Ова поле може да биде само цел број!");
+                    errorProvider1.SetError(tbCena, "Ова поле може да биде само цел број!");
                     e.Cancel = true;
                 }
                 else
                 {
                     if (SelectedComponent != null && SelectedComponent.ComputeCost() != pom)
                         IsChanged = true;
-                    errorProvider1.SetError(tbIme, "");
+                    errorProvider1.SetError(tbCena, "");
                     e.Cancel = false;
                 }
             }

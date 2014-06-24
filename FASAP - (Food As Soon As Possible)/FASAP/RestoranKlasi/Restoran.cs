@@ -41,6 +41,20 @@ namespace SmetkaZaNaracka
             return false;
         }
 
+        public MenuComponent GetSameComponent(MenuComponent mc)
+        {
+            if (GlavnoMeni == null)
+                return null;
+            return GlavnoMeni.GetSameComponent(mc);
+        }
+
+        public bool SodrziComponent(MenuComponent mc)
+        {
+            if (GlavnoMeni == null)
+                return false;
+            return GlavnoMeni.Sodrzi(mc);
+        }
+
         public Restoran()
         {
             Kontakt = new List<Telefon>();

@@ -202,7 +202,7 @@ namespace SmetkaZaNaracka
         public override void SQLUpdate(Oracle.DataAccess.Client.OracleConnection conn, int resID)
         {
             string insertRest = @"UPDATE STAVKA
-                                SET OPIS_STAVKA = :OpisStavka, CENA_STAVKA = :CenaStavka, IME_STAVKA = :ImeStavka
+                                SET OPIS_STAVKA = :OpisStavka, CENA_STAVKA = :CenaStavka, IME_STAVKA = :ImeStavka, DODATOK_STAVKA = 0
                                 WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni AND STAVKA_ID = :StavkaID";
             OracleCommand cmd = new OracleCommand(insertRest, conn);
 
@@ -293,6 +293,18 @@ namespace SmetkaZaNaracka
             myCommand.ExecuteNonQuery();
 
             return vkID + 1;
+        }
+
+        public override bool Sodrzi(Object obj)
+        {
+            return this.Equals(obj);
+        }
+
+        public override MenuComponent GetSameComponent(MenuComponent mc)
+        {
+            if (Equals(mc))
+                return this;
+            return null;
         }
     }
 }

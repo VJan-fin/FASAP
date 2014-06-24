@@ -133,6 +133,51 @@ namespace SmetkaZaNaracka
 
         }
 
+        public override void SQLUpdate(Oracle.DataAccess.Client.OracleConnection conn, int resID)
+        {
+            string insertRest = @"UPDATE STAVKA
+                                SET OPIS_STAVKA = :OpisStavka, CENA_STAVKA = :CenaStavka, IME_STAVKA = :ImeStavka, DODATOK_STAVKA = 1
+                                WHERE RESTORAN_ID = :ResID AND IME_MENI = :ImeMeni AND STAVKA_ID = :StavkaID";
+            OracleCommand cmd = new OracleCommand(insertRest, conn);
+
+            OracleParameter prm = new OracleParameter("OpisStavka", OracleDbType.Varchar2);
+            prm.Value = Opis;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("CenaStavka", OracleDbType.Int64);
+            prm.Value = this.ComputeCost();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeStavka", OracleDbType.Varchar2);
+            prm.Value = Ime;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ResID", OracleDbType.Int64);
+            prm.Value = resID;
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("ImeMeni", OracleDbType.Varchar2);
+            prm.Value = Parent.GetName();
+            cmd.Parameters.Add(prm);
+
+            prm = new OracleParameter("StavkaID", OracleDbType.Int64);
+            prm.Value = ID;
+            cmd.Parameters.Add(prm);
+
+            int br;
+            try
+            {
+                br = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException("Проверете ја вашата конекција");
+            }
+
+            if (br == 0)
+                throw new DuplicatePrimaryKeyException("Не постои ставката");
+        }
+
         public override int SqlVklucuva(OracleConnection conn, OracleTransaction myTrans, int resID, int narID, int vkID, int q)
         {
             OracleCommand myCommand = conn.CreateCommand();
