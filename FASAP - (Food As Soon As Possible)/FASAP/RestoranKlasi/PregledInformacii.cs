@@ -287,9 +287,8 @@ namespace SmetkaZaNaracka
             OracleCommand cmd = new OracleCommand(sqlRest, this.Conn);
             cmd.CommandType = CommandType.Text;
 
-          //  try
-          //  {
-
+            try
+            {
                 OracleParameter prm = new OracleParameter("IME", OracleDbType.Varchar2);
                 prm.Value = this.tbIme.Text.Trim();
                 cmd.Parameters.Add(prm);
@@ -310,31 +309,31 @@ namespace SmetkaZaNaracka
                 else prm.Value = null;
                 cmd.Parameters.Add(prm);
 
-
                 prm = new OracleParameter("KAP", OracleDbType.Int32);
                 if (tbKapacitet.Text.Trim() != "") prm.Value = int.Parse(this.tbKapacitet.Text.Trim());
                 else prm.Value = null;
                 cmd.Parameters.Add(prm);
-                MessageBox.Show(""+prm.Value);
+                //MessageBox.Show(""+prm.Value);
 
                 prm = new OracleParameter("BR_M", OracleDbType.Int32);
                 if (tbBrojMasi.Text.Trim() != "")
                     prm.Value = int.Parse(this.tbBrojMasi.Text.Trim());
                 else prm.Value = null;
                 cmd.Parameters.Add(prm);
-
-            
+      
                 prm = new OracleParameter("CENA", OracleDbType.Int32);
                 if (tbCenaDostava.Text.Trim() != "")
                     prm.Value = int.Parse(this.tbCenaDostava.Text.Trim());
                 else
                     prm.Value = null;
+                cmd.Parameters.Add(prm);
             
                 prm = new OracleParameter("PRAG", OracleDbType.Int32);
                 if (tbPragDostava.Text.Trim() != "")
                     prm.Value = int.Parse(this.tbPragDostava.Text.Trim());
                 else
                     prm.Value = null;
+                cmd.Parameters.Add(prm);
              
                 prm = new OracleParameter("DAT", OracleDbType.Date);
                 if (tbDen.Text.Trim() != "" && tbMesec.Text.Trim()!="" && tbGodina.Text.Trim()!="")
@@ -355,32 +354,30 @@ namespace SmetkaZaNaracka
                 prm = new OracleParameter("REST_ID", OracleDbType.Int32);
                 prm.Value = this.RestoranID;
                 cmd.Parameters.Add(prm);
-
-
-                
+             
                 //cmd.ExecuteNonQuery();
-           // }
-       //     catch (Exception ex)
-        //    {
-        //        MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
-        //        if (mbf.ShowDialog() == DialogResult.Yes)
-        //            this.Close();
-        //        else
-        //            this.Close();
-        //    }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
+                if (mbf.ShowDialog() == DialogResult.Yes)
+                    this.Close();
+                else
+                    this.Close();
+            }
 
             int br1;
-          //  try
-          //  {
+            try
+            {
                 br1 = cmd.ExecuteNonQuery();
-          //  }
-         //   catch (Exception)
-         //   {
+            }
+            catch (Exception)
+            {
 
-           //      br1=-1;
-          //  }
+                 br1=-1;
+            }
 
-         //   if (br1 == -1) return false;
+            if (br1 == -1) return false;
             return true;
         }
 
