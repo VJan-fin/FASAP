@@ -207,6 +207,12 @@
     <Compile Include="PomosniKlasi\UspesnostNaNaracka.Designer.cs">
       <DependentUpon>UspesnostNaNaracka.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenadziranjeVraboteni\PregledDodatoci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenadziranjeVraboteni\PregledDodatoci.Designer.cs">
+      <DependentUpon>PregledDodatoci.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestoranKlasi\DodavanjeRestoran.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenadziranjeVraboteni\ListaVraboteni.resx">
       <DependentUpon>ListaVraboteni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenadziranjeVraboteni\PregledDodatoci.resx">
+      <DependentUpon>PregledDodatoci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenadziranjeVraboteni\PregledVraboten.resx">
       <DependentUpon>PregledVraboten.cs</DependentUpon>

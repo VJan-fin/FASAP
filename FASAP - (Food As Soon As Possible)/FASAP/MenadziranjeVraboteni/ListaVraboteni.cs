@@ -797,5 +797,19 @@ namespace SmetkaZaNaracka
             else
                 this.VcitajPozicii();
         }
+
+        private void buttonDodatoci_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentEmp != null)
+            {
+                PregledDodatoci viewAddForm = new PregledDodatoci(this.Conn, this.Restoran, this.CurrentEmp.VrabotenID);
+                viewAddForm.ShowDialog();
+            }
+            else
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Немате одбрано вработен!\nОдберете вработен и обидете се повторно", false);
+                mbf.ShowDialog();
+            }
+        }
     }
 }

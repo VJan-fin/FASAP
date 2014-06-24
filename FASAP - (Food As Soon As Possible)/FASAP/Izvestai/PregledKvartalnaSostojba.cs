@@ -28,6 +28,8 @@ namespace SmetkaZaNaracka
 
         public PregledKvartalnaSostojba(OracleConnection conn, Restoran rest)
         {
+            InitializeComponent();
+
             this.Conn = conn;
             this.Restoran = rest;
             Init();

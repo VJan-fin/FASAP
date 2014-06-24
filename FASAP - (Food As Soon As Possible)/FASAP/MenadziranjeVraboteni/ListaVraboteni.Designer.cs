@@ -76,6 +76,7 @@
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.buttonSmetka = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.buttonPozicija = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.buttonDodatoci = new SmetkaZaNaracka.ButtonFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBroj)).BeginInit();
             this.dbLayoutPanel2.SuspendLayout();
@@ -554,7 +555,7 @@
             this.buttonPregledVrab.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonPregledVrab.ForeColor = System.Drawing.Color.Khaki;
             this.buttonPregledVrab.Image = ((System.Drawing.Image)(resources.GetObject("buttonPregledVrab.Image")));
-            this.buttonPregledVrab.Location = new System.Drawing.Point(1125, 256);
+            this.buttonPregledVrab.Location = new System.Drawing.Point(1125, 220);
             this.buttonPregledVrab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonPregledVrab.Name = "buttonPregledVrab";
             this.buttonPregledVrab.Size = new System.Drawing.Size(207, 73);
@@ -571,7 +572,7 @@
             this.buttonDodadiVrab.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonDodadiVrab.ForeColor = System.Drawing.Color.Khaki;
             this.buttonDodadiVrab.Image = ((System.Drawing.Image)(resources.GetObject("buttonDodadiVrab.Image")));
-            this.buttonDodadiVrab.Location = new System.Drawing.Point(1125, 150);
+            this.buttonDodadiVrab.Location = new System.Drawing.Point(1125, 122);
             this.buttonDodadiVrab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonDodadiVrab.Name = "buttonDodadiVrab";
             this.buttonDodadiVrab.Size = new System.Drawing.Size(207, 73);
@@ -793,7 +794,7 @@
             this.buttonSmetka.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonSmetka.ForeColor = System.Drawing.Color.Khaki;
             this.buttonSmetka.Image = ((System.Drawing.Image)(resources.GetObject("buttonSmetka.Image")));
-            this.buttonSmetka.Location = new System.Drawing.Point(1125, 362);
+            this.buttonSmetka.Location = new System.Drawing.Point(1125, 416);
             this.buttonSmetka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonSmetka.Name = "buttonSmetka";
             this.buttonSmetka.Size = new System.Drawing.Size(207, 73);
@@ -811,7 +812,7 @@
             this.buttonPozicija.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.buttonPozicija.ForeColor = System.Drawing.Color.Khaki;
             this.buttonPozicija.Image = ((System.Drawing.Image)(resources.GetObject("buttonPozicija.Image")));
-            this.buttonPozicija.Location = new System.Drawing.Point(1125, 468);
+            this.buttonPozicija.Location = new System.Drawing.Point(1125, 514);
             this.buttonPozicija.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.buttonPozicija.Name = "buttonPozicija";
             this.buttonPozicija.Size = new System.Drawing.Size(207, 73);
@@ -822,11 +823,30 @@
             this.buttonPozicija.MouseEnter += new System.EventHandler(this.buttonOtkazi_MouseEnter);
             this.buttonPozicija.MouseLeave += new System.EventHandler(this.buttonOtkazi_MouseLeave);
             // 
+            // buttonDodatoci
+            // 
+            this.buttonDodatoci.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDodatoci.CausesValidation = false;
+            this.buttonDodatoci.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonDodatoci.ForeColor = System.Drawing.Color.Khaki;
+            this.buttonDodatoci.Image = ((System.Drawing.Image)(resources.GetObject("buttonDodatoci.Image")));
+            this.buttonDodatoci.Location = new System.Drawing.Point(1125, 318);
+            this.buttonDodatoci.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.buttonDodatoci.Name = "buttonDodatoci";
+            this.buttonDodatoci.Size = new System.Drawing.Size(207, 73);
+            this.buttonDodatoci.TabIndex = 109;
+            this.buttonDodatoci.Text = "Преглед на додатоци";
+            this.buttonDodatoci.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonDodatoci.Click += new System.EventHandler(this.buttonDodatoci_Click);
+            this.buttonDodatoci.MouseEnter += new System.EventHandler(this.buttonOtkazi_MouseEnter);
+            this.buttonDodatoci.MouseLeave += new System.EventHandler(this.buttonOtkazi_MouseLeave);
+            // 
             // ListaVraboteni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.buttonDodatoci);
             this.Controls.Add(this.buttonPozicija);
             this.Controls.Add(this.buttonSmetka);
             this.Controls.Add(this.pbPlata);
@@ -899,6 +919,7 @@
             this.Controls.SetChildIndex(this.pbPlata, 0);
             this.Controls.SetChildIndex(this.buttonSmetka, 0);
             this.Controls.SetChildIndex(this.buttonPozicija, 0);
+            this.Controls.SetChildIndex(this.buttonDodatoci, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbIme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBroj)).EndInit();
             this.dbLayoutPanel2.ResumeLayout(false);
@@ -964,5 +985,6 @@
         private LabelFASAP labelFASAP2;
         private ButtonFASAP buttonSmetka;
         private ButtonFASAP buttonPozicija;
+        private ButtonFASAP buttonDodatoci;
     }
 }

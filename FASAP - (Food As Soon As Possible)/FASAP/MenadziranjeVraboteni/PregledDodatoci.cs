@@ -11,33 +11,36 @@ using SmetkaZaNaracka.Properties;
 
 namespace SmetkaZaNaracka
 {
-    public partial class PregledPromet : BackgroundForm
+    public partial class PregledDodatoci : BackgroundForm
     {
         private OracleConnection Conn { get; set; }
         private Restoran Restoran { get; set; }
+        private int VrabotenID { get; set; }
 
         private int tekovnaGodina { get; set; }
         /// <summary>
         /// Pomosna lista koja gi sodrzi poziciite vo
         /// koi treba da se vnesat podatocite za prometot
         /// </summary>
-        private List<LabelFASAP> PrometMeseci { get; set; }
+        private List<LabelFASAP> DodatokMeseci { get; set; }
 
-        public PregledPromet(OracleConnection conn, Restoran rest)
+        public PregledDodatoci(OracleConnection conn, Restoran rest, int id)
         {
             InitializeComponent();
 
             this.Conn = conn;
             this.Restoran = rest;
+            this.VrabotenID = id;
             Init();
         }
-
+        /*
         // samo za primer
-        public PregledPromet()
+        public PregledDodatoci()
         {
             InitializeComponent();
 
             this.Restoran = new Restoran() { RestoranID = 1, Ime = "Ресторан Лира" };
+            this.VrabotenID = 5;
 
             string oradb = "Data Source=(DESCRIPTION="
           + "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1620))"
@@ -50,28 +53,28 @@ namespace SmetkaZaNaracka
 
             Init();
         }
-
+        */
         public void Init()
         {
             this.DoubleBuffered = true;
             this.Opacity = 0;
             this.tekovnaGodina = DateTime.Now.Year;
             this.lblGodina.Text = this.tekovnaGodina.ToString();
-            this.lblImeRestoran.Text = this.Restoran.Ime + " ";
+            this.lblVrabotenID.Text = this.VrabotenID.ToString() + " ";
 
-            this.PrometMeseci = new List<LabelFASAP>();
-            this.PrometMeseci.Add(this.lblPromet1);
-            this.PrometMeseci.Add(this.lblPromet2);
-            this.PrometMeseci.Add(this.lblPromet3);
-            this.PrometMeseci.Add(this.lblPromet4);
-            this.PrometMeseci.Add(this.lblPromet5);
-            this.PrometMeseci.Add(this.lblPromet6);
-            this.PrometMeseci.Add(this.lblPromet7);
-            this.PrometMeseci.Add(this.lblPromet8);
-            this.PrometMeseci.Add(this.lblPromet9);
-            this.PrometMeseci.Add(this.lblPromet10);
-            this.PrometMeseci.Add(this.lblPromet11);
-            this.PrometMeseci.Add(this.lblPromet12);
+            this.DodatokMeseci = new List<LabelFASAP>();
+            this.DodatokMeseci.Add(this.lblDodatok1);
+            this.DodatokMeseci.Add(this.lblDodatok2);
+            this.DodatokMeseci.Add(this.lblDodatok3);
+            this.DodatokMeseci.Add(this.lblDodatok4);
+            this.DodatokMeseci.Add(this.lblDodatok5);
+            this.DodatokMeseci.Add(this.lblDodatok6);
+            this.DodatokMeseci.Add(this.lblDodatok7);
+            this.DodatokMeseci.Add(this.lblDodatok8);
+            this.DodatokMeseci.Add(this.lblDodatok9);
+            this.DodatokMeseci.Add(this.lblDodatok10);
+            this.DodatokMeseci.Add(this.lblDodatok11);
+            this.DodatokMeseci.Add(this.lblDodatok12);
 
             this.ObnoviEkran();
         }
@@ -81,9 +84,9 @@ namespace SmetkaZaNaracka
         /// </summary>
         private void ClearLabels()
         {
-            foreach (var item in this.PrometMeseci)
+            foreach (var item in this.DodatokMeseci)
                 item.Text = " - ";
-            this.lblPromet.Text = " - ";
+            this.lblVkDodatok.Text = " - ";
         }
 
         /// <summary>
@@ -103,10 +106,10 @@ namespace SmetkaZaNaracka
         /// </summary>
         private void VcitajPodatoci()
         {
-            String sqlTab = @"SELECT MESEC_PROMET, IZNOS_PROMET
-                            FROM PROMET
-                            WHERE RESTORAN_ID = :REST_ID AND GODINA_PROMET = :GOD
-                            ORDER BY MESEC_PROMET";
+            String sqlTab = @"SELECT MESEC_DODATOK, IZNOS_DODATOK
+                            FROM DODATOK
+                            WHERE RESTORAN_ID = :REST_ID AND VRABOTEN_ID = :VRAB_ID AND GODINA_DODATOK = :GOD
+                            ORDER BY MESEC_DODATOK";
 
             OracleCommand cmd = new OracleCommand(sqlTab, Conn);
 
@@ -114,6 +117,10 @@ namespace SmetkaZaNaracka
             {
                 OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
                 prm.Value = this.Restoran.RestoranID;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("VRAB_ID", OracleDbType.Int64);
+                prm.Value = this.VrabotenID;
                 cmd.Parameters.Add(prm);
 
                 prm = new OracleParameter("GOD", OracleDbType.Int64);
@@ -124,22 +131,22 @@ namespace SmetkaZaNaracka
                 OracleDataReader dr = cmd.ExecuteReader();
 
                 int ind = 0;
-                int godPromet = 0;
+                int godDodatok = 0;
                 while (dr.Read())
                 {
                     int tmp = dr.GetInt32(1);
                     //int pom = int.Parse(dr.GetString(0).ToString()) - 1;
                     //MessageBox.Show(pom.ToString());
                     ind = int.Parse(dr.GetString(0).ToString()) - 1;
-                    this.PrometMeseci[ind].Text = tmp.ToString() + " ден. ";
-                    godPromet += tmp;
+                    this.DodatokMeseci[ind].Text = tmp.ToString() + " ден. ";
+                    godDodatok += tmp;
                     //ind++;
                 }
 
                 if (ind != 0)
-                    this.lblPromet.Text = godPromet.ToString() + " ден. ";
+                    this.lblVkDodatok.Text = godDodatok.ToString() + " ден. ";
                 else
-                    this.lblPromet.Text = " - ";
+                    this.lblVkDodatok.Text = " - ";
             }
             catch (Exception ex)
             {

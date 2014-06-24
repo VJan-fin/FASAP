@@ -59,11 +59,11 @@
             this.lblPromet5 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP10 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.pbRightG = new System.Windows.Forms.PictureBox();
-            this.lblImeRestoran = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP8 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.btnTekoven = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.labelFASAP5 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblPromet = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.lblImeRestoran = new SmetkaZaNaracka.LabelFASAP(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftG)).BeginInit();
             this.dbLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRightG)).BeginInit();
@@ -517,19 +517,6 @@
             this.pbRightG.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
             this.pbRightG.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
             // 
-            // lblImeRestoran
-            // 
-            this.lblImeRestoran.BackColor = System.Drawing.Color.Transparent;
-            this.lblImeRestoran.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblImeRestoran.ForeColor = System.Drawing.Color.Khaki;
-            this.lblImeRestoran.Image = ((System.Drawing.Image)(resources.GetObject("lblImeRestoran.Image")));
-            this.lblImeRestoran.LblObject = null;
-            this.lblImeRestoran.Location = new System.Drawing.Point(44, 39);
-            this.lblImeRestoran.Name = "lblImeRestoran";
-            this.lblImeRestoran.Size = new System.Drawing.Size(392, 100);
-            this.lblImeRestoran.TabIndex = 56;
-            this.lblImeRestoran.Text = "Ресторан: Име ";
-            // 
             // labelFASAP8
             // 
             this.labelFASAP8.AutoSize = true;
@@ -541,9 +528,9 @@
             this.labelFASAP8.Location = new System.Drawing.Point(44, 163);
             this.labelFASAP8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFASAP8.Name = "labelFASAP8";
-            this.labelFASAP8.Size = new System.Drawing.Size(527, 40);
+            this.labelFASAP8.Size = new System.Drawing.Size(556, 40);
             this.labelFASAP8.TabIndex = 55;
-            this.labelFASAP8.Text = "Преглед на месечниот промет   ";
+            this.labelFASAP8.Text = "Преглед на прометот по месеци   ";
             // 
             // btnTekoven
             // 
@@ -586,6 +573,19 @@
             this.lblPromet.Size = new System.Drawing.Size(302, 55);
             this.lblPromet.TabIndex = 57;
             this.lblPromet.Text = " ден.";
+            // 
+            // lblImeRestoran
+            // 
+            this.lblImeRestoran.BackColor = System.Drawing.Color.Transparent;
+            this.lblImeRestoran.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblImeRestoran.ForeColor = System.Drawing.Color.Khaki;
+            this.lblImeRestoran.Image = ((System.Drawing.Image)(resources.GetObject("lblImeRestoran.Image")));
+            this.lblImeRestoran.LblObject = null;
+            this.lblImeRestoran.Location = new System.Drawing.Point(44, 39);
+            this.lblImeRestoran.Name = "lblImeRestoran";
+            this.lblImeRestoran.Size = new System.Drawing.Size(392, 100);
+            this.lblImeRestoran.TabIndex = 56;
+            this.lblImeRestoran.Text = "Ресторан: Име ";
             // 
             // PregledPromet
             // 
@@ -642,7 +642,6 @@
         private LabelFASAP lblPromet8;
         private LabelFASAP labelFASAP1;
         private System.Windows.Forms.PictureBox pbRightG;
-        private LabelFASAP lblImeRestoran;
         private LabelFASAP labelFASAP8;
         private ButtonFASAP btnTekoven;
         private LabelFASAP labelFASAP16;
@@ -661,5 +660,6 @@
         private LabelFASAP labelFASAP2;
         private LabelFASAP labelFASAP5;
         private LabelFASAP lblPromet;
+        private LabelFASAP lblImeRestoran;
     }
 }
