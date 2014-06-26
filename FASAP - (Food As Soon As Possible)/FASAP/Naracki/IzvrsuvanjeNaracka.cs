@@ -606,7 +606,7 @@ namespace SmetkaZaNaracka
             }
             if (CurrItem != null)
             {
-                lblImeStavka.Text = CurrItem.GetName();
+                lblImeStavka.UpdateObject(CurrItem);
                 try
                 {
                     lblCenaProizvod.Text = String.Format("{0} ден.", CurrItem.ComputeCost().ToString());
@@ -663,7 +663,7 @@ namespace SmetkaZaNaracka
 
         private void pictureBox16_Click(object sender, EventArgs e)
         {
-            int pom = OrderList.Count - ListaKupeni.Count;
+            int pom = Naracka.Stavki.Count - ListaKupeni.Count;
             if (indKupeni < pom)
             {
                 indKupeni++;

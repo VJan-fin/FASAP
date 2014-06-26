@@ -632,7 +632,7 @@
             this.lblImeStavka.LblObject = null;
             this.lblImeStavka.Location = new System.Drawing.Point(668, 122);
             this.lblImeStavka.Name = "lblImeStavka";
-            this.lblImeStavka.Size = new System.Drawing.Size(520, 127);
+            this.lblImeStavka.Size = new System.Drawing.Size(509, 127);
             this.lblImeStavka.TabIndex = 18;
             this.lblImeStavka.MouseLeave += new System.EventHandler(this.lblImeStavka_MouseLeave);
             this.lblImeStavka.MouseHover += new System.EventHandler(this.lblImeStavka_MouseHover);
@@ -955,7 +955,7 @@
             this.lblCenaProizvod.ForeColor = System.Drawing.Color.White;
             this.lblCenaProizvod.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaProizvod.Image")));
             this.lblCenaProizvod.LblObject = null;
-            this.lblCenaProizvod.Location = new System.Drawing.Point(1194, 203);
+            this.lblCenaProizvod.Location = new System.Drawing.Point(1183, 203);
             this.lblCenaProizvod.Name = "lblCenaProizvod";
             this.lblCenaProizvod.Size = new System.Drawing.Size(127, 43);
             this.lblCenaProizvod.TabIndex = 32;

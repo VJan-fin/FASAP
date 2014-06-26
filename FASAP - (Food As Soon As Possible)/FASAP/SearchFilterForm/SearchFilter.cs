@@ -284,7 +284,9 @@ namespace SmetkaZaNaracka
                 lblSlobodniMasi.UpdateObject(Restoran.SlobodniMasi);
                 lblRabotnoVreme.UpdateObject(Restoran.RabotnoVreme);
                 postaviRejting(Restoran.Rejting);
-                lblDatumNaOtvoranje.UpdateObject(Restoran.DatumNaOtvoranje.Value.ToString("dd/MM/yyyy"));
+                if (Restoran.DatumNaOtvoranje != null)
+                    lblDatumNaOtvoranje.UpdateObject(Restoran.DatumNaOtvoranje.Value.ToString("dd/MM/yyyy"));
+                else lblDatumNaOtvoranje.UpdateObject(null);
                 lblKapacitet.UpdateObject(Restoran.Kapacitet);
                 lblBrojMasi.UpdateObject(Restoran.BrojMasi);
                 CurrKontakt = 0;

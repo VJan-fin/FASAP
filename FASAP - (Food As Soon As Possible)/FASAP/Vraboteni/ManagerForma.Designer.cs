@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForma));
             this.lblrest = new SmetkaZaNaracka.LabelFASAP(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonFASAP1 = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblManager = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -52,8 +52,10 @@
             this.btnPonuda = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.btnInformacii = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.tbURL = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.dbLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblrest
@@ -69,13 +71,18 @@
             this.lblrest.TabIndex = 4;
             this.lblrest.Text = "labelFASAP1";
             // 
-            // pictureBox3
+            // pictureBoxLogo
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(57, 261);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(162, 135);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.errorProvider1.SetIconAlignment(this.pictureBoxLogo, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.pictureBoxLogo.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(57, 263);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(162, 135);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 5;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // buttonFASAP1
             // 
@@ -86,15 +93,17 @@
             this.buttonFASAP1.Location = new System.Drawing.Point(242, 349);
             this.buttonFASAP1.Name = "buttonFASAP1";
             this.buttonFASAP1.Size = new System.Drawing.Size(164, 47);
-            this.buttonFASAP1.TabIndex = 7;
+            this.buttonFASAP1.TabIndex = 1;
             this.buttonFASAP1.Text = "Промени слика";
             this.buttonFASAP1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonFASAP1.Click += new System.EventHandler(this.buttonFASAP1_Click);
             this.buttonFASAP1.MouseEnter += new System.EventHandler(this.btnPregledPromet_MouseEnter);
             this.buttonFASAP1.MouseLeave += new System.EventHandler(this.btnPregledPromet_MouseLeave);
             // 
             // labelFASAP2
             // 
             this.labelFASAP2.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP2.CausesValidation = false;
             this.labelFASAP2.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
@@ -108,6 +117,7 @@
             // lblManager
             // 
             this.lblManager.BackColor = System.Drawing.Color.Transparent;
+            this.lblManager.CausesValidation = false;
             this.lblManager.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblManager.ForeColor = System.Drawing.Color.Khaki;
             this.lblManager.Image = ((System.Drawing.Image)(resources.GetObject("lblManager.Image")));
@@ -121,6 +131,7 @@
             // labelFASAP1
             // 
             this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP1.CausesValidation = false;
             this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
@@ -135,6 +146,7 @@
             // 
             this.btnVraboteni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVraboteni.BackColor = System.Drawing.Color.Transparent;
+            this.btnVraboteni.CausesValidation = false;
             this.btnVraboteni.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnVraboteni.ForeColor = System.Drawing.Color.Khaki;
             this.btnVraboteni.Image = ((System.Drawing.Image)(resources.GetObject("btnVraboteni.Image")));
@@ -142,7 +154,7 @@
             this.btnVraboteni.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnVraboteni.Name = "btnVraboteni";
             this.btnVraboteni.Size = new System.Drawing.Size(207, 73);
-            this.btnVraboteni.TabIndex = 53;
+            this.btnVraboteni.TabIndex = 4;
             this.btnVraboteni.Text = "Управување со вработени";
             this.btnVraboteni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnVraboteni.Click += new System.EventHandler(this.btnVraboteni_Click);
@@ -153,6 +165,7 @@
             // 
             this.labelFASAP7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP7.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP7.CausesValidation = false;
             this.labelFASAP7.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP7.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP7.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP7.Image")));
@@ -196,6 +209,7 @@
             // 
             this.btnPregledProdazba.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPregledProdazba.BackColor = System.Drawing.Color.Transparent;
+            this.btnPregledProdazba.CausesValidation = false;
             this.btnPregledProdazba.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnPregledProdazba.ForeColor = System.Drawing.Color.Khaki;
             this.btnPregledProdazba.Image = ((System.Drawing.Image)(resources.GetObject("btnPregledProdazba.Image")));
@@ -203,9 +217,10 @@
             this.btnPregledProdazba.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnPregledProdazba.Name = "btnPregledProdazba";
             this.btnPregledProdazba.Size = new System.Drawing.Size(207, 73);
-            this.btnPregledProdazba.TabIndex = 58;
+            this.btnPregledProdazba.TabIndex = 4;
             this.btnPregledProdazba.Text = "Преглед на продажбата";
             this.btnPregledProdazba.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPregledProdazba.Click += new System.EventHandler(this.btnPregledProdazba_Click);
             this.btnPregledProdazba.MouseEnter += new System.EventHandler(this.btnPregledPromet_MouseEnter);
             this.btnPregledProdazba.MouseLeave += new System.EventHandler(this.btnPregledPromet_MouseLeave);
             // 
@@ -213,6 +228,7 @@
             // 
             this.btnPregledRegioni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPregledRegioni.BackColor = System.Drawing.Color.Transparent;
+            this.btnPregledRegioni.CausesValidation = false;
             this.btnPregledRegioni.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnPregledRegioni.ForeColor = System.Drawing.Color.Khaki;
             this.btnPregledRegioni.Image = ((System.Drawing.Image)(resources.GetObject("btnPregledRegioni.Image")));
@@ -220,9 +236,10 @@
             this.btnPregledRegioni.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnPregledRegioni.Name = "btnPregledRegioni";
             this.btnPregledRegioni.Size = new System.Drawing.Size(207, 73);
-            this.btnPregledRegioni.TabIndex = 58;
+            this.btnPregledRegioni.TabIndex = 3;
             this.btnPregledRegioni.Text = "Преглед по региони";
             this.btnPregledRegioni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPregledRegioni.Click += new System.EventHandler(this.btnPregledRegioni_Click);
             this.btnPregledRegioni.MouseEnter += new System.EventHandler(this.btnPregledPromet_MouseEnter);
             this.btnPregledRegioni.MouseLeave += new System.EventHandler(this.btnPregledPromet_MouseLeave);
             // 
@@ -230,6 +247,7 @@
             // 
             this.labelFASAP6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP6.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP6.CausesValidation = false;
             this.labelFASAP6.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP6.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
@@ -244,6 +262,7 @@
             // 
             this.btnPregledPromet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPregledPromet.BackColor = System.Drawing.Color.Transparent;
+            this.btnPregledPromet.CausesValidation = false;
             this.btnPregledPromet.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnPregledPromet.ForeColor = System.Drawing.Color.Khaki;
             this.btnPregledPromet.Image = ((System.Drawing.Image)(resources.GetObject("btnPregledPromet.Image")));
@@ -251,7 +270,7 @@
             this.btnPregledPromet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnPregledPromet.Name = "btnPregledPromet";
             this.btnPregledPromet.Size = new System.Drawing.Size(207, 73);
-            this.btnPregledPromet.TabIndex = 56;
+            this.btnPregledPromet.TabIndex = 0;
             this.btnPregledPromet.Text = "Преглед на прометот";
             this.btnPregledPromet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPregledPromet.Click += new System.EventHandler(this.btnPregledPromet_Click);
@@ -262,6 +281,7 @@
             // 
             this.btnPridonesPromet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPridonesPromet.BackColor = System.Drawing.Color.Transparent;
+            this.btnPridonesPromet.CausesValidation = false;
             this.btnPridonesPromet.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnPridonesPromet.ForeColor = System.Drawing.Color.Khaki;
             this.btnPridonesPromet.Image = ((System.Drawing.Image)(resources.GetObject("btnPridonesPromet.Image")));
@@ -269,7 +289,7 @@
             this.btnPridonesPromet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnPridonesPromet.Name = "btnPridonesPromet";
             this.btnPridonesPromet.Size = new System.Drawing.Size(207, 73);
-            this.btnPridonesPromet.TabIndex = 55;
+            this.btnPridonesPromet.TabIndex = 1;
             this.btnPridonesPromet.Text = "Придонес во прометот";
             this.btnPridonesPromet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPridonesPromet.Click += new System.EventHandler(this.btnPridonesPromet_Click);
@@ -280,6 +300,7 @@
             // 
             this.btnKvartalnaSostojba.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnKvartalnaSostojba.BackColor = System.Drawing.Color.Transparent;
+            this.btnKvartalnaSostojba.CausesValidation = false;
             this.btnKvartalnaSostojba.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnKvartalnaSostojba.ForeColor = System.Drawing.Color.Khaki;
             this.btnKvartalnaSostojba.Image = ((System.Drawing.Image)(resources.GetObject("btnKvartalnaSostojba.Image")));
@@ -287,7 +308,7 @@
             this.btnKvartalnaSostojba.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnKvartalnaSostojba.Name = "btnKvartalnaSostojba";
             this.btnKvartalnaSostojba.Size = new System.Drawing.Size(207, 73);
-            this.btnKvartalnaSostojba.TabIndex = 57;
+            this.btnKvartalnaSostojba.TabIndex = 2;
             this.btnKvartalnaSostojba.Text = "Квартална состојба";
             this.btnKvartalnaSostojba.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnKvartalnaSostojba.Click += new System.EventHandler(this.btnKvartalnaSostojba_Click);
@@ -298,6 +319,7 @@
             // 
             this.labelFASAP3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP3.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP3.CausesValidation = false;
             this.labelFASAP3.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP3.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP3.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP3.Image")));
@@ -312,6 +334,7 @@
             // 
             this.labelFASAP8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP8.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP8.CausesValidation = false;
             this.labelFASAP8.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP8.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP8.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP8.Image")));
@@ -326,6 +349,7 @@
             // 
             this.labelFASAP4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP4.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP4.CausesValidation = false;
             this.labelFASAP4.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP4.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
@@ -340,6 +364,7 @@
             // 
             this.labelFASAP5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelFASAP5.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP5.CausesValidation = false;
             this.labelFASAP5.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold);
             this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
@@ -354,6 +379,7 @@
             // 
             this.btnPonuda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPonuda.BackColor = System.Drawing.Color.Transparent;
+            this.btnPonuda.CausesValidation = false;
             this.btnPonuda.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnPonuda.ForeColor = System.Drawing.Color.Khaki;
             this.btnPonuda.Image = ((System.Drawing.Image)(resources.GetObject("btnPonuda.Image")));
@@ -361,7 +387,7 @@
             this.btnPonuda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnPonuda.Name = "btnPonuda";
             this.btnPonuda.Size = new System.Drawing.Size(207, 73);
-            this.btnPonuda.TabIndex = 54;
+            this.btnPonuda.TabIndex = 3;
             this.btnPonuda.Text = "Управување со понудата";
             this.btnPonuda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPonuda.Click += new System.EventHandler(this.btnPonuda_Click);
@@ -372,6 +398,7 @@
             // 
             this.btnInformacii.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnInformacii.BackColor = System.Drawing.Color.Transparent;
+            this.btnInformacii.CausesValidation = false;
             this.btnInformacii.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
             this.btnInformacii.ForeColor = System.Drawing.Color.Khaki;
             this.btnInformacii.Image = ((System.Drawing.Image)(resources.GetObject("btnInformacii.Image")));
@@ -379,7 +406,7 @@
             this.btnInformacii.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnInformacii.Name = "btnInformacii";
             this.btnInformacii.Size = new System.Drawing.Size(207, 73);
-            this.btnInformacii.TabIndex = 55;
+            this.btnInformacii.TabIndex = 2;
             this.btnInformacii.Text = "Информации за ресторанот";
             this.btnInformacii.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnInformacii.Click += new System.EventHandler(this.btnInfo_Click);
@@ -394,13 +421,19 @@
             this.tbURL.Location = new System.Drawing.Point(246, 302);
             this.tbURL.Name = "tbURL";
             this.tbURL.Size = new System.Drawing.Size(358, 30);
-            this.tbURL.TabIndex = 56;
+            this.tbURL.TabIndex = 0;
+            this.tbURL.Validating += new System.ComponentModel.CancelEventHandler(this.tbURL_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ManagerForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.tbURL);
             this.Controls.Add(this.btnInformacii);
             this.Controls.Add(this.btnPonuda);
@@ -410,14 +443,12 @@
             this.Controls.Add(this.lblManager);
             this.Controls.Add(this.labelFASAP2);
             this.Controls.Add(this.buttonFASAP1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblrest);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "ManagerForma";
             this.Opacity = 1D;
             this.Text = "ManagerForma";
             this.Controls.SetChildIndex(this.lblrest, 0);
-            this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.buttonFASAP1, 0);
             this.Controls.SetChildIndex(this.labelFASAP2, 0);
             this.Controls.SetChildIndex(this.lblManager, 0);
@@ -427,8 +458,10 @@
             this.Controls.SetChildIndex(this.btnPonuda, 0);
             this.Controls.SetChildIndex(this.btnInformacii, 0);
             this.Controls.SetChildIndex(this.tbURL, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Controls.SetChildIndex(this.pictureBoxLogo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.dbLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,7 +470,7 @@
         #endregion
 
         private LabelFASAP lblrest;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private ButtonFASAP buttonFASAP1;
         private LabelFASAP labelFASAP2;
         private LabelFASAP lblManager;
@@ -458,5 +491,6 @@
         private LabelFASAP labelFASAP5;
         private ButtonFASAP btnInformacii;
         private System.Windows.Forms.TextBox tbURL;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

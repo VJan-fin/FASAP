@@ -107,6 +107,18 @@
     <Compile Include="Izvestai\PregledKvartalnaSostojba.Designer.cs">
       <DependentUpon>PregledKvartalnaSostojba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Izvestai\PregledNaProdazba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvestai\PregledNaProdazba.Designer.cs">
+      <DependentUpon>PregledNaProdazba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izvestai\PregledPoRegioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvestai\PregledPoRegioni.Designer.cs">
+      <DependentUpon>PregledPoRegioni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Izvestai\PregledPromet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +352,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Izvestai\PregledKvartalnaSostojba.resx">
       <DependentUpon>PregledKvartalnaSostojba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvestai\PregledNaProdazba.resx">
+      <DependentUpon>PregledNaProdazba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Izvestai\PregledPoRegioni.resx">
+      <DependentUpon>PregledPoRegioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Izvestai\PregledPromet.resx">
       <DependentUpon>PregledPromet.cs</DependentUpon>
