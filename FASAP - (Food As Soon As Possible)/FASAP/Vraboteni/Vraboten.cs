@@ -39,7 +39,7 @@ namespace SmetkaZaNaracka
                             where Restoran_id in
                                 (select restoran_id
                                 from korisnik
-                                where KORISNICHKO_IME = :UserName AND LOZINKA = :PASSWORD)";
+                                where KORISNICHKO_IME = :UserName AND LOZINKA = :Password)";
             OracleCommand cmd = new OracleCommand(sqlMeni, conn);
             OracleParameter prm = new OracleParameter("UserName", OracleDbType.Varchar2);
             prm.Value = Username;

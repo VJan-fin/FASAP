@@ -113,6 +113,24 @@ namespace SmetkaZaNaracka
             timer2.Start();
         }
 
+        delegate void SetObjectCallback(LabelFASAP fs, Object obj);
+
+        private void SetObject(LabelFASAP fs, Object obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetObjectCallback d = new SetObjectCallback(SetObject);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.UpdateObject(obj);
+            }
+        }
+
         public void PrevzemiNaracki()
         {
             naracki = Vraboten.ListaNaracki(Conn);
@@ -399,7 +417,9 @@ namespace SmetkaZaNaracka
             prm = new OracleParameter("Vkupno", OracleDbType.Int32);
             prm.Value = CurrNaracka.VkupnaCena;
             cmd.Parameters.Add(prm);
+
             LoadingSemaphore.Release();
+
             prm = new OracleParameter("ResID", OracleDbType.Int32);
             prm.Value = Vraboten.RestoranID;
             cmd.Parameters.Add(prm);
