@@ -202,10 +202,10 @@ namespace SmetkaZaNaracka
 	                 from
 		                (select distinct *
 		                 from q, promet p
-		                 where (p.mesec_promet between 1 and 3) and q.kvartali = 'Прв квартал'
+		                 where ((p.mesec_promet between 1 and 3) and q.kvartali = 'Прв квартал'
 			                  or (p.mesec_promet between 4 and 6) and q.kvartali = 'Втор квартал'
 			                  or (p.mesec_promet between 7 and 9) and q.kvartali = 'Трет квартал'
-			                  or (p.mesec_promet between 10 and 12) and q.kvartali = 'Четврт квартал'
+			                  or (p.mesec_promet between 10 and 12) and q.kvartali = 'Четврт квартал')
 			                  and restoran_id = :REST_ID1
 		                 order by p.godina_promet, q.kvartali
 		                ) t
@@ -232,8 +232,8 @@ namespace SmetkaZaNaracka
 			                 from dodatok
 			                 where restoran_id = :REST_ID3
 			                ) dat
-		                 where to_char(i.datum_na_vrabotuvanje, 'yyyy') < godina_dodatok 
-			                or (to_char(i.datum_na_vrabotuvanje, 'yyyy') = godina_dodatok and to_char(i.datum_na_vrabotuvanje, 'mm') < mesec_dodatok) 
+		                 where (to_char(i.datum_na_vrabotuvanje, 'yyyy') < godina_dodatok 
+			                or (to_char(i.datum_na_vrabotuvanje, 'yyyy') = godina_dodatok and to_char(i.datum_na_vrabotuvanje, 'mm') < mesec_dodatok))
 			                and i.restoran_id = :REST_ID4 and i.status like '1'
 		                 order by i.vraboten_id, godina_dodatok, mesec_dodatok
 		                ) plati
