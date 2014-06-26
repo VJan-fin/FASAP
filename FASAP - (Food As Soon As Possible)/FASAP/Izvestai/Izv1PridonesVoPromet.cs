@@ -72,7 +72,7 @@ namespace SmetkaZaNaracka
             this.DoubleBuffered = true;
             this.Opacity = 0;
             indexStart = 0;
-
+           
             iminja = new List<LabelFASAP>();
             promet = new List<LabelFASAP>();
             prosek = new List<LabelFASAP>();
@@ -111,7 +111,7 @@ namespace SmetkaZaNaracka
             OrderPics.Add(pbProcent);
 
             clearLabels();
-
+            lblPromet.Text = ": :";
             VcitajPozicii();
 
             this.SortParam = SortArg.Procent;
@@ -202,7 +202,7 @@ namespace SmetkaZaNaracka
             {
                 l.Text = ": :";
             }
-            lblPromet.Text = ": :";
+            //lblPromet.Text = ": :";
         }
         /*
         //samo probni redici za da gi testiram kopcinjata nagore nadole :D
@@ -386,7 +386,7 @@ namespace SmetkaZaNaracka
         }
 
         public void vcitajPromet(){
-            String sql="select iznos_promet from promet where mesec_promet = :MESEC and godina_promet= :GODINA";
+            String sql="select iznos_promet from promet where mesec_promet = :MESEC and godina_promet= :GODINA and restoran_id= :REST_ID";
             OracleCommand cmd = new OracleCommand(sql, Conn);
 
            try
@@ -397,6 +397,10 @@ namespace SmetkaZaNaracka
 
                 prm = new OracleParameter("GODINA", OracleDbType.Int64);
                 prm.Value = lblGodina.Text;
+                cmd.Parameters.Add(prm);
+
+                prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                prm.Value = this.RestoranID;
                 cmd.Parameters.Add(prm);
 
                 cmd.CommandType = CommandType.Text;
@@ -442,17 +446,19 @@ namespace SmetkaZaNaracka
         private void Izv1PridonesVoPromet_Load(object sender, EventArgs e)
         {
             postaviTekovenDatum();
-            vcitajPromet();
+          
             vcitajTabela();
             vcitajFunkcii();
             FiltrirajVraboteni();
             //probno();
             popolniLabeli();
+            vcitajPromet();
         
         }
         private void btnVnesi_Click(object sender, EventArgs e)
         {
             indexStart = 0;
+            lblPromet.Text = ": :";
             vraboteni.Clear();
             vcitajTabela();
             vcitajFunkcii();
