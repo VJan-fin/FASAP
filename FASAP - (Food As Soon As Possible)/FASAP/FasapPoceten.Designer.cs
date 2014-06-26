@@ -269,8 +269,8 @@
             this.lblRest8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest8.AutoSize = true;
             this.lblRest8.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest8.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest8.ForeColor = System.Drawing.Color.White;
+            this.lblRest8.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest8.ForeColor = System.Drawing.Color.Gold;
             this.lblRest8.Image = ((System.Drawing.Image)(resources.GetObject("lblRest8.Image")));
             this.lblRest8.LblObject = null;
             this.lblRest8.Location = new System.Drawing.Point(169, 427);
@@ -287,8 +287,8 @@
             this.lblRest7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest7.AutoSize = true;
             this.lblRest7.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest7.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest7.ForeColor = System.Drawing.Color.White;
+            this.lblRest7.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest7.ForeColor = System.Drawing.Color.Gold;
             this.lblRest7.Image = ((System.Drawing.Image)(resources.GetObject("lblRest7.Image")));
             this.lblRest7.LblObject = null;
             this.lblRest7.Location = new System.Drawing.Point(169, 375);
@@ -305,8 +305,8 @@
             this.lblRest6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest6.AutoSize = true;
             this.lblRest6.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest6.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest6.ForeColor = System.Drawing.Color.White;
+            this.lblRest6.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest6.ForeColor = System.Drawing.Color.Gold;
             this.lblRest6.Image = ((System.Drawing.Image)(resources.GetObject("lblRest6.Image")));
             this.lblRest6.LblObject = null;
             this.lblRest6.Location = new System.Drawing.Point(169, 323);
@@ -338,8 +338,8 @@
             this.lblRest1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest1.AutoSize = true;
             this.lblRest1.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest1.ForeColor = System.Drawing.Color.White;
+            this.lblRest1.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest1.ForeColor = System.Drawing.Color.Gold;
             this.lblRest1.Image = ((System.Drawing.Image)(resources.GetObject("lblRest1.Image")));
             this.lblRest1.LblObject = null;
             this.lblRest1.Location = new System.Drawing.Point(169, 63);
@@ -356,8 +356,8 @@
             this.lblRest2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest2.AutoSize = true;
             this.lblRest2.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest2.ForeColor = System.Drawing.Color.White;
+            this.lblRest2.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest2.ForeColor = System.Drawing.Color.Gold;
             this.lblRest2.Image = ((System.Drawing.Image)(resources.GetObject("lblRest2.Image")));
             this.lblRest2.LblObject = null;
             this.lblRest2.Location = new System.Drawing.Point(169, 115);
@@ -374,8 +374,8 @@
             this.lblRest3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest3.AutoSize = true;
             this.lblRest3.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest3.ForeColor = System.Drawing.Color.White;
+            this.lblRest3.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest3.ForeColor = System.Drawing.Color.Gold;
             this.lblRest3.Image = ((System.Drawing.Image)(resources.GetObject("lblRest3.Image")));
             this.lblRest3.LblObject = null;
             this.lblRest3.Location = new System.Drawing.Point(169, 167);
@@ -392,8 +392,8 @@
             this.lblRest4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest4.AutoSize = true;
             this.lblRest4.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest4.ForeColor = System.Drawing.Color.White;
+            this.lblRest4.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest4.ForeColor = System.Drawing.Color.Gold;
             this.lblRest4.Image = ((System.Drawing.Image)(resources.GetObject("lblRest4.Image")));
             this.lblRest4.LblObject = null;
             this.lblRest4.Location = new System.Drawing.Point(169, 219);
@@ -410,8 +410,8 @@
             this.lblRest5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRest5.AutoSize = true;
             this.lblRest5.BackColor = System.Drawing.Color.Transparent;
-            this.lblRest5.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRest5.ForeColor = System.Drawing.Color.White;
+            this.lblRest5.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRest5.ForeColor = System.Drawing.Color.Gold;
             this.lblRest5.Image = ((System.Drawing.Image)(resources.GetObject("lblRest5.Image")));
             this.lblRest5.LblObject = null;
             this.lblRest5.Location = new System.Drawing.Point(169, 271);
@@ -527,8 +527,8 @@
             this.lblNaj3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaj3.AutoSize = true;
             this.lblNaj3.BackColor = System.Drawing.Color.Transparent;
-            this.lblNaj3.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaj3.ForeColor = System.Drawing.Color.White;
+            this.lblNaj3.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaj3.ForeColor = System.Drawing.Color.Gold;
             this.lblNaj3.Image = ((System.Drawing.Image)(resources.GetObject("lblNaj3.Image")));
             this.lblNaj3.LblObject = null;
             this.lblNaj3.Location = new System.Drawing.Point(165, 123);
@@ -537,16 +537,16 @@
             this.lblNaj3.TabIndex = 4;
             this.lblNaj3.Text = ": :";
             this.lblNaj3.Click += new System.EventHandler(this.lblNaj1_Click);
-            this.lblNaj3.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
-            this.lblNaj3.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblNaj3.MouseEnter += new System.EventHandler(this.lblNaj5_MouseEnter);
+            this.lblNaj3.MouseLeave += new System.EventHandler(this.lblNaj1_MouseLeave);
             // 
             // lblNaj4
             // 
             this.lblNaj4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaj4.AutoSize = true;
             this.lblNaj4.BackColor = System.Drawing.Color.Transparent;
-            this.lblNaj4.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaj4.ForeColor = System.Drawing.Color.White;
+            this.lblNaj4.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaj4.ForeColor = System.Drawing.Color.Gold;
             this.lblNaj4.Image = ((System.Drawing.Image)(resources.GetObject("lblNaj4.Image")));
             this.lblNaj4.LblObject = null;
             this.lblNaj4.Location = new System.Drawing.Point(165, 178);
@@ -555,16 +555,16 @@
             this.lblNaj4.TabIndex = 5;
             this.lblNaj4.Text = ": :";
             this.lblNaj4.Click += new System.EventHandler(this.lblNaj1_Click);
-            this.lblNaj4.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
-            this.lblNaj4.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblNaj4.MouseEnter += new System.EventHandler(this.lblNaj5_MouseEnter);
+            this.lblNaj4.MouseLeave += new System.EventHandler(this.lblNaj1_MouseLeave);
             // 
             // lblNaj1
             // 
             this.lblNaj1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaj1.AutoSize = true;
             this.lblNaj1.BackColor = System.Drawing.Color.Transparent;
-            this.lblNaj1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaj1.ForeColor = System.Drawing.Color.White;
+            this.lblNaj1.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaj1.ForeColor = System.Drawing.Color.Gold;
             this.lblNaj1.Image = ((System.Drawing.Image)(resources.GetObject("lblNaj1.Image")));
             this.lblNaj1.LblObject = null;
             this.lblNaj1.Location = new System.Drawing.Point(165, 13);
@@ -573,16 +573,16 @@
             this.lblNaj1.TabIndex = 2;
             this.lblNaj1.Text = ": :";
             this.lblNaj1.Click += new System.EventHandler(this.lblNaj1_Click);
-            this.lblNaj1.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
-            this.lblNaj1.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblNaj1.MouseEnter += new System.EventHandler(this.lblNaj5_MouseEnter);
+            this.lblNaj1.MouseLeave += new System.EventHandler(this.lblNaj1_MouseLeave);
             // 
             // lblNaj2
             // 
             this.lblNaj2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaj2.AutoSize = true;
             this.lblNaj2.BackColor = System.Drawing.Color.Transparent;
-            this.lblNaj2.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaj2.ForeColor = System.Drawing.Color.White;
+            this.lblNaj2.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaj2.ForeColor = System.Drawing.Color.Gold;
             this.lblNaj2.Image = ((System.Drawing.Image)(resources.GetObject("lblNaj2.Image")));
             this.lblNaj2.LblObject = null;
             this.lblNaj2.Location = new System.Drawing.Point(165, 68);
@@ -591,16 +591,16 @@
             this.lblNaj2.TabIndex = 3;
             this.lblNaj2.Text = ": :";
             this.lblNaj2.Click += new System.EventHandler(this.lblNaj1_Click);
-            this.lblNaj2.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
-            this.lblNaj2.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblNaj2.MouseEnter += new System.EventHandler(this.lblNaj5_MouseEnter);
+            this.lblNaj2.MouseLeave += new System.EventHandler(this.lblNaj1_MouseLeave);
             // 
             // lblNaj5
             // 
             this.lblNaj5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaj5.AutoSize = true;
             this.lblNaj5.BackColor = System.Drawing.Color.Transparent;
-            this.lblNaj5.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaj5.ForeColor = System.Drawing.Color.White;
+            this.lblNaj5.Font = new System.Drawing.Font("Trebuchet MS", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNaj5.ForeColor = System.Drawing.Color.Gold;
             this.lblNaj5.Image = ((System.Drawing.Image)(resources.GetObject("lblNaj5.Image")));
             this.lblNaj5.LblObject = null;
             this.lblNaj5.Location = new System.Drawing.Point(165, 234);
@@ -609,8 +609,8 @@
             this.lblNaj5.TabIndex = 6;
             this.lblNaj5.Text = ": :";
             this.lblNaj5.Click += new System.EventHandler(this.lblNaj1_Click);
-            this.lblNaj5.MouseEnter += new System.EventHandler(this.lblMeni1_MouseEnter);
-            this.lblNaj5.MouseLeave += new System.EventHandler(this.lblMeni1_MouseLeave);
+            this.lblNaj5.MouseEnter += new System.EventHandler(this.lblNaj5_MouseEnter);
+            this.lblNaj5.MouseLeave += new System.EventHandler(this.lblNaj1_MouseLeave);
             // 
             // btnRegister
             // 

@@ -167,11 +167,25 @@ namespace SmetkaZaNaracka
             {
                 if (ind < this.Gradovi.Count)
                 {
+                    if (Gradovi[ind].Equals(tekovenGrad))
+                    {
+                        this.labeliGrad[i].Image = Resources.LabelBackgroundSelected;
+                        this.labeliGrad[i].ForeColor = Color.SaddleBrown;
+                    }
+                    else
+                    {
+                        this.labeliGrad[i].Image = Resources.LabelBackground2;
+                        this.labeliGrad[i].ForeColor = Color.White;
+                    }
                     this.labeliGrad[i].UpdateObject(this.Gradovi[ind]);
                     ind++;
                 }
                 else
+                {
                     this.labeliGrad[i].UpdateObject(null);
+                    this.labeliGrad[i].Image = Resources.LabelBackground2;
+                    this.labeliGrad[i].ForeColor = Color.White;
+                }
             }
             //clearLabels();
             // for (int i = indexG; i < indexG + 4; i++)
@@ -187,11 +201,25 @@ namespace SmetkaZaNaracka
             {
                 if (ind < this.Kategorija.Count)
                 {
+                    if (Kategorija[ind] == tekovnaKat)
+                    {
+                        this.labeliKategorija[i].Image = Resources.LabelBackgroundSelected;
+                        this.labeliKategorija[i].ForeColor = Color.SaddleBrown;
+                    }
+                    else
+                    {
+                        this.labeliKategorija[i].Image = Resources.LabelBackground2;
+                        this.labeliKategorija[i].ForeColor = Color.White;
+                    }
                     this.labeliKategorija[i].UpdateObject(this.Kategorija[ind]);
                     ind++;
                 }
                 else
+                {
                     this.labeliKategorija[i].UpdateObject(null);
+                    this.labeliKategorija[i].Image = Resources.LabelBackground2;
+                    this.labeliKategorija[i].ForeColor = Color.White;
+                }
             }
 
             // for (int i = indexK; i < indexK + 5; i++)
@@ -491,7 +519,9 @@ namespace SmetkaZaNaracka
             if (lb.LblObject != null)
             {
                 Cursor = Cursors.Hand;
-                lb.Font = new Font("Trebuchet MS", 20, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                if(lb.LblObject is Restoran)
+                    lb.Font = new Font("Trebuchet MS", 19, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                else lb.Font = new Font("Trebuchet MS", 19, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
 
@@ -503,7 +533,9 @@ namespace SmetkaZaNaracka
             if (lb.LblObject != null)
             {
                 Cursor = Cursors.Default;
-                lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                if(lb.LblObject is Restoran)
+                    lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                else lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
 
@@ -706,6 +738,30 @@ namespace SmetkaZaNaracka
 
                 }
 
+            }
+        }
+
+        private void lblNaj1_MouseLeave(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb == null)
+                MessageBox.Show("Ednakvo na null vo MouseLeave");
+            if (lb.LblObject != null)
+            {
+                Cursor = Cursors.Default;
+                lb.Font = new Font("Trebuchet MS", 18, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            }
+        }
+
+        private void lblNaj5_MouseEnter(object sender, EventArgs e)
+        {
+            LabelFASAP lb = sender as LabelFASAP;
+            if (lb == null)
+                MessageBox.Show("Ednakvo na null vo MouseEnter");
+            if (lb.LblObject != null)
+            {
+                Cursor = Cursors.Hand;
+                lb.Font = new Font("Trebuchet MS", 19, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             }
         }
 
