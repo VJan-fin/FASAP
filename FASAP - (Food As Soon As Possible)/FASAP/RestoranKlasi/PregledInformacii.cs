@@ -89,38 +89,44 @@ namespace SmetkaZaNaracka
         }
         private int dodadiTelefon()
         {
-          
-            string insertRest = @"INSERT INTO IMENIK (RESTORAN_ID, TELEFON) VALUES (:REST_ID, :TEL)";
-            OracleCommand cmd = new OracleCommand(insertRest, Conn);
-            try
+
+            if (tbTelefon.Text.Trim() != "")
             {
-                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-                prm.Value = this.RestoranID;
-                cmd.Parameters.Add(prm);
+                string insertImenik = @"Insert into IMENIK (RESTORAN_ID,TELEFON) values (:REST_ID,:TEL)";
+                OracleCommand cmd = new OracleCommand(insertImenik, Conn);
 
-                prm = new OracleParameter("TEL", OracleDbType.Varchar2);
-                prm.Value = this.tbTelefon.Text.Trim();
+                try
+                {
+                    OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                    prm.Value = this.RestoranID;
+                    cmd.Parameters.Add(prm);
 
+                    prm = new OracleParameter("TEL", OracleDbType.Varchar2);
 
-                cmd.Parameters.Add(prm);
+                    prm.Value = this.tbTelefon.Text.Trim();
+
+                    cmd.Parameters.Add(prm);
+                }
+                catch (Exception ex)
+                {
+                    return -1;
+                }
+
+                int br;
+
+                try
+                {
+                    br = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+
+                    br = -1;
+                }
+                return br;
             }
-            catch (Exception ex)
-            {
-                return -1;
-            }
-            cmd.CommandType = CommandType.Text;
-
-            int br1;
-            try
-            {
-                br1 = cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-
-                br1 = -1;
-            }
-            return br1;
+            else  return 1; 
+            
         }
         private int izbrisiTelefon()
         {

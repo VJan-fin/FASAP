@@ -49,39 +49,43 @@ namespace SmetkaZaNaracka
            
         }
         private int dodadiVoImenik(){
-            string insertImenik = @"Insert into IMENIK (RESTORAN_ID,TELEFON) values (:REST_ID,:TEL)";
-            OracleCommand cmd = new OracleCommand(insertImenik, Conn);
-
-            try
+            if (tbTel.Text.Trim() != "")
             {
-                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-                prm.Value = this.RestoranID;
-                cmd.Parameters.Add(prm);
+                string insertImenik = @"Insert into IMENIK (RESTORAN_ID,TELEFON) values (:REST_ID,:TEL)";
+                OracleCommand cmd = new OracleCommand(insertImenik, Conn);
 
-                prm = new OracleParameter("TEL", OracleDbType.Varchar2);
-                if (tbTel.Text.Trim() != "")
-                    prm.Value = this.tbTel.Text.Trim();
-                else prm.Value = null;
-                cmd.Parameters.Add(prm);
+                try
+                {
+                    OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
+                    prm.Value = this.RestoranID;
+                    cmd.Parameters.Add(prm);
+
+                    prm = new OracleParameter("TEL", OracleDbType.Varchar2);
+                   
+                        prm.Value = this.tbTel.Text.Trim();
+                 
+                    cmd.Parameters.Add(prm);
+                }
+                catch (Exception ex)
+                {
+                    return -1;
+                }
+
+                int br;
+
+                try
+                {
+                    br = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+
+                    br = -1;
+                }
+
+                return br;
             }
-            catch (Exception ex)
-            {
-               return  -1;
-            }
-
-            int br;
-
-            try
-            {
-                br = cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                br = -1;
-            }
-
-            return br;
+            return 1;
         }
         private int dodadiGlavnoMeni()
         {
