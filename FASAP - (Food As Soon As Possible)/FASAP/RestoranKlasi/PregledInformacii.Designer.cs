@@ -93,6 +93,8 @@
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(309, 32);
             this.tbIme.TabIndex = 5;
+            this.tbIme.TabStop = false;
+            this.tbIme.Click += new System.EventHandler(this.tbIme_Click);
             this.tbIme.Validating += new System.ComponentModel.CancelEventHandler(this.tbIme_Validating);
             // 
             // lblKategorija
@@ -117,6 +119,8 @@
             this.tbKategoorija.Name = "tbKategoorija";
             this.tbKategoorija.Size = new System.Drawing.Size(309, 32);
             this.tbKategoorija.TabIndex = 7;
+            this.tbKategoorija.TabStop = false;
+            this.tbKategoorija.Click += new System.EventHandler(this.tbIme_Click);
             this.tbKategoorija.Validating += new System.ComponentModel.CancelEventHandler(this.tbKategoorija_Validating);
             // 
             // labelFASAP4
@@ -142,6 +146,8 @@
             this.tbUlica.Name = "tbUlica";
             this.tbUlica.Size = new System.Drawing.Size(309, 32);
             this.tbUlica.TabIndex = 9;
+            this.tbUlica.TabStop = false;
+            this.tbUlica.Click += new System.EventHandler(this.tbIme_Click);
             // 
             // labelFASAP5
             // 
@@ -165,6 +171,8 @@
             this.tbGrad.Name = "tbGrad";
             this.tbGrad.Size = new System.Drawing.Size(309, 32);
             this.tbGrad.TabIndex = 11;
+            this.tbGrad.TabStop = false;
+            this.tbGrad.Click += new System.EventHandler(this.tbIme_Click);
             // 
             // labelFASAP6
             // 
@@ -188,6 +196,8 @@
             this.tbRab.Name = "tbRab";
             this.tbRab.Size = new System.Drawing.Size(309, 32);
             this.tbRab.TabIndex = 13;
+            this.tbRab.TabStop = false;
+            this.tbRab.Click += new System.EventHandler(this.tbIme_Click);
             // 
             // labelFASAP7
             // 
@@ -211,6 +221,8 @@
             this.tbKapacitet.Name = "tbKapacitet";
             this.tbKapacitet.Size = new System.Drawing.Size(108, 32);
             this.tbKapacitet.TabIndex = 15;
+            this.tbKapacitet.TabStop = false;
+            this.tbKapacitet.Click += new System.EventHandler(this.tbIme_Click);
             this.tbKapacitet.Validating += new System.ComponentModel.CancelEventHandler(this.tbKapacitet_Validating);
             // 
             // labelFASAP8
@@ -235,6 +247,8 @@
             this.tbBrojMasi.Name = "tbBrojMasi";
             this.tbBrojMasi.Size = new System.Drawing.Size(111, 32);
             this.tbBrojMasi.TabIndex = 17;
+            this.tbBrojMasi.TabStop = false;
+            this.tbBrojMasi.Click += new System.EventHandler(this.tbIme_Click);
             this.tbBrojMasi.Validating += new System.ComponentModel.CancelEventHandler(this.tbBrojMasi_Validating);
             // 
             // labelFASAP9
@@ -259,6 +273,8 @@
             this.tbCenaDostava.Name = "tbCenaDostava";
             this.tbCenaDostava.Size = new System.Drawing.Size(108, 32);
             this.tbCenaDostava.TabIndex = 19;
+            this.tbCenaDostava.TabStop = false;
+            this.tbCenaDostava.Click += new System.EventHandler(this.tbIme_Click);
             this.tbCenaDostava.Validating += new System.ComponentModel.CancelEventHandler(this.tbCenaDostava_Validating);
             // 
             // labelFASAP10
@@ -283,6 +299,8 @@
             this.tbPragDostava.Name = "tbPragDostava";
             this.tbPragDostava.Size = new System.Drawing.Size(111, 32);
             this.tbPragDostava.TabIndex = 21;
+            this.tbPragDostava.TabStop = false;
+            this.tbPragDostava.Click += new System.EventHandler(this.tbIme_Click);
             this.tbPragDostava.Validating += new System.ComponentModel.CancelEventHandler(this.tbPragDostava_Validating);
             // 
             // labelFASAP11
@@ -307,6 +325,8 @@
             this.tbDen.Name = "tbDen";
             this.tbDen.Size = new System.Drawing.Size(67, 32);
             this.tbDen.TabIndex = 23;
+            this.tbDen.TabStop = false;
+            this.tbDen.Click += new System.EventHandler(this.tbIme_Click);
             this.tbDen.Validating += new System.ComponentModel.CancelEventHandler(this.tbDen_Validating);
             // 
             // buttonFASAP1
@@ -389,6 +409,8 @@
             this.tbMesec.Name = "tbMesec";
             this.tbMesec.Size = new System.Drawing.Size(72, 32);
             this.tbMesec.TabIndex = 29;
+            this.tbMesec.TabStop = false;
+            this.tbMesec.Click += new System.EventHandler(this.tbIme_Click);
             this.tbMesec.Validating += new System.ComponentModel.CancelEventHandler(this.tbMesec_Validating);
             // 
             // tbGodina
@@ -400,6 +422,8 @@
             this.tbGodina.Name = "tbGodina";
             this.tbGodina.Size = new System.Drawing.Size(101, 32);
             this.tbGodina.TabIndex = 30;
+            this.tbGodina.TabStop = false;
+            this.tbGodina.Click += new System.EventHandler(this.tbIme_Click);
             this.tbGodina.Validating += new System.ComponentModel.CancelEventHandler(this.tbGodina_Validating);
             // 
             // labelFASAP14

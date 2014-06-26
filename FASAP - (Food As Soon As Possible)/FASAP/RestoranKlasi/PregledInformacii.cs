@@ -48,6 +48,10 @@ namespace SmetkaZaNaracka
         private void PregledInformacii_Load(object sender, EventArgs e)
         {
            // MessageBox.Show("restoran>"+RestoranID);
+            foreach (TextBox tb in Writeable)
+            {
+                tb.DeselectAll();
+            }
         }
         private void init() {
             Nevidlivi = new List<LabelFASAP>();
@@ -71,11 +75,17 @@ namespace SmetkaZaNaracka
             Writeable.Add(tbGodina);
             Writeable.Add(tbTelefon);
 
+           
             this.ModifyMode = false;
             this.PostaviVidlivost();
             this.PostaviMenlivost();
             this.PopolniTelefoni();
             this.PopolniInfo();
+
+            foreach (TextBox tb in Writeable)
+            {
+                tb.DeselectAll();
+            }
         }
         private int dodadiTelefon()
         {
@@ -791,7 +801,25 @@ namespace SmetkaZaNaracka
             }
         }
 
+        private void tbIme_Click(object sender, EventArgs e)
+        {
+            if (!this.ModifyMode)
+            {
+                MessageBoxForm mbf = new MessageBoxForm("Не е возможна промена на тоа поле.\nПритиснете измени и обидете се повторно!", false);
+                mbf.ShowDialog();
+                this.LoseCursor(sender);
+            }
+        }
 
+        private void LoseCursor(object sender)
+        {
+            (sender as TextBox).Enabled = false;
+            (sender as TextBox).Enabled = true;
+        }
+
+        
+
+       
         
        
 
