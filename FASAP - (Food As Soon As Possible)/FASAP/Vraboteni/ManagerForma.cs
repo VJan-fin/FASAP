@@ -17,15 +17,15 @@ namespace SmetkaZaNaracka
         private ManagerC Manager { get; set; }
         private OracleConnection Conn { get; set; }
 
-        public ManagerForma(OracleConnection conn ,ManagerC manager)
+        public ManagerForma(OracleConnection conn, ManagerC manager)
         {
             InitializeComponent();
             Manager = manager;
-            this.DoubleBuffered = true;
-            Opacity = 0;
             Conn = conn;
-            init();
+
+            Init();
         }
+        
         public ManagerForma() //probno
         {
             InitializeComponent();
@@ -38,40 +38,25 @@ namespace SmetkaZaNaracka
             Conn.ConnectionString = oradb;
             Conn.Open();
             Manager = new ManagerC(8, 1, "Гордана", "Иванова-Крстевска", "gordanaivanovakrstevska@gmail.com", "1804978455221");
-            init();
+            Init();
         }
-        private void init()
+        
+        /// <summary>
+        /// Pocetna inicijalizacija na formata i popolnuvanje
+        /// na pozicijata za ime na menadzerot
+        /// </summary>
+        private void Init()
         {
-            
-            string sqlVrab = @"SELECT IME_RESTORAN FROM RESTORAN WHERE RESTORAN_ID = :REST_ID";
-            OracleCommand cmd = new OracleCommand(sqlVrab, this.Conn);
-            
-            try
-            {
-                OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
-                prm.Value = this.Manager.RestoranID;
-                cmd.Parameters.Add(prm);
-                cmd.CommandType = CommandType.Text;
-
-                OracleDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    lblrest.Text = dr.GetString(0);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBoxForm mbf = new MessageBoxForm("Настана грешка при поврзувањето со базата!", false);
-                if (mbf.ShowDialog() == DialogResult.Yes)
-                    this.Close();
-                else
-                    this.Close();
-            
-            }
-            lblManager.Text = Manager.Ime + " " + Manager.Prezime;
-            popolniRestoran();
+            this.DoubleBuffered = true;
+            this.Opacity = 0;
+            this.lblManager.Text = Manager.Ime + " " + Manager.Prezime;
+            this.popolniRestoran();
         }
 
+        /// <summary>
+        /// Vcituvanje na site podatoci za restoranot vo koj
+        /// raboti menadzerot koj e tekovno najaven
+        /// </summary>
         private void popolniRestoran()
         {
             string sqlRestoran = @"SELECT * FROM RESTORAN WHERE RESTORAN_ID = :REST_ID";
@@ -79,7 +64,6 @@ namespace SmetkaZaNaracka
 
             try
             {
-
                 OracleParameter prm = new OracleParameter("REST_ID", OracleDbType.Int64);
                 prm.Value = this.Manager.RestoranID;
                 cmd.Parameters.Add(prm);
@@ -89,7 +73,6 @@ namespace SmetkaZaNaracka
                 CurrRestoran = new Restoran();
                 if (dr.Read())
                 {
-
                     CurrRestoran.RestoranID = (int)dr.GetValue(0);
                     CurrRestoran.Ime = dr.GetString(2);
                     if (!dr.IsDBNull(3))
@@ -136,9 +119,9 @@ namespace SmetkaZaNaracka
                     else CurrRestoran.DatumNaOtvoranje = null;
 
                     CurrRestoran.Kategorija = dr.GetString(12);
-
                 }
 
+                this.lblrest.Text = this.CurrRestoran.Ime;
             }
             catch (Exception ex)
             {
@@ -148,91 +131,6 @@ namespace SmetkaZaNaracka
                 else
                     this.Close();
             }
-
-           
-        }
-        private void btnInfo_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnInfo.Image = Resources.LightButton___Copy;
-            this.btnInfo.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void btnInfo_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnInfo.Image = Resources.DarkButton___Copy;
-            this.btnInfo.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
-        }
-
-        private void btnVraboteni_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnVraboteni.Image = Resources.LightButton___Copy;
-            this.btnVraboteni.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void btnVraboteni_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnVraboteni.Image = Resources.DarkButton___Copy;
-            this.btnVraboteni.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
-        }
-
-        private void btnPonuda_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnPonuda.Image = Resources.LightButton___Copy;
-            this.btnPonuda.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void btnPonuda_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnPonuda.Image = Resources.DarkButton___Copy;
-            this.btnPonuda.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
-        }
-
-        private void btnFinansii_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnFinansii.Image = Resources.LightButton___Copy;
-            this.btnFinansii.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void btnFinansii_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnFinansii.Image = Resources.DarkButton___Copy;
-            this.btnFinansii.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
-        }
-
-        private void btnIzvestai_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnIzvestai.Image = Resources.LightButton___Copy;
-            this.btnIzvestai.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void btnIzvestai_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnIzvestai.Image = Resources.DarkButton___Copy;
-            this.btnIzvestai.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
-        }
-
-        private void buttonFASAP1_MouseEnter(object sender, EventArgs e)
-        {
-            this.buttonFASAP1.Image = Resources.LightButton___Copy;
-            this.buttonFASAP1.ForeColor = Color.Sienna;
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void buttonFASAP1_MouseLeave(object sender, EventArgs e)
-        {
-            this.buttonFASAP1.Image = Resources.DarkButton___Copy;
-            this.buttonFASAP1.ForeColor = Color.Khaki;
-            this.Cursor = Cursors.Default;
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -243,21 +141,48 @@ namespace SmetkaZaNaracka
 
         private void btnVraboteni_Click(object sender, EventArgs e)
         {
-            // samo za primer
-          //  CurrRestoran = new Restoran() { RestoranID = 1, Ime = "Гостилница Лира" };
-            popolniRestoran();
             ListaVraboteni v = new ListaVraboteni(this.CurrRestoran, this.Conn);
-            //Vraboteni v = new Vraboteni(Conn, Manager.RestoranID);
             v.Show();
         }
 
         private void btnPonuda_Click(object sender, EventArgs e)
         {
             PregledMeni v = new PregledMeni(this.CurrRestoran, Manager, this.Conn);
-            //Vraboteni v = new Vraboteni(Conn, Manager.RestoranID);
             v.Show();
         }
 
-        
+        private void btnPregledPromet_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonFASAP btn = (sender as ButtonFASAP);
+            btn.Image = Resources.LightButton___Copy;
+            btn.ForeColor = Color.Sienna;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void btnPregledPromet_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonFASAP btn = (sender as ButtonFASAP);
+            btn.Image = Resources.DarkButton___Copy;
+            btn.ForeColor = Color.Khaki;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void btnPregledPromet_Click(object sender, EventArgs e)
+        {
+            PregledPromet pp = new PregledPromet(this.Conn, this.CurrRestoran);
+            pp.Show();
+        }
+
+        private void btnPridonesPromet_Click(object sender, EventArgs e)
+        {
+            Izv1PridonesVoPromet pp = new Izv1PridonesVoPromet(this.Conn, this.CurrRestoran.RestoranID);
+            pp.Show();
+        }
+
+        private void btnKvartalnaSostojba_Click(object sender, EventArgs e)
+        {
+            PregledKvartalnaSostojba ks = new PregledKvartalnaSostojba(this.Conn, this.CurrRestoran);
+            ks.Show();
+        }
     }
 }

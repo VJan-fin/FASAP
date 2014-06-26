@@ -74,13 +74,13 @@
             // lblIme
             // 
             this.lblIme.BackColor = System.Drawing.Color.Transparent;
-            this.lblIme.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIme.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblIme.ForeColor = System.Drawing.Color.Khaki;
             this.lblIme.Image = ((System.Drawing.Image)(resources.GetObject("lblIme.Image")));
             this.lblIme.LblObject = null;
-            this.lblIme.Location = new System.Drawing.Point(60, 51);
+            this.lblIme.Location = new System.Drawing.Point(61, 79);
             this.lblIme.Name = "lblIme";
-            this.lblIme.Size = new System.Drawing.Size(285, 45);
+            this.lblIme.Size = new System.Drawing.Size(252, 27);
             this.lblIme.TabIndex = 0;
             this.lblIme.Text = "Име на ресторанот";
             // 
@@ -89,7 +89,7 @@
             this.tbIme.BackColor = System.Drawing.Color.Sienna;
             this.tbIme.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIme.ForeColor = System.Drawing.Color.Khaki;
-            this.tbIme.Location = new System.Drawing.Point(65, 108);
+            this.tbIme.Location = new System.Drawing.Point(65, 118);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(309, 32);
             this.tbIme.TabIndex = 5;
@@ -102,7 +102,7 @@
             this.lblKategorija.ForeColor = System.Drawing.Color.Khaki;
             this.lblKategorija.Image = ((System.Drawing.Image)(resources.GetObject("lblKategorija.Image")));
             this.lblKategorija.LblObject = null;
-            this.lblKategorija.Location = new System.Drawing.Point(61, 207);
+            this.lblKategorija.Location = new System.Drawing.Point(61, 214);
             this.lblKategorija.Name = "lblKategorija";
             this.lblKategorija.Size = new System.Drawing.Size(153, 27);
             this.lblKategorija.TabIndex = 6;
@@ -113,7 +113,7 @@
             this.tbKategoorija.BackColor = System.Drawing.Color.Sienna;
             this.tbKategoorija.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbKategoorija.ForeColor = System.Drawing.Color.Khaki;
-            this.tbKategoorija.Location = new System.Drawing.Point(65, 248);
+            this.tbKategoorija.Location = new System.Drawing.Point(65, 254);
             this.tbKategoorija.Name = "tbKategoorija";
             this.tbKategoorija.Size = new System.Drawing.Size(309, 32);
             this.tbKategoorija.TabIndex = 7;
@@ -126,7 +126,7 @@
             this.labelFASAP4.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
             this.labelFASAP4.LblObject = null;
-            this.labelFASAP4.Location = new System.Drawing.Point(60, 341);
+            this.labelFASAP4.Location = new System.Drawing.Point(60, 349);
             this.labelFASAP4.Name = "labelFASAP4";
             this.labelFASAP4.Size = new System.Drawing.Size(153, 27);
             this.labelFASAP4.TabIndex = 8;
@@ -137,7 +137,7 @@
             this.tbUlica.BackColor = System.Drawing.Color.Sienna;
             this.tbUlica.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUlica.ForeColor = System.Drawing.Color.Khaki;
-            this.tbUlica.Location = new System.Drawing.Point(65, 387);
+            this.tbUlica.Location = new System.Drawing.Point(65, 390);
             this.tbUlica.Multiline = true;
             this.tbUlica.Name = "tbUlica";
             this.tbUlica.Size = new System.Drawing.Size(309, 32);
@@ -150,7 +150,7 @@
             this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
             this.labelFASAP5.LblObject = null;
-            this.labelFASAP5.Location = new System.Drawing.Point(60, 488);
+            this.labelFASAP5.Location = new System.Drawing.Point(60, 484);
             this.labelFASAP5.Name = "labelFASAP5";
             this.labelFASAP5.Size = new System.Drawing.Size(153, 27);
             this.labelFASAP5.TabIndex = 10;
@@ -161,7 +161,7 @@
             this.tbGrad.BackColor = System.Drawing.Color.Sienna;
             this.tbGrad.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbGrad.ForeColor = System.Drawing.Color.Khaki;
-            this.tbGrad.Location = new System.Drawing.Point(65, 527);
+            this.tbGrad.Location = new System.Drawing.Point(65, 526);
             this.tbGrad.Name = "tbGrad";
             this.tbGrad.Size = new System.Drawing.Size(309, 32);
             this.tbGrad.TabIndex = 11;
@@ -173,7 +173,7 @@
             this.labelFASAP6.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
             this.labelFASAP6.LblObject = null;
-            this.labelFASAP6.Location = new System.Drawing.Point(60, 632);
+            this.labelFASAP6.Location = new System.Drawing.Point(60, 619);
             this.labelFASAP6.Name = "labelFASAP6";
             this.labelFASAP6.Size = new System.Drawing.Size(182, 27);
             this.labelFASAP6.TabIndex = 12;
@@ -184,7 +184,7 @@
             this.tbRab.BackColor = System.Drawing.Color.Sienna;
             this.tbRab.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRab.ForeColor = System.Drawing.Color.Khaki;
-            this.tbRab.Location = new System.Drawing.Point(65, 672);
+            this.tbRab.Location = new System.Drawing.Point(65, 662);
             this.tbRab.Name = "tbRab";
             this.tbRab.Size = new System.Drawing.Size(309, 32);
             this.tbRab.TabIndex = 13;
@@ -446,7 +446,7 @@
             this.lblZad1.ForeColor = System.Drawing.Color.Crimson;
             this.lblZad1.Image = ((System.Drawing.Image)(resources.GetObject("lblZad1.Image")));
             this.lblZad1.LblObject = null;
-            this.lblZad1.Location = new System.Drawing.Point(379, 111);
+            this.lblZad1.Location = new System.Drawing.Point(379, 121);
             this.lblZad1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblZad1.Name = "lblZad1";
             this.lblZad1.Size = new System.Drawing.Size(21, 27);
@@ -461,7 +461,7 @@
             this.lblZad2.ForeColor = System.Drawing.Color.Crimson;
             this.lblZad2.Image = ((System.Drawing.Image)(resources.GetObject("lblZad2.Image")));
             this.lblZad2.LblObject = null;
-            this.lblZad2.Location = new System.Drawing.Point(379, 248);
+            this.lblZad2.Location = new System.Drawing.Point(379, 256);
             this.lblZad2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblZad2.Name = "lblZad2";
             this.lblZad2.Size = new System.Drawing.Size(21, 27);

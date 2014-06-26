@@ -31,7 +31,7 @@ namespace SmetkaZaNaracka
             this.Restoran = rest;
             Init();
         }
-
+        /*
         // samo za primer
         public PregledPromet()
         {
@@ -50,7 +50,7 @@ namespace SmetkaZaNaracka
 
             Init();
         }
-
+        */
         public void Init()
         {
             this.DoubleBuffered = true;

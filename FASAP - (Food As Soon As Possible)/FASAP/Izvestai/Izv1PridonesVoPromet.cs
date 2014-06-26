@@ -39,7 +39,7 @@ namespace SmetkaZaNaracka
 
         private SortArg SortParam { get; set; }
         private SortingOrder SortStat { get; set; }
-
+        /*
         public Izv1PridonesVoPromet() //probno
         {
             InitializeComponent();
@@ -55,7 +55,8 @@ namespace SmetkaZaNaracka
             Conn.Open();
 
             Init();
-        }
+        }*/
+
         public Izv1PridonesVoPromet(OracleConnection conn, int restID)
         {
             InitializeComponent();
@@ -63,6 +64,7 @@ namespace SmetkaZaNaracka
             this.RestoranID = restID;
             Init();
         }
+
         public void Init()
         {
             vraboteni = new List<VrabPrometProcent>();
@@ -132,6 +134,7 @@ namespace SmetkaZaNaracka
             }
         
         }
+
         public void VcitajPozicii()
         {
             this.Pozicii = new List<string>();
@@ -159,6 +162,7 @@ namespace SmetkaZaNaracka
             Pozicii.Remove("Менаџер");
             this.UpdatePozicii();
         }
+
         private void FiltrirajVraboteni()
         {
             this.showVraboteni = new List<VrabPrometProcent>();
@@ -200,6 +204,7 @@ namespace SmetkaZaNaracka
             }
             lblPromet.Text = ": :";
         }
+        /*
         //samo probni redici za da gi testiram kopcinjata nagore nadole :D
         public void probno()
         {
@@ -219,6 +224,7 @@ namespace SmetkaZaNaracka
 
             showVraboteni = new List<VrabPrometProcent>(vraboteni);
         }
+        */
         public void popolniLabeli()
         {
             clearLabels();
@@ -230,6 +236,7 @@ namespace SmetkaZaNaracka
                 prosek[i - indexStart].Text = String.Format(": {0} :", showVraboteni[i].getProcent());
             }
         }
+
         private void ChangeOrder()
         {
             if (this.SortStat == SortingOrder.Asc)
@@ -237,6 +244,7 @@ namespace SmetkaZaNaracka
             else
                 this.SortStat = SortingOrder.Asc;
         }
+
         private void UpdateImages(PictureBox pb)
         {
             //PictureBox pb = sender as PictureBox;
@@ -249,11 +257,10 @@ namespace SmetkaZaNaracka
                 else if (pb != item)
                     item.Image = Resources.DarkArrowUp;
             }
-           
         }
+
         public void PodrediVrab()
         {
-
             if (this.SortParam == SortArg.Ime)
                 OrderEmpStats.OrderByName(this.showVraboteni, this.SortStat == SortingOrder.Asc);
             else if (this.SortParam == SortArg.Prezime)
@@ -263,6 +270,7 @@ namespace SmetkaZaNaracka
             else if (this.SortParam == SortArg.Procent)
                 OrderEmpStats.OrderByPercent(this.showVraboteni, this.SortStat == SortingOrder.Asc);
         }
+
         public void vcitajTabela()
         {
             String sql = getSqlVer2();
@@ -335,6 +343,7 @@ namespace SmetkaZaNaracka
             }
             
         }
+
         public void vcitajFunkcii()
         {
             foreach(VrabPrometProcent v in vraboteni)
@@ -342,6 +351,7 @@ namespace SmetkaZaNaracka
                 vcitajFunkcija(v);
             }
         }
+
         private void vcitajFunkcija(VrabPrometProcent v)
         {
             String sql = "select pozicija from izvrshuva where restoran_id= :REST_ID and VRABOTEN_ID= :VRAB_ID";
@@ -374,6 +384,7 @@ namespace SmetkaZaNaracka
                     this.Close();
             }
         }
+
         public void vcitajPromet(){
             String sql="select iznos_promet from promet where mesec_promet = :MESEC and godina_promet= :GODINA";
             OracleCommand cmd = new OracleCommand(sql, Conn);
@@ -405,12 +416,14 @@ namespace SmetkaZaNaracka
                     this.Close();
             }
         }
+
         public void postaviTekovenDatum()
         {
             this.tekovenMesec = DateTime.Now.Month;
             this.tekovnaGodina = DateTime.Now.Year;
             azurirajMesecGodina();
         }
+
         public void azurirajMesecGodina()
         {
           
@@ -424,15 +437,16 @@ namespace SmetkaZaNaracka
             }
             lblGodina.Text = String.Format("{0}", tekovnaGodina);
         }
+
         // da se smeni probnoto so komentarite
         private void Izv1PridonesVoPromet_Load(object sender, EventArgs e)
         {
             postaviTekovenDatum();
-            // vcitajPromet();
-            // vcitajTabela();
-            //vcitajFunkcii();
-            //FiltrirajVraboteni();
-            probno();
+            vcitajPromet();
+            vcitajTabela();
+            vcitajFunkcii();
+            FiltrirajVraboteni();
+            //probno();
             popolniLabeli();
         
         }
@@ -447,9 +461,6 @@ namespace SmetkaZaNaracka
             vcitajPromet();
         }
        
-
-        
-
         private void pbleftM_Click(object sender, EventArgs e)
         {
             tekovenMesec--;
@@ -668,50 +679,48 @@ namespace SmetkaZaNaracka
         public String getSqlVer2()
         {
             String sql = @"select id, ime, prezime, promet_vraboten, vk_promet_restoran, (round(promet_vraboten/vk_promet_restoran*100,2)) as procent  from
-(
+                    (
 
-select A.id, A.ime, A.prezime, A.promet_vraboten, A.vk_promet_restoran from
-(select vr.vraboten_id as id,vr.ime_vraboten as ime, vr.prezime_vraboten as prezime,sum( n.vkupna_cena) as promet_vraboten, p.iznos_promet as vk_promet_restoran
-from vraboten vr join online_narachka ol on vr.vraboten_id=ol.vraboten_id
-join narachka n on ol.restoran_id=n.restoran_id and ol.narachka_id=n.narachka_id and n.restoran_id= :REST_ID1
-and n.realizirana=1 
-join restoran r on n.restoran_id=r.restoran_id
-join promet p on p.restoran_id=r.restoran_id
-where p.mesec_promet= :MESEC1 and p.godina_promet= :GODINA1
-and to_char(n.vreme,'MM/YYYY')= :DATUM1
-and vr.vraboten_id in
-(
-select v.vraboten_id
-from vraboten v join izvrshuva i on v.vraboten_id=i.vraboten_id
-where i.pozicija='Доставувач' and i.restoran_id= :REST_ID2
-)
-group by (vr.vraboten_id, vr.ime_vraboten, vr.prezime_vraboten, p.iznos_promet)
-)A
+                    select A.id, A.ime, A.prezime, A.promet_vraboten, A.vk_promet_restoran from
+                    (select vr.vraboten_id as id,vr.ime_vraboten as ime, vr.prezime_vraboten as prezime,sum( n.vkupna_cena) as promet_vraboten, p.iznos_promet as vk_promet_restoran
+                    from vraboten vr join online_narachka ol on vr.vraboten_id=ol.vraboten_id
+                    join narachka n on ol.restoran_id=n.restoran_id and ol.narachka_id=n.narachka_id and n.restoran_id= :REST_ID1
+                    and n.realizirana=1 
+                    join restoran r on n.restoran_id=r.restoran_id
+                    join promet p on p.restoran_id=r.restoran_id
+                    where p.mesec_promet= :MESEC1 and p.godina_promet= :GODINA1
+                    and to_char(n.vreme,'MM/YYYY')= :DATUM1
+                    and vr.vraboten_id in
+                    (
+                    select v.vraboten_id
+                    from vraboten v join izvrshuva i on v.vraboten_id=i.vraboten_id
+                    where i.pozicija='Доставувач' and i.restoran_id= :REST_ID2
+                    )
+                    group by (vr.vraboten_id, vr.ime_vraboten, vr.prezime_vraboten, p.iznos_promet)
+                    )A
 
+                    union
 
-union
+                    select B.id, B.ime, B.prezime, B.promet_vraboten, B.vk_promet_restoran from
+                    (select vr.vraboten_id as id,vr.ime_vraboten as ime, vr.prezime_vraboten as prezime,sum( n.vkupna_cena) as promet_vraboten, p.iznos_promet as vk_promet_restoran
+                    from vraboten vr join onsite_narachka os on vr.vraboten_id=os.vraboten_id
+                    join narachka n on os.restoran_id=n.restoran_id and os.narachka_id=n.narachka_id and n.restoran_id= :REST_ID3 
+                    and n.realizirana=1 
+                    join restoran r on n.restoran_id=r.restoran_id
+                    join promet p on p.restoran_id=r.restoran_id
+                    where p.mesec_promet= :MESEC2 and p.godina_promet= :GODINA2
+                    and to_char(n.vreme,'MM/YYYY')= :DATUM2
+                    and vr.vraboten_id in
+                    (
+                    select v.vraboten_id
+                    from vraboten v join izvrshuva i on v.vraboten_id=i.vraboten_id
+                    where i.pozicija='Келнер' and i.restoran_id= :REST_ID4
+                    )
+                    group by (vr.vraboten_id, vr.ime_vraboten, vr.prezime_vraboten, p.iznos_promet)
+                    )B
 
-
-select B.id, B.ime, B.prezime, B.promet_vraboten, B.vk_promet_restoran from
-(select vr.vraboten_id as id,vr.ime_vraboten as ime, vr.prezime_vraboten as prezime,sum( n.vkupna_cena) as promet_vraboten, p.iznos_promet as vk_promet_restoran
-from vraboten vr join onsite_narachka os on vr.vraboten_id=os.vraboten_id
-join narachka n on os.restoran_id=n.restoran_id and os.narachka_id=n.narachka_id and n.restoran_id= :REST_ID3 
-and n.realizirana=1 
-join restoran r on n.restoran_id=r.restoran_id
-join promet p on p.restoran_id=r.restoran_id
-where p.mesec_promet= :MESEC2 and p.godina_promet= :GODINA2
-and to_char(n.vreme,'MM/YYYY')= :DATUM2
-and vr.vraboten_id in
-(
-select v.vraboten_id
-from vraboten v join izvrshuva i on v.vraboten_id=i.vraboten_id
-where i.pozicija='Келнер' and i.restoran_id= :REST_ID4
-)
-group by (vr.vraboten_id, vr.ime_vraboten, vr.prezime_vraboten, p.iznos_promet)
-)B
-
-)
-order by procent desc";
+                    )
+                    order by procent desc";
             return sql;
         }
 

@@ -34,7 +34,7 @@ namespace SmetkaZaNaracka
             this.Restoran = rest;
             Init();
         }
-        
+        /*
         // samo za primer
         public PregledKvartalnaSostojba()
         {
@@ -53,7 +53,7 @@ namespace SmetkaZaNaracka
 
             Init();
         }
-        
+        */
         public void Init()
         {
             this.DoubleBuffered = true;

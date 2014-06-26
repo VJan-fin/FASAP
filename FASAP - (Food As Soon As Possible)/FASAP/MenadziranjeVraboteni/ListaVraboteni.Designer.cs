@@ -93,13 +93,13 @@
             // lblImeRestoran
             // 
             this.lblImeRestoran.BackColor = System.Drawing.Color.Transparent;
-            this.lblImeRestoran.Font = new System.Drawing.Font("Trebuchet MS", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblImeRestoran.Font = new System.Drawing.Font("Trebuchet MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblImeRestoran.ForeColor = System.Drawing.Color.Khaki;
             this.lblImeRestoran.Image = ((System.Drawing.Image)(resources.GetObject("lblImeRestoran.Image")));
             this.lblImeRestoran.LblObject = null;
             this.lblImeRestoran.Location = new System.Drawing.Point(48, 26);
             this.lblImeRestoran.Name = "lblImeRestoran";
-            this.lblImeRestoran.Size = new System.Drawing.Size(392, 100);
+            this.lblImeRestoran.Size = new System.Drawing.Size(427, 100);
             this.lblImeRestoran.TabIndex = 5;
             this.lblImeRestoran.Text = "Ресторан: Име ";
             // 
