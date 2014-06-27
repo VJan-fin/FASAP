@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelFASAP1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelFASAP2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAABkCAYAAABwx8J9AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAOwESURBVHhe7L0HmF1pVp6rnFVV
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAOwESURBVHhe7L0HmF1pVp6rnFVV
         UqlUyjnnHFut0EHdrZyzVCWplFVSKatnMGBwAtsXzHW+NnDBXNuACQYTzIyZ8WAP2EMcDCbODMPA4GFy
         7G5p3+9d619n/+foVLe6pyd26Xk+7X322WfXCXv9K3+rV6+ef9/M30Bvfbg+Ql+hvzBAGCgMFoYJjcII
         YaTQJAxPz3Eur3u1f1y73vX5G4Br9EvX4bzu/uXX4Px4He/51V73jfq7xefNPyvf9TfjZ/1G/Y1e7/vu
@@ -1132,7 +1132,7 @@
         YII=
 </value>
   </data>
-  <data name="labelFASAP2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="labelFASAP1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAABkCAYAAABwx8J9AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAOwESURBVHhe7L0HmF1pVp6rnFVV

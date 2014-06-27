@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UspesnostNaNaracka));
             this.dbLayoutPanel1 = new SmetkaZaNaracka.DBLayoutPanel(this.components);
-            this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
+            this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dbLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,21 +52,6 @@
             this.dbLayoutPanel1.Size = new System.Drawing.Size(1365, 162);
             this.dbLayoutPanel1.TabIndex = 4;
             // 
-            // labelFASAP1
-            // 
-            this.labelFASAP1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelFASAP1.AutoSize = true;
-            this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
-            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFASAP1.ForeColor = System.Drawing.Color.Lime;
-            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
-            this.labelFASAP1.LblObject = null;
-            this.labelFASAP1.Location = new System.Drawing.Point(343, 17);
-            this.labelFASAP1.Name = "labelFASAP1";
-            this.labelFASAP1.Size = new System.Drawing.Size(678, 46);
-            this.labelFASAP1.TabIndex = 0;
-            this.labelFASAP1.Text = "Нарачката е успешно реализирана   ";
-            // 
             // labelFASAP2
             // 
             this.labelFASAP2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -81,6 +66,21 @@
             this.labelFASAP2.Size = new System.Drawing.Size(286, 46);
             this.labelFASAP2.TabIndex = 1;
             this.labelFASAP2.Text = "Добар апетит  ";
+            // 
+            // labelFASAP1
+            // 
+            this.labelFASAP1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelFASAP1.AutoSize = true;
+            this.labelFASAP1.BackColor = System.Drawing.Color.Transparent;
+            this.labelFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFASAP1.ForeColor = System.Drawing.Color.GreenYellow;
+            this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
+            this.labelFASAP1.LblObject = null;
+            this.labelFASAP1.Location = new System.Drawing.Point(343, 17);
+            this.labelFASAP1.Name = "labelFASAP1";
+            this.labelFASAP1.Size = new System.Drawing.Size(678, 46);
+            this.labelFASAP1.TabIndex = 0;
+            this.labelFASAP1.Text = "Нарачката е успешно реализирана   ";
             // 
             // timer1
             // 

@@ -131,7 +131,7 @@
             this.lblImeRestoran.ForeColor = System.Drawing.Color.White;
             this.lblImeRestoran.Image = ((System.Drawing.Image)(resources.GetObject("lblImeRestoran.Image")));
             this.lblImeRestoran.LblObject = null;
-            this.lblImeRestoran.Location = new System.Drawing.Point(43, 64);
+            this.lblImeRestoran.Location = new System.Drawing.Point(24, 64);
             this.lblImeRestoran.Name = "lblImeRestoran";
             this.lblImeRestoran.Size = new System.Drawing.Size(368, 49);
             this.lblImeRestoran.TabIndex = 4;
@@ -144,7 +144,7 @@
             this.pictureBoxLogo.Image = global::SmetkaZaNaracka.Properties.Resources.restoran_amigos_skopje_logo;
             this.pictureBoxLogo.Location = new System.Drawing.Point(52, 116);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(123, 97);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(184, 133);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 5;
             this.pictureBoxLogo.TabStop = false;
@@ -157,7 +157,7 @@
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
-            this.labelFASAP1.Location = new System.Drawing.Point(47, 216);
+            this.labelFASAP1.Location = new System.Drawing.Point(47, 249);
             this.labelFASAP1.Name = "labelFASAP1";
             this.labelFASAP1.Size = new System.Drawing.Size(119, 27);
             this.labelFASAP1.TabIndex = 6;
@@ -171,7 +171,7 @@
             this.lblAdresa.ForeColor = System.Drawing.Color.White;
             this.lblAdresa.Image = ((System.Drawing.Image)(resources.GetObject("lblAdresa.Image")));
             this.lblAdresa.LblObject = null;
-            this.lblAdresa.Location = new System.Drawing.Point(47, 251);
+            this.lblAdresa.Location = new System.Drawing.Point(47, 276);
             this.lblAdresa.Name = "lblAdresa";
             this.lblAdresa.Size = new System.Drawing.Size(18, 27);
             this.lblAdresa.TabIndex = 7;
@@ -185,7 +185,7 @@
             this.lblRabVreme.ForeColor = System.Drawing.Color.White;
             this.lblRabVreme.Image = ((System.Drawing.Image)(resources.GetObject("lblRabVreme.Image")));
             this.lblRabVreme.LblObject = null;
-            this.lblRabVreme.Location = new System.Drawing.Point(413, 157);
+            this.lblRabVreme.Location = new System.Drawing.Point(414, 149);
             this.lblRabVreme.Name = "lblRabVreme";
             this.lblRabVreme.Size = new System.Drawing.Size(18, 27);
             this.lblRabVreme.TabIndex = 9;
@@ -213,7 +213,7 @@
             this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
-            this.labelFASAP2.Location = new System.Drawing.Point(413, 203);
+            this.labelFASAP2.Location = new System.Drawing.Point(413, 190);
             this.labelFASAP2.Name = "labelFASAP2";
             this.labelFASAP2.Size = new System.Drawing.Size(99, 27);
             this.labelFASAP2.TabIndex = 10;
@@ -227,7 +227,7 @@
             this.lblKontakt.ForeColor = System.Drawing.Color.White;
             this.lblKontakt.Image = ((System.Drawing.Image)(resources.GetObject("lblKontakt.Image")));
             this.lblKontakt.LblObject = null;
-            this.lblKontakt.Location = new System.Drawing.Point(413, 230);
+            this.lblKontakt.Location = new System.Drawing.Point(413, 217);
             this.lblKontakt.Name = "lblKontakt";
             this.lblKontakt.Size = new System.Drawing.Size(19, 27);
             this.lblKontakt.TabIndex = 11;
@@ -237,7 +237,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowLeft;
-            this.pictureBox4.Location = new System.Drawing.Point(384, 224);
+            this.pictureBox4.Location = new System.Drawing.Point(384, 211);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -251,7 +251,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::SmetkaZaNaracka.Properties.Resources.DarkArrowRight;
-            this.pictureBox5.Location = new System.Drawing.Point(557, 224);
+            this.pictureBox5.Location = new System.Drawing.Point(557, 211);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 35);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -269,7 +269,7 @@
             this.labelFASAP4.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP4.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP4.Image")));
             this.labelFASAP4.LblObject = null;
-            this.labelFASAP4.Location = new System.Drawing.Point(47, 302);
+            this.labelFASAP4.Location = new System.Drawing.Point(47, 315);
             this.labelFASAP4.Name = "labelFASAP4";
             this.labelFASAP4.Size = new System.Drawing.Size(145, 27);
             this.labelFASAP4.TabIndex = 14;
@@ -617,7 +617,7 @@
             this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
             this.labelFASAP5.LblObject = null;
-            this.labelFASAP5.Location = new System.Drawing.Point(360, 302);
+            this.labelFASAP5.Location = new System.Drawing.Point(354, 315);
             this.labelFASAP5.Name = "labelFASAP5";
             this.labelFASAP5.Size = new System.Drawing.Size(158, 27);
             this.labelFASAP5.TabIndex = 17;
@@ -632,7 +632,7 @@
             this.lblImeStavka.LblObject = null;
             this.lblImeStavka.Location = new System.Drawing.Point(668, 122);
             this.lblImeStavka.Name = "lblImeStavka";
-            this.lblImeStavka.Size = new System.Drawing.Size(509, 127);
+            this.lblImeStavka.Size = new System.Drawing.Size(499, 127);
             this.lblImeStavka.TabIndex = 18;
             this.lblImeStavka.MouseLeave += new System.EventHandler(this.lblImeStavka_MouseLeave);
             this.lblImeStavka.MouseHover += new System.EventHandler(this.lblImeStavka_MouseHover);
@@ -955,7 +955,7 @@
             this.lblCenaProizvod.ForeColor = System.Drawing.Color.White;
             this.lblCenaProizvod.Image = ((System.Drawing.Image)(resources.GetObject("lblCenaProizvod.Image")));
             this.lblCenaProizvod.LblObject = null;
-            this.lblCenaProizvod.Location = new System.Drawing.Point(1183, 203);
+            this.lblCenaProizvod.Location = new System.Drawing.Point(1173, 203);
             this.lblCenaProizvod.Name = "lblCenaProizvod";
             this.lblCenaProizvod.Size = new System.Drawing.Size(127, 43);
             this.lblCenaProizvod.TabIndex = 32;
@@ -1045,7 +1045,7 @@
             this.lblDescription.ForeColor = System.Drawing.Color.SaddleBrown;
             this.lblDescription.Image = global::SmetkaZaNaracka.Properties.Resources.NoteBackground;
             this.lblDescription.LblObject = null;
-            this.lblDescription.Location = new System.Drawing.Point(203, 203);
+            this.lblDescription.Location = new System.Drawing.Point(266, 211);
             this.lblDescription.MaximumSize = new System.Drawing.Size(250, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(49, 22);
