@@ -34,9 +34,10 @@ namespace SmetkaZaNaracka
         private String tekovenGrad { get; set; }
         private String tekovnaKat { get; set; }
 
-        public FasapPoceten()
+        public FasapPoceten(OracleConnection conn)
         {
             InitializeComponent();
+            this.Conn = conn;
             Init();
         }
         public void Init()
@@ -90,7 +91,7 @@ namespace SmetkaZaNaracka
             tekovnaKat = "Сите";
         }
         private void FasapPoceten_Load(object sender, EventArgs e)
-        {
+        {/*
             string oradb = "Data Source=(DESCRIPTION="
            + "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1620))"
            + "(CONNECT_DATA=(SERVICE_NAME=ORCL)));"
@@ -108,7 +109,7 @@ namespace SmetkaZaNaracka
                     this.Close();
                 else
                     this.Close();
-            }
+            }*/
             vcituvanje();
             popolniLabeli();
             MarkSelection();
