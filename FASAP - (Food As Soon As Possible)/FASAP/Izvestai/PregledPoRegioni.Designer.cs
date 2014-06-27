@@ -78,6 +78,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonFASAP5 = new SmetkaZaNaracka.ButtonFASAP(this.components);
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.dbLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -814,6 +815,19 @@
             this.buttonFASAP5.MouseEnter += new System.EventHandler(this.buttonFASAP4_MouseEnter);
             this.buttonFASAP5.MouseLeave += new System.EventHandler(this.buttonFASAP4_MouseLeave);
             // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.BackColor = System.Drawing.Color.Khaki;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblErrorMessage.Location = new System.Drawing.Point(0, 707);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(54, 22);
+            this.lblErrorMessage.TabIndex = 89;
+            this.lblErrorMessage.Text = "label1";
+            this.lblErrorMessage.Visible = false;
+            // 
             // PregledPoRegioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -821,6 +835,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.buttonFASAP5);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.textBox1);
@@ -869,6 +884,7 @@
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.buttonFASAP5, 0);
+            this.Controls.SetChildIndex(this.lblErrorMessage, 0);
             this.dbLayoutPanel2.ResumeLayout(false);
             this.dbLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -934,6 +950,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private ButtonFASAP buttonFASAP5;
+        private System.Windows.Forms.Label lblErrorMessage;
 
     }
 }

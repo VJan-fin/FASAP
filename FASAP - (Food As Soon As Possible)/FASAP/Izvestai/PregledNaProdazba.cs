@@ -246,8 +246,8 @@ namespace SmetkaZaNaracka.Izvestai
             }
             catch (Exception ex)
             {
-                throw ex;
-                throw new Exception("Ве молиме проверете ја вашата конекција");
+                SetText(lblErrorMessage, "Имате проблем со поврзување на конекцијата");
+                SetVisible(lblErrorMessage, true);
             }
 
             LoadingSemaphore.WaitOne();
@@ -336,7 +336,8 @@ namespace SmetkaZaNaracka.Izvestai
             }
             catch (Exception)
             {
-                throw new Exception("Ве молиме проверете ја вашата конекција");
+                SetText(lblErrorMessage, "Имате проблем со поврзување на конекцијата");
+                SetVisible(lblErrorMessage, true);
             }
 
             LoadingSemaphore.WaitOne();
@@ -593,6 +594,40 @@ namespace SmetkaZaNaracka.Izvestai
             }
         }
 
-        
+        delegate void SetTextCallback(Label fs, String obj);
+
+        private void SetText(Label fs, String obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.Text = obj;
+            }
+        }
+
+        delegate void SetVisibleCallback(Label fs, bool obj);
+
+        private void SetVisible(Label fs, bool obj)
+        {
+            // InvokeRequired required compares the thread ID of the 
+            // calling thread to the thread ID of the creating thread. 
+            // If these threads are different, it returns true. 
+            if (fs.InvokeRequired)
+            {
+                SetVisibleCallback d = new SetVisibleCallback(SetVisible);
+                this.Invoke(d, new object[] { fs, obj });
+            }
+            else
+            {
+                fs.Visible = obj;
+            }
+        }
     }
 }
