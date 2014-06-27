@@ -229,7 +229,7 @@
             this.labelFASAP4.Name = "labelFASAP4";
             this.labelFASAP4.Size = new System.Drawing.Size(740, 77);
             this.labelFASAP4.TabIndex = 5;
-            this.labelFASAP4.Text = "Реализација на нарачки на тековниот месец во однос на минатиот: ";
+            this.labelFASAP4.Text = "Реализација на нарачки за тековниот месец во однос на минатиот: ";
             // 
             // pictureBox6
             // 

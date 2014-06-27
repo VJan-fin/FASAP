@@ -77,9 +77,9 @@
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.errorProvider1.SetIconAlignment(this.pictureBoxLogo, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.pictureBoxLogo.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(57, 263);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(48, 222);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(162, 135);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(224, 220);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLogo.TabIndex = 5;
             this.pictureBoxLogo.TabStop = false;
@@ -90,7 +90,7 @@
             this.buttonFASAP1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.buttonFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP1.Image")));
-            this.buttonFASAP1.Location = new System.Drawing.Point(242, 349);
+            this.buttonFASAP1.Location = new System.Drawing.Point(278, 349);
             this.buttonFASAP1.Name = "buttonFASAP1";
             this.buttonFASAP1.Size = new System.Drawing.Size(164, 47);
             this.buttonFASAP1.TabIndex = 1;
@@ -108,7 +108,7 @@
             this.labelFASAP2.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP2.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP2.Image")));
             this.labelFASAP2.LblObject = null;
-            this.labelFASAP2.Location = new System.Drawing.Point(242, 263);
+            this.labelFASAP2.Location = new System.Drawing.Point(278, 263);
             this.labelFASAP2.Name = "labelFASAP2";
             this.labelFASAP2.Size = new System.Drawing.Size(164, 27);
             this.labelFASAP2.TabIndex = 8;
@@ -418,7 +418,7 @@
             this.tbURL.BackColor = System.Drawing.Color.Sienna;
             this.tbURL.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbURL.ForeColor = System.Drawing.Color.Khaki;
-            this.tbURL.Location = new System.Drawing.Point(246, 302);
+            this.tbURL.Location = new System.Drawing.Point(282, 302);
             this.tbURL.Name = "tbURL";
             this.tbURL.Size = new System.Drawing.Size(358, 30);
             this.tbURL.TabIndex = 0;
