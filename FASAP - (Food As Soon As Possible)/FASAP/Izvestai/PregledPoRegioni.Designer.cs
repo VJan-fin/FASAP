@@ -77,6 +77,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonFASAP5 = new SmetkaZaNaracka.ButtonFASAP(this.components);
             this.dbLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -542,6 +543,7 @@
             // tbDatumOd
             // 
             this.tbDatumOd.BackColor = System.Drawing.Color.Sienna;
+            this.tbDatumOd.Culture = new System.Globalization.CultureInfo("en-GB");
             this.tbDatumOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDatumOd.ForeColor = System.Drawing.Color.Khaki;
             this.tbDatumOd.Location = new System.Drawing.Point(911, 311);
@@ -555,6 +557,7 @@
             // tbDatumDo
             // 
             this.tbDatumDo.BackColor = System.Drawing.Color.Sienna;
+            this.tbDatumDo.Culture = new System.Globalization.CultureInfo("en-GB");
             this.tbDatumDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDatumDo.ForeColor = System.Drawing.Color.Khaki;
             this.tbDatumDo.Location = new System.Drawing.Point(1162, 311);
@@ -794,11 +797,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // buttonFASAP5
+            // 
+            this.buttonFASAP5.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFASAP5.CausesValidation = false;
+            this.buttonFASAP5.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonFASAP5.ForeColor = System.Drawing.Color.Khaki;
+            this.buttonFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("buttonFASAP5.Image")));
+            this.buttonFASAP5.Location = new System.Drawing.Point(964, 630);
+            this.buttonFASAP5.Name = "buttonFASAP5";
+            this.buttonFASAP5.Size = new System.Drawing.Size(304, 58);
+            this.buttonFASAP5.TabIndex = 88;
+            this.buttonFASAP5.Text = "Откажи";
+            this.buttonFASAP5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonFASAP5.Click += new System.EventHandler(this.buttonFASAP5_Click);
+            this.buttonFASAP5.MouseEnter += new System.EventHandler(this.buttonFASAP4_MouseEnter);
+            this.buttonFASAP5.MouseLeave += new System.EventHandler(this.buttonFASAP4_MouseLeave);
+            // 
             // PregledPoRegioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.buttonFASAP5);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dbLayoutPanel1);
@@ -845,6 +868,7 @@
             this.Controls.SetChildIndex(this.dbLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
+            this.Controls.SetChildIndex(this.buttonFASAP5, 0);
             this.dbLayoutPanel2.ResumeLayout(false);
             this.dbLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -909,6 +933,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private ButtonFASAP buttonFASAP5;
 
     }
 }

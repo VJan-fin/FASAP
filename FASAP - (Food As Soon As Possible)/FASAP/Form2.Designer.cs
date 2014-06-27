@@ -32,7 +32,7 @@ namespace SmetkaZaNaracka
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loading));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.labelFASAP1 = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.lblZab = new SmetkaZaNaracka.LabelFASAP(this.components);
             this.labelFASAP2 = new SmetkaZaNaracka.LabelFASAP(this.components);
@@ -53,10 +53,10 @@ namespace SmetkaZaNaracka
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // timer1
+            // timer2
             // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer2.Interval = 2000;
+            this.timer2.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // labelFASAP1
             // 
@@ -129,7 +129,7 @@ namespace SmetkaZaNaracka
         #endregion
 
         private PictureBox pictureBox1;
-        private Timer timer1;
+        private Timer timer2;
         private LabelFASAP labelFASAP1;
         private LabelFASAP lblZab;
         private LabelFASAP labelFASAP2;

@@ -187,7 +187,6 @@ namespace SmetkaZaNaracka.Izvestai
         {
             DateTime Od = DateTime.ParseExact(tbDatumOd.Text + " 00:00", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
             DateTime Do = DateTime.ParseExact(tbDatumDo.Text + " 23:59", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
-            SetObject(labelFASAP7, tbDatumOd.Text);
             string sql = @"select 
 	                        r.region, 
 	                        NVL(period_rg.period, 0) as BROJ_NARACHKI, ROUND(nvl(period_rg.period/period_vk.period * 100, 0), 2) AS PROCENT
@@ -443,6 +442,8 @@ namespace SmetkaZaNaracka.Izvestai
         private void buttonFASAP4_Click(object sender, EventArgs e)
         {
             textBox1Focus();
+            if (!ValidateChildren())
+                return;
             PostaviDatum();
         }
 
@@ -500,13 +501,22 @@ namespace SmetkaZaNaracka.Izvestai
                     errorProvider1.SetError(tb, "Датумот кој го внесовте го надминува тековниот датум");
                     e.Cancel = true;
                 }
-                errorProvider1.SetError(tb, "");
+                else
+                {
+                    errorProvider1.SetError(tb, "");
+                    e.Cancel = false;
+                }
             }
             catch
             {
                 errorProvider1.SetError(tb, "Ве молиме внесете валиден датум \"ден.месец.година\"");
                 e.Cancel = true;
             }
+        }
+
+        private void buttonFASAP5_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
     }

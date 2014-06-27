@@ -17,7 +17,7 @@ namespace SmetkaZaNaracka
             InitializeComponent();
             Opacity = 0;
             DoubleBuffered = true;
-            timer1.Start();
+            timer2.Start();
         }
 
         private void Form2_Paint(object sender, PaintEventArgs e)
@@ -31,8 +31,8 @@ namespace SmetkaZaNaracka
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            this.timer2.Stop();
             FasapPoceten fp = new FasapPoceten();
-            timer1.Stop();
             fp.ShowDialog();
             Close();
         }
