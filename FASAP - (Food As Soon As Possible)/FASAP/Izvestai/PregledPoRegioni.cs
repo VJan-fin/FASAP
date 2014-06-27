@@ -71,7 +71,8 @@ namespace SmetkaZaNaracka.Izvestai
             Thread oThread = new Thread(new ThreadStart(PostaviNajverenKlient));
             oThread.Start();
             oThread = new Thread(new ThreadStart(PrevzemiPodatociZaRegioni));
-            oThread.Start();
+            if(ValidateChildren())
+                oThread.Start();
         }
 
         public void PostaviNajverenKlient()
@@ -184,8 +185,9 @@ namespace SmetkaZaNaracka.Izvestai
 
         public void PrevzemiPodatociZaRegioni()
         {
-            DateTime Od = DateTime.ParseExact(tbDatumOd.Text + " 00:00", "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
-            DateTime Do = DateTime.ParseExact(tbDatumDo.Text + " 23:59", "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
+            DateTime Od = DateTime.ParseExact(tbDatumOd.Text + " 00:00", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
+            DateTime Do = DateTime.ParseExact(tbDatumDo.Text + " 23:59", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
+            SetObject(labelFASAP7, tbDatumOd.Text);
             string sql = @"select 
 	                        r.region, 
 	                        NVL(period_rg.period, 0) as BROJ_NARACHKI, ROUND(nvl(period_rg.period/period_vk.period * 100, 0), 2) AS PROCENT
@@ -459,16 +461,16 @@ namespace SmetkaZaNaracka.Izvestai
         private void buttonFASAP1_Click(object sender, EventArgs e)
         {
             textBox1Focus();
-            tbDatumOd.Text = String.Format("{0:00}\\{1:00}\\{2}", 1, DateTime.Now.Month, DateTime.Now.Year);
-            tbDatumDo.Text = String.Format("{0:00}\\{1:00}\\{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+            tbDatumOd.Text = String.Format("{0:00}.{1:00}.{2}", 1, DateTime.Now.Month, DateTime.Now.Year);
+            tbDatumDo.Text = String.Format("{0:00}.{1:00}.{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
             PostaviDatum();
         }
 
         private void buttonFASAP2_Click(object sender, EventArgs e)
         {
             textBox1Focus();
-            tbDatumOd.Text = String.Format("{0:00}\\{1:00}\\{2}", 1, 1, DateTime.Now.Year);
-            tbDatumDo.Text = String.Format("{0:00}\\{1:00}\\{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+            tbDatumOd.Text = String.Format("{0:00}.{1:00}.{2}", 1, 1, DateTime.Now.Year);
+            tbDatumDo.Text = String.Format("{0:00}.{1:00}.{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
             PostaviDatum();
         }
 
@@ -481,8 +483,8 @@ namespace SmetkaZaNaracka.Izvestai
                 mbf.ShowDialog();
                 return;
             }
-            tbDatumOd.Text = String.Format("{0:00}\\{1:00}\\{2}", Restoran.DatumNaOtvoranje.Value.Day, Restoran.DatumNaOtvoranje.Value.Month, Restoran.DatumNaOtvoranje.Value.Year);
-            tbDatumDo.Text = String.Format("{0:00}\\{1:00}\\{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+            tbDatumOd.Text = String.Format("{0:00}.{1:00}.{2}", Restoran.DatumNaOtvoranje.Value.Day, Restoran.DatumNaOtvoranje.Value.Month, Restoran.DatumNaOtvoranje.Value.Year);
+            tbDatumDo.Text = String.Format("{0:00}.{1:00}.{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
             PostaviDatum();
         }
 
@@ -492,16 +494,17 @@ namespace SmetkaZaNaracka.Izvestai
             DateTime datum = DateTime.Now;
             try
             {
-                datum = DateTime.ParseExact(tb.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                datum = DateTime.ParseExact(tbDatumOd.Text + " 00:00", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
                 if (datum > DateTime.Now)
                 {
                     errorProvider1.SetError(tb, "Датумот кој го внесовте го надминува тековниот датум");
                     e.Cancel = true;
                 }
+                errorProvider1.SetError(tb, "");
             }
             catch
             {
-                errorProvider1.SetError(tb, "Ве молиме внесете валиден датум \"ден\\месец\\година\"");
+                errorProvider1.SetError(tb, "Ве молиме внесете валиден датум \"ден.месец.година\"");
                 e.Cancel = true;
             }
         }

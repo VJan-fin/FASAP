@@ -545,12 +545,11 @@
             this.tbDatumOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDatumOd.ForeColor = System.Drawing.Color.Khaki;
             this.tbDatumOd.Location = new System.Drawing.Point(911, 311);
-            this.tbDatumOd.Mask = "00/00/0000";
+            this.tbDatumOd.Mask = "00.00.0000";
             this.tbDatumOd.Name = "tbDatumOd";
             this.tbDatumOd.Size = new System.Drawing.Size(153, 40);
             this.tbDatumOd.TabIndex = 75;
             this.tbDatumOd.Text = "01062014";
-            this.tbDatumOd.ValidatingType = typeof(System.DateTime);
             this.tbDatumOd.Validating += new System.ComponentModel.CancelEventHandler(this.tbDatumOd_Validating);
             // 
             // tbDatumDo
@@ -559,12 +558,11 @@
             this.tbDatumDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDatumDo.ForeColor = System.Drawing.Color.Khaki;
             this.tbDatumDo.Location = new System.Drawing.Point(1162, 311);
-            this.tbDatumDo.Mask = "00/00/0000";
+            this.tbDatumDo.Mask = "00.00.0000";
             this.tbDatumDo.Name = "tbDatumDo";
             this.tbDatumDo.Size = new System.Drawing.Size(153, 40);
             this.tbDatumDo.TabIndex = 76;
             this.tbDatumDo.Text = "30062014";
-            this.tbDatumDo.ValidatingType = typeof(System.DateTime);
             this.tbDatumDo.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // labelFASAP2
