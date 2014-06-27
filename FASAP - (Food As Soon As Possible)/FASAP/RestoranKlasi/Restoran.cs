@@ -100,8 +100,14 @@ namespace SmetkaZaNaracka
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
             int pom = 0;
+            bool vlegov = false;
             while (dr.Read())
+            {
+                vlegov = true;
                 pom = dr.GetInt32(0);
+            }
+            if (!vlegov && BrojMasi != null)
+                pom = (int)BrojMasi;
             SlobodniMasi = pom;
             return pom.ToString();
         }
