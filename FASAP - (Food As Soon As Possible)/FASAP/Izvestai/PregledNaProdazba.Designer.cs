@@ -327,7 +327,7 @@
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0051F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0051F));
             this.dbLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.dbLayoutPanel2.Size = new System.Drawing.Size(1226, 449);
+            this.dbLayoutPanel2.Size = new System.Drawing.Size(1226, 480);
             this.dbLayoutPanel2.TabIndex = 35;
             // 
             // labelFASAP58
@@ -339,7 +339,7 @@
             this.labelFASAP58.ForeColor = System.Drawing.Color.White;
             this.labelFASAP58.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP58.Image")));
             this.labelFASAP58.LblObject = null;
-            this.labelFASAP58.Location = new System.Drawing.Point(1087, 409);
+            this.labelFASAP58.Location = new System.Drawing.Point(1087, 442);
             this.labelFASAP58.Name = "labelFASAP58";
             this.labelFASAP58.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP58.TabIndex = 58;
@@ -354,7 +354,7 @@
             this.labelFASAP38.ForeColor = System.Drawing.Color.White;
             this.labelFASAP38.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP38.Image")));
             this.labelFASAP38.LblObject = null;
-            this.labelFASAP38.Location = new System.Drawing.Point(621, 409);
+            this.labelFASAP38.Location = new System.Drawing.Point(621, 442);
             this.labelFASAP38.Name = "labelFASAP38";
             this.labelFASAP38.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP38.TabIndex = 43;
@@ -369,7 +369,7 @@
             this.labelFASAP28.ForeColor = System.Drawing.Color.White;
             this.labelFASAP28.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP28.Image")));
             this.labelFASAP28.LblObject = null;
-            this.labelFASAP28.Location = new System.Drawing.Point(389, 409);
+            this.labelFASAP28.Location = new System.Drawing.Point(389, 442);
             this.labelFASAP28.Name = "labelFASAP28";
             this.labelFASAP28.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP28.TabIndex = 42;
@@ -384,7 +384,7 @@
             this.labelFASAP18.ForeColor = System.Drawing.Color.White;
             this.labelFASAP18.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP18.Image")));
             this.labelFASAP18.LblObject = null;
-            this.labelFASAP18.Location = new System.Drawing.Point(126, 409);
+            this.labelFASAP18.Location = new System.Drawing.Point(126, 442);
             this.labelFASAP18.Name = "labelFASAP18";
             this.labelFASAP18.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP18.TabIndex = 35;
@@ -399,7 +399,7 @@
             this.labelFASAP48.ForeColor = System.Drawing.Color.White;
             this.labelFASAP48.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP48.Image")));
             this.labelFASAP48.LblObject = null;
-            this.labelFASAP48.Location = new System.Drawing.Point(853, 409);
+            this.labelFASAP48.Location = new System.Drawing.Point(853, 442);
             this.labelFASAP48.Name = "labelFASAP48";
             this.labelFASAP48.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP48.TabIndex = 7;
@@ -414,7 +414,7 @@
             this.labelFASAP17.ForeColor = System.Drawing.Color.White;
             this.labelFASAP17.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP17.Image")));
             this.labelFASAP17.LblObject = null;
-            this.labelFASAP17.Location = new System.Drawing.Point(126, 361);
+            this.labelFASAP17.Location = new System.Drawing.Point(126, 393);
             this.labelFASAP17.Name = "labelFASAP17";
             this.labelFASAP17.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP17.TabIndex = 6;
@@ -429,7 +429,7 @@
             this.labelFASAP15.ForeColor = System.Drawing.Color.White;
             this.labelFASAP15.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP15.Image")));
             this.labelFASAP15.LblObject = null;
-            this.labelFASAP15.Location = new System.Drawing.Point(126, 273);
+            this.labelFASAP15.Location = new System.Drawing.Point(126, 297);
             this.labelFASAP15.Name = "labelFASAP15";
             this.labelFASAP15.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP15.TabIndex = 4;
@@ -444,7 +444,7 @@
             this.labelFASAP12.ForeColor = System.Drawing.Color.White;
             this.labelFASAP12.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP12.Image")));
             this.labelFASAP12.LblObject = null;
-            this.labelFASAP12.Location = new System.Drawing.Point(126, 141);
+            this.labelFASAP12.Location = new System.Drawing.Point(126, 153);
             this.labelFASAP12.Name = "labelFASAP12";
             this.labelFASAP12.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP12.TabIndex = 1;
@@ -459,7 +459,7 @@
             this.labelFASAP13.ForeColor = System.Drawing.Color.White;
             this.labelFASAP13.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP13.Image")));
             this.labelFASAP13.LblObject = null;
-            this.labelFASAP13.Location = new System.Drawing.Point(126, 185);
+            this.labelFASAP13.Location = new System.Drawing.Point(126, 201);
             this.labelFASAP13.Name = "labelFASAP13";
             this.labelFASAP13.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP13.TabIndex = 2;
@@ -474,7 +474,7 @@
             this.labelFASAP21.ForeColor = System.Drawing.Color.White;
             this.labelFASAP21.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP21.Image")));
             this.labelFASAP21.LblObject = null;
-            this.labelFASAP21.Location = new System.Drawing.Point(389, 97);
+            this.labelFASAP21.Location = new System.Drawing.Point(389, 105);
             this.labelFASAP21.Name = "labelFASAP21";
             this.labelFASAP21.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP21.TabIndex = 10;
@@ -489,7 +489,7 @@
             this.labelFASAP22.ForeColor = System.Drawing.Color.White;
             this.labelFASAP22.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP22.Image")));
             this.labelFASAP22.LblObject = null;
-            this.labelFASAP22.Location = new System.Drawing.Point(389, 141);
+            this.labelFASAP22.Location = new System.Drawing.Point(389, 153);
             this.labelFASAP22.Name = "labelFASAP22";
             this.labelFASAP22.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP22.TabIndex = 11;
@@ -504,7 +504,7 @@
             this.labelFASAP23.ForeColor = System.Drawing.Color.White;
             this.labelFASAP23.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP23.Image")));
             this.labelFASAP23.LblObject = null;
-            this.labelFASAP23.Location = new System.Drawing.Point(389, 185);
+            this.labelFASAP23.Location = new System.Drawing.Point(389, 201);
             this.labelFASAP23.Name = "labelFASAP23";
             this.labelFASAP23.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP23.TabIndex = 12;
@@ -519,7 +519,7 @@
             this.labelFASAP24.ForeColor = System.Drawing.Color.White;
             this.labelFASAP24.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP24.Image")));
             this.labelFASAP24.LblObject = null;
-            this.labelFASAP24.Location = new System.Drawing.Point(389, 229);
+            this.labelFASAP24.Location = new System.Drawing.Point(389, 249);
             this.labelFASAP24.Name = "labelFASAP24";
             this.labelFASAP24.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP24.TabIndex = 13;
@@ -534,7 +534,7 @@
             this.labelFASAP25.ForeColor = System.Drawing.Color.White;
             this.labelFASAP25.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP25.Image")));
             this.labelFASAP25.LblObject = null;
-            this.labelFASAP25.Location = new System.Drawing.Point(389, 273);
+            this.labelFASAP25.Location = new System.Drawing.Point(389, 297);
             this.labelFASAP25.Name = "labelFASAP25";
             this.labelFASAP25.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP25.TabIndex = 14;
@@ -549,7 +549,7 @@
             this.labelFASAP26.ForeColor = System.Drawing.Color.White;
             this.labelFASAP26.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP26.Image")));
             this.labelFASAP26.LblObject = null;
-            this.labelFASAP26.Location = new System.Drawing.Point(389, 317);
+            this.labelFASAP26.Location = new System.Drawing.Point(389, 345);
             this.labelFASAP26.Name = "labelFASAP26";
             this.labelFASAP26.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP26.TabIndex = 15;
@@ -564,7 +564,7 @@
             this.labelFASAP27.ForeColor = System.Drawing.Color.White;
             this.labelFASAP27.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP27.Image")));
             this.labelFASAP27.LblObject = null;
-            this.labelFASAP27.Location = new System.Drawing.Point(389, 361);
+            this.labelFASAP27.Location = new System.Drawing.Point(389, 393);
             this.labelFASAP27.Name = "labelFASAP27";
             this.labelFASAP27.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP27.TabIndex = 16;
@@ -579,7 +579,7 @@
             this.labelFASAP14.ForeColor = System.Drawing.Color.White;
             this.labelFASAP14.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP14.Image")));
             this.labelFASAP14.LblObject = null;
-            this.labelFASAP14.Location = new System.Drawing.Point(126, 229);
+            this.labelFASAP14.Location = new System.Drawing.Point(126, 249);
             this.labelFASAP14.Name = "labelFASAP14";
             this.labelFASAP14.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP14.TabIndex = 3;
@@ -594,7 +594,7 @@
             this.labelFASAP16.ForeColor = System.Drawing.Color.White;
             this.labelFASAP16.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP16.Image")));
             this.labelFASAP16.LblObject = null;
-            this.labelFASAP16.Location = new System.Drawing.Point(126, 317);
+            this.labelFASAP16.Location = new System.Drawing.Point(126, 345);
             this.labelFASAP16.Name = "labelFASAP16";
             this.labelFASAP16.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP16.TabIndex = 5;
@@ -608,7 +608,7 @@
             this.labelFASAP59.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP59.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP59.Image")));
             this.labelFASAP59.LblObject = null;
-            this.labelFASAP59.Location = new System.Drawing.Point(27, 12);
+            this.labelFASAP59.Location = new System.Drawing.Point(27, 15);
             this.labelFASAP59.Name = "labelFASAP59";
             this.labelFASAP59.Size = new System.Drawing.Size(239, 65);
             this.labelFASAP59.TabIndex = 30;
@@ -623,7 +623,7 @@
             this.labelFASAP11.ForeColor = System.Drawing.Color.White;
             this.labelFASAP11.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP11.Image")));
             this.labelFASAP11.LblObject = null;
-            this.labelFASAP11.Location = new System.Drawing.Point(126, 97);
+            this.labelFASAP11.Location = new System.Drawing.Point(126, 105);
             this.labelFASAP11.Name = "labelFASAP11";
             this.labelFASAP11.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP11.TabIndex = 0;
@@ -637,7 +637,7 @@
             this.labelFASAP5.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP5.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP5.Image")));
             this.labelFASAP5.LblObject = null;
-            this.labelFASAP5.Location = new System.Drawing.Point(297, 12);
+            this.labelFASAP5.Location = new System.Drawing.Point(297, 15);
             this.labelFASAP5.Name = "labelFASAP5";
             this.labelFASAP5.Size = new System.Drawing.Size(226, 65);
             this.labelFASAP5.TabIndex = 31;
@@ -651,7 +651,7 @@
             this.labelFASAP6.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP6.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP6.Image")));
             this.labelFASAP6.LblObject = null;
-            this.labelFASAP6.Location = new System.Drawing.Point(529, 12);
+            this.labelFASAP6.Location = new System.Drawing.Point(529, 15);
             this.labelFASAP6.Name = "labelFASAP6";
             this.labelFASAP6.Size = new System.Drawing.Size(226, 65);
             this.labelFASAP6.TabIndex = 32;
@@ -665,7 +665,7 @@
             this.labelFASAP7.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP7.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP7.Image")));
             this.labelFASAP7.LblObject = null;
-            this.labelFASAP7.Location = new System.Drawing.Point(761, 12);
+            this.labelFASAP7.Location = new System.Drawing.Point(761, 15);
             this.labelFASAP7.Name = "labelFASAP7";
             this.labelFASAP7.Size = new System.Drawing.Size(226, 65);
             this.labelFASAP7.TabIndex = 33;
@@ -679,7 +679,7 @@
             this.labelFASAP8.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP8.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP8.Image")));
             this.labelFASAP8.LblObject = null;
-            this.labelFASAP8.Location = new System.Drawing.Point(993, 12);
+            this.labelFASAP8.Location = new System.Drawing.Point(993, 15);
             this.labelFASAP8.Name = "labelFASAP8";
             this.labelFASAP8.Size = new System.Drawing.Size(230, 65);
             this.labelFASAP8.TabIndex = 34;
@@ -694,7 +694,7 @@
             this.labelFASAP31.ForeColor = System.Drawing.Color.White;
             this.labelFASAP31.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP31.Image")));
             this.labelFASAP31.LblObject = null;
-            this.labelFASAP31.Location = new System.Drawing.Point(621, 97);
+            this.labelFASAP31.Location = new System.Drawing.Point(621, 105);
             this.labelFASAP31.Name = "labelFASAP31";
             this.labelFASAP31.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP31.TabIndex = 36;
@@ -709,7 +709,7 @@
             this.labelFASAP32.ForeColor = System.Drawing.Color.White;
             this.labelFASAP32.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP32.Image")));
             this.labelFASAP32.LblObject = null;
-            this.labelFASAP32.Location = new System.Drawing.Point(621, 141);
+            this.labelFASAP32.Location = new System.Drawing.Point(621, 153);
             this.labelFASAP32.Name = "labelFASAP32";
             this.labelFASAP32.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP32.TabIndex = 17;
@@ -724,7 +724,7 @@
             this.labelFASAP33.ForeColor = System.Drawing.Color.White;
             this.labelFASAP33.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP33.Image")));
             this.labelFASAP33.LblObject = null;
-            this.labelFASAP33.Location = new System.Drawing.Point(621, 185);
+            this.labelFASAP33.Location = new System.Drawing.Point(621, 201);
             this.labelFASAP33.Name = "labelFASAP33";
             this.labelFASAP33.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP33.TabIndex = 37;
@@ -739,7 +739,7 @@
             this.labelFASAP34.ForeColor = System.Drawing.Color.White;
             this.labelFASAP34.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP34.Image")));
             this.labelFASAP34.LblObject = null;
-            this.labelFASAP34.Location = new System.Drawing.Point(621, 229);
+            this.labelFASAP34.Location = new System.Drawing.Point(621, 249);
             this.labelFASAP34.Name = "labelFASAP34";
             this.labelFASAP34.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP34.TabIndex = 38;
@@ -754,7 +754,7 @@
             this.labelFASAP35.ForeColor = System.Drawing.Color.White;
             this.labelFASAP35.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP35.Image")));
             this.labelFASAP35.LblObject = null;
-            this.labelFASAP35.Location = new System.Drawing.Point(621, 273);
+            this.labelFASAP35.Location = new System.Drawing.Point(621, 297);
             this.labelFASAP35.Name = "labelFASAP35";
             this.labelFASAP35.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP35.TabIndex = 39;
@@ -769,7 +769,7 @@
             this.labelFASAP36.ForeColor = System.Drawing.Color.White;
             this.labelFASAP36.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP36.Image")));
             this.labelFASAP36.LblObject = null;
-            this.labelFASAP36.Location = new System.Drawing.Point(621, 317);
+            this.labelFASAP36.Location = new System.Drawing.Point(621, 345);
             this.labelFASAP36.Name = "labelFASAP36";
             this.labelFASAP36.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP36.TabIndex = 40;
@@ -784,7 +784,7 @@
             this.labelFASAP37.ForeColor = System.Drawing.Color.White;
             this.labelFASAP37.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP37.Image")));
             this.labelFASAP37.LblObject = null;
-            this.labelFASAP37.Location = new System.Drawing.Point(621, 361);
+            this.labelFASAP37.Location = new System.Drawing.Point(621, 393);
             this.labelFASAP37.Name = "labelFASAP37";
             this.labelFASAP37.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP37.TabIndex = 41;
@@ -799,7 +799,7 @@
             this.labelFASAP44.ForeColor = System.Drawing.Color.White;
             this.labelFASAP44.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP44.Image")));
             this.labelFASAP44.LblObject = null;
-            this.labelFASAP44.Location = new System.Drawing.Point(853, 229);
+            this.labelFASAP44.Location = new System.Drawing.Point(853, 249);
             this.labelFASAP44.Name = "labelFASAP44";
             this.labelFASAP44.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP44.TabIndex = 44;
@@ -814,7 +814,7 @@
             this.labelFASAP41.ForeColor = System.Drawing.Color.White;
             this.labelFASAP41.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP41.Image")));
             this.labelFASAP41.LblObject = null;
-            this.labelFASAP41.Location = new System.Drawing.Point(853, 97);
+            this.labelFASAP41.Location = new System.Drawing.Point(853, 105);
             this.labelFASAP41.Name = "labelFASAP41";
             this.labelFASAP41.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP41.TabIndex = 45;
@@ -829,7 +829,7 @@
             this.labelFASAP42.ForeColor = System.Drawing.Color.White;
             this.labelFASAP42.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP42.Image")));
             this.labelFASAP42.LblObject = null;
-            this.labelFASAP42.Location = new System.Drawing.Point(853, 141);
+            this.labelFASAP42.Location = new System.Drawing.Point(853, 153);
             this.labelFASAP42.Name = "labelFASAP42";
             this.labelFASAP42.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP42.TabIndex = 46;
@@ -844,7 +844,7 @@
             this.labelFASAP43.ForeColor = System.Drawing.Color.White;
             this.labelFASAP43.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP43.Image")));
             this.labelFASAP43.LblObject = null;
-            this.labelFASAP43.Location = new System.Drawing.Point(853, 185);
+            this.labelFASAP43.Location = new System.Drawing.Point(853, 201);
             this.labelFASAP43.Name = "labelFASAP43";
             this.labelFASAP43.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP43.TabIndex = 47;
@@ -859,7 +859,7 @@
             this.labelFASAP45.ForeColor = System.Drawing.Color.White;
             this.labelFASAP45.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP45.Image")));
             this.labelFASAP45.LblObject = null;
-            this.labelFASAP45.Location = new System.Drawing.Point(853, 273);
+            this.labelFASAP45.Location = new System.Drawing.Point(853, 297);
             this.labelFASAP45.Name = "labelFASAP45";
             this.labelFASAP45.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP45.TabIndex = 48;
@@ -874,7 +874,7 @@
             this.labelFASAP46.ForeColor = System.Drawing.Color.White;
             this.labelFASAP46.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP46.Image")));
             this.labelFASAP46.LblObject = null;
-            this.labelFASAP46.Location = new System.Drawing.Point(853, 317);
+            this.labelFASAP46.Location = new System.Drawing.Point(853, 345);
             this.labelFASAP46.Name = "labelFASAP46";
             this.labelFASAP46.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP46.TabIndex = 49;
@@ -889,7 +889,7 @@
             this.labelFASAP47.ForeColor = System.Drawing.Color.White;
             this.labelFASAP47.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP47.Image")));
             this.labelFASAP47.LblObject = null;
-            this.labelFASAP47.Location = new System.Drawing.Point(853, 361);
+            this.labelFASAP47.Location = new System.Drawing.Point(853, 393);
             this.labelFASAP47.Name = "labelFASAP47";
             this.labelFASAP47.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP47.TabIndex = 50;
@@ -904,7 +904,7 @@
             this.labelFASAP51.ForeColor = System.Drawing.Color.White;
             this.labelFASAP51.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP51.Image")));
             this.labelFASAP51.LblObject = null;
-            this.labelFASAP51.Location = new System.Drawing.Point(1087, 97);
+            this.labelFASAP51.Location = new System.Drawing.Point(1087, 105);
             this.labelFASAP51.Name = "labelFASAP51";
             this.labelFASAP51.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP51.TabIndex = 51;
@@ -919,7 +919,7 @@
             this.labelFASAP52.ForeColor = System.Drawing.Color.White;
             this.labelFASAP52.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP52.Image")));
             this.labelFASAP52.LblObject = null;
-            this.labelFASAP52.Location = new System.Drawing.Point(1087, 141);
+            this.labelFASAP52.Location = new System.Drawing.Point(1087, 153);
             this.labelFASAP52.Name = "labelFASAP52";
             this.labelFASAP52.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP52.TabIndex = 52;
@@ -934,7 +934,7 @@
             this.labelFASAP53.ForeColor = System.Drawing.Color.White;
             this.labelFASAP53.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP53.Image")));
             this.labelFASAP53.LblObject = null;
-            this.labelFASAP53.Location = new System.Drawing.Point(1087, 185);
+            this.labelFASAP53.Location = new System.Drawing.Point(1087, 201);
             this.labelFASAP53.Name = "labelFASAP53";
             this.labelFASAP53.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP53.TabIndex = 53;
@@ -949,7 +949,7 @@
             this.labelFASAP54.ForeColor = System.Drawing.Color.White;
             this.labelFASAP54.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP54.Image")));
             this.labelFASAP54.LblObject = null;
-            this.labelFASAP54.Location = new System.Drawing.Point(1087, 229);
+            this.labelFASAP54.Location = new System.Drawing.Point(1087, 249);
             this.labelFASAP54.Name = "labelFASAP54";
             this.labelFASAP54.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP54.TabIndex = 54;
@@ -964,7 +964,7 @@
             this.labelFASAP55.ForeColor = System.Drawing.Color.White;
             this.labelFASAP55.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP55.Image")));
             this.labelFASAP55.LblObject = null;
-            this.labelFASAP55.Location = new System.Drawing.Point(1087, 273);
+            this.labelFASAP55.Location = new System.Drawing.Point(1087, 297);
             this.labelFASAP55.Name = "labelFASAP55";
             this.labelFASAP55.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP55.TabIndex = 55;
@@ -979,7 +979,7 @@
             this.labelFASAP56.ForeColor = System.Drawing.Color.White;
             this.labelFASAP56.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP56.Image")));
             this.labelFASAP56.LblObject = null;
-            this.labelFASAP56.Location = new System.Drawing.Point(1087, 317);
+            this.labelFASAP56.Location = new System.Drawing.Point(1087, 345);
             this.labelFASAP56.Name = "labelFASAP56";
             this.labelFASAP56.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP56.TabIndex = 56;
@@ -994,7 +994,7 @@
             this.labelFASAP57.ForeColor = System.Drawing.Color.White;
             this.labelFASAP57.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP57.Image")));
             this.labelFASAP57.LblObject = null;
-            this.labelFASAP57.Location = new System.Drawing.Point(1087, 361);
+            this.labelFASAP57.Location = new System.Drawing.Point(1087, 393);
             this.labelFASAP57.Name = "labelFASAP57";
             this.labelFASAP57.Size = new System.Drawing.Size(42, 27);
             this.labelFASAP57.TabIndex = 57;
@@ -1144,7 +1144,7 @@
             this.lblErrorMessage.BackColor = System.Drawing.Color.Khaki;
             this.lblErrorMessage.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMessage.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblErrorMessage.Location = new System.Drawing.Point(0, 707);
+            this.lblErrorMessage.Location = new System.Drawing.Point(0, 746);
             this.lblErrorMessage.Name = "lblErrorMessage";
             this.lblErrorMessage.Size = new System.Drawing.Size(54, 22);
             this.lblErrorMessage.TabIndex = 98;
@@ -1155,7 +1155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.pbStara);
             this.Controls.Add(this.buttonFASAP2);
