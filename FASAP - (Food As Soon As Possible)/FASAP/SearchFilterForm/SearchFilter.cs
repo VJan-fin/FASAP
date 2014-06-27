@@ -446,5 +446,24 @@ namespace SmetkaZaNaracka
             }
             PostaviRestorani();
         }
+
+        private void pbListUp_Click(object sender, EventArgs e)
+        {
+            if (this.CurrRestorani != 0)
+            {
+                this.CurrRestorani--;
+                this.PostaviRestorani();
+            }
+        }
+
+        private void pbListDown_Click(object sender, EventArgs e)
+        {
+            if (this.Restorani.Count > this.labeli.Count)
+            {
+                if (this.CurrRestorani < this.Restorani.Count - this.labeli.Count)
+                    this.CurrRestorani++;
+                this.PostaviRestorani();
+            }
+        }
     }
 }

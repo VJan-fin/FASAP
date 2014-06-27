@@ -420,6 +420,7 @@
             this.pbListUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbListUp.TabIndex = 0;
             this.pbListUp.TabStop = false;
+            this.pbListUp.Click += new System.EventHandler(this.pbListUp_Click);
             this.pbListUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbListUp_MouseDown);
             this.pbListUp.MouseEnter += new System.EventHandler(this.pbListUp_MouseEnter);
             this.pbListUp.MouseLeave += new System.EventHandler(this.pbListUp_MouseLeave);
@@ -434,6 +435,7 @@
             this.pbListDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbListDown.TabIndex = 1;
             this.pbListDown.TabStop = false;
+            this.pbListDown.Click += new System.EventHandler(this.pbListDown_Click);
             this.pbListDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbListDown_MouseDown);
             this.pbListDown.MouseEnter += new System.EventHandler(this.pbListDown_MouseEnter);
             this.pbListDown.MouseLeave += new System.EventHandler(this.pbListDown_MouseLeave);
