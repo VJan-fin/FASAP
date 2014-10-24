@@ -48,7 +48,7 @@ namespace SmetkaZaNaracka
             this.pictureBox1.Image = global::SmetkaZaNaracka.Properties.Resources.FASAP_LOGO;
             this.pictureBox1.Location = new System.Drawing.Point(466, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(445, 443);
+            this.pictureBox1.Size = new System.Drawing.Size(435, 511);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -65,7 +65,7 @@ namespace SmetkaZaNaracka
             this.labelFASAP1.ForeColor = System.Drawing.Color.Khaki;
             this.labelFASAP1.Image = ((System.Drawing.Image)(resources.GetObject("labelFASAP1.Image")));
             this.labelFASAP1.LblObject = null;
-            this.labelFASAP1.Location = new System.Drawing.Point(293, 531);
+            this.labelFASAP1.Location = new System.Drawing.Point(293, 599);
             this.labelFASAP1.Name = "labelFASAP1";
             this.labelFASAP1.Size = new System.Drawing.Size(791, 118);
             this.labelFASAP1.TabIndex = 11;
@@ -106,7 +106,7 @@ namespace SmetkaZaNaracka
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SmetkaZaNaracka.Properties.Resources.FasapBackground;
-            this.ClientSize = new System.Drawing.Size(1376, 700);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.labelFASAP2);
             this.Controls.Add(this.lblZab);
             this.Controls.Add(this.labelFASAP1);
